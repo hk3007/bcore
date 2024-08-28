@@ -1,0 +1,60 @@
+.EventsContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9; /* Light shade background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.EventHeading {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.EventItem {
+  margin-bottom: 40px;
+  text-align: center; /* Center the event item content */
+}
+
+.EventSubHeading {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #2c3aff, #050128); /* Gradient background */
+  border-radius: 8px;
+}
+
+.EventImages {
+  display: flex;
+  justify-content: center; /* Center the images */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.EventImage {
+  width: calc(50% - 20px); /* Adjust the width as needed */
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; /* Add animation */
+}
+
+.EventImage:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+@media (max-width: 768px) {
+  .EventImage {
+    width: calc(75% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .EventImage {
+    width: calc(100% - 20px);
+  }
+}

@@ -1,0 +1,119 @@
+.active {
+    background-color: rgb(0, 8, 25);
+    color: aliceblue;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #030953, #1e2cb0, #392cea, #010114);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the nav stays above other content */
+}
+
+nav .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    text-decoration: none;
+    color: rgb(17, 0, 0);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .title span {
+    font-family: 'Courier New', Courier, monospace; /* Use Algerian font */
+    font-weight: bolder; /* Make the text bold */
+    display: flex;
+    align-items: center; /* Center the text vertically */
+    color: #ffffff;
+    font-size: xx-large;
+}
+
+nav .logo {
+    width: 60px; /* Increase the width */
+    margin-right: 10px; /* Adjust the spacing as necessary */
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center; /* Center the text */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+
+nav ul li a:not(.active):hover {
+    background-color: rgb(0, 21, 36);
+    color: aliceblue;
+}
+
+nav .menu {
+    display: none;
+    position: absolute;
+    top: 1rem; /* Adjust the vertical positioning */
+    right: 1rem; /* Move to the right */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+    cursor: pointer; /* Change the cursor to pointer */
+}
+
+nav .menu span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 700px) {
+    nav .menu {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        padding: 0px;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+        align-items: center; /* Center the list items horizontally */
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center; /* Center the list items */
+    }
+
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+    
+}

@@ -1,0 +1,24 @@
+.team-member {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.team-member-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.team-member-name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.team-member-designation {
+  color: #777;
+  font-size: 14px;
+}
