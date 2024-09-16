@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Bcore } from './components/pages/BCORE';
+import  {BCORE}  from './components/pages/BCORE';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
 import { Footer } from './components/Footer';
@@ -29,8 +29,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/" element={<Bcore />} />
-        <Route path="/home" element={<Bcore />} />
+        <Route path="/" element={<BCORE />} />
+        <Route path="/bcore" element={<BCORE />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
         <Route path="/team" element={<Team />} />

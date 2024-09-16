@@ -10,7 +10,7 @@ import Testimonial3 from '../pages/Images/Praveen Kumar.jpg';
 import Testinomial4 from '../pages/Images/Yash Sharma.jpg';
 
 
-export const Bcore = () => {
+export const BCORE = () => {
     const newsArticles = [
         {
             id: 1,
