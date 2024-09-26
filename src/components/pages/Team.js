@@ -96,12 +96,6 @@ const interns = [
     info: 'Information about Harshdipsinh Rathod'
   },
   {
-    name: 'Amber Chahal',
-    schoolName: 'School Of Physical Education and Sports',
-    photo: [image1],
-    info: 'Information about Amber Chahal'
-  },
-  {
     name: 'Anirudh Singh',
     schoolName: 'School of Physical Education and Sports',
     photo: [image14],
