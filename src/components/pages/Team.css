@@ -1,68 +1,86 @@
+/* Flexbox for Team Section */
 .team {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
+  gap: 30px;
 }
 
+/* Flip Card Container */
 .flip-card {
   background-color: transparent;
-  width: 250px;
-  height: 350px;
+  width: 270px;
+  height: 370px;
   perspective: 1000px;
   margin: 20px;
-  position: relative; /* Add position relative */
 }
 
+/* Inner Flip Card */
 .flip-card-inner {
-  position: absolute; /* Change to absolute */
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.6s;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 15px;
 }
 
+/* Flip Card on Hover */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-  z-index: 1; /* Bring the flipped card to the front */
 }
 
+/* Front and Back Faces */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
-}
-
-.flip-card-front {
-  background-color: #fff;
-  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Front Face */
+.flip-card-front {
+  background-color: #ffffff;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Back Face */
 .flip-card-back {
   background-color: #004d99;
   color: white;
   transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
 }
 
+/* Image Styling */
 .flip-card img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Add Shadow on Hover */
+.flip-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Flip Card Content */
+.flip-card-back h3, .flip-card-back p {
+  margin: 10px 0;
 }
 
 .overview {
@@ -81,4 +99,21 @@
   color: #ffffff;
   margin-bottom: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flip-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .overview h2 {
+    font-size: 2.5rem;
+  }
 }

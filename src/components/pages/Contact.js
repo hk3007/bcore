@@ -23,6 +23,9 @@ export const Contact = () => {
         const data = await response.json();
         console.log(data);
         formEle.reset(); // Reset form after successful submission
+
+        // Refresh the page after form submission
+        window.location.reload();
       } else {
         throw new Error('Network response was not ok.');
       }
