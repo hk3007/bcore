@@ -210,7 +210,18 @@ export const BCORE = () => {
                     <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/09/Paralympics_Webslider1-1.jpg" alt="Slide 1" />
                     </div>
-
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Paralympics_Webslider2.jpg" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Hockey_Webslider.jpg" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Niraj-Chopra_Webslider.jpg" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Swapnil-Kusale_Webslider.jpg" alt="Slide 1" />
+                    </div>
                     <div>
                         <img src={image1} alt="Slide 1" />
                     </div>

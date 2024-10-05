@@ -7,7 +7,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #030953, #1e2cb0, #392cea, #010114);
+    background: linear-gradient(135deg, #000939, #090021, #010027);
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensure the nav stays above other content */
