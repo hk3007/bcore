@@ -1,56 +1,101 @@
-/* src/footer.css */
-
 .footer {
-    background-color: #003366; 
-    color: #ffffff; 
-    text-align: center;
-    padding: 1rem; 
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-    position: relative; 
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
+    background-color: #090221;
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Centering the entire footer content */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1; /* Distribute space evenly */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer-left {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-left p a {
+    color: #fbff00;
+    text-decoration: none;
+}
+
+.footer-left p a:hover {
+    text-decoration: underline;
 }
 
 .social-icons {
-    margin-top: 1rem;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .social-icons a {
-    color: #ffffff; /* White icons */
-    margin: 0 0.5rem;
-    font-size: 1.2rem;
+    color: #c4c4c4;
+    font-size: 24px;
+    transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #ffd700; /* Gold color on hover */
+    color: #007bff;
 }
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-    .footer {
-        font-size: 0.8rem; /* Slightly smaller text on small screens */
+.footer-center {
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-center a {
+    color: #ffe600;
+    text-decoration: none;
+}
+
+.footer-center a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    align-items: flex-end;
+    text-align: right;
+}
+
+.footer-right address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .social-icons a {
-        margin: 0 0.3rem; /* Smaller margin for icons */
+    .footer-left, .footer-center, .footer-right {
+        align-items: center;
+        text-align: center;
     }
-}
 
-/* Ensure that the body takes up at least the full height of the viewport */
-html, body {
-    height: 100%;
-    margin: 0;
-}
+    .social-icons {
+        justify-content: center;
+    }
 
-.App {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Ensuring the footer stays at the bottom if the content is short */
-.App > *:last-child {
-    margin-top: auto;
+    .footer-right {
+        margin-top: 20px;
+    }
 }
