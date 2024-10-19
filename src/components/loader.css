@@ -1,8 +1,22 @@
-/* src/components/Loader.css */
 .loader {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.loader-image {
+  width: 150px; /* Increase the size of the image */
+  height: 150px;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
   }
-  
+  50% {
+    opacity: 0;
+  }
+}

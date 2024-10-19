@@ -1,12 +1,12 @@
 // src/components/Loader.js
 import React from 'react';
-import { TailSpin } from 'react-loader-spinner';
+import './loader.css';
+import imagePath from './pages/Images/BCORE Logo.png';
 
 export const Loader = () => {
   return (
     <div className="loader">
-      <TailSpin color="#00BFFF" height={80} width={80} />
+      <img src={imagePath} alt="Loading..." className="loader-image" />
     </div>
   );
 };
-

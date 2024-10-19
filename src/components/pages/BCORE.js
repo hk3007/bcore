@@ -192,6 +192,9 @@ export const BCORE = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    const sortedNewsArticles = newsArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+
     return (
         <div>
             <div style={{ maxWidth: '1900px', margin: '0 auto' }}>
@@ -268,12 +271,91 @@ export const BCORE = () => {
                     </p>
                 </div>
             </section>
+            <h1 class="title">OLYMPIC TIMELINE</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">776 BC</div>
+                    <div class="timeline-content">
+                        <h3>First Ancient Olympics</h3>
+                        <p>The first recorded Olympic Games are held in Olympia, Greece, as part of a religious festival honoring Zeus.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">AD 393</div>
+                    <div class="timeline-content">
+                        <h3>End of Ancient Olympics</h3>
+                        <p>Roman Emperor Theodosius I bans all pagan festivals, marking the end of the games.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1850</div>
+                    <div class="timeline-content">
+                        <h3>Wenlock Olympian Games</h3>
+                        <p>The Wenlock Olympian Games were founded by Dr. William Penny Brookes in Much Wenlock, England.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1896</div>
+                    <div class="timeline-content">
+                        <h3>First Modern Olympics</h3>
+                        <p>The inaugural Modern Olympic Games are held in Athens, featuring 241 male athletes from 14 countries.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">1924</div>
+                    <div class="timeline-content">
+                        <h3>First Winter Olympics</h3>
+                        <p>The inaugural Winter Olympic Games are held in Chamonix, France, featuring events like skiing and ice hockey.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1960</div>
+                    <div class="timeline-content">
+                        <h3>First Televised Olympics</h3>
+                        <p>The Rome Games are the first to be fully televised, increasing global viewership.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1980</div>
+                    <div class="timeline-content">
+                        <h3>Moscow Boycott</h3>
+                        <p>The United States and several other countries boycott the Moscow Games in protest of the Soviet invasion of Afghanistan.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2000</div>
+                    <div class="timeline-content">
+                        <h3>Sydney Olympics</h3>
+                        <p>The Sydney Olympics are hailed as the "best ever" by IOC President Juan Antonio Samaranch.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2021</div>
+                    <div class="timeline-content">
+                        <h3>Tokyo 2020 (Held in 2021)</h3>
+                        <p>The Tokyo Games are postponed due to COVID-19 and held without spectators. New sports like skateboarding are introduced.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>Upcoming: Paris 2024</h3>
+                        <p>Paris will host the Summer Olympics, marking 100 years since it last hosted the Games.</p>
+                    </div>
+                </div>
+            </div>
             <div className="news-section">
                 <div className="section-title">
                     <h1>In The News</h1>
                 </div>
                 <div className="news-container">
-                    {newsArticles.map((article) => (
+                    {sortedNewsArticles.map((article) => (
                         <div key={article.id} className="news-item">
                             <div className="news-img">
                                 <img src={article.imgSrc} alt={article.alt} />
