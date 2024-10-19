@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bcore/static/css/main.3e9f65f7.css",
-    "main.js": "/bcore/static/js/main.91120e15.js",
+    "main.css": "/bcore/static/css/main.3ca95187.css",
+    "main.js": "/bcore/static/js/main.33b9fa05.js",
     "static/js/453.b2889c0a.chunk.js": "/bcore/static/js/453.b2889c0a.chunk.js",
     "static/media/Purnima Joshi.png": "/bcore/static/media/Purnima Joshi.4313c6f376cf799de534.png",
     "static/media/DESIGN COMPETITION.png": "/bcore/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
@@ -33,12 +33,12 @@
     "static/media/BCORE Logo.png": "/bcore/static/media/BCORE Logo.178ff992bc088357a841.png",
     "static/media/Harshil Khokhar.jpg": "/bcore/static/media/Harshil Khokhar.ada5b59264cbaa91fc04.jpg",
     "index.html": "/bcore/index.html",
-    "main.3e9f65f7.css.map": "/bcore/static/css/main.3e9f65f7.css.map",
-    "main.91120e15.js.map": "/bcore/static/js/main.91120e15.js.map",
+    "main.3ca95187.css.map": "/bcore/static/css/main.3ca95187.css.map",
+    "main.33b9fa05.js.map": "/bcore/static/js/main.33b9fa05.js.map",
     "453.b2889c0a.chunk.js.map": "/bcore/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e9f65f7.css",
-    "static/js/main.91120e15.js"
+    "static/css/main.3ca95187.css",
+    "static/js/main.33b9fa05.js"
   ]
 }
