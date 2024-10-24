@@ -37,7 +37,7 @@ const teamMembers = [
     name: 'Lt. (Dr.) Gaurav Singh Kushwah',
     designation: 'Director NCC',
     photo: [image3],
-    info: 'Information about Lt. (Dr.) Gaurav Singh Kushwah'
+    info: 'Head of Sports Fields, Amenities and Gym Branch and Assistant Director (Physical Education and Sports) PhD, MPEd, BPEd'
   },
   {
     name: 'Dr. Utsav Chaware',
@@ -47,9 +47,9 @@ const teamMembers = [
   },
   {
     name: 'Dr. Purnima Joshi',
-    designation: 'Director I/c SPES',
+    designation: 'Director I/c',
     photo: [image8],
-    info: 'Information about Dr. Purnima Joshi'
+    info: 'School of Physical Education and Sports (SPES)'
   }
 ];
 const interns = [
@@ -57,49 +57,49 @@ const interns = [
     name: 'Shivam Kumar',
     schoolName: 'School of International Cooperation, Security and Strategic Languages',
     photo: [image9],
-    info: 'Information about Shivam Kumar'
+    info: ''
   },
   {
     name: 'Zulfikar Pathan',
     schoolName: 'School of International Cooperation, Security and Strategic Languages',
     photo: [image13],
-    info: 'Information about Zulfikar Pathan'
+    info: ''
   },
   {
     name: 'Neeladri Shekhar Das',
     schoolName: 'School of International Cooperation, Security and Strategic Languages',
     photo: [image7],
-    info: 'Information about Neeladri Shekhar Das'
+    info: ''
   },
   {
     name: 'Tanishka Singh',
     schoolName: 'School of International Cooperation, Security and Strategic Languages',
     photo: [image11],
-    info: 'Information about Tanishka Singh'
+    info: ''
   },
   {
     name: 'Harshil Khokhar',
     schoolName: 'School of IT, Artificial Intelligence and Cyber Security',
     photo: [image5],
-    info: 'Information about Harshil Khokhar'
+    info: ''
   },
   {
     name: 'Kruti Hudka',
     schoolName: 'School of International Cooperation, Security and Strategic Languages',
     photo: [image6],
-    info: 'Information about Kruti'
+    info: ''
   },
   {
     name: 'Harshdipsinh Rathod',
     schoolName: 'School of IT, Artificial Intelligence and Cyber Security',
     photo: [image4],
-    info: 'Information about Harshdipsinh Rathod'
+    info: ''
   },
   {
     name: 'Anirudh Singh',
     schoolName: 'School of Physical Education and Sports',
     photo: [image14],
-    info: 'Information about Anirudh Singh'
+    info: ''
   }
 ];
 

@@ -1,0 +1,108 @@
+/* Olympic-themed colors */
+:root {
+    --primary-color: #005EB8; /* Olympic blue */
+    --secondary-color: #F4A900; /* Olympic gold */
+    --accent-color: #E91E63; /* Pink for contrast */
+    --font-family: 'Poppins', sans-serif;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: var(--font-family);
+    background-color: #f0f0f0;
+  }
+  
+  .news-section {
+    padding: 50px 20px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .news-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    font-weight: bold;
+  }
+  
+  .news-title:after {
+    content: '';
+    width: 150px;
+    height: 5px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    border-radius: 10px;
+  }
+  
+  /* News Grid */
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .news-card {
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image */
+  .news-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Content */
+  .news-content {
+    padding: 20px;
+  }
+  
+  .news-heading {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  
+  .news-date {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+  
+  .news-link {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .news-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Media Queries */
+  @media (max-width: 768px) {
+    .news-title {
+      font-size: 2rem;
+    }
+  
+    .news-card {
+      margin: 0 auto;
+    }
+  }
+  

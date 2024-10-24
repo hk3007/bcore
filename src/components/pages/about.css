@@ -1,9 +1,38 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-/* src/Banner.css */
-/* src/Banner.css */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Logo Section */
+.logo-section-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+}
 
+.logos-1 {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo-1 {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-1:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments - Hide logos */
+@media (max-width: 768px) {
+    .logo-section-1 {
+        display: none;  /* Hide the entire logo section on screens smaller than 768px */
+    }
+}
+
+/* About Section */
 .about-section {
     padding: 50px 20px;
     display: flex;
@@ -22,6 +51,7 @@
     animation: slideUp 1s ease-out;
 }
 
+/* Make text responsive */
 .title {
     font-size: 2.5em;
     color: #003366;
@@ -43,6 +73,27 @@
     font-family: 'Verdana', sans-serif;
 }
 
+@media (max-width: 768px) {
+    .title {
+        font-size: 2em;
+    }
+
+    .list-item {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8em;
+    }
+
+    .list-item {
+        font-size: 1em;
+    }
+}
+
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -62,4 +113,3 @@
         opacity: 1;
     }
 }
-

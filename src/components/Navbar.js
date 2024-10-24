@@ -27,6 +27,7 @@ export const Navbar = () => {
                 <li><NavLink to="/About" activeClassName="active" onClick={handleNavLinkClick}>About</NavLink></li>
                 <li><NavLink to="/Events" activeClassName="active" onClick={handleNavLinkClick}>Events</NavLink></li>
                 <li><NavLink to="/Team" activeClassName="active" onClick={handleNavLinkClick}>BCORE Team</NavLink></li>
+                <li><NavLink to="/News" activeClassName="active" onClick={handleNavLinkClick}>News</NavLink></li>
                 <li><NavLink to="/Contact" activeClassName="active" onClick={handleNavLinkClick}>Contact</NavLink></li>
             </ul>
         </nav>
