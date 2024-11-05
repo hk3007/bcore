@@ -63,7 +63,7 @@ export const BCORE = () => {
                     transitionTime={500}
                 >
                     <div>
-                        <img src="http://rru.ac.in/wp-content/uploads/2024/11/Advanced-Olympic-Research-Grant-Programme_Webslider.jpg" alt="Slide 1" />
+                        <img src="https://rru.ac.in/wp-content/uploads/2024/11/Advanced-Olympic-Research-Grant-Programme_Webslider.jpg" alt="Slide 1" />
                     </div>
                     <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/10/COB-Expo-1.jpg" alt="Slide 1" />
