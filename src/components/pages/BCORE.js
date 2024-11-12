@@ -99,7 +99,7 @@ export const BCORE = () => {
             </div>
             <div className="marquee-container">
                 <marquee className="marquee">
-                    <span>Latest News: Olympic events update... | New research papers published... | Upcoming events... | Special announcements...</span>
+                    <span>1st International Olympic Research Academy</span>
                 </marquee>
             </div>
             <section className="logo-section-1">

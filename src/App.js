@@ -8,6 +8,7 @@ import { Contact } from './components/pages/Contact';
 import { Footer } from './components/Footer';
 import { Team } from './components/pages/Team';
 import { Events } from './components/pages/Events';
+import { UpComing } from './components/pages/UpComingEvents';
 import { Loader } from './components/Loader';
 import './components/loader.css';
 import NewsSection from './components/pages/NewsSection';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<BCORE />} />
         <Route path="/bcore" element={<BCORE />} />
         <Route path="/about" element={<About />} />
+        <Route path="/upcomingevents" element={<UpComing />} />
         <Route path="/events" element={<Events />} />
         <Route path="/team" element={<Team />} />
         <Route path="/news" element={<NewsSection />} />
