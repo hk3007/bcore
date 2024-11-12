@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bcore/static/css/main.5a14b753.css",
-    "main.js": "/bcore/static/js/main.d3e478f3.js",
+    "main.css": "/bcore/static/css/main.961e205e.css",
+    "main.js": "/bcore/static/js/main.1b03ff83.js",
     "static/js/453.b2889c0a.chunk.js": "/bcore/static/js/453.b2889c0a.chunk.js",
     "static/media/Purnima Joshi.png": "/bcore/static/media/Purnima Joshi.4313c6f376cf799de534.png",
     "static/media/DESIGN COMPETITION.png": "/bcore/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
@@ -35,12 +35,12 @@
     "static/media/Harshil Khokhar.jpg": "/bcore/static/media/Harshil Khokhar.ada5b59264cbaa91fc04.jpg",
     "static/media/Indian_Olympic_Association_logo.png": "/bcore/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "index.html": "/bcore/index.html",
-    "main.5a14b753.css.map": "/bcore/static/css/main.5a14b753.css.map",
-    "main.d3e478f3.js.map": "/bcore/static/js/main.d3e478f3.js.map",
+    "main.961e205e.css.map": "/bcore/static/css/main.961e205e.css.map",
+    "main.1b03ff83.js.map": "/bcore/static/js/main.1b03ff83.js.map",
     "453.b2889c0a.chunk.js.map": "/bcore/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5a14b753.css",
-    "static/js/main.d3e478f3.js"
+    "static/css/main.961e205e.css",
+    "static/js/main.1b03ff83.js"
   ]
 }
