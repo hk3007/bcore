@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './UpcomingEvents.css';
+import { useParams } from 'react-router-dom';
+import './EventDetails.css';
 
-export const UpComing = () => {
+export const EventDetails = () => {
+    const { id } = useParams(); // Get the ID from the URL
+    
     const events = [
         {
             id: 1,
@@ -23,19 +25,25 @@ export const UpComing = () => {
         },
     ];
 
+    const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
+
+    if (!event) {
+        return <div>Event not found</div>;
+    }
+
     return (
-        <div className="events-page">
-            <h2 className="events-title">Upcoming Events</h2>
-            <div className="events-grid">
-                {events.map((event) => (
-                    <div className="event-card" key={event.id}>
-                        <h3>{event.name}</h3>
-                        <p>{event.date}</p>
-                        <p>{event.place}</p>
-                        <Link to={`/event/${event.id}`} className="know-more-btn">Know More</Link>
-                    </div>
+        <div className="event-details-page">
+            <h2>{event.name}</h2>
+            <p><strong>Date:</strong> {event.date}</p>
+            <p><strong>Location:</strong> {event.place}</p>
+            <p>{event.description}</p>
+            <ul>
+                {event.subpoints.map((point, index) => (
+                    <li key={index}>{point}</li>
                 ))}
-            </div>
+            </ul>
+            <a href={event.brochure} target="_blank" rel="noopener noreferrer" className="modal-link">View Brochure</a>
+            <a href={event.registrationLink} target="_blank" rel="noopener noreferrer" className="modal-link">Register Now</a>
         </div>
     );
 };

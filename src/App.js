@@ -12,6 +12,7 @@ import { UpComing } from './components/pages/UpComingEvents';
 import { Loader } from './components/Loader';
 import './components/loader.css';
 import NewsSection from './components/pages/NewsSection';
+import { EventDetails } from './components/pages/EventDetails';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/news" element={<NewsSection />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/event/:id" element={<EventDetails />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />

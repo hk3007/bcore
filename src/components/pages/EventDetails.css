@@ -1,0 +1,141 @@
+/* Overall page styling */
+.event-details-page {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Title styling */
+.event-details-page h2 {
+    font-size: 2.5rem;
+    color: #0055a5; /* Olympic Blue */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* General paragraph styling */
+.event-details-page p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Strong emphasis for date and location */
+.event-details-page p strong {
+    color: #003b5c; /* Darker Olympic Blue */
+}
+
+/* List items (subpoints) styling */
+.event-details-page ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.event-details-page li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.event-details-page li:before {
+    content: '•';
+    color: #f8c32e; /* Olympic Yellow */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Links styling */
+.modal-link {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff5a36; /* Olympic Red */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-link:hover {
+    background-color: #d43f2d; /* Darker Red */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .event-details-page h2 {
+        font-size: 2rem;
+    }
+
+    .event-details-page p {
+        font-size: 1.1rem;
+    }
+
+    .event-details-page li {
+        font-size: 1rem;
+    }
+
+    .modal-link {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-details-page {
+        padding: 10px;
+    }
+
+    .event-details-page h2 {
+        font-size: 1.8rem;
+    }
+
+    .event-details-page p {
+        font-size: 1rem;
+    }
+
+    .modal-link {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+}
+
+/* Header Banner (optional) */
+.event-details-page::before {
+    content: '';
+    display: block;
+    background-image: linear-gradient(45deg, #ff5a36, #f8c32e, #0055a5);
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Section padding */
+.event-details-page > * {
+    margin-bottom: 20px;
+}
+
+/* Brochure and Registration Links (Buttons) */
+.modal-link + .modal-link {
+    margin-left: 15px;
+}
+
+/* Responsive Image (if you want to add an image for the event) */
+.event-details-page img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 20px;
+}
