@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bcore/static/css/main.95891cfc.css",
-    "main.js": "/bcore/static/js/main.aa67524d.js",
+    "main.css": "/bcore/static/css/main.a4379a92.css",
+    "main.js": "/bcore/static/js/main.cf6790b2.js",
     "static/js/453.b2889c0a.chunk.js": "/bcore/static/js/453.b2889c0a.chunk.js",
     "static/media/Purnima Joshi.png": "/bcore/static/media/Purnima Joshi.4313c6f376cf799de534.png",
     "static/media/DESIGN COMPETITION.png": "/bcore/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
@@ -22,6 +22,7 @@
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "/bcore/static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
     "static/media/Gaurav Singh Khushwah.jpg": "/bcore/static/media/Gaurav Singh Khushwah.558d615d360e189396ab.jpg",
     "static/media/Shubham Dhaka.jpg": "/bcore/static/media/Shubham Dhaka.41fac0a9f844c1e5b07b.jpg",
+    "static/media/qr-code (2).png": "/bcore/static/media/qr-code (2).2971b0d10ba333f326f6.png",
     "static/media/Khelo India 1.jpg": "/bcore/static/media/Khelo India 1.324ef89bbc7ea94e6969.jpg",
     "static/media/Praveen Kumar.jpg": "/bcore/static/media/Praveen Kumar.ec7eb5cbc02d703622d5.jpg",
     "static/media/TANISHKA SINGH.jpg": "/bcore/static/media/TANISHKA SINGH.3ab089ab81e06df4fecf.jpg",
@@ -35,12 +36,12 @@
     "static/media/Harshil Khokhar.jpg": "/bcore/static/media/Harshil Khokhar.ada5b59264cbaa91fc04.jpg",
     "static/media/Indian_Olympic_Association_logo.png": "/bcore/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "index.html": "/bcore/index.html",
-    "main.95891cfc.css.map": "/bcore/static/css/main.95891cfc.css.map",
-    "main.aa67524d.js.map": "/bcore/static/js/main.aa67524d.js.map",
+    "main.a4379a92.css.map": "/bcore/static/css/main.a4379a92.css.map",
+    "main.cf6790b2.js.map": "/bcore/static/js/main.cf6790b2.js.map",
     "453.b2889c0a.chunk.js.map": "/bcore/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.95891cfc.css",
-    "static/js/main.aa67524d.js"
+    "static/css/main.a4379a92.css",
+    "static/js/main.cf6790b2.js"
   ]
 }
