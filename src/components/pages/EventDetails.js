@@ -72,7 +72,7 @@ export const EventDetails = () => {
             ],
             qrCode: QR1, // Replace with an actual QR code URL
             email: 'olyresearchacademy.registration@rru.ac.in', 
-            brochure: 'http://rru.ac.in/wp-content/uploads/2024/11/Brochure-BCORE.pdf',
+            brochure: 'https://rru.ac.in/wp-content/uploads/2024/11/Brochure-BCORE.pdf',
             Schedule: 'https://rru.ac.in/wp-content/uploads/2024/11/Schedule-1.pdf',
             registrationLink: 'https://forms.eduqfix.com/bcoreregof/add',
         },

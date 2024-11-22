@@ -480,4 +480,7 @@
     display: inline-block;
 }
 
-  
+.marquee-container .marquee span a{
+    color: white;
+}
+ 

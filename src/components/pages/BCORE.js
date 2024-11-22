@@ -99,7 +99,7 @@ export const BCORE = () => {
             </div>
             <div className="marquee-container">
                 <marquee className="marquee">
-                    <span>1st International Olympic Research Academy</span>
+                    <span><a href="https://rru.ac.in/wp-content/uploads/2024/11/Brochure-BCORE.pdf">1st International Olympic Research Conference</a></span>
                 </marquee>
             </div>
             <section className="logo-section-1">
