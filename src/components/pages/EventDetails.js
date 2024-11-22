@@ -218,7 +218,7 @@ export const EventDetails = () => {
                     </a>
                 </p>
                 <p>
-                    <strong>Deadline:</strong> {event.callForAbstract.deadline}
+                    <strong>Last Date of Submission:</strong> {event.callForAbstract.deadline}
                 </p>
             </div>
             <div className="important-dates-container">
