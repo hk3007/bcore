@@ -12,7 +12,7 @@ export const Navbar = () => {
     const handleDropdownToggle = (menu) => {
         setDropdownOpen(prev => ({ ...prev, [menu]: !prev[menu] }));
     };
-
+    
     return (
         <nav>
             <Link to="/" className='title'>

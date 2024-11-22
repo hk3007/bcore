@@ -1,8 +1,12 @@
-import React from 'react';
+import React , {useEffect}from 'react';
 import { useParams } from 'react-router-dom';
 import './EventDetails.css';
 import QR1 from './Images/qr-code (2).png'
 export const EventDetails = () => {
+    useEffect(() => {
+        // Scroll to top when the component mounts
+        window.scrollTo(0, 0);
+      }, []); // Empty dependency array means this runs only once on mount
     const { id } = useParams(); // Get the ID from the URL
 
     const events = [
@@ -17,8 +21,8 @@ export const EventDetails = () => {
                 'Members of the Olympic Studies Research Centre (OSRC) will have the opportunity to present their research findings and ongoing projects to a diverse, international audience.',
                 'The academy welcomes attendees from India and around the globe, fostering international collaboration and knowledge sharing.',
                 'BCORE will facilitate accommodation and local support for all participants throughout the academy.',
-                'Participants will enjoy a guided tour of the heritage city of Ahmedabad, offering insights into Indian culture and history.',
-                "Attendees will have the unique opportunity to visit the Statue of Unity and Vibrant Gujarat Global Summit, India's premier event for collaboration and idea exchange across various sectors.",
+                'Participants will enjoy a guided tour of the heritage city of Ahmedabad and statue of Unity offerings insights into Indian culture and history',
+                "Attendees will have the unique opportunity to network and collaborate with industry experts and entrepreneurs",
             ],
             schedule: [
                 {
@@ -62,21 +66,69 @@ export const EventDetails = () => {
                     day: 'Day 5: Tour to World Heritage City Ahmedabad and Statue of Unity',
                     sessions: [
                     ],
-                },            
+                },
             ],
-            importantDates : [
+            importantDates: [
                 { event: 'Last date for Abstract Submission', date: '12 January, 2025' },
                 { event: 'Early Bird Registrations closes', date: '20 December, 2024' },
                 { event: 'Regular Registrations closes', date: '15 January, 2025' },
                 { event: 'Late Registrations till', date: '24 January, 2025' },
             ],
-            qrCode: QR1, // Replace with an actual QR code URL
-            email: 'olyresearchacademy.registration@rru.ac.in', 
+            Steps: [
+                { event: 'Step 1', date: ' Submit the abstract' },
+                { event: 'Step 2', date: 'Wait For confirmation' },
+                { event: 'Step 3', date: 'Register to the Olympics conference' },
+                { event: 'Step 4', date: 'Fill Google Form' },
+            ],
+            qrCode: QR1,
+            email: 'olyresearchacademy.registration@rru.ac.in',
             brochure: 'https://rru.ac.in/wp-content/uploads/2024/11/Brochure-BCORE.pdf',
             Schedule: 'https://rru.ac.in/wp-content/uploads/2024/11/Schedule-1.pdf',
             registrationLink: 'https://forms.eduqfix.com/bcoreregof/add',
+            googleform: 'https://docs.google.com/forms/d/e/1FAIpQLScQw4qS9J-GXwCaMcVa0ZAqcYBgWTCDWWda2uzknElP3KxIWg/viewform?vc=0&c=0&w=1&flr=0',
+            callForAbstract: {
+                text: `BCORE cordially invites abstracts for presentation at its International Olympic Research Conference at Rashtriya Raksha University. Submissions addressing hosting and organizing, Olympic education, sustainable development, and technological innovation are particularly welcomed. Early career researchers are encouraged to participate.`,
+                submissionEmail: 'olyresearchacademy.submissions@rru.ac.in',
+                deadline: '12th January 2025',
+            },
+            organizingCommittee: [
+                {
+                    name: 'Scientific Committee',
+                    members: [
+                        { name: 'Dr Gaurav Singh Kushwah (Team Lead)', email: 'gaurav.kushwah@rru.ac.in' },
+                        { name: 'Dr Utsav Chaware', email: 'utsav.chaware@rru.ac.in' },
+                        { name: 'Department of Research and Publication, RRU' }
+                    ]
+                },
+                {
+                    name: 'Finance & Budgeting Committee',
+                    members: [
+                        { name: 'Mr Bhargav Sarmah (Team Lead)', email: 'bhargav.sarmah@rru.ac.in' },
+                        { name: 'Mr Gaurav Shah', email: 'gaurav.shah@rru.ac.in' },
+                        { name: 'Mr Nikunj Parmaar', email: 'nikunj.p.parmaar@rru.ac.in' }
+                    ]
+                },
+                {
+                    name: 'Promotion and Marketing',
+                    members: [
+                        { name: 'Mr Yash Sharma (Team Lead)', email: 'yash.sharma@rru.ac.in' },
+                        { name: 'Mr Kumar Sabyasachi', email: 'k.sabyasachi@rru.ac.in' },
+                        { name: 'Mr Sourav Tomar', email: 'souravsingh.tomar@rru.ac.in' },
+                        { name: 'Mrs Jasmika Soni', email: 'jasmika.soni@rru.ac.in' }
+                    ]
+                },
+                {
+                    name: 'Query/Registration and Communication',
+                    members: [
+                        { name: 'Ms Laxmi Devi (Team Lead)', email: 'phurailatpam.laxmikumari@rru.ac.in' },
+                        { name: 'Mr Sumit Tomar', email: 'sumit.tomar@rru.ac.in' },
+                        { name: 'Mr Avinash', email: 'sto10.spes@rru.ac.in' }
+                    ]
+                },
+            ]
         },
     ];
+    
 
     const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
 
@@ -156,6 +208,28 @@ export const EventDetails = () => {
                     </div>
                 ))}
             </div>
+            <div className="call-for-abstract-container olympic-theme">
+                <h3>Call for Abstract</h3>
+                <p className="animated-text">{event.callForAbstract.text}</p>
+                <p>
+                    <strong>Submission Email:</strong>{" "}
+                    <a href={`mailto:${event.callForAbstract.submissionEmail}`} className="email-link">
+                        {event.callForAbstract.submissionEmail}
+                    </a>
+                </p>
+                <p>
+                    <strong>Deadline:</strong> {event.callForAbstract.deadline}
+                </p>
+            </div>
+            <div className="important-dates-container">
+                <h3>Steps to Register</h3>
+                {event.Steps.map((date, index) => (
+                    <div key={index} className="date-card">
+                        <h4>{date.event}</h4>
+                        <p>{date.date}</p>
+                    </div>
+                ))}
+            </div>
             <h3>Schedule</h3>
             <div className="eventtimeline">
                 {event.schedule.map((day, index) => (
@@ -168,6 +242,21 @@ export const EventDetails = () => {
                                     <span className="timeline-details">
                                         <strong>{session.session}:</strong> {session.description}
                                     </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+            <div className="organizing-team">
+                <h3>Organizing Committee</h3>
+                {event.organizingCommittee.map((group, index) => (
+                    <div key={index} className="team-group">
+                        <h4>{group.name}</h4>
+                        <ul>
+                            {group.members.map((member, idx) => (
+                                <li key={idx}>
+                                    {member.name} - <a href={`mailto:${member.email}`}>{member.email}</a>
                                 </li>
                             ))}
                         </ul>
@@ -188,7 +277,7 @@ export const EventDetails = () => {
                 ))}
             </div>
             <div className="additional-info">
-                <h3>Contact Information</h3>
+                <h3>Registration Queries</h3>
                 <p>
                     <a href={`mailto:${event.email}`} className="email-link">
                         {event.email}
@@ -219,10 +308,18 @@ export const EventDetails = () => {
                 >
                     Register Now
                 </a>
+                <a
+                    href={event.googleform}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
+                >
+                    Google Form
+                </a>
             </div>
             <div className="map-section">
                 <h3>Event Location</h3>
-+                   <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1qBrfyqNsIAM85EshihXYSfOAKeDYrEA&ehbc=2E312F&noprof=1" 
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1qBrfyqNsIAM85EshihXYSfOAKeDYrEA&ehbc=2E312F&noprof=1" 
                     width="100%"
                     height="500"
                     style={{ border: 0 }}

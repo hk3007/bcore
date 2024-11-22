@@ -105,6 +105,10 @@ const interns = [
 
 export const Team = () => {
   useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array means this runs only once on mount
+  useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: 'ease-in-out',

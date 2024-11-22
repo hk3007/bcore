@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import  {BCORE}  from './components/pages/BCORE';
+import { BCORE } from './components/pages/BCORE';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
 import { Footer } from './components/Footer';
@@ -24,6 +24,12 @@ function App() {
     }, 2000);
   }, []);
 
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array means this runs only once on mount
+
+  // Conditional rendering for the loader
   if (loading) {
     return <Loader />;
   }

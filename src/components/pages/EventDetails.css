@@ -117,6 +117,70 @@ body {
     padding-bottom: 10px;
 }
 
+/* Modern Clean Styling */
+.call-for-abstract-container {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fefefe;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.call-for-abstract-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #2d2d2d;
+}
+
+.call-for-abstract-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Email Link */
+.call-for-abstract-container .email-link {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.call-for-abstract-container .email-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .call-for-abstract-container {
+        padding: 15px;
+    }
+
+    .call-for-abstract-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .call-for-abstract-container p {
+        font-size: 0.9rem;
+    }
+
+    .call-for-abstract-container .email-link {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
 /* Section titles */
 .event-details-page h3 {
     font-size: 1.8rem;
@@ -468,6 +532,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 300px;
+    width: calc(33.333% - 20px); /* Default: 3 cards per row */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.8s ease-in-out;
@@ -489,6 +554,7 @@ body {
     color: #666;
 }
 
+/* Keyframes */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -511,14 +577,15 @@ body {
     }
 }
 
+/* Tablet view (medium screens) */
 @media (max-width: 768px) {
     .important-dates-container {
-        gap: 10px;
-        padding: 10px;
+        gap: 15px;
+        padding: 15px;
     }
 
     .date-card {
-        max-width: 100%;
+        width: calc(50% - 15px); /* Two cards per row */
         padding: 15px;
     }
 
@@ -530,6 +597,33 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* Mobile view (small screens) */
+@media (max-width: 480px) {
+    .important-dates-container {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .date-card {
+        width: 100%; /* Single card per row */
+        padding: 10px;
+    }
+
+    .important-dates-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .date-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .date-card p {
+        font-size: 0.8rem;
+    }
+}
+
 
 .additional-info {
     margin-top: 30px;

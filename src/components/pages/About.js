@@ -1,10 +1,14 @@
-import React from 'react';
+import React , {useEffect}from 'react';
 import './about.css';  // Import the CSS file
 import logo1 from './Images/BCORE Logo.png';
 import logo3 from './Images/IOC.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png';
 
 export const About = () => {
+    useEffect(() => {
+        // Scroll to top when the component mounts
+        window.scrollTo(0, 0);
+      }, []); // Empty dependency array means this runs only once on mount
     return (
     <div>
         {/* Logo Section */}

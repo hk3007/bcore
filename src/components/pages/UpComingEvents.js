@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './UpcomingEvents.css';
 
 export const UpComing = () => {
+    useEffect(() => {
+        // Scroll to top when the component mounts
+        window.scrollTo(0, 0);
+      }, []); // Empty dependency array means this runs only once on mount
     const events = [
         {
             id: 1,

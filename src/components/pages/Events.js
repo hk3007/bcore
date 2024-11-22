@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Events.css';
 import Image1 from './Images/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg';
 import Image2 from './Images/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.jpg';
@@ -34,6 +34,10 @@ const eventsData = [
 ];
 
 export const Events = () => {
+  useEffect(() => {
+    // Scroll to top when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array means this runs only once on mount
   return (
     <div className="EventsContainer">
       <h1 className="EventHeading">Past Events</h1>
