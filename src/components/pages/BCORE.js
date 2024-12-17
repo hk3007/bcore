@@ -4,13 +4,11 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./home.css";
 import image1 from '../pages/Images/Manu Bhaker & Sarabjot Singh_Webslider1.jpg';
-import image2 from '../pages/Images/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg';
 import Testimonial1 from '../pages/Images/Praskash Singh Parihar.png';
 import Testimonial2 from '../pages/Images/Shubham Dhaka.jpg';
 import Testimonial3 from '../pages/Images/Praveen Kumar.jpg';
 import Testinomial4 from '../pages/Images/Yash Sharma.jpg';
 import logo1 from './Images/BCORE Logo.png';
-import logo3 from './Images/IOC.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png'
 
 
@@ -86,9 +84,9 @@ export const BCORE = () => {
                     interval={3000}
                     transitionTime={500}
                 >
-                    <div>
+                    {/* <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/11/Advanced-Olympic-Research-Grant-Programme_Webslider.jpg" alt="Slide 1" />
-                    </div>
+                    </div> */}
                     <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/10/COB-Expo-1.jpg" alt="Slide 1" />
                     </div>
@@ -110,15 +108,15 @@ export const BCORE = () => {
                     <div>
                         <img src={image1} alt="Slide 1" />
                     </div>
-                    <div>
+                    {/* <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/05/Olympic-Panorama-Flyer_page.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/04/Website-Slider.jpg" alt="Slide 2" />
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                         <img src={image2} alt="Slide 3" />
-                    </div>
+                    </div> */}
                 </Carousel>
             </div>
             <div className="marquee-container">
@@ -130,12 +128,16 @@ export const BCORE = () => {
                 <div className="logos-1">
                     <img src={logo1} alt="Logo 3" className="logo-1" />
                     <img src={logo5} alt="Logo 5" className="logo-1" />
-                    <img src={logo3} alt="Logo 4" className="logo-1" />
+                    {/* <img src={logo3} alt="Logo 4" className="logo-1" /> */}
                 </div>
             </section>
             <div className="content-container">
                 <h4>
-                Rashtriya Raksha University (RRU) proudly announces the establishment of the Bharat Centre for Olympic Research and Education (B-CORE), inaugurated in June 2024. This Centre, the world’s 71st and South Asia’s premier facility of its kind, has been officially recognized by the International Olympic Committee (IOC) and endorsed by the Indian Olympic Association (IOA).                </h4>
+                Rashtriya Raksha University (RRU) is honored to announce the establishment of the Bharat Centre for Olympic Research and Education (B-CORE), 
+                a landmark initiative that positions India at the forefront of global Olympic scholarship. This groundbreaking center emerged as the 71st Olympic Studies Research Centre (OSRC) 
+                globally and the first dedicated Olympic research facility in India and South Asia, officially recognized by the International Olympic Committee (IOC) Olympic Studies Centre and endorsed by the Indian Olympic Association (IOA). 
+                B-CORE is now an active member in the global network of academic Olympic Studies and Research Centres, contributing to the international discourse on Olympic studies and research.
+                </h4>
             </div>
             <div className="events-page">
                 <h2 className="events-title">Upcoming Events</h2>

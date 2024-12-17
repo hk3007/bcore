@@ -24,6 +24,37 @@ export const EventDetails = () => {
                 'Participants will enjoy a guided tour of the heritage city of Ahmedabad and statue of Unity offerings insights into Indian culture and history',
                 "Attendees will have the unique opportunity to network and collaborate with industry experts and entrepreneurs",
             ],
+            Steps: [
+                { event: 'Step 1', date: ' Submit the abstract' },
+                { event: 'Step 2', date: 'Wait For confirmation' },
+                { event: 'Step 3', date: 'Register to the Olympics conference' },
+                { event: 'Step 4', date: 'Fill Google Form' },
+            ],
+            generalguidlines: [
+                {
+                    heading:'Introduction',
+                    description:'Briefly introduce the research topic and its significance.Highlight the research gap or problem the study aims to address'
+                },
+                {
+                    heading:'Research Aim/Objective:',
+                    description:'Clearly state the primary objective of the research.Specify the specific research question(s) to be answered.'
+
+                },
+                {
+                    heading:'Methodology',
+                    description:'Provide a concise overview of the research methodology.Describe the research design (e.g., experimental, survey, case study).Outline the data collection methods (e.g., questionnaires, interviews, observations).Mention the data analysis techniques used (e.g., statistical analysis, thematic analysis)'
+                },
+                {
+                    heading:'Results',
+                    description:'Present the key findings of the research.Highlight the most significant results that address the research objectives.Use concise and clear language to convey the results.'
+
+                },
+                {
+                    heading:'Discussion and Conclusion',
+                    description:'Interpret the results in the context of the research question(s).Discuss the implications of the findings for the field of study.Highlight the limitations of the study.'
+
+                }
+            ],
             schedule: [
                 {
                     day: 'Day 1: Olympic Host City Selection and Urban Transformation',
@@ -220,6 +251,21 @@ export const EventDetails = () => {
                 <p>
                     <strong>Last Date of Submission:</strong> {event.callForAbstract.deadline}
                 </p>
+            </div>
+            <div className="guidelines-container">
+                <h1>General Guidelines</h1>
+                {event.generalguidlines.map((date, index) => (
+                    <div key={index} className="guideline-item">
+                        <ul>
+                            <li>                        
+                                <b><h3 className='guideline-heading'>{date.heading}</h3></b>
+                            </li>
+                            <li>                        
+                                <p>{date.description}</p>
+                            </li>                            
+                        </ul>
+                    </div>
+                ))}
             </div>
             <div className="important-dates-container">
                 <h3>Steps to Register</h3>

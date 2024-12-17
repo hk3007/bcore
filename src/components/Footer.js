@@ -1,8 +1,17 @@
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './footer.css';
 
 export const Footer = () => {
+    const [dateTime, setDateTime] = useState(new Date());
+
+    // Update time every second
+    useEffect(() => {
+        const timer = setInterval(() => setDateTime(new Date()), 1000);
+        return () => clearInterval(timer);
+    }, []);
+
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -16,10 +25,11 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                {/* Center Section: Copyright & Developed By */}
+                {/* Center Section: Date, Time, and Visit Count */}
                 <div className="footer-center">
                     <p>© BCORE. All Rights Reserved.</p>
-                    <p>Developed by: <a href="https://www.linkedin.com/in/harshil-khokhar/">Harshil Khokhar </a> and <a href="https://www.linkedin.com/in/harshdipsinh-rathod/">Harshdipsinh Rathod</a></p>
+                    <p>Developed by: <a href="https://www.linkedin.com/in/harshil-khokhar/">Harshil Khokhar</a> and <a href="https://www.linkedin.com/in/harshdipsinh-rathod/">Harshdipsinh Rathod</a></p>
+                    <p>{dateTime.toLocaleString()}</p>
                 </div>
 
                 {/* Right Section: Address */}

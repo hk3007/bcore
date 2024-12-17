@@ -3,7 +3,6 @@ import { TeamMember } from "./TeamMember";
 import './Team.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import image1 from '../pages/Images/TEAM/Amber Chahal.jpg'
 import image2 from '../pages/Images/TEAM/Bimal Patel.jpeg'
 import image3 from '../pages/Images/TEAM/Gaurav Singh Khushwah.jpg'
 import image4 from '../pages/Images/TEAM/HARSHDIPSINH RATHOD.jpg'

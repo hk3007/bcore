@@ -65,7 +65,9 @@ body {
     padding: 0;
     list-style: none; /* Disable default bullet points */
 }
-
+.guidline-margin{
+    margin-left: 0px;
+}
 .highlights-container li {
     background-color: #ffffff;
     padding: 20px;
@@ -704,5 +706,74 @@ body {
         width: 90%;
         padding: 12px 0;
         font-size: 1rem;
+    }
+}
+
+/* General container */
+.guidelines-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: Arial, sans-serif;
+}
+
+.guidelines-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Each item within the guidelines */
+.guideline-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles for each guideline */
+.guideline-heading {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Description for each guideline */
+.guideline-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .guidelines-container {
+        padding: 15px;
+    }
+
+    .guideline-heading {
+        font-size: 1.25rem;
+    }
+
+    .guideline-item p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .guidelines-container {
+        padding: 10px;
+    }
+
+    .guideline-heading {
+        font-size: 1rem;
+    }
+
+    .guideline-item p {
+        font-size: 0.9rem;
     }
 }

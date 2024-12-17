@@ -1,7 +1,6 @@
 import React , {useEffect}from 'react';
 import './about.css';  // Import the CSS file
 import logo1 from './Images/BCORE Logo.png';
-import logo3 from './Images/IOC.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png';
 
 export const About = () => {
@@ -16,7 +15,7 @@ export const About = () => {
                 <div className="logos-1">
                     <img src={logo1} alt="Logo 3" className="logo-1" />
                     <img src={logo5} alt="Logo 5" className="logo-1" />
-                    <img src={logo3} alt="Logo 4" className="logo-1" />
+                    {/* <img src={logo3} alt="Logo 4" className="logo-1" /> */}
                 </div>
             </section>
         <section className="about-section">
