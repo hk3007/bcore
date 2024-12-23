@@ -21,8 +21,8 @@ export const EventDetails = () => {
                 'Members of the Olympic Studies Research Centre (OSRC) will have the opportunity to present their research findings and ongoing projects to a diverse, international audience.',
                 'The academy welcomes attendees from India and around the globe, fostering international collaboration and knowledge sharing.',
                 'BCORE will facilitate accommodation and local support for all participants throughout the academy.',
-                'Participants will enjoy a guided tour of the heritage city of Ahmedabad and statue of Unity offerings insights into Indian culture and history',
-                "Attendees will have the unique opportunity to network and collaborate with industry experts and entrepreneurs",
+                'Participants will enjoy a guided tour of the heritage city of Ahmedabad and Statue of Unity offering insights into Indian culture and history.',
+                'Attendees will have the unique opportunity to network and collaborate with industry experts and entrepreneurs.',
             ],
             Steps: [
                 { event: 'Step 1', date: ' Submit the abstract' },
@@ -30,86 +30,44 @@ export const EventDetails = () => {
                 { event: 'Step 3', date: 'Register to the Olympics conference' },
                 { event: 'Step 4', date: 'Fill Google Form' },
             ],
-            generalguidlines: [
-                {
-                    heading:'Introduction',
-                    description:'Briefly introduce the research topic and its significance.Highlight the research gap or problem the study aims to address'
-                },
-                {
-                    heading:'Research Aim/Objective:',
-                    description:'Clearly state the primary objective of the research.Specify the specific research question(s) to be answered.'
-
-                },
-                {
-                    heading:'Methodology',
-                    description:'Provide a concise overview of the research methodology.Describe the research design (e.g., experimental, survey, case study).Outline the data collection methods (e.g., questionnaires, interviews, observations).Mention the data analysis techniques used (e.g., statistical analysis, thematic analysis)'
-                },
-                {
-                    heading:'Results',
-                    description:'Present the key findings of the research.Highlight the most significant results that address the research objectives.Use concise and clear language to convey the results.'
-
-                },
-                {
-                    heading:'Discussion and Conclusion',
-                    description:'Interpret the results in the context of the research question(s).Discuss the implications of the findings for the field of study.Highlight the limitations of the study.'
-
-                }
-            ],
-            schedule: [
-                {
-                    day: 'Day 1: Olympic Host City Selection and Urban Transformation',
-                    sessions: [
-                        { time: '10:00 AM - 11:00 AM', session: 'Opening Ceremony', description: '' },
-                        { time: '11:30 AM - 1:00 PM', session: 'Keynote Speech', description: '2036 Vision: Pathway to Becoming an Olympic Host – Bid process and strategic planning.' },
-                        { time: '2:30 PM - 4:30 PM', session: 'Expert Session', description: 'Global Best Practices and Comparative Analysis in Olympic City Selection and Urban Legacy' },
-                        { time: '4:30 PM - 5:30 PM', session: 'Panel Discussion', description: 'Urban Development for Mega-Sporting Events: Challenges and Solutions for India – (Urban regeneration, infrastructure needs, and CSR & PPP Model)' },
-                    ],
-                },
-                {
-                    day: 'Day 2: Economic Strategies and Technological Innovation',
-                    sessions: [
-                        { time: '9:30 AM - 11:00 AM', session: 'Keynote Session', description: 'Financing the Future: Innovative Economic Models for Hosting the Olympics in India - Insights into sustainable funding and investment.' },
-                        { time: '11:30 AM - 1:00 PM', session: 'Expert Session', description: 'Smart Sports Management - AI and IoT; innovations in Sports, fan engagements and e-sports.' },
-                        { time: '2:30 PM - 4:30 PM', session: 'Panel Discussion', description: 'Balancing Costs and Benefits: Financial Strategy for Olympic Ambitions - A look at economic modelling, budgets, and long-term analysis.' },
-                        { time: '4:30 PM - 5:30 PM', session: 'High Tea Session with Workshop/Exhibition', description: 'Wearable Technology and Advanced Equipment for Olympics' },
-                        { time: '5:30 PM - 6:30 PM', session: 'Paper Presentations', description: 'Topics could include Tech Innovations for Mega Event Operations” and “Economicc Benefits vs. Costs: A developing nation’s perspective.' },
-                    ],
-                },
-                {
-                    day: 'Day 3 Sustainability and Environmental Responsibility',
-                    sessions: [
-                        { time: '9:30 AM - 11:00 AM', session: 'Keynote Session', description: 'Greening the Games: Integrating Sustainability into the Indian Olympic Plan - Strategies aligning with Agenda 2020+5.' },
-                        { time: '11:30 AM - 1:00 PM', session: 'Expert Session', description: 'Sustainable Venue Design, Green Infrastructure and Temporary Venues - Building eco-friendly sports complexes.' },
-                        { time: '2:30 PM - 4:30 PM', session: 'Panel Discussion', description: 'Climate Resilience in Mega Events: Challenges for India’s 2036 Games - Addressing environmental impacts and solutions.' },
-                        { time: '4:30 PM - 5:30 PM', session: 'Paper Presentations', description: 'Include works such as Implementing Green Infrastructure in Indian Sports Venues and Environmental Impact Mitigation Strategies for Mega-events.' },
-                    ],
-                },
-                {
-                    day: 'Day 4: Governance, Equity, and Inclusion',
-                    sessions: [
-                        { time: '9:30 AM - 11:00 AM', session: 'Keynote Session', description: 'Governance in Mega-sporting Events: Ethical and Transparent Practices- Ensuring fairness and integrity in the organization.' },
-                        { time: '11:30 AM - 1:00 PM', session: 'Expert Session', description: 'Diversity and Inclusion in Indian Sports: The Road to 2036 - Promoting gender equity and inclusion across disciplines.' },
-                        { time: '2:30 PM - 3:30 PM', session: 'Panel Discussion', description: 'Streamlining Governance in Sports Federations: Need of the hour' },
-                        { time: '4:00 PM - 5:00 PM', session: 'Closing Ceremony', description: '' },
-                    ],
-                },
-                {
-                    day: 'Day 5: Tour to World Heritage City Ahmedabad and Statue of Unity',
-                    sessions: [
-                    ],
-                },
-            ],
+            abstractGuidelines: {
+                formatRequirements: [
+                    'Abstract should be between 150-250 words.',
+                    'Use 12-point Times New Roman font.',
+                    'Double-space all text.',
+                    'Set 1-inch (2.54 cm) margins on all sides.',
+                    'Include page number in the top-right header.',
+                    'Center the word "Abstract" as the title (bold).',
+                    'Text should be left-aligned and not indented.'
+                ],
+                contentStructure: [
+                    {
+                        heading: 'Introduction',
+                        description: 'Begin with a brief introduction to the research problem. Clearly state the purpose and objectives of the study.'
+                    },
+                    {
+                        heading: 'Methodology',
+                        description: 'Describe the research design. Include information about participants, if applicable. Outline data collection methods and procedures. Mention analytical approaches used.'
+                    },
+                    {
+                        heading: 'Results',
+                        description: 'Present key findings concisely. Include statistical significance when relevant. Focus on main outcomes only.'
+                    },
+                    {
+                        heading: 'Conclusions',
+                        description: 'State primary conclusions. Address implications of findings. Avoid introducing new information.'
+                    },
+                    {
+                        heading: 'Keywords',
+                        description: 'Include 3-5 keywords. Place keywords on a new line below the abstract. Indent the first line of keywords. Begin with "Keywords:" (italicized).'
+                    }
+                ]
+            },
             importantDates: [
                 { event: 'Last date for Abstract Submission', date: '12 January, 2025' },
                 { event: 'Early Bird Registrations closes', date: '20 December, 2024' },
                 { event: 'Regular Registrations closes', date: '15 January, 2025' },
                 { event: 'Late Registrations till', date: '24 January, 2025' },
-            ],
-            Steps: [
-                { event: 'Step 1', date: ' Submit the abstract' },
-                { event: 'Step 2', date: 'Wait For confirmation' },
-                { event: 'Step 3', date: 'Register to the Olympics conference' },
-                { event: 'Step 4', date: 'Fill Google Form' },
             ],
             qrCode: QR1,
             email: 'olyresearchacademy.registration@rru.ac.in',
@@ -122,43 +80,64 @@ export const EventDetails = () => {
                 submissionEmail: 'olyresearchacademy.submissions@rru.ac.in',
                 deadline: '12th January 2025',
             },
-            organizingCommittee: [
+            organizingTeam: [
                 {
-                    name: 'Scientific Committee',
+                    name: 'Program Chair',
                     members: [
-                        { name: 'Dr Gaurav Singh Kushwah (Team Lead)', email: 'gaurav.kushwah@rru.ac.in' },
                         { name: 'Dr Utsav Chaware', email: 'utsav.chaware@rru.ac.in' },
-                        { name: 'Department of Research and Publication, RRU' }
                     ]
                 },
                 {
-                    name: 'Finance & Budgeting Committee',
+                    name: 'Program co - Chair',
                     members: [
-                        { name: 'Mr Bhargav Sarmah (Team Lead)', email: 'bhargav.sarmah@rru.ac.in' },
-                        { name: 'Mr Gaurav Shah', email: 'gaurav.shah@rru.ac.in' },
-                        { name: 'Mr Nikunj Parmaar', email: 'nikunj.p.parmaar@rru.ac.in' }
+                        { name: 'Mr Bhargav Sarmah ', email: 'bhargav.sarmah@rru.ac.in' },
+                        { name: 'Mr Yash Sharma ', email: 'yash.sharma@rru.ac.in' },
+                        { name: 'Ms. Phurailatpam Laxmikumari Devi', email: 'phurailatpam.laxmikumari@rru.ac.in' },
                     ]
                 },
                 {
-                    name: 'Promotion and Marketing',
+                    name: 'Advisory Chair',
                     members: [
-                        { name: 'Mr Yash Sharma (Team Lead)', email: 'yash.sharma@rru.ac.in' },
-                        { name: 'Mr Kumar Sabyasachi', email: 'k.sabyasachi@rru.ac.in' },
-                        { name: 'Mr Sourav Tomar', email: 'souravsingh.tomar@rru.ac.in' },
-                        { name: 'Mrs Jasmika Soni', email: 'jasmika.soni@rru.ac.in' }
+                        { name: 'Mr. Pruthvi-Gerben Patel', email: '' },
                     ]
                 },
+            ],
+            transportation: {
+                busRoutes: [
+                    {
+                        route: 'Ahmedabad to BCORE',
+                        details: 'Take a direct bus from Ahmedabad to Gandhinagar. Buses are available every hour. The journey takes approximately 45 minutes.'
+                    },
+                    {
+                        route: 'Gandhinagar to BCORE',
+                        details: 'From Gandhinagar, take a local bus or auto-rickshaw to Rashtriya Raksha University. The venue is located near the Bharat Centre of Olympic Research and Education (BCORE).'
+                    },
+                ]
+            },
+            accommodations: [
                 {
-                    name: 'Query/Registration and Communication',
-                    members: [
-                        { name: 'Ms Laxmi Devi (Team Lead)', email: 'phurailatpam.laxmikumari@rru.ac.in' },
-                        { name: 'Mr Sumit Tomar', email: 'sumit.tomar@rru.ac.in' },
-                        { name: 'Mr Avinash', email: 'sto10.spes@rru.ac.in' }
-                    ]
+                    name: 'Good Times, Dahegam',
+                    address: 'Good Times by Sangath IPL near Rashtriya Raksha University Lavad Dehgam',
+                    contact: 'For Bookings Contact - 8175991401 | Mr. Sandeep'
+                },
+                {
+                    name: 'Malhaar Resort, Dahegam',
+                    address: 'Malhaar Resort, Uttam Dairy, Behind Dehgam Power Grid, Dahegam, Ahmedabad Gujarat, India.',
+                    contact: 'For Bookings Contact - 7575806021 | Mr. Bahadur Singh'
+                },
+                {
+                    name: 'Hotel Neelkanth, Dahegam',
+                    address: '5R64+56H, Ahmedabad - Modasa Rd, Vrundavan Society, Nehru Society, Dahegam, Gujarat 382305',
+                },
+                {
+                    name: 'Home World Hostel, Gandhinagar (Economical)',
+                    address: '4, 5 & 6 Floor, Times Square, Bhaijipura, Chowk, Gandhinagar, Gujarat 382421',
+                    contact: 'For Bookings Contact - +91 7600 476 012 | Mr. Luckyraj Singh'
                 },
             ]
         },
     ];
+        
     
 
     const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
@@ -166,47 +145,6 @@ export const EventDetails = () => {
     if (!event) {
         return <div>Event not found</div>;
     }
-    const organizingTeam = [
-        {
-            role: 'Patron',
-            members: ['Professor (Dr.) Bimal N. Patel, Vice-Chancellor, Rashtriya Raksha University'],
-        },
-        {
-            role: 'General Chair',
-            members: [
-                'Prof.(Dr.) Kalpesh. H. Wandra, Pro Vice-Chancellor, Rashtriya Raksha University',
-                'Dr. Dharmeshkumar D. Prajapati, I/c Registrar, Rashtriya Raksha University',
-                'Mr. Sushil Goswami, I/c University Dean, Rashtriya Raksha University',
-                'Dr. Anand Kumar Tripathi Dean, Research & Publications, Rashtriya Raksha University'
-            ],
-        },
-        {
-            role: 'General Co-Chair',
-            members: [
-                'Lt. (Dr.) Gaurav Singh Kushwah, Director NCC and Head of Sports Fields, RRU',
-                'Dr. Purnima Joshi, I/c Director & Assistant Professor, SPES, RRU',
-            ],
-        },
-        {
-            role: 'Program Chair',
-            members: ['Dr. Utsav Chaware, Director BCORE & Assistant Professor, SPES, RRU'],
-        },
-        {
-            role: 'Program co - Chair',
-            members: [
-                'Mr. Bhargav Sarmah, Assist. Director & Assist. Professor, SPES, RRU',
-                'Mr. Yash Sharma, Assistant Professor, SPES, RRU',
-                'Ms. Phurailatpam Laxmikumari Devi, Assistant Professor, SPES, RRU'
-            ]
-        },
-        {
-            role: 'Advisory Chair',
-            members: [
-                'Mr. Pruthvi-Gerben Patel'
-            ]
-        }
-        // Add more members as per your image content
-    ];
 
     return (
         <div className="event-details-page">
@@ -226,10 +164,13 @@ export const EventDetails = () => {
                 <h3>Highlights</h3>
                 <ul>
                     {event.subpoints.map((point, index) => (
-                    <li key={index}>{point}</li>
-                ))}
-                </ul>   
+                        <li key={index}>
+                            <span>{point}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
+
             <div className="important-dates-container">
                 <h3>Important Dates</h3>
                 {event.importantDates.map((date, index) => (
@@ -252,20 +193,23 @@ export const EventDetails = () => {
                     <strong>Last Date of Submission:</strong> {event.callForAbstract.deadline}
                 </p>
             </div>
-            <div className="guidelines-container">
-                <h1>General Guidelines</h1>
-                {event.generalguidlines.map((date, index) => (
-                    <div key={index} className="guideline-item">
-                        <ul>
-                            <li>                        
-                                <b><h3 className='guideline-heading'>{date.heading}</h3></b>
-                            </li>
-                            <li>                        
-                                <p>{date.description}</p>
-                            </li>                            
-                        </ul>
-                    </div>
-                ))}
+            <div className="abstract-guidelines-container">
+                <h3>Abstract Submission Guidelines</h3>
+                <div className="abstract-guidelines">
+                    <h4>Format Requirements</h4>
+                    <ul>
+                        {event.abstractGuidelines?.formatRequirements?.map((requirement, index) => (
+                            <li key={index}>{requirement}</li>
+                        ))}
+                    </ul>
+                    <h4>Content Structure</h4>
+                    {event.abstractGuidelines?.contentStructure?.map((section, index) => (
+                        <div key={index} className="guideline-section">
+                            <h5>{section.heading}</h5>
+                            <p>{section.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
             <div className="important-dates-container">
                 <h3>Steps to Register</h3>
@@ -276,47 +220,14 @@ export const EventDetails = () => {
                     </div>
                 ))}
             </div>
-            <h3>Schedule</h3>
-            <div className="eventtimeline">
-                {event.schedule.map((day, index) => (
-                    <div key={index} className="timeline-day">
-                        <h4>{day.day}</h4>
-                        <ul>
-                            {day.sessions.map((session, idx) => (
-                                <li key={idx} className="timeline-session">
-                                    <span className="timeline-time">{session.time}</span>
-                                    <span className="timeline-details">
-                                        <strong>{session.session}:</strong> {session.description}
-                                    </span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
             <div className="organizing-team">
-                <h3>Organizing Committee</h3>
-                {event.organizingCommittee.map((group, index) => (
+                <h3>Organizing Team</h3>
+                {events?.[0]?.organizingTeam?.map((group, index) => (
                     <div key={index} className="team-group">
                         <h4>{group.name}</h4>
                         <ul>
-                            {group.members.map((member, idx) => (
-                                <li key={idx}>
-                                    {member.name} - <a href={`mailto:${member.email}`}>{member.email}</a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-            <div className="organizing-team">
-                <h3>Organizing Team</h3>
-                {organizingTeam.map((group, index) => (
-                    <div key={index} className="team-group">
-                        <h4>{group.role}</h4>
-                        <ul>
-                            {group.members.map((member, idx) => (
-                                <li key={idx}>{member}</li>
+                            {group.members?.map((member, idx) => (
+                                <li key={idx}>{member.name} - {member.email}</li>
                             ))}
                         </ul>
                     </div>
@@ -362,6 +273,20 @@ export const EventDetails = () => {
                 >
                     Google Form
                 </a>
+            </div>
+            <div className="accommodation-container">
+                <h3>Accommodation Options</h3>
+                <div className="accommodation-items">
+                    {event.accommodations.map((accommodation, index) => (
+                    <div key={index} className="accommodation-item">
+                        <h4>{accommodation.name}</h4>
+                        <p><strong>Address:</strong> {accommodation.address}</p>
+                        {accommodation.contact && (
+                        <p><strong>Contact:</strong> {accommodation.contact}</p>
+                        )}
+                    </div>
+                    ))}
+                </div>
             </div>
             <div className="map-section">
                 <h3>Event Location</h3>

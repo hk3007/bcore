@@ -47,59 +47,68 @@ body {
 /* Highlights Section */
 .highlights-container {
     margin: 40px 0;
+    text-align: center;
+    perspective: 1000px; /* Enable 3D effect */
 }
 
 .highlights-container h3 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: #0055a5;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Highlights Section */
+/* Highlight Boxes */
 .highlights-container ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 0;
     list-style: none; /* Disable default bullet points */
 }
-.guidline-margin{
-    margin-left: 0px;
-}
+
 .highlights-container li {
-    background-color: #ffffff;
+    background: linear-gradient(145deg, #f0f0f3, #ebe9e9);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
     padding: 20px;
-    border-radius: 10px;
-    font-size: 1.1rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
     line-height: 1.5;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Adjust for spacing */
+    min-width: 250px;
     display: flex;
     align-items: center;
     gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    transform: rotateY(0deg) rotateX(0deg); /* Default 3D position */
 }
 
-/* Remove the pseudo-element for icons */
-.highlights-container li:before {
-    content: none;
+.highlights-container li:hover {
+    transform: rotateY(10deg) rotateX(-5deg) scale(1.05); /* 3D hover effect */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3), -10px -10px 20px rgba(255, 255, 255, 0.6);
 }
+
+.highlights-container li:active {
+    transform: scale(0.95); /* Click effect */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .details-card {
-        flex: 1 1 90%;
-    }
-
-    .highlights-container ul {
-        gap: 10px;
-    }
-
     .highlights-container li {
-        font-size: 1rem;
+        width: calc(50% - 20px);
     }
 }
+
+@media (max-width: 480px) {
+    .highlights-container li {
+        width: 100%;
+    }
+}
+
 
 
 .event-details-page {
@@ -124,7 +133,7 @@ body {
     margin-top: 30px;
     padding: 20px;
     border-radius: 12px;
-    background-color: #fefefe;
+    background-color: #fffabd;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     color: #333;
     text-align: center;
@@ -149,17 +158,17 @@ body {
     display: inline-block;
     font-size: 1rem;
     font-weight: bold;
-    color: #007bff;
+    color: #000000;
     text-decoration: none;
     margin-top: 10px;
     padding: 8px 12px;
-    border: 2px solid #007bff;
+    border: 2px solid #000000;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .call-for-abstract-container .email-link:hover {
-    background-color: #007bff;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -777,3 +786,188 @@ body {
         font-size: 0.9rem;
     }
 }
+/* Abstract Guidelines Container */
+.abstract-guidelines-container {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Section Title */
+.abstract-guidelines-container h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.abstract-guidelines h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555555;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 5px;
+}
+
+/* List Items */
+.abstract-guidelines ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.abstract-guidelines ul li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+/* Content Structure Section */
+.guideline-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.guideline-section h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 10px;
+}
+
+.guideline-section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555555;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .abstract-guidelines-container {
+        padding: 15px;
+    }
+
+    .abstract-guidelines-container h3 {
+        font-size: 1.8rem;
+    }
+
+    .abstract-guidelines h4 {
+        font-size: 1.3rem;
+    }
+
+    .guideline-section {
+        padding: 10px;
+    }
+
+    .guideline-section h5 {
+        font-size: 1.1rem;
+    }
+
+    .guideline-section p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Accommodation Section Styling */
+.accommodation-container {
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accommodation-container h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000; /* Changed the color of the heading */
+  }
+  
+  /* Flexbox Container to align items in a row */
+  .accommodation-items {
+    display: flex;
+    flex-wrap: nowrap;  /* No wrapping, keep all boxes in a single row */
+    gap: 20px;  /* Space between items */
+    justify-content: space-between; /* Ensure items are spaced evenly */
+    overflow-x: auto; /* In case the items overflow, they will be scrollable horizontally */
+  }
+  
+  /* Styling for individual accommodation boxes */
+  .accommodation-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #ffae00;
+    border-radius: 8px;
+    width: 23%; /* Adjust width for 4 items per row */
+    transition: all 0.3s ease-in-out;
+    color: #011134; /* Change the text color */
+  }
+  
+  .accommodation-item h4 {
+    font-size: 18px;
+    color: #00052f; /* Changed the color of the accommodation name */
+  }
+  
+  .accommodation-item p {
+    font-size: 14px;
+    margin: 5px 0;
+    line-height: 1.6;
+    color: #330279; /* Changed text color for address and contact */
+  }
+  
+  
+  /* Responsive Design for Different Screen Sizes */
+  
+  /* For large screens like laptops and desktops */
+  @media (min-width: 1024px) {
+    .accommodation-items {
+      justify-content: space-evenly;  /* Adjust spacing between items */
+    }
+    .accommodation-item {
+      width: 25%; /* 4 items per row */
+    }
+  }
+  
+  /* For medium screens like tablets */
+  @media (max-width: 1024px) {
+    .accommodation-items {
+      justify-content: center;  /* Center the items on medium screens */
+    }
+    .accommodation-item {
+      width: 48%; /* 2 items per row */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 768px) {
+    .accommodation-items {
+      justify-content: center;  /* Center the items on small screens */
+    }
+    .accommodation-item {
+      width: 100%; /* 1 item per row */
+    }
+  }
+  
+  /* For extra-small mobile devices */
+  @media (max-width: 480px) {
+    .accommodation-items {
+      flex-direction: column; /* Stack items vertically on small devices */
+    }
+    .accommodation-item {
+      width: auto; /* Full width for each item */
+      margin-bottom: 20px; /* Space between stacked items */
+    }
+  }
+  
