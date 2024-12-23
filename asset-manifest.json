@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bcore/static/css/main.76a44ae1.css",
-    "main.js": "/bcore/static/js/main.4d2d4308.js",
+    "main.css": "/bcore/static/css/main.c75a1d6b.css",
+    "main.js": "/bcore/static/js/main.3720ba41.js",
     "static/js/453.b2889c0a.chunk.js": "/bcore/static/js/453.b2889c0a.chunk.js",
     "static/media/Purnima Joshi.png": "/bcore/static/media/Purnima Joshi.4313c6f376cf799de534.png",
     "static/media/DESIGN COMPETITION.png": "/bcore/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
@@ -16,9 +16,7 @@
     "static/media/Zulfikar Pathan.jpg": "/bcore/static/media/Zulfikar Pathan.285bd90bd16636dcc90d.jpg",
     "static/media/Praskash Singh Parihar.png": "/bcore/static/media/Praskash Singh Parihar.107fa2224d4b9ff9154a.png",
     "static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.jpg": "/bcore/static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.d47309858370eb372a2c.jpg",
-    "static/media/Amber Chahal.jpg": "/bcore/static/media/Amber Chahal.e7719840f9e1dc657f57.jpg",
     "static/media/ANIRUDH SINGH.jpg": "/bcore/static/media/ANIRUDH SINGH.8a19d695765612a30ac5.jpg",
-    "static/media/IOC.png": "/bcore/static/media/IOC.bfaabf1e2c63dca36e58.png",
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "/bcore/static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
     "static/media/Gaurav Singh Khushwah.jpg": "/bcore/static/media/Gaurav Singh Khushwah.558d615d360e189396ab.jpg",
     "static/media/Shubham Dhaka.jpg": "/bcore/static/media/Shubham Dhaka.41fac0a9f844c1e5b07b.jpg",
@@ -36,12 +34,12 @@
     "static/media/Harshil Khokhar.jpg": "/bcore/static/media/Harshil Khokhar.ada5b59264cbaa91fc04.jpg",
     "static/media/Indian_Olympic_Association_logo.png": "/bcore/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "index.html": "/bcore/index.html",
-    "main.76a44ae1.css.map": "/bcore/static/css/main.76a44ae1.css.map",
-    "main.4d2d4308.js.map": "/bcore/static/js/main.4d2d4308.js.map",
+    "main.c75a1d6b.css.map": "/bcore/static/css/main.c75a1d6b.css.map",
+    "main.3720ba41.js.map": "/bcore/static/js/main.3720ba41.js.map",
     "453.b2889c0a.chunk.js.map": "/bcore/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.76a44ae1.css",
-    "static/js/main.4d2d4308.js"
+    "static/css/main.c75a1d6b.css",
+    "static/js/main.3720ba41.js"
   ]
 }
