@@ -6,8 +6,13 @@ export const Contact = () => {
     // Scroll to top when the component mounts
     window.scrollTo(0, 0);
   }, []); // Empty dependency array means this runs only once on mount
+
   const formRef = useRef(null);
-  const [formStatus, setFormStatus] = useState({ submitted: false, message: "", error: false });
+  const [formStatus, setFormStatus] = useState({
+    submitted: false,
+    message: "",
+    error: false,
+  });
   const [formData, setFormData] = useState({
     Name: "",
     Email: "",
@@ -38,13 +43,15 @@ export const Contact = () => {
           body: submitFormData,
         }
       );
-      console.log(response.status);
-      // Check if response is ok
+
       if (response.ok) {
         const data = await response.json();
         console.log(data);
 
-        // Clear form data on successful submission
+        // Reset form fields
+        formElement.reset();
+
+        // Clear form data state
         setFormData({
           Name: "",
           Email: "",
@@ -98,7 +105,7 @@ export const Contact = () => {
             placeholder="Your Email"
             name="Email"
             type="email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$"
             title="Please enter a valid email address, e.g. example@mail.com."
             value={formData.Email}
             onChange={handleChange}
@@ -117,6 +124,6 @@ export const Contact = () => {
           <input type="submit" value="Submit" />
         </form>
       </div>
-    </div>
+    </div>  
   );
 };

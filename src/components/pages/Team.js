@@ -11,7 +11,7 @@ import image6 from '../pages/Images/TEAM/Kruti.jpg'
 import image7 from '../pages/Images/TEAM/Neeladri Shekhar Das.jpg'
 import image8 from '../pages/Images/TEAM/Purnima Joshi.png'
 import image9 from '../pages/Images/TEAM/Shivam Kumar.jpg'
-import image10 from '../pages/Images/TEAM/Sushil Goswami.png'
+import image10 from '../pages/Images/TEAM/Dr.-Anand-Kumar-Tripathi-scaled.jpg'
 import image11 from '../pages/Images/TEAM/TANISHKA SINGH.jpg'
 import image12 from '../pages/Images/TEAM/Utsav Chaware.jpg'
 import image13 from '../pages/Images/TEAM/Zulfikar Pathan.jpg'
@@ -27,10 +27,10 @@ const teamMembers = [
     info: 'Member, UN International Law Commission (2023-2027) Member, National Security Advisory Board of India'
   },
   {
-    name: 'Mr. Sushil Goswami',
+    name: 'Dr. Anand Kumar Tripathi',
     designation: 'University DEAN',
     photo: [image10],
-    info: 'Assistant Professor (Maritime Law) Director, School of Integrated Coastal and Maritime Security Studies Ph.D. (Pursuing), LL.M., B.A. LL.B (Hons.), UGC-NET'
+    info: 'Associate Professor, School of Criminal Law and Military Law (SCLML), Chairperson Center for Post Graduate Legal Studies, RRU'
   },
   {
     name: 'Lt. (Dr.) Gaurav Singh Kushwah',

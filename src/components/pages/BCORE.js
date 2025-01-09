@@ -10,8 +10,9 @@ import Testimonial3 from '../pages/Images/Praveen Kumar.jpg';
 import Testinomial4 from '../pages/Images/Yash Sharma.jpg';
 import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png'
-
-
+import sponser1 from './Images/Hyperlab Logo.png';
+import sponser2 from './Images/AISTS.png';
+import broucher from './Broucher/Broucher.pdf';
 export const BCORE = () => {
     const events = [
         {
@@ -31,6 +32,7 @@ export const BCORE = () => {
             accomodation: 'BCORE will Provide accommodation for OSRC and NOC Members and facilitate accommodation at a nominal cost for all the other participants.',
             brochure: 'http://rru.ac.in/wp-content/uploads/2024/11/RRU-BCORE-Olympic-research-Academy-Brochure.pdf',
             registrationLink: 'https://forms.eduqfix.com/bcoreregof/add',
+            sponser: [sponser1,sponser2]
         },
     ];
     const testimonials = [
@@ -61,13 +63,15 @@ export const BCORE = () => {
       ];
     const [currentIndex, setCurrentIndex] = useState(0);
 
-        useEffect(() => {
+    useEffect(() => {
         const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
         }, 5000);
-
+    
         return () => clearInterval(interval);
-    }, []);
+    }, [testimonials.length]);
+
+    
     useEffect(() => {
         // Scroll to top when route changes
         window.scrollTo(0, 0);
@@ -84,9 +88,6 @@ export const BCORE = () => {
                     interval={3000}
                     transitionTime={500}
                 >
-                    {/* <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/11/Advanced-Olympic-Research-Grant-Programme_Webslider.jpg" alt="Slide 1" />
-                    </div> */}
                     <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/10/COB-Expo-1.jpg" alt="Slide 1" />
                     </div>
@@ -108,21 +109,19 @@ export const BCORE = () => {
                     <div>
                         <img src={image1} alt="Slide 1" />
                     </div>
-                    {/* <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/05/Olympic-Panorama-Flyer_page.jpg" alt="Slide 1" />
-                    </div> */}
-                    {/* <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/04/Website-Slider.jpg" alt="Slide 2" />
-                    </div> */}
-                    {/* <div>
-                        <img src={image2} alt="Slide 3" />
-                    </div> */}
                 </Carousel>
             </div>
             <div className="marquee-container">
-                <marquee className="marquee">
-                    <span><a href="https://rru.ac.in/wp-content/uploads/2024/11/Brochure-BCORE.pdf">1st International Olympic Research Conference</a></span>
-                </marquee>
+                <div className="marquee-wrapper">
+                    <div className="marquee">
+                        <a
+                            href={broucher}
+                            style={{ color: '#fff', textDecoration: 'none' }}
+                        >
+                            1st International Olympic Research Conference
+                        </a>
+                    </div>
+                </div>
             </div>
             <section className="logo-section-1">
                 <div className="logos-1">
@@ -150,9 +149,28 @@ export const BCORE = () => {
                             <p><b>{event.accomodation}</b></p>
                             <Link to={`/event/${event.id}`} className="know-more-btn">Know More</Link>
                         </div>
+                        
                     ))}
                 </div>
             </div>
+            <section className="partners-section">
+                <h2 className="partners-title">Our Partners</h2>
+                <div className="partners-grid">
+                    <div className="partner-card">
+                        <img src={logo5} alt="Tech Partner 2" />
+                        <p>Knowledge Partner</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src={sponser1} alt="Strategic Partner 1" />
+                        <p>Innovation and Technology Partner</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src={sponser2} alt="Strategic Partner 2" />
+                        <p>Strategic Partner</p>
+                    </div>
+                </div>
+            </section>
+
             <section className="overview">
                 <h2>Overview</h2>
                 <p>

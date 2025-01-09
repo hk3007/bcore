@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     color: #333;
 }
 
@@ -17,7 +17,7 @@ body {
 }
 
 .details-card {
-    background: linear-gradient(145deg, #0055a5, #008cff);
+    background: linear-gradient(145deg, #000f80, #ff0037);
     color: #ffffff;
     border-radius: 12px;
     flex: 1 1 calc(40% - 20px);
@@ -887,87 +887,99 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .accommodation-container h3 {
+}
+
+.accommodation-container h3 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #000000; /* Changed the color of the heading */
-  }
-  
-  /* Flexbox Container to align items in a row */
-  .accommodation-items {
+    color: #000000; /* Heading color */
+}
+
+/* Flexbox Container */
+.accommodation-items {
     display: flex;
-    flex-wrap: nowrap;  /* No wrapping, keep all boxes in a single row */
-    gap: 20px;  /* Space between items */
-    justify-content: space-between; /* Ensure items are spaced evenly */
-    overflow-x: auto; /* In case the items overflow, they will be scrollable horizontally */
-  }
-  
-  /* Styling for individual accommodation boxes */
-  .accommodation-item {
-    background-color: #ffffff;
-    padding: 15px;
+    flex-wrap: nowrap; /* No wrapping; scroll horizontally if overflow */
+    gap: 20px;
+    justify-content: space-between;
+    overflow-x: auto; /* Horizontal scrolling for overflow */
+}
+
+/* Styling for individual accommodation boxes */
+.accommodation-item {
+    position: relative; /* For overlay positioning */
     border: 1px solid #ffae00;
     border-radius: 8px;
-    width: 23%; /* Adjust width for 4 items per row */
-    transition: all 0.3s ease-in-out;
-    color: #011134; /* Change the text color */
-  }
-  
-  .accommodation-item h4 {
+    width: 23%;
+    color: #011134; /* Text color */
+    overflow: hidden; /* Crop content that overflows */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline for links */
+}
+
+/* Add an off-white overlay for better text visibility */
+.accommodation-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* Off-white semi-transparent layer */
+    z-index: 1; /* Place the overlay below the text */
+}
+
+/* Content inside the accommodation item */
+.accommodation-item .overlay {
+    position: relative; /* For text above overlay */
+    z-index: 2; /* Ensure text is above the overlay */
+    padding: 15px;
+    text-align: left;
+}
+
+/* Text styles */
+.accommodation-item h4 {
     font-size: 18px;
-    color: #00052f; /* Changed the color of the accommodation name */
-  }
-  
-  .accommodation-item p {
-    font-size: 14px;
+    color: #00052f; /* Text color for headings */
+    text-decoration: none; /* Remove underline */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.accommodation-item p {
+    font-size: 17px;
+    color: #330279; /* Text color for description */
+    line-height: 1.5;
     margin: 5px 0;
-    line-height: 1.6;
-    color: #330279; /* Changed text color for address and contact */
-  }
-  
-  
-  /* Responsive Design for Different Screen Sizes */
-  
-  /* For large screens like laptops and desktops */
-  @media (min-width: 1024px) {
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+}
+
+/* For large screens */
+@media (min-width: 1024px) {
+    .accommodation-item {
+        width: 25%; /* 4 items per row */
+    }
+}
+
+/* For medium screens like tablets */
+@media (max-width: 1024px) {
+    .accommodation-item {
+        width: 48%; /* 2 items per row */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
     .accommodation-items {
-      justify-content: space-evenly;  /* Adjust spacing between items */
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Add spacing between items */
     }
     .accommodation-item {
-      width: 25%; /* 4 items per row */
+        width: 100%; /* Full width for each item */
     }
-  }
-  
-  /* For medium screens like tablets */
-  @media (max-width: 1024px) {
-    .accommodation-items {
-      justify-content: center;  /* Center the items on medium screens */
-    }
-    .accommodation-item {
-      width: 48%; /* 2 items per row */
-    }
-  }
-  
-  /* For mobile devices */
-  @media (max-width: 768px) {
-    .accommodation-items {
-      justify-content: center;  /* Center the items on small screens */
-    }
-    .accommodation-item {
-      width: 100%; /* 1 item per row */
-    }
-  }
-  
-  /* For extra-small mobile devices */
-  @media (max-width: 480px) {
-    .accommodation-items {
-      flex-direction: column; /* Stack items vertically on small devices */
-    }
-    .accommodation-item {
-      width: auto; /* Full width for each item */
-      margin-bottom: 20px; /* Space between stacked items */
-    }
-  }
+}
+
+
   

@@ -1,7 +1,8 @@
 import React , {useEffect}from 'react';
 import { useParams } from 'react-router-dom';
 import './EventDetails.css';
-import QR1 from './Images/qr-code (2).png'
+import QR1 from './Images/qr-code (2).png';
+import brochure from "./Broucher/Broucher.pdf";
 export const EventDetails = () => {
     useEffect(() => {
         // Scroll to top when the component mounts
@@ -65,13 +66,13 @@ export const EventDetails = () => {
             },
             importantDates: [
                 { event: 'Last date for Abstract Submission', date: '12 January, 2025' },
-                { event: 'Early Bird Registrations closes', date: '20 December, 2024' },
+                { event: 'Early Bird Registrations closes', date: '30 December, 2024' },
                 { event: 'Regular Registrations closes', date: '15 January, 2025' },
                 { event: 'Late Registrations till', date: '24 January, 2025' },
             ],
             qrCode: QR1,
             email: 'olyresearchacademy.registration@rru.ac.in',
-            brochure: 'https://rru.ac.in/wp-content/uploads/2024/11/Brochure-BCORE.pdf',
+            brochure: [brochure],
             Schedule: 'https://rru.ac.in/wp-content/uploads/2024/11/Schedule-1.pdf',
             registrationLink: 'https://forms.eduqfix.com/bcoreregof/add',
             googleform: 'https://docs.google.com/forms/d/e/1FAIpQLScQw4qS9J-GXwCaMcVa0ZAqcYBgWTCDWWda2uzknElP3KxIWg/viewform?vc=0&c=0&w=1&flr=0',
@@ -118,21 +119,55 @@ export const EventDetails = () => {
                 {
                     name: 'Good Times, Dahegam',
                     address: 'Good Times by Sangath IPL near Rashtriya Raksha University Lavad Dehgam',
-                    contact: 'For Bookings Contact - 8175991401 | Mr. Sandeep'
+                    contact: 'For Bookings Contact - 8175991401 | Mr. Sandeep',
+                    image: 'https://goodtimesbysangathipl.com/wp-content/uploads/2022/04/gtl-2.png',
+                    link: 'https://goodtimesbysangathipl.com/'
                 },
                 {
                     name: 'Malhaar Resort, Dahegam',
                     address: 'Malhaar Resort, Uttam Dairy, Behind Dehgam Power Grid, Dahegam, Ahmedabad Gujarat, India.',
-                    contact: 'For Bookings Contact - 7575806021 | Mr. Bahadur Singh'
+                    contact: 'For Bookings Contact - 7575806021 | Mr. Bahadur Singh',
+                    image: 'https://r1imghtlak.mmtcdn.com/d8b02df056b711eeb25f0a58a9feac02.jpg',
+                    link: 'https://www.makemytrip.com/hotels/malhaar_resorts-details-dahegam.html'
                 },
                 {
                     name: 'Hotel Neelkanth, Dahegam',
                     address: '5R64+56H, Ahmedabad - Modasa Rd, Vrundavan Society, Nehru Society, Dahegam, Gujarat 382305',
+                    image: 'https://lh3.googleusercontent.com/p/AF1QipP9ZAJ0xs9tV2dMSOqfec29It65ZVHO_8ZJINgs=s1360-w1360-h1020',
+                    link: ''
                 },
                 {
-                    name: 'Home World Hostel, Gandhinagar (Economical)',
+                    name: 'University Accomodation, Gandhinagar (Economical)',
                     address: '4, 5 & 6 Floor, Times Square, Bhaijipura, Chowk, Gandhinagar, Gujarat 382421',
-                    contact: 'For Bookings Contact - +91 7600 476 012 | Mr. Luckyraj Singh'
+                    contact: 'For Bookings Contact - +91 7600 476 012 | Mr. Luckyraj Singh',
+                    image: 'https://lh3.googleusercontent.com/p/AF1QipPVsaQosnVl3KS2F_R80QpFiUiFNHKAMZA-OKKZ=s1360-w1360-h1020',
+                    link: 'https://www.facebook.com/people/Home-World-Hostel/100083539351879/'
+                },
+            ],
+            NearBytransportation: [
+                {
+                    name: 'Sardar Vallabhbhai Patel International Airport',
+                    address: 'Hansol, Ahmedabad, Gujarat 380003',
+                    image: 'https://tds.indianeagle.com/wp-content/uploads/2018/11/Ahmedabad-Airport.jpg',
+                    link: 'https://www.adani.com/svpia-ahmedabad-airport'
+                },
+                {
+                    name: 'Kalupur Railway Station',
+                    address: 'Kapasia Bazar, Sakar Bazzar, Kalupur, Ahmedabad, Gujarat 380002',
+                    image: 'https://static.gujaratsamachar.com/content_image/content_image_87011ab4-1387-4672-b3d0-c2160e24d0b1.jpeg',
+                    link: 'https://www.irctc.co.in/nget/train-search'
+                },
+                {
+                    name: 'Gandhinagar Capital',
+                    address: 'Footover Bridge, Sector 13C, Sector 14, Gandhinagar, Gujarat 382016',
+                    image: 'https://akm-img-a-in.tosshub.com/aajtak/images/assets/202107/gandhinagar-railway-station-night-view.jpg',
+                    link: 'https://www.irctc.co.in/nget/train-search'
+                },
+                {
+                    name: 'Geeta Mandir ST Bus Stand',
+                    address: 'Gita Mandir, Ahmedabad, Gujarat 380001',
+                    image: 'https://content.jdmagicbox.com/comp/ahmedabad/93/079p250393/catalogue/gujarat-state-road-transport-corporation-geeta-mandir-road-ahmedabad-st-bus-depot-2qkhhet.jpg',
+                    link: 'https://gsrtc.in/site/'
                 },
             ]
         },
@@ -278,13 +313,50 @@ export const EventDetails = () => {
                 <h3>Accommodation Options</h3>
                 <div className="accommodation-items">
                     {event.accommodations.map((accommodation, index) => (
-                    <div key={index} className="accommodation-item">
-                        <h4>{accommodation.name}</h4>
-                        <p><strong>Address:</strong> {accommodation.address}</p>
-                        {accommodation.contact && (
-                        <p><strong>Contact:</strong> {accommodation.contact}</p>
-                        )}
-                    </div>
+                        <a
+                            key={index}
+                            href={accommodation.link || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="accommodation-item"
+                            style={{
+                                backgroundImage: `url(${accommodation.image})`,
+                            }}
+                        >
+                            <div className="overlay">
+                                <h4>{accommodation.name}</h4>
+                                <p><strong>Address:</strong> {accommodation.address}</p>
+                                {accommodation.contact && (
+                                    <p><strong>Contact:</strong> {accommodation.contact}</p>
+                                )}
+                            </div>
+                        </a>
+                    ))}
+                </div>
+                <h5>For Accommodation-related queries - Janak Choudhari - +91 90992 69896</h5>
+            </div>
+            <div className="accommodation-container">
+                <h3>Near By Transportation</h3>
+                <div className="accommodation-items">
+                    {event.NearBytransportation.map((transportation, index) => (
+                        <a
+                            key={index}
+                            href={transportation.link || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="accommodation-item"
+                            style={{
+                                backgroundImage: `url(${transportation.image})`,
+                            }}
+                        >
+                            <div className="overlay">
+                                <h4>{transportation.name}</h4>
+                                <p><strong>Address:</strong> {transportation.address}</p>
+                                {transportation.contact && (
+                                    <p><strong>Contact:</strong> {transportation.contact}</p>
+                                )}
+                            </div>
+                        </a>
                     ))}
                 </div>
             </div>
@@ -295,7 +367,9 @@ export const EventDetails = () => {
                     height="500"
                     style={{ border: 0 }}
                     allowFullScreen=""
-                    loading="lazy"></iframe>
+                    loading="lazy"
+                    title='Event location'
+                    ></iframe>
             </div>
 
             <div className="qr-section">
