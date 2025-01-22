@@ -66,7 +66,7 @@ const interns = [
   },
   {
     name: 'Neeladri Shekhar Das',
-    schoolName: 'School of International Cooperation, Security and Strategic Languages',
+    schoolName: 'School of Physical Education and Sports',
     photo: [image7],
     info: ''
   },

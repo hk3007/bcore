@@ -46,7 +46,7 @@ nav ul li {
     position: relative; /* To position the dropdown */
 }
 
-nav ul li a {
+nav ul li a, nav ul li p{
     display: block;
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -58,7 +58,7 @@ nav ul li a {
     font-size: large;
 }
 
-nav ul li a:not(.active):hover {
+nav ul li a:not(.active):hover, nav ul li p:not(.active):hover{
     background-color: rgb(0, 21, 36);
     color: aliceblue;
 }

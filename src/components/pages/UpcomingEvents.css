@@ -51,8 +51,14 @@ body {
     color: #555;
     font-size: 0.95rem;
 }
+.event-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the spacing as needed */
+    margin-top: 15px;
+}
 
-.know-more-btn {
+.know-more-btn, .schedule-btn {
     background-color: #000000;
     color: #ffffff;
     padding: 10px 20px;
@@ -61,10 +67,15 @@ body {
     cursor: pointer;
     font-weight: bold;
     margin-top: 15px;
+    text-decoration: none; /* Remove underline */
     transition: background-color 0.3s ease;
 }
 
-.know-more-btn:hover {
+.know-more-btn:hover, .schedule-btn:hover {
+    background-color: #020027;
+}
+
+.schedule-btn:hover {
     background-color: #020027;
 }
 

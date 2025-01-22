@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b8f577b.css",
-    "main.js": "/static/js/main.23a96489.js",
+    "main.css": "/static/css/main.91b6bab6.css",
+    "main.js": "/static/js/main.772f1e25.js",
     "static/js/453.b2889c0a.chunk.js": "/static/js/453.b2889c0a.chunk.js",
+    "static/media/Schedule.pdf": "/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Broucher.pdf": "/static/media/Broucher.ec41f6132fa75fd7b23b.pdf",
     "static/media/Purnima Joshi.png": "/static/media/Purnima Joshi.4313c6f376cf799de534.png",
     "static/media/DESIGN COMPETITION.png": "/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
@@ -20,6 +21,7 @@
     "static/media/ANIRUDH SINGH.jpg": "/static/media/ANIRUDH SINGH.8a19d695765612a30ac5.jpg",
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "/static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
     "static/media/Gaurav Singh Khushwah.jpg": "/static/media/Gaurav Singh Khushwah.558d615d360e189396ab.jpg",
+    "static/media/Ministry_of_Youth_Affairs_and_Sports.png": "/static/media/Ministry_of_Youth_Affairs_and_Sports.ce20d0eb1e8e65a684e9.png",
     "static/media/Shubham Dhaka.jpg": "/static/media/Shubham Dhaka.41fac0a9f844c1e5b07b.jpg",
     "static/media/qr-code (2).png": "/static/media/qr-code (2).2971b0d10ba333f326f6.png",
     "static/media/Khelo India 1.jpg": "/static/media/Khelo India 1.324ef89bbc7ea94e6969.jpg",
@@ -37,12 +39,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/index.html",
-    "main.9b8f577b.css.map": "/static/css/main.9b8f577b.css.map",
-    "main.23a96489.js.map": "/static/js/main.23a96489.js.map",
+    "main.91b6bab6.css.map": "/static/css/main.91b6bab6.css.map",
+    "main.772f1e25.js.map": "/static/js/main.772f1e25.js.map",
     "453.b2889c0a.chunk.js.map": "/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b8f577b.css",
-    "static/js/main.23a96489.js"
+    "static/css/main.91b6bab6.css",
+    "static/js/main.772f1e25.js"
   ]
 }

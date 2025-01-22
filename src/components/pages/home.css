@@ -84,7 +84,11 @@
     list-style: none;
     display: flex;
     overflow-x: auto;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.timeline::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
 }
 
 .timeline-item {
@@ -98,11 +102,24 @@
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     text-align: left;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards ease-in-out;
+}
+
+.timeline-item:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(odd) {
+    animation-delay: 0.2s;
 }
 
 .timeline-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .timeline-date {
@@ -110,45 +127,78 @@
     font-weight: bold;
     color: #003366;
     margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .timeline-content h3 {
     font-size: 1.5em;
     color: #003366;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
 
 .timeline-content p {
     font-size: 1em;
     color: #555;
+    line-height: 1.6;
 }
 
-.timeline::-webkit-scrollbar {
+.timeline-content h3:hover {
+    color: #0056b3;
+}
+
+.timeline-detail {
     display: none;
+    font-size: 1em;
+    color: #333;
+    margin-top: 15px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-@keyframes fadeIn {
-    from {
+.timeline-item.active .timeline-detail {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@media (max-width: 600px) {
-    .content-container {
-        padding: 1rem;
-        margin: 1rem;
-        max-width: 100%;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
     }
-
-    .content-container h4 {
-        font-size: 1rem;
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
+
+@media (max-width: 600px) {
+    .timeline {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
 
 .overview {
     padding: 1rem;
@@ -581,4 +631,27 @@
     .partner-card img {
         width: 70px;
     }
+}
+.event-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Adjust the spacing as needed */
+    margin-top: 15px;
+}
+
+.know-more-btn, .schedule-btn {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease;
+}
+
+.know-more-btn:hover, .schedule-btn:hover {
+    background-color: #020027;
 }

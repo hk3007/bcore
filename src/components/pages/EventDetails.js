@@ -3,6 +3,11 @@ import { useParams } from 'react-router-dom';
 import './EventDetails.css';
 import QR1 from './Images/qr-code (2).png';
 import brochure from "./Broucher/Broucher.pdf";
+import schedule from "./Broucher/Schedule.pdf";
+import logo5 from './Images/Indian_Olympic_Association_logo.png'
+import sponser1 from './Images/Hyperlab Logo.png';
+import sponser2 from './Images/AISTS.png';
+import collaborator1 from './Images/Ministry_of_Youth_Affairs_and_Sports.png'
 export const EventDetails = () => {
     useEffect(() => {
         // Scroll to top when the component mounts
@@ -70,10 +75,116 @@ export const EventDetails = () => {
                 { event: 'Regular Registrations closes', date: '15 January, 2025' },
                 { event: 'Late Registrations till', date: '24 January, 2025' },
             ],
+            guests: [
+                {
+                    id: 1,
+                    name: "Shri (Dr.) Mansukh Mandaviya",
+                    about: "Shri (Dr.) Mansukh Mandaviya is the current Union Minister of Health and Family Welfare, Chemicals, and Fertilizers, Government of India. Known for his visionary leadership, he has been instrumental in driving key healthcare reforms and fostering India's self-reliance in the pharmaceutical sector.",
+                    img: "https://www.gavi.org/sites/default/files/body/2021-10/MANDAVIYA_Mansukh.jpg",
+                },
+                {
+                    id: 2,
+                    name: "Shri Harsh Sanghavi",
+                    about: "Harsh Sanghavi is the Minister of State for Home, Industries, and Youth Affairs in the Government of Gujarat. A dynamic leader, he is known for his proactive approach to governance and engaging with youth for progressive development initiatives.",
+                    img: "https://harshsanghavi.in/img/ss11.png ",
+                },
+                {
+                    id: 3,
+                    name: "Dr. PT USHA",
+                    about: "PT Usha, fondly known as the 'Golden Girl of India,' is one of the greatest athletes in Indian history. A legendary sprinter, she has won numerous international medals and inspired generations with her dedication to sports and excellence.",
+                    img: "https://olympic.ind.in/public/images/news/1160776464.png",
+                },
+                {
+                    id: 4,
+                    name: "Smt. Sujata Chaturvedi, IAS, Secretary (Sports)",
+                    about: "Smt. Sujata Chaturvedi, an IAS officer from the 1989 Bihar cadre, is the current Secretary of the Department of Sports. She took charge in October 2021, succeeding Ravi Mittal. Prior to this role, she served as an Additional Secretary in the Department of Personnel and Training (DoPT).",
+                    img: "https://pbs.twimg.com/media/GQZauq1X0AAbJdi.jpg"
+                },
+                {
+                    id: 5,
+                    name: "Prof. Bimal N Patel, VC, RRU",
+                    about: "Prof. (Dr.) Bimal N. Patel is the Vice-Chancellor of Rashtriya Raksha University (RRU), a premier security and police university in India. He is also a Member of the National Security Advisory Board (NSAB) of India and the UN International Law Commission (2023-2027)",
+                    img: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Prof.%28Dr.%29_Bimal_N._Patel.jpg"
+                }
+            ],
+            speakers: [
+                {
+                    id: 1,
+                    name: "Shri Adille Sumariwalla, Vice President, World Athletics",
+                    about: "Shri Adille Sumariwalla is currently the President of the Athletics Federation of India (AFI) and a member of the Council of World Athletics. He is a former Olympian and a key figure in advancing athletics in India.",
+                    img: "https://static.toiimg.com/thumb/msid-70393719,width-400,resizemode-4/70393719.jpg",
+                },
+                {
+                    id: 2,
+                    name: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
+                    about: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
+                    img: "https://media.licdn.com/dms/image/v2/D5603AQFCsY7Ong86cg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726402492305?e=2147483647&v=beta&t=BuMi_oa76CiC8VCP2qm6aX-_v-dKQxQYuogoG3-PXQo",
+                },
+                {
+                    id: 3,
+                    name: "Shri Gagan Narang, Vice President IOA, Padma Shri",
+                    about: "Shri Gagan Narang is a renowned Indian shooter and Olympic medalist. He won a bronze medal in the 10m Air Rifle event at the 2012 London Olympics, making him one of India's celebrated sports icons.",
+                    img: "https://upload.wikimedia.org/wikipedia/commons/1/11/XIX_Commonwealth_Games-2010_Delhi_Gagan_Narang_won_the_Gold_medal_in_%28Men%E2%80%99s%29_Shooting_Rifle_50m_pairs_%28cropped%29.jpg",
+                },
+                {
+                    id: 4,
+                    name:"Mr. Lambis Konstantinidis, Executive Director, Planning Paris 2024 Games, France",
+                    about: "Mr. Lambis Konstantinidis, Executive Director, Planning Paris 2024 Games, France Mr. Lambis Konstantinidis is the Executive Director of Planning and Coordination for the Paris 2024 Olympic and Paralympic Games",
+                    img: "https://media.licdn.com/dms/image/v2/C4E34AQGnecSgqp8g-Q/ugc-proxy-shrink_800/ugc-proxy-shrink_800/0/1594194264939?e=2147483647&v=beta&t=q44nWPIpa5DeIponXCRcz9lgLwBAV0vGm_8VSn2tD60"
+                },
+                {
+                    id: 5,
+                    name:"Mr. Prasanth Shantakumaran, Head Sports Sector, KPMG, India",
+                    about: "Mr. Prasanth Shantakumaran is a Partner at KPMG in India, where he leads the Digital Engineering and Quality (DEQ) practice as well as the Sports sector",
+                    img: "https://kpmg.com/content/dam/kpmgsites/in/images/2020/12/prasanth-shanthakumaran.jpg"
+                },
+                {
+                    id: 6,
+                    name:"Mr Pranshu Jain, Executive Director, Sports Advisory, PwC India",
+                    about: "Mr. Pranshu Jain is the Executive Director of Sports Advisory at PwC India. Pranshu has previously worked with firms like Deloitte and has been involved in various projects related to sports management and digital transformation",
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQH1nThVeWchzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516893474724?e=1743033600&v=beta&t=0t3h6qlR4DKE_W6zsmmDMDM6zJkmExzBO02Q4jHbhoY"
+                },
+                {
+                    id: 7,
+                    name:"Prof.  Rajendra Shrivastav, Novartis Professor of Marketing Strategy",
+                    about: "Prof. Rajendra Srivastava is the Novartis Professor of Marketing Strategy and Innovation at the Indian School of Business (ISB). He is also the Executive Director of the Centre for Business Innovation (CBI) at EFPM",
+                    img: "https://media.licdn.com/dms/image/v2/C5103AQHE4hB7W4kWwA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517579741419?e=2147483647&v=beta&t=kl-igT0JMeqG9VOx2hu4YWcNkV18jfcUx1AcfJR1TO0"
+                },
+                {
+                    id: 8,
+                    name:"Christian Klaue Director, Corporate Communications and Public Affairs, International Olympic Committee (IOC)",
+                    about: "Christian Klaue is the Director of Corporate Communications and Public Affairs at the International Olympic Committee (IOC). He joined the IOC in September 2015 and has been leading the department since October 2019",
+                    img: "https://img.olympics.com/images/image/private/t_original_380/f_auto/primary/n6bepq6tdifn0jkpnvca"
+                },
+                {
+                    id: 9,
+                    name:"Prof Mahesh Panchagnula, Professor of Applied Mechanics, IIT Madras, India",
+                    about: "Prof. Mahesh Panchagnula is a Professor of Applied Mechanics at IIT Madras, India. He specializes in fluid dynamics, atomization, and spray nozzle design",
+                    img: "https://home.iitm.ac.in/mvp/img/prof-img.png"
+                },
+                {
+                    id: 10,
+                    name:"Mr. Ramesh. Kumar, CEO, IIT Madras Center of Excellence in Sports Science & Analytics",
+                    about: "Mr. Ramesh Kumar is the CEO of the Center of Excellence in Sports Science and Analytics (CESSA) at IIT Madras, leading innovation in sports technology and research.",
+                    img: "https://media.licdn.com/dms/image/sync/v2/D4D27AQES632CHz09iA/articleshare-shrink_800/articleshare-shrink_800/0/1711138359716?e=2147483647&v=beta&t=NalRaBoJGM9-riLKSa-8uyOMtzbnh0UOvEpSTRl79L8"
+                },
+                {
+                    id: 11,
+                    name:"Mr. Udit Seth, Founder & Managing Director, Transtadia",
+                    about: "Mr. Udit Seth is the Founder and Managing Director of TransStadia, a sports infrastructure company in India. He has been instrumental in developing multi-use sports facilities, including the Arena Stadium in Ahmedabad, through innovative public-private partnerships",
+                    img: "https://ekaclub.net/wp-content/uploads/2023/Udit-Photo.jpg.webp"
+                },
+                {
+                    id: 12,
+                    name:"Ms. Isha Rathee, Architect, Populous",
+                    about: "Ms. Isha Rathee is a Principal Architect at Populous, based in their New Delhi studio. She has over 10 years of experience in designing sports and entertainment venues, including the Narendra Modi Stadium in Ahmedabad",
+                    img: "https://populous.com/uploads/2018/01/Isha-Rathee_005_BW_500X500_web.jpg"
+                }
+            ],
             qrCode: QR1,
             email: 'olyresearchacademy.registration@rru.ac.in',
             brochure: [brochure],
-            Schedule: 'https://rru.ac.in/wp-content/uploads/2024/11/Schedule-1.pdf',
+            Schedule: [schedule],
             registrationLink: 'https://forms.eduqfix.com/bcoreregof/add',
             googleform: 'https://docs.google.com/forms/d/e/1FAIpQLScQw4qS9J-GXwCaMcVa0ZAqcYBgWTCDWWda2uzknElP3KxIWg/viewform?vc=0&c=0&w=1&flr=0',
             callForAbstract: {
@@ -194,7 +305,32 @@ export const EventDetails = () => {
                     <p>{event.place}</p>
                 </div>
             </div>
-            
+            <section className="partners-section">
+                <h2 className="partners-title">Collaboration</h2>
+                <div className="partners-grid">
+                    <div className="partner-card">
+                        <p>Ministry of Youth Affairs and Sports, Goverment of India</p>
+                        <img src={collaborator1} alt="collaborator 1" />
+                    </div>
+                </div>
+            </section>
+            <section className="partners-section">
+                <h2 className="partners-title">Our Partners</h2>
+                <div className="partners-grid">
+                    <div className="partner-card">
+                        <img src={logo5} alt="Tech Partner 2" />
+                        <p>Knowledge Partner</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src={sponser1} alt="Strategic Partner 1" />
+                        <p>Innovation and Technology Partner</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src={sponser2} alt="Strategic Partner 2" />
+                        <p>Strategic Partner</p>
+                    </div>
+                </div>
+            </section>
             <div className="highlights-container">
                 <h3>Highlights</h3>
                 <ul>
@@ -205,7 +341,24 @@ export const EventDetails = () => {
                     ))}
                 </ul>
             </div>
-
+            <section className="chief-guests">
+                <h2>Meet Our Guests</h2>
+                <div className="chief-guests-grid">
+                    {event.guests.map((guest) => (
+                        <div className="guest-card" key={guest.id}>
+                            <div className="guest-card-inner">
+                                <div className="guest-card-front">
+                                    <img src={guest.img} alt={guest.name} />
+                                    <h3>{guest.name}</h3>
+                                </div>
+                                <div className="guest-card-back">
+                                    <p>{guest.about}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
             <div className="important-dates-container">
                 <h3>Important Dates</h3>
                 {event.importantDates.map((date, index) => (
@@ -255,6 +408,24 @@ export const EventDetails = () => {
                     </div>
                 ))}
             </div>
+            <section className="chief-guests">
+                <h2>Speakers</h2>
+                <div className="chief-guests-grid">
+                    {event.speakers.map((speaker) => (
+                        <div className="guest-card" key={speaker.id}>
+                            <div className="guest-card-inner">
+                                <div className="guest-card-front">
+                                    <img src={speaker.img} alt={speaker.name} />
+                                    <h3>{speaker.name}</h3>
+                                </div>
+                                <div className="guest-card-back">
+                                    <p>{speaker.about}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
             <div className="organizing-team">
                 <h3>Organizing Team</h3>
                 {events?.[0]?.organizingTeam?.map((group, index) => (

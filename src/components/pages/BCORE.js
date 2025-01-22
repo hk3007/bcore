@@ -71,7 +71,29 @@ export const BCORE = () => {
         return () => clearInterval(interval);
     }, [testimonials.length]);
 
-    
+    useEffect(() => {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        timelineItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove 'active' class from any currently active item
+                const activeItem = document.querySelector('.timeline-item.active');
+                if (activeItem && activeItem !== item) {
+                    activeItem.classList.remove('active');
+                }
+                // Toggle 'active' class on clicked item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Cleanup event listeners on component unmount
+        return () => {
+            timelineItems.forEach(item => {
+                item.removeEventListener('click', () => {});
+            });
+        };
+    }, []);
+
     useEffect(() => {
         // Scroll to top when route changes
         window.scrollTo(0, 0);
@@ -88,6 +110,9 @@ export const BCORE = () => {
                     interval={3000}
                     transitionTime={500}
                 >
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2025/01/International-Olympic-Research-Conference-Guest-Banner-16.png" alt="Slide 1" />
+                    </div>
                     <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2024/10/COB-Expo-1.jpg" alt="Slide 1" />
                     </div>
@@ -147,7 +172,14 @@ export const BCORE = () => {
                             <p>{event.date}</p>
                             <p>{event.place}</p>
                             <p><b>{event.accomodation}</b></p>
-                            <Link to={`/event/${event.id}`} className="know-more-btn">Know More</Link>
+                            <div className="event-buttons">
+                                <Link to={`/event/${event.id}`} className="know-more-btn">
+                                    Know More
+                                </Link>
+                                <Link to={`/event/${event.id}/schedule`} className="schedule-btn">
+                                    View Schedule
+                                </Link>
+                            </div>
                         </div>
                         
                     ))}
@@ -192,85 +224,116 @@ export const BCORE = () => {
                     </p>
                 </div>
             </section>
-            <h1 class="title">OLYMPIC TIMELINE</h1>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">776 BC</div>
-                    <div class="timeline-content">
+            <h1 className="title">OLYMPIC TIMELINE</h1>
+            <div className="timeline">
+                <div className="timeline-item">
+                    <div className="timeline-date">776 BC</div>
+                    <div className="timeline-content">
                         <h3>First Ancient Olympics</h3>
                         <p>The first recorded Olympic Games are held in Olympia, Greece, as part of a religious festival honoring Zeus.</p>
                     </div>
+                    <div className="timeline-detail">
+                        These games included events like running, wrestling, and chariot racing. They were a key part of Greek culture and politics.
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">AD 393</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">AD 393</div>
+                    <div className="timeline-content">
                         <h3>End of Ancient Olympics</h3>
                         <p>Roman Emperor Theodosius I bans all pagan festivals, marking the end of the games.</p>
                     </div>
+                    <div className="timeline-detail">
+                        This decision reflected the rise of Christianity as the dominant religion in the Roman Empire.
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">1850</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">1850</div>
+                    <div className="timeline-content">
                         <h3>Wenlock Olympian Games</h3>
                         <p>The Wenlock Olympian Games were founded by Dr. William Penny Brookes in Much Wenlock, England.</p>
                     </div>
+                    <div className="timeline-detail">
+                        These games are considered an inspiration for the modern Olympic movement.
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1896</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">1896</div>
+                    <div className="timeline-content">
                         <h3>First Modern Olympics</h3>
                         <p>The inaugural Modern Olympic Games are held in Athens, featuring 241 male athletes from 14 countries.</p>
                     </div>
+                    <div className="timeline-detail">
+                        Events included athletics, cycling, fencing, gymnastics, shooting, swimming, tennis, weightlifting, and wrestling.
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">1924</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">1924</div>
+                    <div className="timeline-content">
                         <h3>First Winter Olympics</h3>
                         <p>The inaugural Winter Olympic Games are held in Chamonix, France, featuring events like skiing and ice hockey.</p>
                     </div>
+                    <div className="timeline-detail">
+                        A total of 16 nations participated, and Norway won the most medals.
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">1960</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">1960</div>
+                    <div className="timeline-content">
                         <h3>First Televised Olympics</h3>
                         <p>The Rome Games are the first to be fully televised, increasing global viewership.</p>
                     </div>
+                    <div className="timeline-detail">
+                        These games were the first to use electronic timing and photo finishes.
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">1980</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">1980</div>
+                    <div className="timeline-content">
                         <h3>Moscow Boycott</h3>
                         <p>The United States and several other countries boycott the Moscow Games in protest of the Soviet invasion of Afghanistan.</p>
                     </div>
+                    <div className="timeline-detail">
+                        Despite the boycott, 80 nations competed in these Olympics.
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2000</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">2000</div>
+                    <div className="timeline-content">
                         <h3>Sydney Olympics</h3>
                         <p>The Sydney Olympics are hailed as the "best ever" by IOC President Juan Antonio Samaranch.</p>
                     </div>
+                    <div className="timeline-detail">
+                        The games featured 10,651 athletes from 199 nations.
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2021</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">2021</div>
+                    <div className="timeline-content">
                         <h3>Tokyo 2020 (Held in 2021)</h3>
                         <p>The Tokyo Games are postponed due to COVID-19 and held without spectators. New sports like skateboarding are introduced.</p>
                     </div>
+                    <div className="timeline-detail">
+                        The games also featured surfing, sport climbing, and karate for the first time.
+                    </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
+                <div className="timeline-item">
+                    <div className="timeline-date">2024</div>
+                    <div className="timeline-content">
                         <h3>Upcoming: Paris 2024</h3>
                         <p>Paris will host the Summer Olympics, marking 100 years since it last hosted the Games.</p>
                     </div>
+                    <div className="timeline-detail">
+                        Breakdancing will debut as an Olympic sport in Paris 2024.
+                    </div>
                 </div>
-            </div>            
+            </div>
+
             <div className="container-fluid py-5">
                 <div className="container py-5">
                     <div className="section-title text-center position-relative pb-3 mb-4 mx-auto">
