@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.91b6bab6.css",
-    "main.js": "/static/js/main.772f1e25.js",
+    "main.css": "/static/css/main.1717eab9.css",
+    "main.js": "/static/js/main.9aec0b97.js",
     "static/js/453.b2889c0a.chunk.js": "/static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Broucher.pdf": "/static/media/Broucher.ec41f6132fa75fd7b23b.pdf",
@@ -9,11 +9,15 @@
     "static/media/DESIGN COMPETITION.png": "/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
     "static/media/Dr.-Anand-Kumar-Tripathi-scaled.jpg": "/static/media/Dr.-Anand-Kumar-Tripathi-scaled.1d588f9556e778558b12.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.ce7f991f3d243b5f9c55.png",
+    "static/media/Yoonkyu Song.png": "/static/media/Yoonkyu Song.95984c606d4faa54566d.png",
     "static/media/Manu Bhaker & Sarabjot Singh_Webslider1.jpg": "/static/media/Manu Bhaker & Sarabjot Singh_Webslider1.dbb93ebdd7cd4a4efc8d.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.1728e243ef2a3662cc50.png",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.494a4865820cb0ee9c41.png",
+    "static/media/Maria Bogner.png": "/static/media/Maria Bogner.b0bda6680142ede35619.png",
+    "static/media/Col Anant Kumar.png": "/static/media/Col Anant Kumar.10d9580d5e026fc30747.png",
     "static/media/Khelo india 2.jpg": "/static/media/Khelo india 2.b5df9c73a34a65947d7d.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.9a89d80589597419ee44.png",
+    "static/media/Lambis.png": "/static/media/Lambis.c948915babe7c1d2f40f.png",
     "static/media/Yash Sharma.jpg": "/static/media/Yash Sharma.233ad2c5a6f33a75643b.jpg",
     "static/media/Zulfikar Pathan.jpg": "/static/media/Zulfikar Pathan.285bd90bd16636dcc90d.jpg",
     "static/media/Praskash Singh Parihar.png": "/static/media/Praskash Singh Parihar.107fa2224d4b9ff9154a.png",
@@ -39,12 +43,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/index.html",
-    "main.91b6bab6.css.map": "/static/css/main.91b6bab6.css.map",
-    "main.772f1e25.js.map": "/static/js/main.772f1e25.js.map",
+    "main.1717eab9.css.map": "/static/css/main.1717eab9.css.map",
+    "main.9aec0b97.js.map": "/static/js/main.9aec0b97.js.map",
     "453.b2889c0a.chunk.js.map": "/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91b6bab6.css",
-    "static/js/main.772f1e25.js"
+    "static/css/main.1717eab9.css",
+    "static/js/main.9aec0b97.js"
   ]
 }

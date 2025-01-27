@@ -193,12 +193,33 @@ export const BCORE = () => {
                         <p>Knowledge Partner</p>
                     </div>
                     <div className="partner-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s" alt="Strategic Partner 2" />
+                        <p>Merchandise Partner</p>
+                    </div>
+                    <div className="partner-card">
                         <img src={sponser1} alt="Strategic Partner 1" />
                         <p>Innovation and Technology Partner</p>
                     </div>
                     <div className="partner-card">
                         <img src={sponser2} alt="Strategic Partner 2" />
                         <p>Strategic Partner</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src="https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png" alt="Strategic Partner 2" />
+                        <p>Industry Partner</p>
+                    </div>
+                </div>
+            </section>
+            <section className="partners-section">
+                <h2 className="partners-title">Our Sponsers</h2>
+                <div className="partners-grid">
+                    <div className="partner-card">
+                        <img src="https://adcbank.coop/wp-content/uploads/2023/05/logo.png" alt="Strategic Partner 2" />
+                        <p>Premium sponser</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvCZCgT7YBn7oemQ6DIZ1jbGwwW_-a3kT2g&s" alt="Strategic Partner 2" />
+                        <p>Silver sponser</p>
                     </div>
                 </div>
             </section>

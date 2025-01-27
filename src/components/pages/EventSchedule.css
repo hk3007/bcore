@@ -83,13 +83,24 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Time Section */
 .time {
     font-size: 1.2rem;
     font-weight: 600;
     color: #333;
-    flex: 0 0 150px;
+    flex: 0 0 auto; /* Ensures it takes only as much space as needed */
+    margin-right: 15px; /* Reduces the gap between time and content */
 }
 
+/* Details Section */
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px; /* Adds a small gap between elements */
+}
+
+/* Content Title */
 .details h3 {
     font-size: 1.3rem;
     margin: 0;
@@ -144,4 +155,3 @@ body {
         opacity: 1;
     }
 }
-

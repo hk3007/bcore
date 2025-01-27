@@ -8,6 +8,10 @@ import logo5 from './Images/Indian_Olympic_Association_logo.png'
 import sponser1 from './Images/Hyperlab Logo.png';
 import sponser2 from './Images/AISTS.png';
 import collaborator1 from './Images/Ministry_of_Youth_Affairs_and_Sports.png'
+import Speaker from './Images/Yoonkyu Song.png';
+import speaker1 from './Images/Col Anant Kumar.png';
+import speaker2 from './Images/Lambis.png';
+import speaker3 from './Images/Maria Bogner.png';
 export const EventDetails = () => {
     useEffect(() => {
         // Scroll to top when the component mounts
@@ -95,12 +99,6 @@ export const EventDetails = () => {
                     img: "https://olympic.ind.in/public/images/news/1160776464.png",
                 },
                 {
-                    id: 4,
-                    name: "Smt. Sujata Chaturvedi, IAS, Secretary (Sports)",
-                    about: "Smt. Sujata Chaturvedi, an IAS officer from the 1989 Bihar cadre, is the current Secretary of the Department of Sports. She took charge in October 2021, succeeding Ravi Mittal. Prior to this role, she served as an Additional Secretary in the Department of Personnel and Training (DoPT).",
-                    img: "https://pbs.twimg.com/media/GQZauq1X0AAbJdi.jpg"
-                },
-                {
                     id: 5,
                     name: "Prof. Bimal N Patel, VC, RRU",
                     about: "Prof. (Dr.) Bimal N. Patel is the Vice-Chancellor of Rashtriya Raksha University (RRU), a premier security and police university in India. He is also a Member of the National Security Advisory Board (NSAB) of India and the UN International Law Commission (2023-2027)",
@@ -110,75 +108,178 @@ export const EventDetails = () => {
             speakers: [
                 {
                     id: 1,
-                    name: "Shri Adille Sumariwalla, Vice President, World Athletics",
-                    about: "Shri Adille Sumariwalla is currently the President of the Athletics Federation of India (AFI) and a member of the Council of World Athletics. He is a former Olympian and a key figure in advancing athletics in India.",
-                    img: "https://static.toiimg.com/thumb/msid-70393719,width-400,resizemode-4/70393719.jpg",
+                    name:"Mr. Lambis Konstantinidis, Executive Director, Planning Paris 2024 Games, France",
+                    about: "Mr. Lambis Konstantinidis, Executive Director, Planning Paris 2024 Games, France Mr. Lambis Konstantinidis is the Executive Director of Planning and Coordination for the Paris 2024 Olympic and Paralympic Games",
+                    img: [speaker2]
                 },
                 {
                     id: 2,
-                    name: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
-                    about: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
-                    img: "https://media.licdn.com/dms/image/v2/D5603AQFCsY7Ong86cg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726402492305?e=2147483647&v=beta&t=BuMi_oa76CiC8VCP2qm6aX-_v-dKQxQYuogoG3-PXQo",
+                    name:"Ms. Maria Bogner, Head of the International Olympic Studies Centre",
+                    about: "Ms. Maria Bogner serves as the Head of the International Olympic Studies Centre, where she oversees research and educational initiatives focused on the Olympic Movement. She plays a key role in fostering global collaboration on sports and Olympic studies.",
+                    img: [speaker3]
                 },
                 {
                     id: 3,
-                    name: "Shri Gagan Narang, Vice President IOA, Padma Shri",
-                    about: "Shri Gagan Narang is a renowned Indian shooter and Olympic medalist. He won a bronze medal in the 10m Air Rifle event at the 2012 London Olympics, making him one of India's celebrated sports icons.",
-                    img: "https://upload.wikimedia.org/wikipedia/commons/1/11/XIX_Commonwealth_Games-2010_Delhi_Gagan_Narang_won_the_Gold_medal_in_%28Men%E2%80%99s%29_Shooting_Rifle_50m_pairs_%28cropped%29.jpg",
-                },
-                {
-                    id: 4,
-                    name:"Mr. Lambis Konstantinidis, Executive Director, Planning Paris 2024 Games, France",
-                    about: "Mr. Lambis Konstantinidis, Executive Director, Planning Paris 2024 Games, France Mr. Lambis Konstantinidis is the Executive Director of Planning and Coordination for the Paris 2024 Olympic and Paralympic Games",
-                    img: "https://media.licdn.com/dms/image/v2/C4E34AQGnecSgqp8g-Q/ugc-proxy-shrink_800/ugc-proxy-shrink_800/0/1594194264939?e=2147483647&v=beta&t=q44nWPIpa5DeIponXCRcz9lgLwBAV0vGm_8VSn2tD60"
-                },
-                {
-                    id: 5,
                     name:"Mr. Prasanth Shantakumaran, Head Sports Sector, KPMG, India",
                     about: "Mr. Prasanth Shantakumaran is a Partner at KPMG in India, where he leads the Digital Engineering and Quality (DEQ) practice as well as the Sports sector",
                     img: "https://kpmg.com/content/dam/kpmgsites/in/images/2020/12/prasanth-shanthakumaran.jpg"
                 },
                 {
-                    id: 6,
+                    id: 4,
                     name:"Mr Pranshu Jain, Executive Director, Sports Advisory, PwC India",
                     about: "Mr. Pranshu Jain is the Executive Director of Sports Advisory at PwC India. Pranshu has previously worked with firms like Deloitte and has been involved in various projects related to sports management and digital transformation",
                     img: "https://media.licdn.com/dms/image/v2/C4D03AQH1nThVeWchzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516893474724?e=1743033600&v=beta&t=0t3h6qlR4DKE_W6zsmmDMDM6zJkmExzBO02Q4jHbhoY"
+                }
+                ,
+                {
+                    id: 5,
+                    name: "Prof. Wolfgang Maennig, The University of Hamburg, Department of Economics, Germany",
+                    about: "Prof. Wolfgang Maennig is a distinguished academic at the University of Hamburg, specializing in Economics. His research focuses on urban and sports economics, including the economic impacts of major events and infrastructure development.",
+                    img: "https://assets.rrz.uni-hamburg.de/instance_assets/fakws/14447474/maennig-640x361-75e48055c7df6d3b79ce8663e6e7ae0301cfcc41.jpg",
                 },
                 {
-                    id: 7,
+                    id: 6,
                     name:"Prof.  Rajendra Shrivastav, Novartis Professor of Marketing Strategy",
                     about: "Prof. Rajendra Srivastava is the Novartis Professor of Marketing Strategy and Innovation at the Indian School of Business (ISB). He is also the Executive Director of the Centre for Business Innovation (CBI) at EFPM",
                     img: "https://media.licdn.com/dms/image/v2/C5103AQHE4hB7W4kWwA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517579741419?e=2147483647&v=beta&t=kl-igT0JMeqG9VOx2hu4YWcNkV18jfcUx1AcfJR1TO0"
                 },
                 {
-                    id: 8,
+                    id: 7,
                     name:"Christian Klaue Director, Corporate Communications and Public Affairs, International Olympic Committee (IOC)",
                     about: "Christian Klaue is the Director of Corporate Communications and Public Affairs at the International Olympic Committee (IOC). He joined the IOC in September 2015 and has been leading the department since October 2019",
                     img: "https://img.olympics.com/images/image/private/t_original_380/f_auto/primary/n6bepq6tdifn0jkpnvca"
                 },
                 {
-                    id: 9,
+                    id: 8,
                     name:"Prof Mahesh Panchagnula, Professor of Applied Mechanics, IIT Madras, India",
                     about: "Prof. Mahesh Panchagnula is a Professor of Applied Mechanics at IIT Madras, India. He specializes in fluid dynamics, atomization, and spray nozzle design",
                     img: "https://home.iitm.ac.in/mvp/img/prof-img.png"
                 },
                 {
-                    id: 10,
+                    id: 9,
                     name:"Mr. Ramesh. Kumar, CEO, IIT Madras Center of Excellence in Sports Science & Analytics",
                     about: "Mr. Ramesh Kumar is the CEO of the Center of Excellence in Sports Science and Analytics (CESSA) at IIT Madras, leading innovation in sports technology and research.",
                     img: "https://media.licdn.com/dms/image/sync/v2/D4D27AQES632CHz09iA/articleshare-shrink_800/articleshare-shrink_800/0/1711138359716?e=2147483647&v=beta&t=NalRaBoJGM9-riLKSa-8uyOMtzbnh0UOvEpSTRl79L8"
                 },
                 {
+                    id: 10,
+                    name: "Mr Cedric Vanden Bogaerde, Executive Director of AISTS",
+                    about: "Mr. Cedric Vanden Bogaerde is the Executive Director of the International Academy of Sport Science and Technology (AISTS). He leads the organization in fostering innovation, education, and research to advance the global sports industry.",
+                    img: "https://www.smartcitiesandsport.org/wp-content/uploads/2024/11/Cedric_Vanden_Bogaerde_250x250.png",
+                },
+                {
                     id: 11,
+                    name: "Ms. Urvi Khasnis, Researcher from Scotland OSRC",
+                    about: "Ms. Urvi Khasnis is a dedicated researcher affiliated with the Scotland OSRC (Olympic Studies Research Centre). Her work contributes to advancing research and promoting a deeper understanding of the Olympic Movement and its global impact.",
+                    img: "https://www.research.ed.ac.uk/files-asset/311454898/Urvi_Photo_GMP.jpg?w=160&f=jpg",
+                },
+                {
+                    id: 12,
+                    name: "Mr. Dheeraj Malhotra, General Manager, BCCI",
+                    about: "Mr. Dheeraj Malhotra serves as the General Manager of the Board of Control for Cricket in India (BCCI). He plays a pivotal role in managing cricket operations, strategizing development initiatives, and fostering the growth of the sport in India.",
+                    img: "https://fifacies.pimsr.ac.in/wp-content/uploads/2021/01/Dheeraj_Malhotra.jpg",
+                },
+                {
+                    id: 13,
                     name:"Mr. Udit Seth, Founder & Managing Director, Transtadia",
                     about: "Mr. Udit Seth is the Founder and Managing Director of TransStadia, a sports infrastructure company in India. He has been instrumental in developing multi-use sports facilities, including the Arena Stadium in Ahmedabad, through innovative public-private partnerships",
                     img: "https://ekaclub.net/wp-content/uploads/2023/Udit-Photo.jpg.webp"
                 },
                 {
-                    id: 12,
+                    id: 14,
+                    name: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
+                    about: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
+                    img: "https://media.licdn.com/dms/image/v2/D5603AQFCsY7Ong86cg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726402492305?e=2147483647&v=beta&t=BuMi_oa76CiC8VCP2qm6aX-_v-dKQxQYuogoG3-PXQo",
+                },
+                {
+                    id: 15,
                     name:"Ms. Isha Rathee, Architect, Populous",
                     about: "Ms. Isha Rathee is a Principal Architect at Populous, based in their New Delhi studio. She has over 10 years of experience in designing sports and entertainment venues, including the Narendra Modi Stadium in Ahmedabad",
                     img: "https://populous.com/uploads/2018/01/Isha-Rathee_005_BW_500X500_web.jpg"
+                },
+                {
+                    id: 16,
+                    name:"Mr. Yoonkyu Song, PhD Candidate of Willibald Gebhardt Institute e.V.",
+                    about: "Mr. Yoonkyu Song is a PhD candidate at the Willibald Gebhardt Institute e.V., focusing on research related to sports science and the Olympic Movement. His work emphasizes the role of sports in fostering international collaboration and development.",
+                    img: [Speaker]
+                },
+                {
+                    id: 17,
+                    name:"Mr. Chris Jenkins OBE, President of Commonwealth Games Federation",
+                    about: "Mr. Chris Jenkins OBE is the President of the Commonwealth Games Federation (CGF). He provides strategic leadership to the organization, driving its mission to promote the values of humanity, equality, and destiny through the Commonwealth Games and its associated initiatives.",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6MnfYs2psF2WqlMuinrBymeUiVunyuVALkA&s"
+                },
+                {
+                    id: 18,
+                    name: "Shri Ajay Patel, Senior Vice-President Indian Olympic Association",
+                    about: "Shri Ajay Patel serves as the Senior Vice-President of the Indian Olympic Association (IOA). He plays a key role in promoting Olympic sports in India and fostering collaboration to enhance the nation's presence in international sports competitions.",
+                    img: "https://pbs.twimg.com/profile_images/1626188722361466881/-JVeAGRv_400x400.jpg",
+                },
+                {
+                    id: 19,
+                    name: "Shri Adille Sumariwalla, Vice President, World Athletics",
+                    about: "Shri Adille Sumariwalla is currently the President of the Athletics Federation of India (AFI) and a member of the Council of World Athletics. He is a former Olympian and a key figure in advancing athletics in India.",
+                    img: "https://static.toiimg.com/thumb/msid-70393719,width-400,resizemode-4/70393719.jpg",
+                },
+                {
+                    id: 20,
+                    name: "Nuria Puig Brandes, Head of University Relations - Olympic Studies Centre",
+                    about: "Nuria Puig Brandes is the Head of the International Olympic Committee (IOC). She leads various initiatives within the IOC, focusing on enhancing global collaboration and advancing the values and objectives of the Olympic Movement worldwide.",
+                    img: "https://media.licdn.com/dms/image/v2/C5603AQFOEhEve7PE5A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517559189453?e=1743638400&v=beta&t=G0-DaG8RVc7YOHQCkaQIdVv0GVIws-KQRWWwb3z13D8",
+                },
+                {
+                    id: 21,
+                    name: "Praveen Nahar, Former Director NIDA, India",
+                    about: "Praveen Nahar was the Director of the National Institute of Design (NID) in Ahmedabad, India. He has over 23 years of experience in design teaching, consultancy, and research",
+                    img: "https://nid.edu/public/image/people/xO5xPBl5WK.jpg"
+                },
+                {
+                    id: 22,
+                    name: "Mr. Ramkumar Subramian, Director, Collage Design ",
+                    about: "Mr. Ramkumar Subramian is the Director of Collage Design, where he oversees the creative direction and strategic design projects. His work emphasizes innovative solutions in design, blending aesthetics with functionality across various industries.",
+                    img: "https://collagedesign.com/wp-content/uploads/2023/12/Ram-S-With-Backgound-Final-2048x1365.jpg"
+                },
+                {
+                    id: 23,
+                    name: "Prof (Dr.) Mariia Bulatova, President of the Olympic Academy of Ukraine",
+                    about: "Prof. (Dr.) Mariia Bulatova is the President of the Olympic Academy of Ukraine. She is dedicated to promoting Olympic education and fostering a deeper understanding of the Olympic values, while advancing research and initiatives that contribute to the development of sports in Ukraine.",
+                    img: "https://rhineruhr2025.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fn9ofama2kqg3%2F6tG68nCfZvFHtSwazMXe2a%2Ff2f063b451a4dc7ca601821f416abdbf%2FBulatova.jpg%3Ffm%3Dwebp&w=3840&q=75"
+                },
+                {
+                    id: 24,
+                    name: "Honorary Professor Ian Jobling, The Queensland Centre for Olympic and Paralympic Studies			",
+                    about: "Honorary Professor Ian Jobling is associated with The Queensland Centre for Olympic and Paralympic Studies. He contributes valuable academic expertise, particularly in the areas of sports studies, Olympic, and Paralympic research, enhancing global understanding of these movements.",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXz94xDGXP6FffideahbpWDzBNZC9NU8jR6w&s",
+                },
+                {
+                    id: 25,
+                    name: "Grzegorz Botwina, CEO, Institute of Sports Governance, Director of Polish Olympic Studies and Research Centre",
+                    about: "Grzegorz Botwina is the CEO of the Institute of Sports Governance and the Director of the Polish Olympic Studies and Research Centre. He specializes in good governance and social responsibility in sports, contributing significantly to the field through his leadership and expertise",
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQHf8wJ2fkY4AA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1634903794601?e=2147483647&v=beta&t=WvDZBj-xK3iRd8xnuFUlGnVLGb2EASsjsiNO6wSinto",
+                },
+                {
+                    id: 26,
+                    name: "Deepa Malik, Paralympian",
+                    about: "Deepa Malik is an inspiring Indian Paralympian who made history by becoming the first Indian woman to win a medal at the Paralympic Games. She won a silver medal in shot put at the 2016 Rio Paralympics",
+                    img: "https://sportsmatik.com/uploads/world-events/players/deepa-malik_1569244978.jpg",
+                },
+                {
+                    id: 27,
+                    name: "Mr. Nachhatar Singh Johal, CEO, TOPS",
+                    about: "Mr. Nachhatar Singh Johal is the CEO of TOPS (Target Olympic Podium Scheme), an initiative aimed at identifying and supporting India's top athletes to excel in international competitions, particularly the Olympic Games.",
+                    img: "https://d2a3o6pzho379u.cloudfront.net/111671.jpg",
+                },
+                {
+                    id: 28,
+                    name: "Mr. Rishikesh Joshi, Founder, SportsforAll",
+                    about: "Mr. Rishikesh Joshi is the Founder of SportsforAll, an organization dedicated to promoting sports participation and development at all levels. His efforts focus on creating accessible opportunities for individuals to engage in sports, fostering a healthier and more active society.",
+                    img: "https://media.licdn.com/dms/image/v2/C5603AQEHM2aGnMtuUA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1641919202690?e=1743638400&v=beta&t=Tf-YuH-C0jmlFI4J_gpo2YXU8re-s383ZVzfsqilhhU",
+                },
+                {
+                    id: 29,
+                    name: "Col Anant Gupta, Mission Olympic Wing Indian Army",
+                    about: "Col. Anant Kumar is part of the Mission Olympic Wings in the Indian Army, which supports the development and training of elite athletes. His role involves mentoring and providing strategic guidance to athletes, helping them achieve success in international sports competitions, including the Olympics.",
+                    img: [speaker1]
                 }
             ],
             qrCode: QR1,
@@ -322,12 +423,20 @@ export const EventDetails = () => {
                         <p>Knowledge Partner</p>
                     </div>
                     <div className="partner-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s" alt="Strategic Partner 2" />
+                        <p>Merchandise Partner</p>
+                    </div>
+                    <div className="partner-card">
                         <img src={sponser1} alt="Strategic Partner 1" />
                         <p>Innovation and Technology Partner</p>
                     </div>
                     <div className="partner-card">
                         <img src={sponser2} alt="Strategic Partner 2" />
                         <p>Strategic Partner</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src="https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png" alt="Strategic Partner 2" />
+                        <p>Industry Partner</p>
                     </div>
                 </div>
             </section>
@@ -424,6 +533,19 @@ export const EventDetails = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+            <section className="partners-section">
+                <h2 className="partners-title">Our Sponsers</h2>
+                <div className="partners-grid">
+                    <div className="partner-card">
+                        <img src="https://adcbank.coop/wp-content/uploads/2023/05/logo.png" alt="Strategic Partner 2" />
+                        <p>Premium sponser</p>
+                    </div>
+                    <div className="partner-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvCZCgT7YBn7oemQ6DIZ1jbGwwW_-a3kT2g&s" alt="Strategic Partner 2" />
+                        <p>Silver sponser</p>
+                    </div>
                 </div>
             </section>
             <div className="organizing-team">

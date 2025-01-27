@@ -1093,6 +1093,8 @@ body {
     gap: 1.5rem;
     justify-items: center;
     padding: 0 1rem;
+    align-items: center;
+    text-align: center;
 }
 
 .guest-card {
