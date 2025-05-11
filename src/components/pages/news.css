@@ -104,5 +104,56 @@
     .news-card {
       margin: 0 auto;
     }
+    .pagination {
+        gap: 8px;
+    }
+
+    .pagination-btn {
+        min-width: 80px; /* Smaller width for mobile */
+        padding: 8px 12px;
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+
+    .pagination-text {
+        font-size: 0.9rem;
+    }
   }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-btn {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pagination-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+.pagination-text {
+    font-size: 1rem;
+    color: #333;
+    margin: 0 10px;
+}
   

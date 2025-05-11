@@ -6,17 +6,14 @@ import 'aos/dist/aos.css';
 import image2 from '../pages/Images/TEAM/Bimal Patel.jpeg'
 import image3 from '../pages/Images/TEAM/Gaurav Singh Khushwah.jpg'
 import image4 from '../pages/Images/TEAM/HARSHDIPSINH RATHOD.jpg'
-import image5 from '../pages/Images/TEAM/Harshil Khokhar.jpg'
-import image6 from '../pages/Images/TEAM/Kruti.jpg'
 import image7 from '../pages/Images/TEAM/Neeladri Shekhar Das.jpg'
-import image8 from '../pages/Images/TEAM/Purnima Joshi.png'
 import image9 from '../pages/Images/TEAM/Shivam Kumar.jpg'
-import image10 from '../pages/Images/TEAM/Dr.-Anand-Kumar-Tripathi-scaled.jpg'
 import image11 from '../pages/Images/TEAM/TANISHKA SINGH.jpg'
 import image12 from '../pages/Images/TEAM/Utsav Chaware.jpg'
 import image13 from '../pages/Images/TEAM/Zulfikar Pathan.jpg'
 import image14 from '../pages/Images/TEAM/ANIRUDH SINGH.jpg'
-
+import image15 from '../pages/Images/TEAM/Intern 1.jpeg'
+import image16 from '../pages/Images/TEAM/Intern 2.jpg'
 
 
 const teamMembers = [
@@ -27,10 +24,10 @@ const teamMembers = [
     info: 'Member, UN International Law Commission (2023-2027) Member, National Security Advisory Board of India'
   },
   {
-    name: 'Dr. Anand Kumar Tripathi',
-    designation: 'University DEAN',
-    photo: [image10],
-    info: 'Associate Professor, School of Criminal Law and Military Law (SCLML), Chairperson Center for Post Graduate Legal Studies, RRU'
+    name: 'Dr. Jasbirkaur Thadhani',
+    designation: 'University Dean (I/c)',
+    photo: 'https://rru.ac.in/wp-content/uploads/2022/11/Jasbir-img-2-scaled.jpg',
+    info: 'Dr. Jasbirkaur Thadhani is the University Dean (I/c) & Assistant Professor at SBSFI'
   },
   {
     name: 'Lt. (Dr.) Gaurav Singh Kushwah',
@@ -45,13 +42,25 @@ const teamMembers = [
     info: 'Talent Identification, Basketball, Sports Policies, Health Sciences/Education, Exercise Physiology'
   },
   {
-    name: 'Dr. Purnima Joshi',
-    designation: 'Director I/c',
-    photo: [image8],
-    info: 'School of Physical Education and Sports (SPES)'
+    name: 'Mr. Yash Sharma',
+    designation: 'I/c Director and Assistant Professor (Physical Education & Sports)',
+    photo: 'https://rru.ac.in/wp-content/uploads/2023/05/Yash-Sharma-scaled.jpg',
+    info: 'Mr. Yash Sharma is the I/c Director & Assistant Professor (Physical Education & Sports), with JRF/NET qualifications, specializing in sports science and physical education.'
   }
 ];
 const interns = [
+  {
+    name: 'Kushi Sriram',
+    schoolName: 'School of Criminal Law and Military Law',
+    photo: [image15],
+    info: ''
+  },
+  {
+    name: 'Anuj Agnihotry',
+    schoolName: 'School of Internal Security, Defence and Strategic Studies',
+    photo: [image16],
+    info: ''
+  },
   {
     name: 'Shivam Kumar',
     schoolName: 'School of International Cooperation, Security and Strategic Languages',
@@ -72,20 +81,8 @@ const interns = [
   },
   {
     name: 'Tanishka Singh',
-    schoolName: 'School of International Cooperation, Security and Strategic Languages',
+    schoolName: 'School of Internal Security, Defence and Strategic Studies',
     photo: [image11],
-    info: ''
-  },
-  {
-    name: 'Harshil Khokhar',
-    schoolName: 'School of IT, Artificial Intelligence and Cyber Security',
-    photo: [image5],
-    info: ''
-  },
-  {
-    name: 'Kruti Hudka',
-    schoolName: 'School of International Cooperation, Security and Strategic Languages',
-    photo: [image6],
     info: ''
   },
   {

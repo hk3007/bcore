@@ -3,8 +3,10 @@
     color: white;
     padding: 40px 20px;
     font-family: 'Arial', sans-serif;
-    text-align: center; /* Centering the entire footer content */
+    text-align: center;
+    margin-top: auto; /* Ensures footer pushes to the bottom */
 }
+
 
 .footer-container {
     display: flex;

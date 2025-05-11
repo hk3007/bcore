@@ -12,7 +12,10 @@ import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png'
 import sponser1 from './Images/Hyperlab Logo.png';
 import sponser2 from './Images/AISTS.png';
-import broucher from './Broucher/Broucher.pdf';
+import page1 from './Slider/Page 1.jpg';
+import page2 from './Slider/Page 2.jpg';
+import page3 from './Slider/Page 3.jpg';
+import page4 from './Slider/Page 4.jpg';
 export const BCORE = () => {
     const events = [
         {
@@ -111,6 +114,30 @@ export const BCORE = () => {
                     transitionTime={500}
                 >
                     <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2025/05/BCORE-Slider-2-scaled.jpg" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2025/05/BCORE-Slider-scaled.jpg" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2025/04/Slider-2-1.png" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src="https://rru.ac.in/wp-content/uploads/2025/03/Visit-to-Rashtriya-Raksha-University-by-COE-in-Sports-Science-Sports-Management-TransStadia-Institute-Mumbai.png" alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src={page1} alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src={page2} alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src={page3} alt="Slide 1" />
+                    </div>
+                    <div>
+                        <img src={page4} alt="Slide 1" />
+                    </div>
+                    <div>
                         <img src="https://rru.ac.in/wp-content/uploads/2025/01/International-Olympic-Research-Conference-Guest-Banner-16.png" alt="Slide 1" />
                     </div>
                     <div>
@@ -140,7 +167,7 @@ export const BCORE = () => {
                 <div className="marquee-wrapper">
                     <div className="marquee">
                         <a
-                            href={broucher}
+                            href={'https://rru.ac.in/wp-content/uploads/2025/03/IORC-Booklet_-05-03-2025-10-MB_compressed.pdf'}
                             style={{ color: '#fff', textDecoration: 'none' }}
                         >
                             1st International Olympic Research Conference
@@ -164,7 +191,7 @@ export const BCORE = () => {
                 </h4>
             </div>
             <div className="events-page">
-                <h2 className="events-title">Upcoming Events</h2>
+                <h2 className="events-title">Past Events</h2>
                 <div className="events-grid">
                     {events.map((event) => (
                         <div className="event-card" key={event.id}>
@@ -178,6 +205,9 @@ export const BCORE = () => {
                                 </Link>
                                 <Link to={`/event/${event.id}/schedule`} className="schedule-btn">
                                     View Schedule
+                                </Link>
+                                <Link to={`https://rru.ac.in/wp-content/uploads/2025/03/IORC-Booklet_-05-03-2025-10-MB_compressed.pdf`} className="schedule-btn">
+                                    IORC BOOKLET
                                 </Link>
                             </div>
                         </div>

@@ -1,0 +1,122 @@
+.ethics-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    font-family: "Segoe UI", sans-serif;
+    color: #1a202c;
+  }
+  
+  .page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: #1a202c;
+    animation: fadeIn 1.2s ease-out;
+    background: linear-gradient(to right, #0071ce, #fcb131, #000000, #00a651, #ef3340);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  .section {
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid transparent;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card:nth-child(5n + 1) {
+    border-left-color: #0071ce; /* Blue */
+  }
+  .card:nth-child(5n + 2) {
+    border-left-color: #fcb131; /* Yellow */
+  }
+  .card:nth-child(5n + 3) {
+    border-left-color: #000000; /* Black */
+  }
+  .card:nth-child(5n + 4) {
+    border-left-color: #00a651; /* Green */
+  }
+  .card:nth-child(5n + 5) {
+    border-left-color: #ef3340; /* Red */
+  }
+  
+  .card-content {
+    padding: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2d3748;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .section-body p,
+  .section-body li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-body ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+  }
+  
+  .section-body a {
+    color: #0071ce;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .section-body a:hover {
+    color: #ef3340;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2.2rem;
+    }
+  
+    .card-content {
+      padding: 1.5rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .section-body p,
+    .section-body li {
+      font-size: 0.95rem;
+    }
+  }
+  

@@ -128,7 +128,7 @@ export const EventDetails = () => {
                     id: 4,
                     name:"Mr Pranshu Jain, Executive Director, Sports Advisory, PwC India",
                     about: "Mr. Pranshu Jain is the Executive Director of Sports Advisory at PwC India. Pranshu has previously worked with firms like Deloitte and has been involved in various projects related to sports management and digital transformation",
-                    img: "https://media.licdn.com/dms/image/v2/C4D03AQH1nThVeWchzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516893474724?e=1743033600&v=beta&t=0t3h6qlR4DKE_W6zsmmDMDM6zJkmExzBO02Q4jHbhoY"
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQFac32d4hSZXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1668054965882?e=2147483647&v=beta&t=HRi_IVEqg0FaQMXL4XKPG6LfDS5nZBaCTZPnk7Mm9I8"
                 }
                 ,
                 {
@@ -225,7 +225,7 @@ export const EventDetails = () => {
                     id: 20,
                     name: "Nuria Puig Brandes, Head of University Relations - Olympic Studies Centre",
                     about: "Nuria Puig Brandes is the Head of the International Olympic Committee (IOC). She leads various initiatives within the IOC, focusing on enhancing global collaboration and advancing the values and objectives of the Olympic Movement worldwide.",
-                    img: "https://media.licdn.com/dms/image/v2/C5603AQFOEhEve7PE5A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517559189453?e=1743638400&v=beta&t=G0-DaG8RVc7YOHQCkaQIdVv0GVIws-KQRWWwb3z13D8",
+                    img: "https://media.licdn.com/dms/image/v2/C5603AQFOEhEve7PE5A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517559189453?e=1750896000&v=beta&t=bXq-oFyXkAB1kAg7_5GYur20CXTvWIFSYf_WjosJ4Ts",
                 },
                 {
                     id: 21,
@@ -273,7 +273,7 @@ export const EventDetails = () => {
                     id: 28,
                     name: "Mr. Rishikesh Joshi, Founder, SportsforAll",
                     about: "Mr. Rishikesh Joshi is the Founder of SportsforAll, an organization dedicated to promoting sports participation and development at all levels. His efforts focus on creating accessible opportunities for individuals to engage in sports, fostering a healthier and more active society.",
-                    img: "https://media.licdn.com/dms/image/v2/C5603AQEHM2aGnMtuUA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1641919202690?e=1743638400&v=beta&t=Tf-YuH-C0jmlFI4J_gpo2YXU8re-s383ZVzfsqilhhU",
+                    img: "https://d2gjqh9j26unp0.cloudfront.net/profilepic/931b41ebd69907b8c2fc5bbe2140c930",
                 },
                 {
                     id: 29,
