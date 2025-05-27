@@ -34,6 +34,28 @@ export const EventDetails = () => {
                 'Participants will enjoy a guided tour of the heritage city of Ahmedabad and Statue of Unity offering insights into Indian culture and history.',
                 'Attendees will have the unique opportunity to network and collaborate with industry experts and entrepreneurs.',
             ],
+            partners: [
+                {
+                name: 'Knowledge Partner',
+                logo: logo5,
+                },
+                {
+                name: 'Merchandise Partner',
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s',
+                },
+                {
+                name: 'Innovation and Technology Partner',
+                logo: sponser1,
+                },
+                {
+                name: 'Strategic Partner',
+                logo: sponser2,
+                },
+                {
+                name: 'Industry Partner',
+                logo: 'https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png',
+                },
+            ],
             Steps: [
                 { event: 'Step 1', date: ' Submit the abstract' },
                 { event: 'Step 2', date: 'Wait For confirmation' },
@@ -360,7 +382,7 @@ export const EventDetails = () => {
                 {
                     name: 'Sardar Vallabhbhai Patel International Airport',
                     address: 'Hansol, Ahmedabad, Gujarat 380003',
-                    image: 'https://tds.indianeagle.com/wp-content/uploads/2018/11/Ahmedabad-Airport.jpg',
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/SVPI_Airport%2C_Ahmedabad.jpg',
                     link: 'https://www.adani.com/svpia-ahmedabad-airport'
                 },
                 {
@@ -381,8 +403,133 @@ export const EventDetails = () => {
                     image: 'https://content.jdmagicbox.com/comp/ahmedabad/93/079p250393/catalogue/gujarat-state-road-transport-corporation-geeta-mandir-road-ahmedabad-st-bus-depot-2qkhhet.jpg',
                     link: 'https://gsrtc.in/site/'
                 },
+            ],
+            sponsors: [
+                {
+                name: 'Premium Sponsor',
+                logo: 'https://adcbank.coop/wp-content/uploads/2023/05/logo.png',
+                },
+                {
+                name: 'Silver Sponsor',
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvCZCgT7YBn7oemQ6DIZ1jbGwwW_-a3kT2g&s',
+                },
+            ],
+            collaboration: [
+                {
+                    name: 'Ministry of Youth Affairs and Sports, Government of India',
+                    logo: collaborator1,
+                },
             ]
         },
+        {
+        id: 2,
+        name: 'SPORTS EXCELLENCE SEMINAR',
+        date: '23rd June 2025',
+        place: 'Rashtriya Raksha University, Gandhinagar, India',
+        description: 'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
+        subpoints: [
+            'Enhancing the sporting profile of security forces through human resource development and high-performance infrastructure',
+            'Enhancing training ecosystems and institutionalizing sports excellence across CAPFs and State Police Organizations.',
+            'Exploring structured career transition pathways for athletes and security personnel.',
+            'Introducing formal sports education initiatives offered by BCORE and RRU.',
+            'Providing a platform for progressive policy dialogue tailored to the needs of security organizations.'
+        ],
+        schedule: [
+            {
+            day: 'DAY 1',
+            date: '23rd JUNE 2025',
+            sessions: [
+                {
+                time: '09:30 AM - 11:00 AM',
+                sessionType: 'Opening Ceremony',
+                topic: 'Welcome, Keynote, Guest Speeches',
+                speakers: 'Chief Guest Dr. Hari Ranjan Rao',
+                },
+                {
+                time: '11:30 AM - 01:00 PM',
+                sessionType: 'Expert Session 1',
+                topic: 'Developing Sports Human Capital & High-Performance Infrastructure',
+                speakers:
+                    'Dr. Kinjal Suratwala, Dr. Shyamal Vallabhjee, Gagan Narang, Dr. B.K. Tripathi, Col. Rajyavardhan Rathore',
+                },
+                {
+                time: '02:00 PM - 03:30 PM',
+                sessionType: 'Panel Discussion 1',
+                topic: 'Institutionalizing Sports Excellence Across CAPFs & SPOs',
+                speakers:
+                    'Dr. Pankaj Jain, Deepa Malik, Rajesh Puri, Brig. Rajesh Nair, Dr. Vedamurthy',
+                },
+                {
+                time: '04:00 PM - 05:30 PM',
+                sessionType: 'Breakout Session',
+                topic: 'Best Practices in Sports Development within Forces',
+                speakers: 'Nominated officers from CAPFs and SPOs, moderated by BCORE faculty',
+                },
+            ],
+            },
+            {
+            day: 'DAY 2',
+            date: '24th JUNE 2025 (MONDAY)',
+            sessions: [
+                {
+                time: '09:30 AM - 11:00 AM',
+                sessionType: 'Expert Session 2',
+                topic: 'Career Transition Pathways for Athletes and Personnel',
+                speakers:
+                    'Anju Bobby George, Col. Vijay Bist, Shiba Prasad, Prof. Ratnakar Shetty, Aparna Popat',
+                },
+                {
+                time: '11:30 AM - 01:00 PM',
+                sessionType: 'Expert Session 3',
+                topic: 'Formalizing Sports Education for Forces: Role of RRU & BCORE',
+                speakers:
+                    'Prof. B.P. Sharma, Dr. Suman Sharma, Dr. Parth Goswami, Dr. Aashish Contractor, Abhinav Bindra',
+                },
+                {
+                time: '02:00 PM - 03:30 PM',
+                sessionType: 'Panel Discussion 2',
+                topic: 'Progressive Sports Policies for India’s Security Forces',
+                speakers:
+                    'Dr. Shaji Prabhakaran, Brig. J.S. Bhatia, Tushar Arothe, Dr. Manisha Malhotra, Senior CAPF Officer',
+                },
+                {
+                time: '03:30 PM - 04:30 PM',
+                sessionType: 'Closing Ceremony',
+                topic: 'Summary, Recommendations, Felicitation',
+                speakers: 'Secretary - Sports (MYAS), Organizing Chair (BCORE), National Anthem',
+                },
+            ],
+            },
+        ],
+        email: 'registration.bcore@rru.ac.in ',
+        registrationLink: 'https://www.rise.rru.ac.in/Course/533/0 ',
+        NearBytransportation: [
+            {
+                name: 'Sardar Vallabhbhai Patel International Airport',
+                address: 'Hansol, Ahmedabad, Gujarat 380003',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/SVPI_Airport%2C_Ahmedabad.jpg',
+                link: 'https://www.adani.com/svpia-ahmedabad-airport'
+            },
+            {
+                name: 'Kalupur Railway Station',
+                address: 'Kapasia Bazar, Sakar Bazzar, Kalupur, Ahmedabad, Gujarat 380002',
+                image: 'https://static.gujaratsamachar.com/content_image/content_image_87011ab4-1387-4672-b3d0-c2160e24d0b1.jpeg',
+                link: 'https://www.irctc.co.in/nget/train-search'
+            },
+            {
+                name: 'Gandhinagar Capital',
+                address: 'Footover Bridge, Sector 13C, Sector 14, Gandhinagar, Gujarat 382016',
+                image: 'https://akm-img-a-in.tosshub.com/aajtak/images/assets/202107/gandhinagar-railway-station-night-view.jpg',
+                link: 'https://www.irctc.co.in/nget/train-search'
+            },
+            {
+                name: 'Geeta Mandir ST Bus Stand',
+                address: 'Gita Mandir, Ahmedabad, Gujarat 380001',
+                image: 'https://content.jdmagicbox.com/comp/ahmedabad/93/079p250393/catalogue/gujarat-state-road-transport-corporation-geeta-mandir-road-ahmedabad-st-bus-depot-2qkhhet.jpg',
+                link: 'https://gsrtc.in/site/'
+            },
+        ],
+        }        
     ];
         
     
@@ -395,280 +542,377 @@ export const EventDetails = () => {
 
     return (
         <div className="event-details-page">
-            <h2>{event.name}</h2>
+        {event?.name && <h2>{event.name}</h2>}
+
+        {(event?.date || event?.place) && (
             <div className="details-container">
+            {event?.date && (
                 <div className="details-card">
-                    <h4>Date</h4>
-                    <p>{event.date}</p>
+                <h4>Date</h4>
+                <p>{event.date}</p>
                 </div>
+            )}
+            {event?.place && (
                 <div className="details-card">
-                    <h4>Location</h4>
-                    <p>{event.place}</p>
+                <h4>Location</h4>
+                <p>{event.place}</p>
                 </div>
+            )}
             </div>
-            <section className="partners-section">
-                <h2 className="partners-title">Collaboration</h2>
-                <div className="partners-grid">
-                    <div className="partner-card">
-                        <p>Ministry of Youth Affairs and Sports, Goverment of India</p>
-                        <img src={collaborator1} alt="collaborator 1" />
-                    </div>
+        )}
+
+        {event?.collaboration?.length > 0 && (
+        <section className="partners-section">
+            <h2 className="partners-title">Collaboration</h2>
+            <div className="partners-grid">
+            {event.collaboration.map((partner, idx) => (
+                <div className="partner-card" key={idx}>
+                <p>{partner.name}</p>
+                <img src={partner.logo} alt={partner.name} />
                 </div>
-            </section>
-            <section className="partners-section">
-                <h2 className="partners-title">Our Partners</h2>
-                <div className="partners-grid">
-                    <div className="partner-card">
-                        <img src={logo5} alt="Tech Partner 2" />
-                        <p>Knowledge Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s" alt="Strategic Partner 2" />
-                        <p>Merchandise Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src={sponser1} alt="Strategic Partner 1" />
-                        <p>Innovation and Technology Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src={sponser2} alt="Strategic Partner 2" />
-                        <p>Strategic Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src="https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png" alt="Strategic Partner 2" />
-                        <p>Industry Partner</p>
-                    </div>
-                </div>
-            </section>
+            ))}
+            </div>
+        </section>
+        )}
+
+
+
+        {event?.subpoints?.length > 0 && (
             <div className="highlights-container">
-                <h3>Highlights</h3>
-                <ul>
-                    {event.subpoints.map((point, index) => (
-                        <li key={index}>
-                            <span>{point}</span>
-                        </li>
+            <h3>Highlights</h3>
+            <ul>
+                {event.subpoints.map((point, index) => (
+                <li key={index}>
+                    <span>{point}</span>
+                </li>
+                ))}
+            </ul>
+            </div>
+        )}
+
+        {event?.guests?.length > 0 && (
+            <section className="chief-guests">
+            <h2>Meet Our Guests</h2>
+            <div className="chief-guests-grid">
+                {event.guests.map((guest) => (
+                <div className="guest-card" key={guest.id}>
+                    <div className="guest-card-inner">
+                    <div className="guest-card-front">
+                        <img src={guest.img} alt={guest.name} />
+                        <h3>{guest.name}</h3>
+                    </div>
+                    <div className="guest-card-back">
+                        <p>{guest.about}</p>
+                    </div>
+                    </div>
+                </div>
+                ))}
+            </div>
+            </section>
+        )}
+
+        {event?.importantDates?.length > 0 && (
+            <div className="important-dates-container">
+            <h3>Important Dates</h3>
+            {event.importantDates.map((date, index) => (
+                <div key={index} className="date-card">
+                <h4>{date.event}</h4>
+                <p>{date.date}</p>
+                </div>
+            ))}
+            </div>
+        )}
+        
+        {events?.[1]?.schedule?.length > 0 && (
+        <div className="event-schedule">
+            <h3>Schedule</h3>
+            {events[1].schedule.map((daySchedule, dayIndex) => (
+            <div key={dayIndex} className="schedule-day">
+                <h4>{daySchedule.day} - {daySchedule.date}</h4>
+                <table className="schedule-table">
+                <thead>
+                    <tr>
+                    <th>Time</th>
+                    <th>Session Type</th>
+                    <th>Topic/Activity</th>
+                    <th>Speakers/Experts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {daySchedule.sessions.map((session, sessionIndex) => (
+                    <tr key={sessionIndex}>
+                        <td>{session.time}</td>
+                        <td>{session.sessionType}</td>
+                        <td>{session.topic}</td>
+                        <td>{session.speakers}</td>
+                    </tr>
                     ))}
+                </tbody>
+                </table>
+            </div>
+            ))}
+        </div>
+        )}
+
+        {event?.callForAbstract && (
+            <div className="call-for-abstract-container olympic-theme">
+            <h3>Call for Abstract</h3>
+            <p className="animated-text">{event.callForAbstract.text}</p>
+            <p>
+                <strong>Submission Email:</strong>{" "}
+                <a href={`mailto:${event.callForAbstract.submissionEmail}`} className="email-link">
+                {event.callForAbstract.submissionEmail}
+                </a>
+            </p>
+            <p>
+                <strong>Last Date of Submission:</strong> {event.callForAbstract.deadline}
+            </p>
+            </div>
+        )}
+
+        {event?.abstractGuidelines && (
+            <div className="abstract-guidelines-container">
+            <h3>Abstract Submission Guidelines</h3>
+            <div className="abstract-guidelines">
+                <h4>Format Requirements</h4>
+                <ul>
+                {event.abstractGuidelines?.formatRequirements?.map((req, index) => (
+                    <li key={index}>{req}</li>
+                ))}
+                </ul>
+                <h4>Content Structure</h4>
+                {event.abstractGuidelines?.contentStructure?.map((section, index) => (
+                <div key={index} className="guideline-section">
+                    <h5>{section.heading}</h5>
+                    <p>{section.description}</p>
+                </div>
+                ))}
+            </div>
+            </div>
+        )}
+
+        {event?.Steps?.length > 0 && (
+            <div className="important-dates-container">
+            <h3>Steps to Register</h3>
+            {event.Steps.map((step, index) => (
+                <div key={index} className="date-card">
+                <h4>{step.event}</h4>
+                <p>{step.date}</p>
+                </div>
+            ))}
+            </div>
+        )}
+
+        {event?.speakers?.length > 0 && (
+            <section className="chief-guests">
+            <h2>Speakers</h2>
+            <div className="chief-guests-grid">
+                {event.speakers.map((speaker) => (
+                <div className="guest-card" key={speaker.id}>
+                    <div className="guest-card-inner">
+                    <div className="guest-card-front">
+                        <img src={speaker.img} alt={speaker.name} />
+                        <h3>{speaker.name}</h3>
+                    </div>
+                    <div className="guest-card-back">
+                        <p>{speaker.about}</p>
+                    </div>
+                    </div>
+                </div>
+                ))}
+            </div>
+            </section>
+        )}
+
+        {event?.partners?.length > 0 && (
+        <section className="partners-section">
+            <h2 className="partners-title">Our Partners</h2>
+            <div className="partners-grid">
+            {event.partners.map((partner, index) => (
+                <div className="partner-card" key={index}>
+                <img src={partner.logo} alt={partner.name} />
+                <p>{partner.name}</p>
+                </div>
+            ))}
+            </div>
+        </section>
+        )}
+
+
+        {event?.sponsors?.length > 0 && (
+        <section className="partners-section">
+            <h2 className="partners-title">Our Sponsors</h2>
+            <div className="partners-grid">
+            {event.sponsors.map((sponsor, index) => (
+                <div className="partner-card" key={index}>
+                <img src={sponsor.logo} alt={sponsor.name} />
+                <p>{sponsor.name}</p>
+                </div>
+            ))}
+            </div>
+        </section>
+        )}
+
+
+        {event?.organizingTeam?.length > 0 && (
+        <div className="organizing-team">
+            <h3>Organizing Team</h3>
+            {event.organizingTeam.map((group, index) => (
+            <div key={index} className="team-group">
+                <h4>{group.name}</h4>
+                <ul>
+                {group.members?.map((member, idx) => (
+                    <li key={idx}>
+                    {member.name} - {member.email}
+                    </li>
+                ))}
                 </ul>
             </div>
-            <section className="chief-guests">
-                <h2>Meet Our Guests</h2>
-                <div className="chief-guests-grid">
-                    {event.guests.map((guest) => (
-                        <div className="guest-card" key={guest.id}>
-                            <div className="guest-card-inner">
-                                <div className="guest-card-front">
-                                    <img src={guest.img} alt={guest.name} />
-                                    <h3>{guest.name}</h3>
-                                </div>
-                                <div className="guest-card-back">
-                                    <p>{guest.about}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-            <div className="important-dates-container">
-                <h3>Important Dates</h3>
-                {event.importantDates.map((date, index) => (
-                    <div key={index} className="date-card">
-                        <h4>{date.event}</h4>
-                        <p>{date.date}</p>
-                    </div>
-                ))}
-            </div>
-            <div className="call-for-abstract-container olympic-theme">
-                <h3>Call for Abstract</h3>
-                <p className="animated-text">{event.callForAbstract.text}</p>
-                <p>
-                    <strong>Submission Email:</strong>{" "}
-                    <a href={`mailto:${event.callForAbstract.submissionEmail}`} className="email-link">
-                        {event.callForAbstract.submissionEmail}
-                    </a>
-                </p>
-                <p>
-                    <strong>Last Date of Submission:</strong> {event.callForAbstract.deadline}
-                </p>
-            </div>
-            <div className="abstract-guidelines-container">
-                <h3>Abstract Submission Guidelines</h3>
-                <div className="abstract-guidelines">
-                    <h4>Format Requirements</h4>
-                    <ul>
-                        {event.abstractGuidelines?.formatRequirements?.map((requirement, index) => (
-                            <li key={index}>{requirement}</li>
-                        ))}
-                    </ul>
-                    <h4>Content Structure</h4>
-                    {event.abstractGuidelines?.contentStructure?.map((section, index) => (
-                        <div key={index} className="guideline-section">
-                            <h5>{section.heading}</h5>
-                            <p>{section.description}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="important-dates-container">
-                <h3>Steps to Register</h3>
-                {event.Steps.map((date, index) => (
-                    <div key={index} className="date-card">
-                        <h4>{date.event}</h4>
-                        <p>{date.date}</p>
-                    </div>
-                ))}
-            </div>
-            <section className="chief-guests">
-                <h2>Speakers</h2>
-                <div className="chief-guests-grid">
-                    {event.speakers.map((speaker) => (
-                        <div className="guest-card" key={speaker.id}>
-                            <div className="guest-card-inner">
-                                <div className="guest-card-front">
-                                    <img src={speaker.img} alt={speaker.name} />
-                                    <h3>{speaker.name}</h3>
-                                </div>
-                                <div className="guest-card-back">
-                                    <p>{speaker.about}</p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-            <section className="partners-section">
-                <h2 className="partners-title">Our Sponsers</h2>
-                <div className="partners-grid">
-                    <div className="partner-card">
-                        <img src="https://adcbank.coop/wp-content/uploads/2023/05/logo.png" alt="Strategic Partner 2" />
-                        <p>Premium sponser</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvCZCgT7YBn7oemQ6DIZ1jbGwwW_-a3kT2g&s" alt="Strategic Partner 2" />
-                        <p>Silver sponser</p>
-                    </div>
-                </div>
-            </section>
-            <div className="organizing-team">
-                <h3>Organizing Team</h3>
-                {events?.[0]?.organizingTeam?.map((group, index) => (
-                    <div key={index} className="team-group">
-                        <h4>{group.name}</h4>
-                        <ul>
-                            {group.members?.map((member, idx) => (
-                                <li key={idx}>{member.name} - {member.email}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-            <div className="additional-info">
-                <h3>Registration Queries</h3>
-                <p>
-                    <a href={`mailto:${event.email}`} className="email-link">
-                        {event.email}
-                    </a>
-                </p>
-                <h3>Resources</h3>
-                <a
-                    href={event.Schedule}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    View Schedule
-                </a>
-                <a
-                    href={event.brochure}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    View Brochure
-                </a>
-                <a
-                    href={event.registrationLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    Register Now
-                </a>
-                <a
-                    href={event.googleform}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    Google Form
-                </a>
-            </div>
-            <div className="accommodation-container">
-                <h3>Accommodation Options</h3>
-                <div className="accommodation-items">
-                    {event.accommodations.map((accommodation, index) => (
-                        <a
-                            key={index}
-                            href={accommodation.link || "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="accommodation-item"
-                            style={{
-                                backgroundImage: `url(${accommodation.image})`,
-                            }}
-                        >
-                            <div className="overlay">
-                                <h4>{accommodation.name}</h4>
-                                <p><strong>Address:</strong> {accommodation.address}</p>
-                                {accommodation.contact && (
-                                    <p><strong>Contact:</strong> {accommodation.contact}</p>
-                                )}
-                            </div>
-                        </a>
-                    ))}
-                </div>
-                <h5>For Accommodation-related queries - Janak Choudhari - +91 90992 69896</h5>
-            </div>
-            <div className="accommodation-container">
-                <h3>Near By Transportation</h3>
-                <div className="accommodation-items">
-                    {event.NearBytransportation.map((transportation, index) => (
-                        <a
-                            key={index}
-                            href={transportation.link || "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="accommodation-item"
-                            style={{
-                                backgroundImage: `url(${transportation.image})`,
-                            }}
-                        >
-                            <div className="overlay">
-                                <h4>{transportation.name}</h4>
-                                <p><strong>Address:</strong> {transportation.address}</p>
-                                {transportation.contact && (
-                                    <p><strong>Contact:</strong> {transportation.contact}</p>
-                                )}
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </div>
-            <div className="map-section">
-                <h3>Event Location</h3>
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1qBrfyqNsIAM85EshihXYSfOAKeDYrEA&ehbc=2E312F&noprof=1" 
-                    width="100%"
-                    height="500"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    title='Event location'
-                    ></iframe>
-            </div>
-
-            <div className="qr-section">
-                <h3>Scan QR Code to Register</h3>
-                <img src={event.qrCode} alt="QR Code to reach the event location" className="qr-code" />
-            </div>
+            ))}
         </div>
+        )}
+
+
+        <div className="additional-info">
+        {/* Registration Queries Section */}
+        {(event?.email || event?.schedule?.[event.schedule.length - 1]?.email) && (
+            <div className="email-section">
+            <h3>Registration Queries</h3>
+            <p>
+                <a
+                href={`mailto:${event?.email || event?.schedule?.[event.schedule.length - 1]?.email}`}
+                className="email-link"
+                >
+                {event?.email || event?.schedule?.[event.schedule.length - 1]?.email}
+                </a>
+            </p>
+            </div>
+        )}
+
+        {/* Resources Section (inline) */}
+        {(event?.Schedule || event?.brochure || event?.registrationLink || event?.googleform ||
+            event?.schedule?.[event.schedule.length - 1]?.Schedule ||
+            event?.schedule?.[event.schedule.length - 1]?.brochure ||
+            event?.schedule?.[event.schedule.length - 1]?.registrationLink ||
+            event?.schedule?.[event.schedule.length - 1]?.googleform) && (
+            <div className="resources-inline">
+            {event?.Schedule || event?.schedule?.[event.schedule.length - 1]?.Schedule ? (
+                <a
+                href={event?.Schedule || event?.schedule?.[event.schedule.length - 1]?.Schedule}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modal-link"
+                >
+                View Schedule
+                </a>
+            ) : null}
+            {event?.brochure || event?.schedule?.[event.schedule.length - 1]?.brochure ? (
+                <a
+                href={event?.brochure || event?.schedule?.[event.schedule.length - 1]?.brochure}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modal-link"
+                >
+                View Brochure
+                </a>
+            ) : null}
+            {event?.registrationLink || event?.schedule?.[event.schedule.length - 1]?.registrationLink ? (
+                <a
+                href={event?.registrationLink || event?.schedule?.[event.schedule.length - 1]?.registrationLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modal-link"
+                >
+                Register Now
+                </a>
+            ) : null}
+            {event?.googleform || event?.schedule?.[event.schedule.length - 1]?.googleform ? (
+                <a
+                href={event?.googleform || event?.schedule?.[event.schedule.length - 1]?.googleform}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modal-link"
+                >
+                Google Form
+                </a>
+            ) : null}
+            </div>
+        )}
+        </div>
+
+
+
+
+
+        {event?.accommodations?.length > 0 && (
+            <div className="accommodation-container">
+            <h3>Accommodation Options</h3>
+            <div className="accommodation-items">
+                {event.accommodations.map((accommodation, index) => (
+                <a
+                    key={index}
+                    href={accommodation.link || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="accommodation-item"
+                    style={{ backgroundImage: `url(${accommodation.image})` }}
+                >
+                    <div className="overlay">
+                    <h4>{accommodation.name}</h4>
+                    <p><strong>Address:</strong> {accommodation.address}</p>
+                    {accommodation.contact && <p><strong>Contact:</strong> {accommodation.contact}</p>}
+                    </div>
+                </a>
+                ))}
+            </div>
+            <h5>For Accommodation-related queries - Janak Choudhari - +91 90992 69896</h5>
+            </div>
+        )}
+
+        {event?.NearBytransportation?.length > 0 && (
+            <div className="accommodation-container">
+            <h3>Nearby Transportation</h3>
+            <div className="accommodation-items">
+                {event.NearBytransportation.map((transportation, index) => (
+                <a
+                    key={index}
+                    href={transportation.link || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="accommodation-item"
+                    style={{ backgroundImage: `url(${transportation.image})` }}
+                >
+                    <div className="overlay">
+                    <h4>{transportation.name}</h4>
+                    <p><strong>Address:</strong> {transportation.address}</p>
+                    {transportation.contact && <p><strong>Contact:</strong> {transportation.contact}</p>}
+                    </div>
+                </a>
+                ))}
+            </div>
+            </div>
+        )}
+
+        <div className="map-section">
+            <h3>Event Location</h3>
+            <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=1qBrfyqNsIAM85EshihXYSfOAKeDYrEA&ehbc=2E312F&noprof=1"
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            title="Event location"
+            ></iframe>
+        </div>
+
+        {event?.qrCode && (
+            <div className="qr-section">
+            <h3>Scan QR Code to Register</h3>
+            <img src={event.qrCode} alt="QR Code to reach the event location" className="qr-code" />
+            </div>
+        )}
+        </div>
+
     );
 };
