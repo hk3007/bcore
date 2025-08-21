@@ -1,4 +1,4 @@
-/* Base Styles */
+/* ========== Base Styles ========== */
 body {
     margin: 0;
     padding: 0;
@@ -8,19 +8,19 @@ body {
     box-sizing: border-box;
 }
 
-/* Container */
+/* ========== Container ========== */
 .event-schedule-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header Section */
+/* ========== Header Section ========== */
 .schedule-header {
     text-align: center;
     background: linear-gradient(135deg, #ef2800, #002ffe);
     color: white;
-    padding: 30px 20px;
+    padding: 40px 20px;
     border-radius: 15px;
     margin-bottom: 40px;
     animation: fadeIn 1s ease-in-out;
@@ -29,53 +29,54 @@ body {
 .schedule-header h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 .schedule-header p {
     font-size: 1.2rem;
-    margin-top: 10px;
     font-weight: 300;
 }
 
-/* Day Section */
+/* ========== Day Title Section ========== */
 .schedule-section {
     margin-bottom: 40px;
     animation: slideUp 0.7s ease-in-out;
 }
 
 .day-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: #0078ff;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .day-title span {
     font-weight: 700;
-    font-size: 1.5rem;
-    margin-right: 10px;
+    font-size: 1.4rem;
     color: #ff6f61;
 }
 
-/* Schedule List */
+/* ========== Session List ========== */
 .schedule-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* ========== Session Item ========== */
 .schedule-item {
     display: flex;
-    background: white;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 20px;
-    align-items: center;
+    align-items: flex-start;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 15px;
 }
 
 .schedule-item:hover {
@@ -83,32 +84,37 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Time Section */
+/* Time */
 .time {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
-    flex: 0 0 auto; /* Ensures it takes only as much space as needed */
-    margin-right: 15px; /* Reduces the gap between time and content */
+    color: #444;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-/* Details Section */
+/* Session Details */
 .details {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 5px; /* Adds a small gap between elements */
+    gap: 6px;
 }
 
-/* Content Title */
 .details h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: 0;
-    color: #555;
-    font-weight: 500;
+    color: #222;
+    font-weight: 600;
 }
 
-/* Responsive Design */
+.details p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* ========== Responsive Design ========== */
 @media (max-width: 768px) {
     .schedule-header h1 {
         font-size: 2rem;
@@ -119,21 +125,31 @@ body {
     }
 
     .day-title {
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .day-title span {
+        font-size: 1.2rem;
     }
 
     .schedule-item {
-        display: inline;
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .time {
-        margin-bottom: 10px;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .details h3 {
+        font-size: 1.1rem;
     }
 }
 
-/* Animations */
+/* ========== Animations ========== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -147,11 +163,11 @@ body {
 
 @keyframes slideUp {
     from {
-        transform: translateY(20px);
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
-        transform: translateY(0);
         opacity: 1;
+        transform: translateY(0);
     }
 }

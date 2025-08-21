@@ -1,7 +1,7 @@
 // src/components/Loader.js
 import React from 'react';
 import './loader.css';
-import imagePath from './pages/Images/BCORE Logo.png';
+import imagePath from '../pages/Images/BCORE Logo.png';
 
 export const Loader = () => {
   return (

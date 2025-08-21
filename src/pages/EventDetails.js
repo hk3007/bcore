@@ -502,7 +502,7 @@ export const EventDetails = () => {
             },
         ],
         email: 'registration.bcore@rru.ac.in ',
-        registrationLink: 'https://www.rise.rru.ac.in/Course/533/0 ',
+        registrationLink: 'https://rise.rru.ac.in/course/533/0 ',
         NearBytransportation: [
             {
                 name: 'Sardar Vallabhbhai Patel International Airport',
@@ -623,7 +623,7 @@ export const EventDetails = () => {
             </div>
         )}
         
-        {events?.[1]?.schedule?.length > 0 && (
+        {event?.schedule?.length > 0 && (
         <div className="event-schedule">
             <h3>Schedule</h3>
             {events[1].schedule.map((daySchedule, dayIndex) => (

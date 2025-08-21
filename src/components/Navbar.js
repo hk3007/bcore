@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import logo from './pages/Images/BCORE Logo.png';
+import logo from '../pages/Images/BCORE Logo.png';
 import './navbar.css';
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState({});
-    const [showNavbar, setShowNavbar] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(window.scrollY);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const closeMenu = () => setMenuOpen(false);
@@ -16,23 +14,8 @@ export const Navbar = () => {
         setDropdownOpen((prev) => ({ ...prev, [menu]: !prev[menu] }));
     };
 
-    const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            setShowNavbar(false);
-        } else {
-            setShowNavbar(true);
-        }
-        setLastScrollY(currentScrollY);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
-
     return (
-        <nav className={`navbar ${showNavbar ? 'show' : 'hide'}`}>
+        <nav className="navbar">
             <Link to="/" className="title" onClick={closeMenu}>
                 <img src={logo} alt="Logo" className="logo" />
                 <span>BCORE</span>
@@ -70,6 +53,11 @@ export const Navbar = () => {
                             <li>
                                 <NavLink to="/Ethics" onClick={closeMenu}>
                                     Ethics Statement and COPE Guidelines
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/OlympicResearchGrants" onClick={closeMenu}>
+                                    Olympic Research Grants 2025-26
                                 </NavLink>
                             </li>
                         </ul>

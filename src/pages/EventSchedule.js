@@ -83,7 +83,72 @@ export const EventSchedule = () => {
             ],
             
         },
-    ];
+        {
+        id: 2,
+        schedule: [
+            {
+                day: 'DAY 1',
+                date: '23rd JUNE 2025',
+                sessions: [
+                    {
+                        time: '09:30 AM - 11:00 AM',
+                        sessionType: 'Opening Ceremony',
+                        topic: 'Welcome, Keynote, Guest Speeches',
+                        speakers: 'Chief Guest Dr. Hari Ranjan Rao',
+                    },
+                    {
+                        time: '11:30 AM - 01:00 PM',
+                        sessionType: 'Expert Session 1',
+                        topic: 'Developing Sports Human Capital & High-Performance Infrastructure',
+                        speakers: 'Dr. Kinjal Suratwala, Dr. Shyamal Vallabhjee, Gagan Narang, Dr. B.K. Tripathi, Col. Rajyavardhan Rathore',
+                    },
+                    {
+                        time: '02:00 PM - 03:30 PM',
+                        sessionType: 'Panel Discussion 1',
+                        topic: 'Institutionalizing Sports Excellence Across CAPFs & SPOs',
+                        speakers: 'Dr. Pankaj Jain, Deepa Malik, Rajesh Puri, Brig. Rajesh Nair, Dr. Vedamurthy',
+                    },
+                    {
+                        time: '04:00 PM - 05:30 PM',
+                        sessionType: 'Breakout Session',
+                        topic: 'Best Practices in Sports Development within Forces',
+                        speakers: 'Nominated officers from CAPFs and SPOs, moderated by BCORE faculty',
+                    },
+                ],
+            },
+            {
+                day: 'DAY 2',
+                date: '24th JUNE 2025 (MONDAY)',
+                sessions: [
+                    {
+                        time: '09:30 AM - 11:00 AM',
+                        sessionType: 'Expert Session 2',
+                        topic: 'Career Transition Pathways for Athletes and Personnel',
+                        speakers: 'Anju Bobby George, Col. Vijay Bist, Shiba Prasad, Prof. Ratnakar Shetty, Aparna Popat',
+                    },
+                    {
+                        time: '11:30 AM - 01:00 PM',
+                        sessionType: 'Expert Session 3',
+                        topic: 'Formalizing Sports Education for Forces: Role of RRU & BCORE',
+                        speakers: 'Prof. B.P. Sharma, Dr. Suman Sharma, Dr. Parth Goswami, Dr. Aashish Contractor, Abhinav Bindra',
+                    },
+                    {
+                        time: '02:00 PM - 03:30 PM',
+                        sessionType: 'Panel Discussion 2',
+                        topic: 'Progressive Sports Policies for India’s Security Forces',
+                        speakers: 'Dr. Shaji Prabhakaran, Brig. J.S. Bhatia, Tushar Arothe, Dr. Manisha Malhotra, Senior CAPF Officer',
+                    },
+                    {
+                        time: '03:30 PM - 04:30 PM',
+                        sessionType: 'Closing Ceremony',
+                        topic: 'Summary, Recommendations, Felicitation',
+                        speakers: 'Secretary - Sports (MYAS), Organizing Chair (BCORE), National Anthem',
+                    },
+                ],
+            },
+        ],
+    }
+];
 
     const event = events.find((e) => e.id === parseInt(id));
 
@@ -99,18 +164,19 @@ export const EventSchedule = () => {
             </header>
             {event.schedule.map((day, index) => (
                 <section key={index} className="schedule-section">
-                    <h2 className="day-title">
-                        <span>{day.day}</span>: {day.topic}
+                   <h2 className="day-title">
+                        <span>{day.day}</span> {day.date && `- ${day.date}`} {day.topic && `: ${day.topic}`}
                     </h2>
                     <div className="schedule-list">
                         {day.sessions.map((session, idx) => (
-                            <div key={idx} className="schedule-item">
-                                <div className="time">{session.time}</div>
-                                <div className="details">
-                                    <h3>{session.title}</h3>
-                                </div>
+                        <div key={idx} className="schedule-item">
+                            <div className="time">{session.time}</div>
+                            <div className="details">
+                                <h3>{session.title || session.sessionType}</h3>
+                                {session.topic && <p><strong>Topic:</strong> {session.topic}</p>}
                             </div>
-                        ))}
+                        </div>
+                    ))}
                     </div>
                 </section>
             ))}
