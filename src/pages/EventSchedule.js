@@ -118,7 +118,7 @@ export const EventSchedule = () => {
             },
             {
                 day: 'DAY 2',
-                date: '24th JUNE 2025 (MONDAY)',
+                date: '24th JUNE 2025',
                 sessions: [
                     {
                         time: '09:30 AM - 11:00 AM',

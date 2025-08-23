@@ -35,7 +35,7 @@ export const Contact = () => {
 
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzcbwfgDeCPOr9x5YmIBlgYi62oHQEHKLHK8YcghD7f6A9cKCXgecsBdGLmQv7v4cTo/exec",
+        "https://script.google.com/macros/s/AKfycbxI0UNXq4l-8mNr1CeA_jqO3ZplMVrxaQBKh27tFJGi9h3C2reAuMVa8RB8P3zTmBb8/exec",
         {
           method: "POST",
           body: submitFormData,
