@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ed590eba.css",
-    "main.js": "/static/js/main.878ee561.js",
+    "main.css": "/static/css/main.ef64fc4a.css",
+    "main.js": "/static/js/main.5451d66e.js",
     "static/js/453.b2889c0a.chunk.js": "/static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Broucher.pdf": "/static/media/Broucher.ec41f6132fa75fd7b23b.pdf",
@@ -45,12 +45,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/index.html",
-    "main.ed590eba.css.map": "/static/css/main.ed590eba.css.map",
-    "main.878ee561.js.map": "/static/js/main.878ee561.js.map",
+    "main.ef64fc4a.css.map": "/static/css/main.ef64fc4a.css.map",
+    "main.5451d66e.js.map": "/static/js/main.5451d66e.js.map",
     "453.b2889c0a.chunk.js.map": "/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed590eba.css",
-    "static/js/main.878ee561.js"
+    "static/css/main.ef64fc4a.css",
+    "static/js/main.5451d66e.js"
   ]
 }

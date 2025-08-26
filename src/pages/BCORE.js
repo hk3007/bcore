@@ -1,19 +1,15 @@
 import React, { useState, useEffect, useRef  } from 'react';
 import { Link } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./home.css";
-import image1 from '../pages/Images/Manu Bhaker & Sarabjot Singh_Webslider1.jpg';
 import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png'
 import sponser1 from './Images/Hyperlab Logo.png';
 import sponser2 from './Images/AISTS.png';
-import page1 from './Slider/Page 1.jpg';
-import page2 from './Slider/Page 2.jpg';
-import page3 from './Slider/Page 3.jpg';
-import page4 from './Slider/Page 4.jpg';
 import Testimonials from "../components/Testimonials";
 import Timeline from "../components/Timeline";
+import ImageCarousel from "../components/ImageCarousel";
+import PartnerSponsorSection from "../components/PartnerSponsorSection";
 export const BCORE = () => {
     const events = [
         {
@@ -34,34 +30,48 @@ export const BCORE = () => {
             place: 'Rashtriya Raksha University, Gandhinagar, India',
             description: 'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
         },
-    ];
-    const parseEndDate = (dateStr) => {
-        const parts = dateStr.split('-').map(s => s.trim());
-        const endPart = parts.length > 1 ? parts[1] : parts[0];
-
-        // Remove suffixes like 'st', 'nd', 'rd', 'th'
-        const cleanDateStr = endPart.replace(/(\d+)(st|nd|rd|th)/, '$1');
-        return new Date(cleanDateStr);
-    };
-
-    const formatDate = (dateStr) => {
-        const options = { day: 'numeric', month: 'short', year: 'numeric' };
-
-        if (dateStr.includes('-')) {
-            const [start, end] = dateStr.split('-').map(s => s.trim());
-            const cleanStart = start.replace(/(\d+)(st|nd|rd|th)/, '$1');
-            const cleanEnd = end.replace(/(\d+)(st|nd|rd|th)/, '$1');
-
-            const startDate = new Date(cleanStart + ' 2025');
-            const endDate = new Date(cleanEnd);
-
-            return `${startDate.getDate()}–${endDate.getDate()} ${endDate.toLocaleString('default', { month: 'short' })} ${endDate.getFullYear()}`;
-        } else {
-            const clean = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
-            const date = new Date(clean);
-            return date.toLocaleDateString('en-US', options);
+        {
+            id: 3,
+            name: '2nd International Olympic Research Conference',
+            date: '27 - 30 January 2026',
+            place: 'Rashtriya Raksha University, Gandhinagar, India',
+            description:
+                "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
+            brochure:
+              'https://rru.ac.in/wp-content/uploads/2025/08/2nd-IORC_Booklet.pdf',
         }
-    };
+    ];
+
+// Parse both start and end date
+const parseDateRange = (dateString) => {
+  if (!dateString) return { start: new Date(0), end: new Date(0) };
+
+  // Handle range "27 - 30 January 2026"
+  const rangeMatch = dateString.match(/(\d+)\s*-\s*(\d+)\s+([A-Za-z]+)\s+(\d{4})/);
+  if (rangeMatch) {
+    const [, startDay, endDay, month, year] = rangeMatch;
+    const start = new Date(`${startDay} ${month} ${year}`);
+    const end = new Date(`${endDay} ${month} ${year}`);
+    return { start, end };
+  }
+
+  // Handle single date "23rd June 2025" → remove suffix like 'st', 'nd', 'rd', 'th'
+  const cleaned = dateString.replace(/(\d+)(st|nd|rd|th)/, "$1");
+  const singleDate = new Date(cleaned);
+  return { start: singleDate, end: singleDate };
+};
+
+// Display function
+const formatDate = (dateString) => {
+  const { start, end } = parseDateRange(dateString);
+  const options = { day: "numeric", month: "short", year: "numeric" };
+
+  if (start.getTime() !== end.getTime()) {
+    return `${start.toLocaleDateString("en-GB", options)} – ${end.toLocaleDateString("en-GB", options)}`;
+  }
+  return start.toLocaleDateString("en-GB", options);
+};
+
 
     useEffect(() => {
         // Scroll to top when route changes
@@ -69,84 +79,7 @@ export const BCORE = () => {
       }, []); // Empty dependency array means this runs only once on mount
     return (
         <div>
-            <div style={{ maxWidth: '1900px', margin: '0 auto' }}>
-                <Carousel
-                    showArrows={true}
-                    showThumbs={false}
-                    showStatus={false}
-                    infiniteLoop={true}
-                    autoPlay={true}
-                    interval={3000}
-                    transitionTime={500}
-                >
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/06/1.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/06/2-1.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/06/3.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/06/4.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/06/5.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/06/Hyperlab-MoU-Webslider.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/05/BCORE-Slider-2-scaled.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/05/BCORE-Slider-scaled.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/04/Slider-2-1.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/03/Visit-to-Rashtriya-Raksha-University-by-COE-in-Sports-Science-Sports-Management-TransStadia-Institute-Mumbai.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src={page1} alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src={page2} alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src={page3} alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src={page4} alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2025/01/International-Olympic-Research-Conference-Guest-Banner-16.png" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/COB-Expo-1.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/09/Paralympics_Webslider1-1.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Paralympics_Webslider2.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Hockey_Webslider.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Niraj-Chopra_Webslider.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src="https://rru.ac.in/wp-content/uploads/2024/10/Swapnil-Kusale_Webslider.jpg" alt="Slide 1" />
-                    </div>
-                    <div>
-                        <img src={image1} alt="Slide 1" />
-                    </div>
-                </Carousel>
-            </div>
+            <ImageCarousel />
             <div className="marquee-container">
                 <div className="marquee-wrapper">
                     <div className="marquee">
@@ -180,77 +113,46 @@ export const BCORE = () => {
                 B-CORE is now an active member in the global network of academic Olympic Studies and Research Centres, contributing to the international discourse on Olympic studies and research.
                 </h4>
             </div>
-            <div className="events-page">
+                <div className="events-page">
                 <h2 className="events-title">Upcoming Events</h2>
                 <div className="events-grid">
-                    {events.filter((event) => {
-                        const eventEndDate = parseEndDate(event.date);
-                        return eventEndDate >= new Date();
-                    }).map((event) => (
-                        <div className="event-card" key={event.id}>
-                            <h3>{event.name}</h3>
-                            <p>{formatDate(event.date)}</p>
-                            {event.place && <p>{event.place}</p>}
-                            {event.accomodation && <p><b>{event.accomodation}</b></p>}
-                            <div className="event-buttons">
-                                <Link to={`/event/${event.id}`} className="know-more-btn">
-                                    Know More
-                                </Link>
-                                {event.id === 1 && (
-                                    <>
-                                        <Link to={`/event/${event.id}/schedule`} className="schedule-btn">
-                                            View Schedule
-                                        </Link>
-                                        <a href="https://rru.ac.in/wp-content/uploads/2025/03/IORC-Booklet_-05-03-2025-10-MB_compressed.pdf" className="schedule-btn" target="_blank" rel="noopener noreferrer">
-                                            IORC BOOKLET
-                                        </a>
-                                    </>
-                                )}
-                            </div>
-                        </div>
-                    ))}
+                {events.filter((event) => {
+                const { end } = parseDateRange(event.date);
+                return end >= new Date();
+                }).map((event) => (
+                <div className="event-card" key={event.id}>
+                    <h3>{event.name}</h3>
+                    <p>{formatDate(event.date)}</p>   {/* ✅ fixed date display */}
+                    {event.place && <p>{event.place}</p>}
+                    {event.accomodation && <p><b>{event.accomodation}</b></p>}
+
+                    <div className="event-buttons">
+                    <Link to={`/event/${event.id}`} className="know-more-btn">
+                        Know More
+                    </Link>
+
+                    {event.schedule && (
+                        <Link to={`/event/${event.id}/schedule`} className="schedule-btn">
+                        View Schedule
+                        </Link>
+                    )}
+
+                    {event.brochure && (
+                        <a
+                        href={event.brochure}
+                        className="schedule-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                        {event.name.includes("IORC") ? "IORC Booklet" : "View Brochure"}
+                        </a>
+                    )}
+                    </div>
+                </div>
+                ))}
                 </div>
             </div>
-
-            <section className="partners-section">
-                <h2 className="partners-title">Our Partners</h2>
-                <div className="partners-grid">
-                    <div className="partner-card">
-                        <img src={logo5} alt="Tech Partner 2" />
-                        <p>Knowledge Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s" alt="Strategic Partner 2" />
-                        <p>Merchandise Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src={sponser1} alt="Strategic Partner 1" />
-                        <p>Innovation and Technology Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src={sponser2} alt="Strategic Partner 2" />
-                        <p>Strategic Partner</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src="https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png" alt="Strategic Partner 2" />
-                        <p>Industry Partner</p>
-                    </div>
-                </div>
-            </section>
-            <section className="partners-section">
-                <h2 className="partners-title">Our Sponsers</h2>
-                <div className="partners-grid">
-                    <div className="partner-card">
-                        <img src="https://adcbank.coop/wp-content/uploads/2023/05/logo.png" alt="Strategic Partner 2" />
-                        <p>Premium sponser</p>
-                    </div>
-                    <div className="partner-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvCZCgT7YBn7oemQ6DIZ1jbGwwW_-a3kT2g&s" alt="Strategic Partner 2" />
-                        <p>Silver sponser</p>
-                    </div>
-                </div>
-            </section>
-
+            <PartnerSponsorSection showPartners={true} showSponsors={true} />
             <section className="overview">
                 <h2>Overview</h2>
                 <p>

@@ -1,6 +1,7 @@
-import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 import './footer.css';
+import { FaXTwitter } from "react-icons/fa6";
 
 export const Footer = () => {
     const [dateTime, setDateTime] = useState(new Date());
@@ -19,9 +20,9 @@ export const Footer = () => {
                 <div className="footer-left">
                     <p><a href="mailto:bcore@rru.ac.in">bcore@rru.ac.in</a></p>
                     <div className="social-icons">
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
-                        <a href="https://www.instagram.com/bcore_rru?igsh=MWk5OW41cWJlY3l1NQ==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                        <a href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                        <a href="https://x.com/bcorerru" target="_blank" rel="noopener noreferrer"><FaXTwitter  /></a>
+                        <a href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
                     </div>
                 </div>
 

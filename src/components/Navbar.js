@@ -1,84 +1,196 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import logo from '../pages/Images/BCORE Logo.png';
-import './navbar.css';
+import React, { useEffect, useRef, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import {
+  Home,
+  Users,
+  Newspaper,
+  Phone,
+  BookOpen,
+  Calendar,
+  FileText,
+  ChevronDown,
+} from "lucide-react";
+import {
+  FaLinkedin,
+  FaInstagram,
+  FaYoutube,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import logo from "../pages/Images/BCORE Logo.png";
+import "./navbar.css";
 
 export const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState({});
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const navRef = useRef(null);
 
-    const toggleMenu = () => setMenuOpen(!menuOpen);
-    const closeMenu = () => setMenuOpen(false);
+  // ✅ Responsive check
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1299px)");
+    const apply = () => setIsMobile(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
 
-    const handleDropdownToggle = (menu) => {
-        setDropdownOpen((prev) => ({ ...prev, [menu]: !prev[menu] }));
+  // ✅ Close on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setMenuOpen(false);
+        setOpenDropdown(null);
+      }
     };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-    return (
-        <nav className="navbar">
-            <Link to="/" className="title" onClick={closeMenu}>
-                <img src={logo} alt="Logo" className="logo" />
-                <span>BCORE</span>
-            </Link>
-            <div className="menu" onClick={toggleMenu}>
-                <span></span>
-                <span></span>
-                <span></span>
+  // ✅ Close on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setMenuOpen(false);
+      setOpenDropdown(null);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMenu = () => setMenuOpen((v) => !v);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+  };
+  const handleDropdownClick = (idx) => {
+    if (!isMobile) return;
+    setOpenDropdown((cur) => (cur === idx ? null : idx));
+  };
+
+  const navItems = [
+    { to: "/", label: "Home", icon: Home },
+    { to: "/about", label: "About", icon: BookOpen },
+    {
+      label: "Events & Guidelines",
+      icon: Calendar,
+      dropdown: [
+        { to: "/upcomingevents", label: "Upcoming Events" },
+        { to: "/events", label: "Past Events" },
+        { to: "/ethics", label: "Ethics Statement and COPE Guidelines" },
+        { to: "/olympicresearchgrants", label: "Olympic Research Grants" },
+      ],
+    },
+    { to: "/team", label: "Team", icon: Users },
+    { to: "/news", label: "News", icon: Newspaper },
+    { to: "/contact", label: "Contact", icon: Phone },
+  ];
+
+  return (
+    <header className="navbar-header" ref={navRef}>
+      {/* Left Logo */}
+      <div className="nav-left">
+        <Link to="/" className="nav-logo" onClick={closeMenu}>
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
+      </div>
+
+      {/* Center Nav */}
+      <nav className="navbar">
+        {/* Hamburger */}
+        <button
+          className={`menu ${menuOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={menuOpen ? "nav-list open" : "nav-list"}>
+          {/* Mobile socials on top */}
+          {isMobile && (
+            <div className="mobile-socials">
+              <a href="https://x.com/bcorerru" target="_blank" rel="noreferrer">
+                <FaXTwitter  />
+              </a>
+              <a href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/" target="_blank" rel="noreferrer">
+                <FaLinkedin />
+              </a>
+              <a href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg==" target="_blank" rel="noreferrer">
+                <FaInstagram />
+              </a>
             </div>
-            <ul className={menuOpen ? 'nav-list open' : 'nav-list'}>
-                <li>
-                    <NavLink to="/Home" activeClassName="active" onClick={closeMenu}>
-                        Home
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/About" activeClassName="active" onClick={closeMenu}>
-                        About
-                    </NavLink>
-                </li>
-                <li className="dropdown" onClick={() => handleDropdownToggle('services')}>
-                    <p>Events and Guidelines</p>
-                    {dropdownOpen.services && (
-                        <ul className="nav-dropdown">
-                            <li>
-                                <NavLink to="/UpcomingEvents" onClick={closeMenu}>
-                                    Upcoming Events
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/Events" onClick={closeMenu}>
-                                    Past Events
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/Ethics" onClick={closeMenu}>
-                                    Ethics Statement and COPE Guidelines
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/OlympicResearchGrants" onClick={closeMenu}>
-                                    Olympic Research Grants 2025-26
-                                </NavLink>
-                            </li>
-                        </ul>
-                    )}
-                </li>
-                <li>
-                    <NavLink to="/Team" activeClassName="active" onClick={closeMenu}>
-                        Team
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/News" activeClassName="active" onClick={closeMenu}>
-                        News
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/Contact" activeClassName="active" onClick={closeMenu}>
-                        Contact
-                    </NavLink>
-                </li>
-            </ul>
-        </nav>
-    );
+          )}
+
+          {navItems.map((item, idx) =>
+            item.dropdown ? (
+              <li
+                key={idx}
+                className={`dropdown ${openDropdown === idx ? "open" : ""}`}
+                onMouseEnter={() => !isMobile && setOpenDropdown(idx)}
+                onMouseLeave={() => !isMobile && setOpenDropdown(null)}
+              >
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  onClick={() => handleDropdownClick(idx)}
+                  aria-expanded={openDropdown === idx}
+                >
+                  {item.icon && <item.icon className="nav-icon" />}
+                  {item.label}
+                  <ChevronDown className="chev" />
+                </button>
+
+                <ul className="nav-dropdown">
+                  {item.dropdown.map((drop, i) => (
+                    <li key={i}>
+                      <NavLink
+                        to={drop.to}
+                        className={({ isActive }) =>
+                          isActive ? "active" : ""
+                        }
+                        onClick={closeMenu}
+                      >
+                        {drop.icon && <drop.icon className="nav-icon" />}
+                        {drop.label}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li key={idx}>
+                <NavLink
+                  to={item.to}
+                  className={({ isActive }) =>
+                    isActive ? "active nav-btn" : "nav-btn"
+                  }
+                  onClick={closeMenu}
+                >
+                  {item.icon && <item.icon className="nav-icon" />}
+                  {item.label}
+                </NavLink>
+              </li>
+            )
+          )}
+        </ul>
+      </nav>
+
+      {/* Right Socials (desktop only) */}
+      {!isMobile && (
+        <div className="nav-right">
+          <a href="https://x.com/bcorerru" target="_blank" rel="noreferrer">
+            <FaXTwitter  />
+          </a>
+          <a href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/" target="_blank" rel="noreferrer">
+            <FaLinkedin />
+          </a>
+          <a href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg==" target="_blank" rel="noreferrer">
+            <FaInstagram />
+          </a>
+        </div>
+      )}
+    </header>
+  );
 };

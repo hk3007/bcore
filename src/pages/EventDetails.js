@@ -529,12 +529,55 @@ export const EventDetails = () => {
                 link: 'https://gsrtc.in/site/'
             },
         ],
-        }        
+        },
+        {
+            id: 3,
+            name: '2nd International Olympic Research Conference',
+            date: '27 - 30 January 2026',
+            place: 'Rashtriya Raksha University, Gandhinagar, India',
+            description:
+                "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
+            bookletLink:
+              'https://rru.ac.in/wp-content/uploads/2025/08/2nd-IORC_Booklet.pdf',
+        }
     ];
-        
+      
     
 
     const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
+
+     
+    const hasOnlyBasicInfo = !(
+    event?.collaboration?.length > 0 ||
+    event?.subpoints?.length > 0 ||
+    event?.guests?.length > 0 ||
+    event?.importantDates?.length > 0 ||
+    event?.schedule?.length > 0 ||
+    event?.callForAbstract ||
+    event?.abstractGuidelines ||
+    event?.Steps?.length > 0 ||
+    event?.speakers?.length > 0 ||
+    event?.partners?.length > 0 ||
+    event?.sponsors?.length > 0 ||
+    event?.organizingTeam?.length > 0 ||
+    event?.email ||
+    event?.Schedule ||
+    event?.brochure ||
+    event?.registrationLink ||
+    event?.googleform ||
+    event?.accommodations?.length > 0 ||
+    event?.NearBytransportation?.length > 0 ||
+    event?.qrCode
+  );
+
+    // Utility: Check if event is in the future
+    const isFutureEvent = (dateString) => {
+    if (!dateString) return false;
+    const eventDate = new Date(dateString);
+    const today = new Date();
+    return eventDate >= today;
+    };
+
 
     if (!event) {
         return <div>Event not found</div>;
@@ -773,9 +816,10 @@ export const EventDetails = () => {
         )}
 
 
-        <div className="additional-info">
+                
         {/* Registration Queries Section */}
-        {(event?.email || event?.schedule?.[event.schedule.length - 1]?.email) && (
+        {isFutureEvent(event?.date) && (event?.email || event?.schedule?.[event.schedule?.length - 1]?.email) && (
+        <div className="additional-info">
             <div className="email-section">
             <h3>Registration Queries</h3>
             <p>
@@ -787,58 +831,62 @@ export const EventDetails = () => {
                 </a>
             </p>
             </div>
+        </div>
         )}
 
         {/* Resources Section (inline) */}
-        {(event?.Schedule || event?.brochure || event?.registrationLink || event?.googleform ||
-            event?.schedule?.[event.schedule.length - 1]?.Schedule ||
-            event?.schedule?.[event.schedule.length - 1]?.brochure ||
-            event?.schedule?.[event.schedule.length - 1]?.registrationLink ||
-            event?.schedule?.[event.schedule.length - 1]?.googleform) && (
+        {isFutureEvent(event?.date) && (
+        (event?.Schedule || event?.brochure || event?.registrationLink || event?.googleform ||
+            event?.schedule?.[event.schedule?.length - 1]?.Schedule ||
+            event?.schedule?.[event.schedule?.length - 1]?.brochure ||
+            event?.schedule?.[event.schedule?.length - 1]?.registrationLink ||
+            event?.schedule?.[event.schedule?.length - 1]?.googleform) && (
+            <div className="additional-info">
             <div className="resources-inline">
-            {event?.Schedule || event?.schedule?.[event.schedule.length - 1]?.Schedule ? (
+                {event?.Schedule || event?.schedule?.[event.schedule?.length - 1]?.Schedule ? (
                 <a
-                href={event?.Schedule || event?.schedule?.[event.schedule.length - 1]?.Schedule}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="modal-link"
+                    href={event?.Schedule || event?.schedule?.[event.schedule.length - 1]?.Schedule}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
                 >
-                View Schedule
+                    View Schedule
                 </a>
-            ) : null}
-            {event?.brochure || event?.schedule?.[event.schedule.length - 1]?.brochure ? (
+                ) : null}
+                {event?.brochure || event?.schedule?.[event.schedule?.length - 1]?.brochure ? (
                 <a
-                href={event?.brochure || event?.schedule?.[event.schedule.length - 1]?.brochure}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="modal-link"
+                    href={event?.brochure || event?.schedule?.[event.schedule.length - 1]?.brochure}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
                 >
-                View Brochure
+                    View Brochure
                 </a>
-            ) : null}
-            {event?.registrationLink || event?.schedule?.[event.schedule.length - 1]?.registrationLink ? (
+                ) : null}
+                {event?.registrationLink || event?.schedule?.[event.schedule?.length - 1]?.registrationLink ? (
                 <a
-                href={event?.registrationLink || event?.schedule?.[event.schedule.length - 1]?.registrationLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="modal-link"
+                    href={event?.registrationLink || event?.schedule?.[event.schedule.length - 1]?.registrationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
                 >
-                Register Now
+                    Register Now
                 </a>
-            ) : null}
-            {event?.googleform || event?.schedule?.[event.schedule.length - 1]?.googleform ? (
+                ) : null}
+                {event?.googleform || event?.schedule?.[event.schedule?.length - 1]?.googleform ? (
                 <a
-                href={event?.googleform || event?.schedule?.[event.schedule.length - 1]?.googleform}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="modal-link"
+                    href={event?.googleform || event?.schedule?.[event.schedule.length - 1]?.googleform}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
                 >
-                Google Form
+                    Google Form
                 </a>
-            ) : null}
+                ) : null}
             </div>
+            </div>
+        )
         )}
-        </div>
 
 
 
@@ -893,6 +941,14 @@ export const EventDetails = () => {
             </div>
         )}
 
+             {/* Coming Soon Section */}
+        {hasOnlyBasicInfo && (
+            <div className="coming-soon">
+                <h3>✨ Coming Soon ✨</h3>
+                <p>More details about this event will be available shortly.</p>
+            </div>
+            )}
+
         <div className="map-section">
             <h3>Event Location</h3>
             <iframe
@@ -912,7 +968,9 @@ export const EventDetails = () => {
             <img src={event.qrCode} alt="QR Code to reach the event location" className="qr-code" />
             </div>
         )}
+            
         </div>
 
+        
     );
 };
