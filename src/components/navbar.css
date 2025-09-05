@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,11 +43,10 @@
 ======================= */
 .navbar {
   position: relative;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 218, 0.92);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 9999px;
-  height: 60px;
+  height: 55px;
   padding: 0 1.2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   display: flex;
@@ -76,14 +75,14 @@
   font-size: 0.95rem;
   padding: 0.4rem 0.9rem;
   border-radius: 9999px;
-  color: #4b5563;
+  color: #000000;
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 .nav-btn:hover {
-  color: #111827;
-  background: rgba(37, 99, 235, 0.1);
+  color: #ffffff;
+  background: rgb(0, 0, 0);
 }
 .nav-btn.active {
   background: #000000;
@@ -97,17 +96,14 @@
   cursor: pointer;
   padding: 0.4rem 0.9rem;
   border-radius: 9999px;
-  color: #4b5563;
+  color: #000000;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 6px;
   font-size: 0.95rem;
 }
-.dropdown-toggle:hover {
-  color: #111827;
-  background: rgba(37, 99, 235, 0.1);
-}
+
 .chev { transition: transform .2s ease; }
 .dropdown.open > .dropdown-toggle .chev { transform: rotate(180deg); }
 
@@ -115,7 +111,7 @@
 .nav-dropdown {
   display: none;
   position: absolute;
-  background: #fff;
+  background: #000000;
   list-style: none;
   padding: 10px 0;
   margin: 0;
@@ -135,13 +131,15 @@
   display: block;
   padding: 0.6rem 1rem;
   font-size: 0.9rem;
-  color: #4b5563;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 6px;
 }
 .nav-dropdown a:hover {
-  background: rgba(37, 99, 235, 0.1);
-  color: #111827;
+  background: #fffdc7;
+  color: #000000;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* =======================

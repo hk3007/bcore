@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./home.css";
@@ -19,7 +19,7 @@ export const BCORE = () => {
             place: 'Bharat Centre of Olympic Research and Education (BCORE), Rashtriya Raksha University, Gandhinagar, India',
             description: 'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
             accomodation: 'BCORE will Provide accommodation for OSRC and NOC Members and facilitate accommodation at a nominal cost for all the other participants.',
-            brochure: 'http://rru.ac.in/wp-content/uploads/2024/11/RRU-BCORE-Olympic-research-Academy-Brochure.pdf',
+            brochure: 'https://rru.ac.in/wp-content/uploads/2024/11/RRU-BCORE-Olympic-research-Academy-Brochure.pdf',
             registrationLink: 'https://forms.eduqfix.com/bcoreregof/add',
             sponser: [sponser1,sponser2]
         },
@@ -38,7 +38,7 @@ export const BCORE = () => {
             description:
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             brochure:
-              'https://rru.ac.in/wp-content/uploads/2025/08/2nd-IORC_Booklet.pdf',
+              'https://rru.ac.in/wp-content/uploads/2025/09/2-IORC_Booklet_04-09-2025_compressed.pdf',
         }
     ];
 

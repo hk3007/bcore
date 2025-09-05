@@ -419,7 +419,9 @@ export const EventDetails = () => {
                     name: 'Ministry of Youth Affairs and Sports, Government of India',
                     logo: collaborator1,
                 },
-            ]
+            ],
+            bookletLink:
+              'https://rru.ac.in/wp-content/uploads/2024/11/RRU-BCORE-Olympic-research-Academy-Brochure.pdf'
         },
         {
         id: 2,
@@ -538,7 +540,7 @@ export const EventDetails = () => {
             description:
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             bookletLink:
-              'https://rru.ac.in/wp-content/uploads/2025/08/2nd-IORC_Booklet.pdf',
+              'https://rru.ac.in/wp-content/uploads/2025/09/2-IORC_Booklet_04-09-2025_compressed.pdf',
         }
     ];
       

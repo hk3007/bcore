@@ -41,9 +41,7 @@ function App() {
   return (
     <div>
     <div className="App">
-    <div className="navbar">
         <Navbar />
-    </div>
      <div className="main-content">
      <Routes>
         <Route path="/" element={<BCORE />} />

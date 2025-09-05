@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -7,13 +9,11 @@ import {
   Phone,
   BookOpen,
   Calendar,
-  FileText,
   ChevronDown,
 } from "lucide-react";
 import {
   FaLinkedin,
   FaInstagram,
-  FaYoutube,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../pages/Images/BCORE Logo.png";
