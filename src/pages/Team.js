@@ -5,15 +5,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import image2 from '../pages/Images/TEAM/Bimal Patel.jpeg'
 import image3 from '../pages/Images/TEAM/Gaurav Singh Khushwah.jpg'
-import image4 from '../pages/Images/TEAM/HARSHDIPSINH RATHOD.jpg'
-import image7 from '../pages/Images/TEAM/Neeladri Shekhar Das.jpg'
-import image9 from '../pages/Images/TEAM/Shivam Kumar.jpg'
-import image11 from '../pages/Images/TEAM/TANISHKA SINGH.jpg'
 import image12 from '../pages/Images/TEAM/Utsav Chaware.jpg'
-import image13 from '../pages/Images/TEAM/Zulfikar Pathan.jpg'
-import image14 from '../pages/Images/TEAM/ANIRUDH SINGH.jpg'
 import image15 from '../pages/Images/TEAM/Intern 1.jpeg'
-import image16 from '../pages/Images/TEAM/Intern 2.jpg'
 
 
 const teamMembers = [
@@ -39,7 +32,7 @@ const teamMembers = [
     name: 'Dr. Utsav Chaware',
     designation: 'Director BCORE',
     photo: [image12],
-    info: 'Talent Identification, Basketball, Sports Policies, Health Sciences/Education, Exercise Physiology'
+    info: 'Olympic Studies and Values, Talent Identification, Sports Sciences, Sports Policies and Governance'
   },
   {
     name: 'Mr. Yash Sharma',
@@ -53,48 +46,6 @@ const interns = [
     name: 'Kushi Sriram',
     schoolName: 'School of Criminal Law and Military Law',
     photo: [image15],
-    info: ''
-  },
-  {
-    name: 'Anuj Agnihotry',
-    schoolName: 'School of Internal Security, Defence and Strategic Studies',
-    photo: [image16],
-    info: ''
-  },
-  {
-    name: 'Shivam Kumar',
-    schoolName: 'School of International Cooperation, Security and Strategic Languages',
-    photo: [image9],
-    info: ''
-  },
-  {
-    name: 'Zulfikar Pathan',
-    schoolName: 'School of International Cooperation, Security and Strategic Languages',
-    photo: [image13],
-    info: ''
-  },
-  {
-    name: 'Neeladri Shekhar Das',
-    schoolName: 'School of Physical Education and Sports',
-    photo: [image7],
-    info: ''
-  },
-  {
-    name: 'Tanishka Singh',
-    schoolName: 'School of Internal Security, Defence and Strategic Studies',
-    photo: [image11],
-    info: ''
-  },
-  {
-    name: 'Harshdipsinh Rathod',
-    schoolName: 'School of IT, Artificial Intelligence and Cyber Security',
-    photo: [image4],
-    info: ''
-  },
-  {
-    name: 'Anirudh Singh',
-    schoolName: 'School of Physical Education and Sports',
-    photo: [image14],
     info: ''
   }
 ];

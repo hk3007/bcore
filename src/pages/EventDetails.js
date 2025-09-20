@@ -150,7 +150,7 @@ export const EventDetails = () => {
                     id: 4,
                     name:"Mr Pranshu Jain, Executive Director, Sports Advisory, PwC India",
                     about: "Mr. Pranshu Jain is the Executive Director of Sports Advisory at PwC India. Pranshu has previously worked with firms like Deloitte and has been involved in various projects related to sports management and digital transformation",
-                    img: "https://media.licdn.com/dms/image/v2/C4D03AQFac32d4hSZXA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1668054965882?e=2147483647&v=beta&t=HRi_IVEqg0FaQMXL4XKPG6LfDS5nZBaCTZPnk7Mm9I8"
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQH1nThVeWchzQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516893474724?e=1760572800&v=beta&t=CrX-cyMa7W_7q5LRky8H-siLlQyMngeghYSWHRtki9c"
                 }
                 ,
                 {
@@ -211,7 +211,7 @@ export const EventDetails = () => {
                     id: 14,
                     name: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
                     about: "Mr. Ravneet Gill, Chief Executive Officer, AISTS India",
-                    img: "https://media.licdn.com/dms/image/v2/D5603AQFCsY7Ong86cg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726402492305?e=2147483647&v=beta&t=BuMi_oa76CiC8VCP2qm6aX-_v-dKQxQYuogoG3-PXQo",
+                    img: "https://media.licdn.com/dms/image/v2/D4D03AQGjYjgUFhgT6A/profile-displayphoto-crop_800_800/B4DZh0YvkdH4AM-/0/1754299301359?e=1760572800&v=beta&t=nvvwhUr1tppGV2eUcEAAuMpc-LoURmpXjac1IS92Ly0",
                 },
                 {
                     id: 15,
@@ -247,7 +247,7 @@ export const EventDetails = () => {
                     id: 20,
                     name: "Nuria Puig Brandes, Head of University Relations - Olympic Studies Centre",
                     about: "Nuria Puig Brandes is the Head of the International Olympic Committee (IOC). She leads various initiatives within the IOC, focusing on enhancing global collaboration and advancing the values and objectives of the Olympic Movement worldwide.",
-                    img: "https://media.licdn.com/dms/image/v2/C5603AQFOEhEve7PE5A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517559189453?e=1750896000&v=beta&t=bXq-oFyXkAB1kAg7_5GYur20CXTvWIFSYf_WjosJ4Ts",
+                    img: "https://media.licdn.com/dms/image/v2/C5603AQFOEhEve7PE5A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517559189317?e=1760572800&v=beta&t=hiLoC4OxDwi3pqFF_YZlwSIIlEnx-ZK0cyf73etLMQ8",
                 },
                 {
                     id: 21,
@@ -541,6 +541,54 @@ export const EventDetails = () => {
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             bookletLink:
               'https://rru.ac.in/wp-content/uploads/2025/09/2-IORC_Booklet_04-09-2025_compressed.pdf',
+            subpoints: [
+                'Ignite research reform and foster innovation in Olympic studies.',
+                'Integrate education, research, and governance for a cohesive Olympic development framework.',
+                "Create India-centered strategies aligned with the country's vision for sporting excellence.",
+                'Gap inding, scoping reviews, qualitative methodologies, and emerging research areas, led by national and international Olympic faculty.',
+                'Facilitation of partnerships between researchers, irms, academies, and institutes for case studies.',
+                'Direct involvement of universities, schools, and academies in shaping Olympic-aligned policies.',
+                'Olympics, Commonwealth Games, WPFG in the Indian context.',
+                'Sponsorships from Indian agencies/irms, with experts and scholars contributing expertise in return.',
+            ],
+            importantDates: [
+                { event: 'Abstract	Submission	Deadline', date: '30 October 2025 (tentative)' },
+                { event: 'Notification of Acceptance:', date: 'Within 15 working days of abstract submission' },
+                { event: 'Full Paper Submission	Deadline:', date: '31 December 2025' },
+            ],
+                        abstractGuidelines: {
+                formatRequirements: [
+                    'Abstract should be between 150-250 words.',
+                    'Use 12-point Times New Roman font.',
+                    'Double-space all text.',
+                    'Set 1-inch (2.54 cm) margins on all sides.',
+                    'Include page number in the top-right header.',
+                    'Center the word "Abstract" as the title (bold).',
+                    'Text should be left-aligned and not indented.'
+                ],
+                contentStructure: [
+                    {
+                        heading: 'Introduction',
+                        description: 'Begin with a brief introduction to the research problem. Clearly state the purpose and objectives of the study.'
+                    },
+                    {
+                        heading: 'Methodology',
+                        description: 'Describe the research design. Include information about participants, if applicable. Outline data collection methods and procedures. Mention analytical approaches used.'
+                    },
+                    {
+                        heading: 'Results',
+                        description: 'Present key findings concisely. Include statistical significance when relevant. Focus on main outcomes only.'
+                    },
+                    {
+                        heading: 'Conclusions',
+                        description: 'State primary conclusions. Address implications of findings. Avoid introducing new information.'
+                    },
+                    {
+                        heading: 'Keywords',
+                        description: 'Include 3-5 keywords. Place keywords on a new line below the abstract. Indent the first line of keywords. Begin with "Keywords:" (italicized).'
+                    }
+                ]
+            },
         }
     ];
       
@@ -669,34 +717,34 @@ export const EventDetails = () => {
         )}
         
         {event?.schedule?.length > 0 && (
-        <div className="event-schedule">
-            <h3>Schedule</h3>
-            {events[1].schedule.map((daySchedule, dayIndex) => (
-            <div key={dayIndex} className="schedule-day">
-                <h4>{daySchedule.day} - {daySchedule.date}</h4>
-                <table className="schedule-table">
-                <thead>
-                    <tr>
-                    <th>Time</th>
-                    <th>Session Type</th>
-                    <th>Topic/Activity</th>
-                    <th>Speakers/Experts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {daySchedule.sessions.map((session, sessionIndex) => (
-                    <tr key={sessionIndex}>
-                        <td>{session.time}</td>
-                        <td>{session.sessionType}</td>
-                        <td>{session.topic}</td>
-                        <td>{session.speakers}</td>
-                    </tr>
-                    ))}
-                </tbody>
-                </table>
+            <div className="event-schedule">
+                <h3>Schedule</h3>
+                {event.schedule.map((daySchedule, dayIndex) => (
+                    <div key={dayIndex} className="schedule-day">
+                        <h4>{daySchedule.day} - {daySchedule.date}</h4>
+                        <table className="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Session Type</th>
+                                    <th>Topic/Activity</th>
+                                    <th>Speakers/Experts</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {daySchedule.sessions.map((session, sessionIndex) => (
+                                    <tr key={sessionIndex}>
+                                        <td>{session.time}</td>
+                                        <td>{session.sessionType}</td>
+                                        <td>{session.topic}</td>
+                                        <td>{session.speakers}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                ))}
             </div>
-            ))}
-        </div>
         )}
 
         {event?.callForAbstract && (

@@ -160,7 +160,6 @@ export const EventSchedule = () => {
         <div className="event-schedule-container">
             <header className="schedule-header">
                 <h1>Event Schedule</h1>
-                <p>Explore the sessions of the 1st International Olympic Research Conference</p>
             </header>
             {event.schedule.map((day, index) => (
                 <section key={index} className="schedule-section">
