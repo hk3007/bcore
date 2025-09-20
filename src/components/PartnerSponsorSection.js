@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import "./PartnerSponsorSection.css";
 import { partners, sponsors } from "./partnersData";

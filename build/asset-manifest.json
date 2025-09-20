@@ -1,11 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.43c7dd84.css",
-    "main.js": "/static/js/main.43daa851.js",
+    "main.css": "/static/css/main.4e0b85cd.css",
+    "main.js": "/static/js/main.98cabe28.js",
     "static/js/453.b2889c0a.chunk.js": "/static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Broucher.pdf": "/static/media/Broucher.ec41f6132fa75fd7b23b.pdf",
-    "static/media/Intern 2.jpg": "/static/media/Intern 2.6427d4d6b4d269c21cad.jpg",
     "static/media/DESIGN COMPETITION.png": "/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
     "static/media/Page 4.jpg": "/static/media/Page 4.5e0f709e5609cf549616.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.ce7f991f3d243b5f9c55.png",
@@ -22,10 +21,8 @@
     "static/media/Page 1.jpg": "/static/media/Page 1.c8c2b57be8d6ff473499.jpg",
     "static/media/Page 2.jpg": "/static/media/Page 2.fdfe8b309c48825f1326.jpg",
     "static/media/Yash Sharma.jpg": "/static/media/Yash Sharma.233ad2c5a6f33a75643b.jpg",
-    "static/media/Zulfikar Pathan.jpg": "/static/media/Zulfikar Pathan.285bd90bd16636dcc90d.jpg",
     "static/media/Praskash Singh Parihar.png": "/static/media/Praskash Singh Parihar.107fa2224d4b9ff9154a.png",
     "static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.jpg": "/static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.d47309858370eb372a2c.jpg",
-    "static/media/ANIRUDH SINGH.jpg": "/static/media/ANIRUDH SINGH.8a19d695765612a30ac5.jpg",
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "/static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
     "static/media/Gaurav Singh Khushwah.jpg": "/static/media/Gaurav Singh Khushwah.558d615d360e189396ab.jpg",
     "static/media/Ministry_of_Youth_Affairs_and_Sports.png": "/static/media/Ministry_of_Youth_Affairs_and_Sports.ce20d0eb1e8e65a684e9.png",
@@ -34,23 +31,19 @@
     "static/media/Khelo India 1.jpg": "/static/media/Khelo India 1.324ef89bbc7ea94e6969.jpg",
     "static/media/AISTS.png": "/static/media/AISTS.c7884b6250db39916f64.png",
     "static/media/Praveen Kumar.jpg": "/static/media/Praveen Kumar.ec7eb5cbc02d703622d5.jpg",
-    "static/media/TANISHKA SINGH.jpg": "/static/media/TANISHKA SINGH.3ab089ab81e06df4fecf.jpg",
-    "static/media/Shivam Kumar.jpg": "/static/media/Shivam Kumar.d6c00a2e3ca9a5013a81.jpg",
     "static/media/Intern 1.jpeg": "/static/media/Intern 1.16a4c77c3d416ebc0516.jpeg",
-    "static/media/Neeladri Shekhar Das.jpg": "/static/media/Neeladri Shekhar Das.d00ff6f3825442baf7d9.jpg",
     "static/media/Bimal Patel.jpeg": "/static/media/Bimal Patel.c85acf540c97f2f39118.jpeg",
     "static/media/Utsav Chaware.jpg": "/static/media/Utsav Chaware.4145c9d90fae8d6717a1.jpg",
-    "static/media/HARSHDIPSINH RATHOD.jpg": "/static/media/HARSHDIPSINH RATHOD.98c023ef9f8f5a733e47.jpg",
     "static/media/BCORE Logo.png": "/static/media/BCORE Logo.178ff992bc088357a841.png",
     "static/media/Indian_Olympic_Association_logo.png": "/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/index.html",
-    "main.43c7dd84.css.map": "/static/css/main.43c7dd84.css.map",
-    "main.43daa851.js.map": "/static/js/main.43daa851.js.map",
+    "main.4e0b85cd.css.map": "/static/css/main.4e0b85cd.css.map",
+    "main.98cabe28.js.map": "/static/js/main.98cabe28.js.map",
     "453.b2889c0a.chunk.js.map": "/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43c7dd84.css",
-    "static/js/main.43daa851.js"
+    "static/css/main.4e0b85cd.css",
+    "static/js/main.98cabe28.js"
   ]
 }
