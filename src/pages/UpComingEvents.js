@@ -67,7 +67,14 @@ export const UpComing = () => {
       description:
         "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
       bookletLink:
-        'https://rru.ac.in/wp-content/uploads/2025/09/2-IORC_Booklet_04-09-2025_compressed.pdf',
+        'https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf',
+    },
+    {
+      id: 4,
+      name: 'BCORE Night Run',
+      startDate: new Date('2026-01-10'),
+      endDate: new Date('2026-01-10'),
+      place: 'Rashtriya Raksha University, Gandhinagar, India',
     },
   ];
 

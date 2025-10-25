@@ -17,6 +17,9 @@ import NewsSection from './pages/NewsSection';
 import { EventDetails } from './pages/EventDetails';
 import { EventSchedule } from './pages/EventSchedule';
 import { EventGallery } from './pages/EventGallery';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
+import Careers from './pages/Careers';
+import HumanPerformanceLab from './pages/HumanPerformanceLab';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -55,11 +58,14 @@ function App() {
         <Route path="/ethics" element={<Ethics_Statement />} />
         <Route path="/olympicresearchgrants" element={<OlympicResearchGrants />} />
         <Route path="/event/:id" element={<EventDetails />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/HumanPerformanceLab" element={<HumanPerformanceLab />} />
         <Route path="/event/:id/schedule" element={<EventSchedule />} />
         <Route path="/event/:id/gallery" element={<EventGallery />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
      </div>
+     <ScrollToTopButton />
      <div className="footer">
           <Footer />
     </div>

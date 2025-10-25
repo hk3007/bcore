@@ -540,23 +540,23 @@ export const EventDetails = () => {
             description:
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             bookletLink:
-              'https://rru.ac.in/wp-content/uploads/2025/09/2-IORC_Booklet_04-09-2025_compressed.pdf',
+              'https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf',
             subpoints: [
                 'Ignite research reform and foster innovation in Olympic studies.',
                 'Integrate education, research, and governance for a cohesive Olympic development framework.',
                 "Create India-centered strategies aligned with the country's vision for sporting excellence.",
-                'Gap inding, scoping reviews, qualitative methodologies, and emerging research areas, led by national and international Olympic faculty.',
-                'Facilitation of partnerships between researchers, irms, academies, and institutes for case studies.',
+                'Gap finding, scoping reviews, qualitative methodologies, and emerging research areas, led by national and international Olympic faculty.',
+                'Facilitation of partnerships between researchers, firms, academies, and institutes for case studies.',
                 'Direct involvement of universities, schools, and academies in shaping Olympic-aligned policies.',
-                'Olympics, Commonwealth Games, WPFG in the Indian context.',
-                'Sponsorships from Indian agencies/irms, with experts and scholars contributing expertise in return.',
+                'Olympics, Commonwealth Games, and WPFG in the Indian context.',
+                'Sponsorships from Indian agencies/firms, with experts and scholars contributing expertise in return.',
             ],
             importantDates: [
-                { event: 'Abstract	Submission	Deadline', date: '30 October 2025 (tentative)' },
+                { event: 'Abstract	Submission	Deadline', date: '30 November 2025' },
                 { event: 'Notification of Acceptance:', date: 'Within 15 working days of abstract submission' },
                 { event: 'Full Paper Submission	Deadline:', date: '31 December 2025' },
             ],
-                        abstractGuidelines: {
+            abstractGuidelines: {
                 formatRequirements: [
                     'Abstract should be between 150-250 words.',
                     'Use 12-point Times New Roman font.',
@@ -589,6 +589,36 @@ export const EventDetails = () => {
                     }
                 ]
             },
+            resources: {
+//                schedule: "https://example.com/schedule.pdf",
+              brochure: "https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf",
+              registrationLink: "https://forms.eduqfix.com/secolycn/add",
+              googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfsd7Tl_kZo8x_4oE_ZocDMyaC5T_AQswO1Hrl9WGv_0jXZyg/viewform?usp=header"
+            },
+            callForAbstract: {
+                text: `BCORE cordially invites abstracts for presentation at its International Olympic Research Conference at Rashtriya Raksha University. Submissions addressing hosting and organizing, Olympic education, sustainable development, and technological innovation are particularly welcomed. Early career researchers are encouraged to participate.`,
+                submissionEmail: 'olyresearchacademy.submissions@rru.ac.in',
+                deadline: '30th November 2025',
+            },
+             Steps: [
+                { event: 'Step 1', date: ' Submit the abstract' },
+                { event: 'Step 2', date: 'Wait For confirmation' },
+                { event: 'Step 3', date: 'Register to the Olympics conference' },
+                { event: 'Step 4', date: 'Fill Google Form' },
+            ],
+        },
+        {
+            id: 4,
+            name: 'BCORE Night Run',
+            date: '10 January 2026',
+            place: 'Gandhinagar, India',
+            description:
+                "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
+            details: [
+                'Rashtriya Raksha University, an Institution of National Importance under the Ministry of Home Affairs, Government of India, is planning to organize the BCORE Night Run (Raksha Olympism Run) — featuring a Half Marathon, 10 km, 5 km, and 3 km run — in the Inner Gandhinagar City on the 10th January 2026.',
+                'This event will serve as a symbolic extension of Sardar Vallabhbhai Patel’s dream of national unity — connecting the spirit of Raksha (Protection) and Olympism (Peace through Sport). Inspired by the ethos of the World Police and Fire Games 2029, this event will aim to bring together civilians with all protectors of the nation — including State Police Forces, Central Armed Police Forces, the Indian Army, Navy, Air Force, Fire and Emergency Services, First Responders, and both active and retired law enforcement personnel — who dedicate their lives to safeguarding our country.',
+                'The initiative-taker, BCORE, envisions that through this race two initiatives are built: the unity within law enforcement officers and with civilians, and secondly, to identify potential athlete’s under the age of 16 and train them in multi-sport facility of the Center.'
+            ],
         }
     ];
       
@@ -599,6 +629,7 @@ export const EventDetails = () => {
      
     const hasOnlyBasicInfo = !(
     event?.collaboration?.length > 0 ||
+    event?.details?.length > 0 ||
     event?.subpoints?.length > 0 ||
     event?.guests?.length > 0 ||
     event?.importantDates?.length > 0 ||
@@ -683,6 +714,21 @@ export const EventDetails = () => {
             </div>
         )}
 
+                {/* Event Details Section */}
+        {event?.details?.length > 0 && (
+        <div className="detail-container">
+            <h3>Event Details</h3>
+            <ul>
+            {event.details.map((detail, index) => (
+                <li key={index}>
+                <span>{detail}</span>
+                </li>
+            ))}
+            </ul>
+        </div>
+        )}
+
+
         {event?.guests?.length > 0 && (
             <section className="chief-guests">
             <h2>Meet Our Guests</h2>
@@ -762,6 +808,18 @@ export const EventDetails = () => {
             </p>
             </div>
         )}
+        
+        {event?.Steps?.length > 0 && (
+            <div className="important-dates-container">
+            <h3>Steps to Register</h3>
+            {event.Steps.map((step, index) => (
+                <div key={index} className="date-card">
+                <h4>{step.event}</h4>
+                <p>{step.date}</p>
+                </div>
+            ))}
+            </div>
+        )}
 
         {event?.abstractGuidelines && (
             <div className="abstract-guidelines-container">
@@ -781,18 +839,6 @@ export const EventDetails = () => {
                 </div>
                 ))}
             </div>
-            </div>
-        )}
-
-        {event?.Steps?.length > 0 && (
-            <div className="important-dates-container">
-            <h3>Steps to Register</h3>
-            {event.Steps.map((step, index) => (
-                <div key={index} className="date-card">
-                <h4>{step.event}</h4>
-                <p>{step.date}</p>
-                </div>
-            ))}
             </div>
         )}
 
@@ -937,6 +983,62 @@ export const EventDetails = () => {
             </div>
         )
         )}
+        
+        {/* Resources Section (inline) */}
+        {(
+        (event?.resources?.schedule ||
+            event?.resources?.brochure ||
+            event?.resources?.registrationLink ||
+            event?.resources?.googleForm) && (
+            <div className="additional-info">
+            <h3 className="resources-title">Resources</h3>
+            <div className="resources-inline">
+                {event?.resources?.schedule && (
+                <a
+                    href={event.resources.schedule}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
+                >
+                    View Schedule
+                </a>
+                )}
+                {event?.resources?.brochure && (
+                <a
+                    href={event.resources.brochure}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
+                >
+                    View Brochure
+                </a>
+                )}
+                {event?.resources?.registrationLink && (
+                <a
+                    href={event.resources.registrationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
+                >
+                    Register Now
+                </a>
+                )}
+                {event?.resources?.googleForm && (
+                <a
+                    href={event.resources.googleForm}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="modal-link"
+                >
+                    Google Form
+                </a>
+                )}
+            </div>
+            </div>
+        )
+        )}
+
+
 
 
 

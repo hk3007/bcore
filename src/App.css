@@ -9,3 +9,52 @@
   flex: 1; /* Takes up remaining space, pushing the footer down */
   padding: 80px 0px 0px 0px;
 }
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  backdrop-filter: blur(10px);
+  color: #0077b6; /* Olympic blue */
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background: #0077b6;
+  color: #fff;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 30px rgba(0, 119, 182, 0.4);
+}
+
+.scroll-to-top svg {
+  pointer-events: none;
+}
+
+.scroll-to-top {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.scroll-to-top.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out;
+}

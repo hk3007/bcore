@@ -7,7 +7,9 @@ import image2 from '../pages/Images/TEAM/Bimal Patel.jpeg'
 import image3 from '../pages/Images/TEAM/Gaurav Singh Khushwah.jpg'
 import image12 from '../pages/Images/TEAM/Utsav Chaware.jpg'
 import image15 from '../pages/Images/TEAM/Intern 1.jpeg'
-
+import image4 from '../pages/Images/TEAM/Krishna Ramani.jpeg'
+import image5 from '../pages/Images/TEAM/Sumit Pandey.jpeg'
+import image6 from '../pages/Images/TEAM/Sonika Bisht.png'
 
 const teamMembers = [
   {
@@ -39,6 +41,12 @@ const teamMembers = [
     designation: 'I/c Director and Assistant Professor (Physical Education & Sports)',
     photo: 'https://rru.ac.in/wp-content/uploads/2023/05/Yash-Sharma-scaled.jpg',
     info: 'Mr. Yash Sharma is the I/c Director & Assistant Professor (Physical Education & Sports), with JRF/NET qualifications, specializing in sports science and physical education.'
+  },
+    {
+    name: 'Ms. Sonika Bisht',
+    designation: 'Research Officer BCORE',
+    photo: [image6],
+    info: 'Ms. Sonika Bisht is a Research Officer at the Bharat Centre of Olympic Research and Education (BCORE), Rashtriya Raksha University, Gujarat. She holds a Master of Laws (LL.M) from Rashtriya Raksha University and a B.B.A LL.B (Hons.) degree from Law College Dehradun, Uttaranchal University.'
   }
 ];
 const interns = [
@@ -46,7 +54,19 @@ const interns = [
     name: 'Kushi Sriram',
     schoolName: 'School of Criminal Law and Military Law',
     photo: [image15],
-    info: ''
+    info: 'Research And Publication'
+  },
+  {
+    name: 'Krishna Ramani',
+    schoolName: 'School of Internal Security, Defence and Strategic Studies',
+    photo: [image4],
+    info: 'Sponsership And Events'
+  },
+  {
+    name: 'Sumit Pandey',
+    schoolName: 'School of Applied Science and Engineering Technology',
+    photo: [image5],
+    info: 'Public Relations And Marketing'
   }
 ];
 

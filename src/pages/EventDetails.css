@@ -602,6 +602,65 @@ body {
     cursor: pointer;
 }
 
+/* 🌟 Event Highlights & Details Section Styling */
+.detail-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.detail-container h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 24px;
+  text-align: center;
+  border-bottom: 2px solid #2563eb;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detail-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.detail-container li {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.detail-container li span {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detail-container {
+    padding: 24px 16px;
+  }
+
+  .detail-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .detail-container li {
+    font-size: 1rem;
+  }
+}
+
+
+
+
 /* Hover Effect */
 .date-card:hover {
     transform: translateY(-12px) scale(1.04);
@@ -666,7 +725,7 @@ body {
     margin-top: 30px;
     padding: 20px;
     text-align: center;
-    background: #f9f9f9;
+    background: #cefdff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 1s ease-in-out;
@@ -707,11 +766,12 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(106, 27, 154, 0.8);
     background: linear-gradient(135deg, #8e24aa, #9c27b0);
+    color: #fff
 }
 
 .additional-info a.email-link {
     background: linear-gradient(135deg, #1565c0, #1e88e5);
-    box-shadow: 0 4px 12px rgba(21, 101, 192, 0.5);
+    box-shadow: 0 4px 12px rgba(233, 234, 235, 0.5);
 }
 
 .additional-info a.email-link:hover {
@@ -977,7 +1037,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.6); /* Off-white semi-transparent layer */
+    background-color: rgba(255, 255, 255, 0.498); /* Off-white semi-transparent layer */
     z-index: 1; /* Place the overlay below the text */
 }
 
@@ -992,10 +1052,11 @@ body {
 /* Text styles */
 .accommodation-item h4 {
     font-size: 18px;
-    color: #00052f; /* Text color for headings */
+    color: #fefefe; /* Text color for headings */
     text-decoration: none; /* Remove underline */
-    margin-bottom: 10px;
+    margin: 10px;
     font-weight: bold;
+    text-align: justify;
 }
 
 .accommodation-item p {

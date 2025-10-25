@@ -1,0 +1,182 @@
+/* 🌐 Page Container */
+.careers-page {
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 60px 0;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  color: #1f2937;
+}
+
+/* ✨ Header Section */
+.careers-header {
+  max-width: 1000px;
+  margin: 0 auto 60px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.careers-header .icon {
+  color: #1d4ed8;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+}
+
+.careers-header h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.careers-header p {
+  font-size: 1.15rem;
+  color: #4b5563;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* 💼 Compact Contact Bar (One-Line Layout) */
+.contact-card.compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  flex-wrap: wrap; /* responsive stacking */
+  text-align: center;
+}
+
+.contact-icon {
+  width: 26px;
+  height: 26px;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  font-size: 1.05rem;
+  color: #374151;
+}
+
+.contact-email {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-email:hover {
+  color: #1e3a8a;
+}
+
+/* 💼 Job Section */
+.job-section {
+  max-width: 900px;
+  margin: 80px auto 0;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.job-section .icon {
+  color: #2563eb;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 16px;
+}
+
+.job-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.job-section p {
+  color: #4b5563;
+  margin-bottom: 24px;
+  font-size: 1.05rem;
+}
+
+.job-section button {
+  background-color: #e5e7eb;
+  color: #6b7280;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+/* ⚖️ Equality Section */
+.equality-section {
+  max-width: 1000px;
+  margin: 100px auto 0;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 50px 40px;
+}
+
+.equality-section h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.equality-section p {
+  color: #4b5563;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* 🧭 Accent Divider (optional subtle touch) */
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background-color: #2563eb;
+  border-radius: 3px;
+  margin: 0 auto 40px;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .careers-header h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers-header h1 {
+    font-size: 2rem;
+  }
+
+  .careers-header p,
+  .equality-section p {
+    font-size: 1rem;
+  }
+
+  .contact-card.compact {
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+  }
+
+  .job-section {
+    margin-top: 60px;
+  }
+
+  .equality-section {
+    margin-top: 80px;
+    padding: 32px 20px;
+  }
+}

@@ -1,0 +1,157 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent global horizontal scroll */
+}
+
+/* === MAIN CONTAINER === */
+.hpl-container {
+  font-family: "Inter", sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  line-height: 1.75;
+  overflow-x: hidden;  /* only horizontal scroll hidden */
+  overflow-y: auto;    /* allow normal vertical scroll */
+  width: 100%;
+}
+
+
+/* === HEADER === */
+.hpl-header {
+  background: linear-gradient(120deg, #0b0b1f, #004466);
+  padding: 10px 10px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.hpl-header h1 {
+  font-size: 2.4rem;
+  color: #FFD700;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hpl-header p {
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #fefae0;
+  line-height: 1.8;
+}
+
+/* === SECTIONS === */
+.hpl-section {
+  padding: 20px 20px;
+}
+
+.hpl-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hpl-section h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.hpl-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700, #ffb703);
+  border-radius: 2px;
+}
+
+.hpl-section p {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+  color: #374151;
+  text-align: justify;
+}
+
+/* === TABLE === */
+.hpl-table-container {
+  margin-top: 30px;
+  overflow-x: auto; /* ✅ Only horizontal scroll for table */
+  overflow-y: visible;
+  width: 100%;
+}
+
+.hpl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  min-width: 900px;
+}
+
+.hpl-table th {
+  background: #004466;
+  color: #fff;
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.hpl-table td {
+  padding: 14px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hpl-table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.hpl-table tr:hover {
+  background: #fff7d1;
+  transition: 0.3s ease;
+}
+
+.hpl-table ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.hpl-table li {
+  list-style-type: "• ";
+  margin-bottom: 5px;
+}
+
+/* === PDF SECTION === */
+.hpl-section.pdf {
+  background: linear-gradient(90deg, #fff9e6, #fff4cc);
+  text-align: center;
+}
+
+.hpl-section.pdf a {
+  color: #b45309;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.hpl-section.pdf a:hover {
+  border-bottom: 2px solid #b45309;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hpl-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .hpl-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .hpl-table th,
+  .hpl-table td {
+    font-size: 0.9rem;
+  }
+}

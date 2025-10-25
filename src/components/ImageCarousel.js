@@ -27,13 +27,6 @@ const ImageCarousel = () => {
     { src: page3, alt: "Page 3" },
     { src: page4, alt: "Page 4" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/01/International-Olympic-Research-Conference-Guest-Banner-16.png", alt: "Olympic Conference" },
-    { src: "https://rru.ac.in/wp-content/uploads/2024/10/COB-Expo-1.jpg", alt: "COB Expo" },
-    { src: "https://rru.ac.in/wp-content/uploads/2024/09/Paralympics_Webslider1-1.jpg", alt: "Paralympics 1" },
-    { src: "https://rru.ac.in/wp-content/uploads/2024/10/Paralympics_Webslider2.jpg", alt: "Paralympics 2" },
-    { src: "https://rru.ac.in/wp-content/uploads/2024/10/Hockey_Webslider.jpg", alt: "Hockey" },
-    { src: "https://rru.ac.in/wp-content/uploads/2024/10/Niraj-Chopra_Webslider.jpg", alt: "Neeraj Chopra" },
-    { src: "https://rru.ac.in/wp-content/uploads/2024/10/Swapnil-Kusale_Webslider.jpg", alt: "Swapnil Kusale" },
-    { src: image1, alt: "Image 1" },
   ];
 
   return (

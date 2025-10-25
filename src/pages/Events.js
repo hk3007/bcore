@@ -20,13 +20,6 @@ const events = [
     place: 'Bharat Centre of Olympic Research and Education (BCORE), Rashtriya Raksha University, Gandhinagar, India',
     description: 'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
     booklet: 'https://rru.ac.in/wp-content/uploads/2025/03/IORC-Booklet_-05-03-2025-10-MB_compressed.pdf',
-  },
-  {
-    id: 2,
-    name: 'SPORTS EXCELLENCE SEMINAR',
-    date: '23rd June 2025',
-    place: 'Rashtriya Raksha University, Gandhinagar, India',
-    description: 'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
   }
 ];
 

@@ -66,23 +66,30 @@ export const Navbar = () => {
     setOpenDropdown((cur) => (cur === idx ? null : idx));
   };
 
-  const navItems = [
-    { to: "/", label: "Home", icon: Home },
-    { to: "/about", label: "About", icon: BookOpen },
-    {
-      label: "Events & Guidelines",
-      icon: Calendar,
-      dropdown: [
-        { to: "/upcomingevents", label: "Upcoming Events" },
-        { to: "/events", label: "Past Events" },
-        { to: "/ethics", label: "Ethics Statement and COPE Guidelines" },
-        { to: "/olympicresearchgrants", label: "Olympic Research Grants" },
-      ],
-    },
-    { to: "/team", label: "Team", icon: Users },
-    { to: "/news", label: "News", icon: Newspaper },
-    { to: "/contact", label: "Contact", icon: Phone },
-  ];
+const navItems = [
+  { to: "/", label: "Home", icon: Home },
+  { to: "/about", label: "About", icon: BookOpen },
+  {
+    label: "Events & Guidelines",
+    icon: Calendar,
+    dropdown: [
+      { to: "/upcomingevents", label: "Upcoming Events" },
+      { to: "/events", label: "Past Events" },
+      { to: "/ethics", label: "Ethics Statement and COPE Guidelines" },
+      { to: "/olympicresearchgrants", label: "Olympic Research Grants" },
+    ],
+  },
+  {
+    label: "Work With BCORE",
+    icon: Users,
+    dropdown: [
+      { to: "/team", label: "Team" },
+      { to: "/careers", label: "Careers" },
+    ],
+  },
+  { to: "/news", label: "News", icon: Newspaper },
+  { to: "/contact", label: "Contact", icon: Phone },
+];
 
   return (
     <header className="navbar-header" ref={navRef}>
