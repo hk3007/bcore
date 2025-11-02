@@ -120,29 +120,30 @@ export const BCORE = () => {
     return (
         <div>
             <ImageCarousel />
-            <div className="banner-countdown">
+            <div className="banner-countdown vintage-theme">
             <div className="banner-left">
                 <p>Get Ready for the 2nd International Olympic Research Conference</p>
             </div>
             <div className="banner-right">
                 <div className="countdown-item">
-                    <span>{timeLeft.days}</span>
-                    <small>DAYS</small>
+                <span>{timeLeft.days}</span>
+                <small>DAYS</small>
                 </div>
                 <div className="countdown-item">
-                    <span>{timeLeft.hours}</span>
-                    <small>HOURS</small>
+                <span>{timeLeft.hours}</span>
+                <small>HOURS</small>
                 </div>
                 <div className="countdown-item">
-                    <span>{timeLeft.minutes}</span>
-                    <small>MINUTES</small>
+                <span>{timeLeft.minutes}</span>
+                <small>MINUTES</small>
                 </div>
                 <div className="countdown-item">
-                    <span>{timeLeft.seconds}</span>
-                    <small>SECONDS</small>
+                <span>{timeLeft.seconds}</span>
+                <small>SECONDS</small>
                 </div>
             </div>
-        </div>
+            </div>
+
 
             <section className="logo-section-1">
                 <div className="logos-1">
@@ -160,49 +161,66 @@ export const BCORE = () => {
                 </h4>
             </div>
 
-            <div className="events-page">
-                <h2 className="events-title">Upcoming Events</h2>
-                <div className="events-grid">
-                    {events.filter((event) => {
-                        const { end } = parseDateRange(event.date);
-                        return end >= new Date();
-                    }).map((event) => (
-                        <div className="event-card" key={event.id}>
-                            <h3>{event.name}</h3>
-                            <p>{formatDate(event.date)}</p>
-                            {event.place && <p>{event.place}</p>}
-                            {event.accomodation && <p><b>{event.accomodation}</b></p>}
+            <div className="bcore-events">
+            <h2 className="bcore-events__title">Upcoming Events</h2>
 
-                            <div className="event-buttons">
-                                <Link to={`/event/${event.id}`} className="know-more-btn">
-                                    Know More
-                                </Link>
+            <div className="bcore-events__grid">
+                {events
+                .filter((event) => {
+                    const { end } = parseDateRange(event.date);
+                    return end >= new Date();
+                })
+                .map((event) => (
+                    <div className="bcore-event-card" key={event.id}>
+                    <div className="bcore-event-card__content">
+                        <h3 className="bcore-event-card__name">{event.name}</h3>
+                        <p className="bcore-event-card__date">{formatDate(event.date)}</p>
+                        {event.place && (
+                        <p className="bcore-event-card__place">{event.place}</p>
+                        )}
+                        {event.accomodation && (
+                        <p className="bcore-event-card__accommodation">
+                            <b>{event.accomodation}</b>
+                        </p>
+                        )}
+                    </div>
 
-                                {event.schedule && (
-                                    <Link to={`/event/${event.id}/schedule`} className="schedule-btn">
-                                        View Schedule
-                                    </Link>
-                                )}
+                    <div className="bcore-event-card__actions">
+                        <Link to={`/event/${event.id}`} className="bcore-btn bcore-btn--gold">
+                        Know More
+                        </Link>
 
-                                {event.brochure && (
-                                    <a
-                                        href={event.brochure}
-                                        className="schedule-btn"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {event.name.includes("IORC") ? "IORC Booklet" : "View Brochure"}
-                                    </a>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                        {event.schedule && (
+                        <Link
+                            to={`/event/${event.id}/schedule`}
+                            className="bcore-btn bcore-btn--blue"
+                        >
+                            View Schedule
+                        </Link>
+                        )}
+
+                        {event.brochure && (
+                        <a
+                            href={event.brochure}
+                            className="bcore-btn bcore-btn--red"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {event.name.includes("IORC")
+                            ? "IORC Booklet"
+                            : "View Brochure"}
+                        </a>
+                        )}
+                    </div>
+                    </div>
+                ))}
             </div>
+            </div>
+
 
             <PartnerSponsorSection showPartners={true} showSponsors={true} />
 
-            <section className="overview">
+            <section className="bcoreoverview">
                 <h2>Overview</h2>
                 <p>
                     The Bharat Centre for Olympic Research and Education (BCORE) at Rashtriya Raksha University aims to serve as a hub for disseminating research-based knowledge to scholars, professionals, sports personnel, coaches, and enthusiasts with a focus on promoting Olympism and fostering Olympic ideals within the country. This Centre will offer a wide array of resources and information to support academic pursuits, professional development, and sports management initiatives.
@@ -233,22 +251,21 @@ export const BCORE = () => {
             </div>
             </section>
 
-            {/* BCORE Video Section */}
-            <section className="bcore-video">
-                <h2>Watch BCORE in Action</h2>
-                <div className="video-wrapper">
-                    <iframe
-                        width="100%"
-                        height="500"
-                        src="https://www.youtube.com/embed/7Mhy_s0Nv7E"
-                        title="BCORE Video"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-                </div>
-            </section>
-
+        {/* BCORE Video Section */}
+        <section className="bcore-video">
+            <h2>Watch BCORE in Action</h2>
+            <div className="video-wrapper">
+                <iframe
+                    width="100%"
+                    height="500"
+                    src="https://www.youtube.com/embed/7Mhy_s0Nv7E?autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1&loop=1&playlist=7Mhy_s0Nv7E"
+                    title="BCORE Video"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
+            </div>
+        </section>
         </div>
     );
 }

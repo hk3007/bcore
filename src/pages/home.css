@@ -223,62 +223,45 @@
 }
 
 
-.overview {
+.bcoreoverview {
     padding: 1rem;
-    margin: 1rem auto;
-    background: linear-gradient(135deg, #000939, #090021, #010027);
-    color: #ecf0f1;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.overview h2 {
-    font-size: 3rem;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
-    color: #f39c12; 
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-}
-
-.overview p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-    text-align: justify;
-}
-
-
-.bcore-overview {
-    display: grid;
-    grid-template-columns: 1fr 0.6fr 1fr; /* Three columns: text-left, image, text-right */
-    align-items: center; /* Align items vertically */
     margin: 2rem auto;
-    padding: 2rem;
-    max-width: 1300px;
-    background: #f0f8ff; /* Light background for contrast */
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Heading Styles */
-.bcore-overview h2 {
-    font-size: 1.5rem;
-    color: #003366; /* Dark blue color for headings */
-    margin-bottom: 1rem;
-    text-align: left;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow for headings */
+    background: linear-gradient(90deg, #000428, #004e92, #000428); /* Deep Olympic blue gradient */
+    color: #f5f5f5;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Paragraph Styles */
-.bcore-overview p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333333; /* Dark gray text color */
-    margin: 0;
-    text-align: justify;
+.bcoreoverview h2 {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    color: #FFD700; /* Olympic Gold */
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
+
+.bcoreoverview p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #e0e0e0;
+    padding: 0 1rem;
+}
+
+
+/* Optional accent line below heading */
+.bcoreoverview h2::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(to right, #FFD700, #FF0000, #0085C7, #00A651);
+    margin: 0.8rem auto 1.5rem;
+    border-radius: 2px;
+}
+
 
 /* Text Sections */
 .text-left,
@@ -506,92 +489,140 @@
     background-color: #020027;
 }
 
-/* Full-width countdown banner */
-.banner-countdown {
+/* ===== Bluish Vintage Countdown Banner ===== */
+.vintage-theme.banner-countdown {
     display: flex;
-    background: linear-gradient(135deg, #020028, #0290a9, #06012e); /* Olympic gradient */
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    padding: 30px 0px;
+
+    /* Elegant blue gradient with subtle vintage contrast */
+    background: linear-gradient(90deg, #000428, #004e92, #000428);
+    color: #f5f3eb;
+    font-family: 'Georgia', serif;
+
+    border-top: 3px solid #89a9d9; /* muted royal blue highlight */
+    border-bottom: 3px solid #89a9d9;
+    padding: 20px ;
+
+    /* Adds soft vignette and paper texture */
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.3);
     animation: fadeInBanner 1s ease-in-out;
 }
 
-/* Left panel with text */
-.banner-left {
-    flex: 1 1 250px;
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.banner-left p {
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    line-height: 1.4;
-}
-
-/* Right panel with countdown boxes */
-.banner-right {
-    flex: 2 1 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+/* ===== Left Text Section ===== */
+.vintage-theme .banner-left {
+    flex: 1 1 40%;
+    text-align: left;
     padding: 10px 20px;
+}
+
+.vintage-theme .banner-left p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #dbe4ee;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    border-left: 3px solid #89a9d9;
+    padding-left: 18px;
+    font-style: italic;
+}
+
+/* ===== Right Countdown Section ===== */
+.vintage-theme .banner-right {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
-/* Countdown item boxes */
-.countdown-item {
+/* ===== Countdown Item Boxes ===== */
+.vintage-theme .countdown-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #fff;
-    color: #0057b8;
-    padding: 15px 25px;
+    background: #f0f4fa;
+    color: #102542;
+    padding: 20px 35px;
     border-radius: 12px;
-    min-width: 80px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 90px;
+    border: 1px solid #89a9d9;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
-.countdown-item:hover {
+.vintage-theme .countdown-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.25);
 }
 
-.countdown-item span {
-    font-size: 2.2rem;
-    font-weight: 800;
-    animation: pulse 1.5s infinite;
+/* ===== Countdown Text ===== */
+.vintage-theme .countdown-item span {
+    font-size: 2.6rem;
+    font-weight: 700;
+    font-family: 'Times New Roman', serif;
+    color: #1b263b;
 }
 
-.countdown-item small {
-    font-size: 0.85rem;
-    margin-top: 4px;
-    color: #333;
-    letter-spacing: 0.5px;
+.vintage-theme .countdown-item small {
+    font-size: 0.9rem;
+    color: #3f5d7d;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 6px;
 }
 
-/* Responsive adjustments */
+/* ===== Subtle Animation ===== */
+@keyframes fadeInBanner {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive Adjustments ===== */
 @media (max-width: 900px) {
-    .banner-countdown {
+    .vintage-theme.banner-countdown {
         flex-direction: column;
         text-align: center;
         padding: 20px 10px;
     }
-    .banner-left, .banner-right {
-        flex: 1 1 100%;
-        margin-bottom: 15px;
+
+    .vintage-theme .banner-left {
+        text-align: center;
+        border-left: none;
+        padding: 0;
+        margin-bottom: 10px;
     }
-    .countdown-item {
-        min-width: 60px;
-        padding: 12px 18px;
+
+    .vintage-theme .banner-left p {
+        font-size: 1rem;
+        border-left: none;
+    }
+
+    /* Keep countdown items on one line */
+    .vintage-theme .banner-right {
+        flex-wrap: nowrap;         /* prevent wrapping */
+        justify-content: center;   /* center align */
+        gap: 8px;                  /* smaller gap */
+        overflow-x: auto;          /* allow scroll if needed */
+    }
+
+    /* Smaller, more compact countdown boxes */
+    .vintage-theme .countdown-item {
+        min-width: 55px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .vintage-theme .countdown-item span {
+        font-size: 1.2rem;         /* smaller number size */
+    }
+
+    .vintage-theme .countdown-item small {
+        font-size: 0.65rem;
+        letter-spacing: 0.3px;
     }
 }
 
@@ -794,3 +825,201 @@
 }
 
 
+/* =========================
+   🌍 BCORE EVENTS SECTION
+   ========================= */
+
+.bcore-events {
+  background: #ffffff;
+  padding: 3rem 5%;
+  text-align: center;
+  color: #111;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.bcore-events__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #002147; /* Deep Navy */
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.bcore-events__title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right, #FFD700, #FF0000, #0085C7, #00A651);
+  margin: 1rem auto;
+  border-radius: 3px;
+}
+
+/* =========================
+   📦 GRID LAYOUT
+   ========================= */
+
+.bcore-events__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ✅ Tablet Fix — ensure clean wrapping */
+@media (max-width: 1024px) {
+  .bcore-events__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bcore-events__grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}
+
+/* =========================
+   🏅 EVENT CARD
+   ========================= */
+
+.bcore-event-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 33, 71, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.bcore-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+}
+
+.bcore-event-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #FFD700, #0085C7);
+  border-radius: 6px 0 0 6px;
+  opacity: 0.9;
+}
+
+/* =========================
+   🧾 CARD CONTENT
+   ========================= */
+
+.bcore-event-card__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #002147;
+  margin-bottom: 0.4rem;
+}
+
+.bcore-event-card__date {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.bcore-event-card__place,
+.bcore-event-card__accommodation {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* =========================
+   🎟️ ACTION BUTTONS
+   ========================= */
+
+.bcore-event-card__actions {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+}
+
+.bcore-btn {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  min-width: 120px;
+  text-align: center;
+}
+
+.bcore-btn--gold {
+  background: #FFD700;
+  color: #000;
+}
+
+.bcore-btn--blue {
+  background: #0055A4;
+}
+
+.bcore-btn--red {
+  background: #E60026;
+}
+
+.bcore-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   📱 RESPONSIVE FIXES
+   ========================= */
+
+@media (max-width: 768px) {
+  .bcore-events {
+    padding: 2rem 1.5rem;
+  }
+
+  .bcore-events__title {
+    font-size: 2rem;
+  }
+
+  .bcore-event-card {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .bcore-event-card__actions {
+    gap: 0.6rem;
+  }
+
+  .bcore-btn {
+    width: 100%;
+  }
+}

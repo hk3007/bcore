@@ -1482,7 +1482,7 @@ body {
 
 .coming-soon p {
   font-size: 1.1rem;
-  color: #374151;
+  color: #000000;
   max-width: 500px;
   line-height: 1.6;
 }
@@ -1496,4 +1496,28 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.full-guideline-link {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.full-guideline-link p {
+  color: #000000;
+  font-size: 1rem;
+}
+
+.full-guideline-link a {
+  color: #ff0000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.full-guideline-link a:hover {
+  color: #ffb400;
+  text-decoration: underline;
 }

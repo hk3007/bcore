@@ -8,7 +8,6 @@ import page1 from '../pages/Slider/Page 1.jpg';
 import page2 from '../pages/Slider/Page 2.jpg';
 import page3 from '../pages/Slider/Page 3.jpg';
 import page4 from '../pages/Slider/Page 4.jpg';
-import image1 from '../pages/Images/Manu Bhaker & Sarabjot Singh_Webslider1.jpg';
 
 const ImageCarousel = () => {
   const images = [

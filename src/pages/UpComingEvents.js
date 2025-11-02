@@ -74,7 +74,7 @@ export const UpComing = () => {
       name: 'BCORE Night Run',
       startDate: new Date('2026-01-10'),
       endDate: new Date('2026-01-10'),
-      place: 'Rashtriya Raksha University, Gandhinagar, India',
+      place: 'Gandhinagar, India',
     },
   ];
 

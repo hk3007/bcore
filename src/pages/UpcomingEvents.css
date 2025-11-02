@@ -1,185 +1,174 @@
-/* UpcomingEvents.css */
+/* ====== UpcomingEvents.css (Modern Olympic Theme) ====== */
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* ===== Hero Section ===== */
 .events-page {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f2f5fa;
-    position: relative;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  padding-bottom: 60px;
 }
 
+/* Decorative Olympic rings overlay */
+.events-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://rru.ac.in/wp-content/uploads/2024/06/Logo.png") center/40% no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+  animation: floatRings 20s ease-in-out infinite alternate;
+}
+
+@keyframes floatRings {
+  0% { transform: scale(1) translateY(0); }
+  100% { transform: scale(1.05) translateY(10px); }
+}
+
+/* ===== Page Title ===== */
 .events-title {
-    font-size: 2.5rem;
-    color: #003580;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 2.8rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #190000;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
 }
 
+/* ===== Events Grid ===== */
 .events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
 }
 
+/* ===== Event Card ===== */
 .event-card {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px 20px;
+  color: #160000;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
 }
 
+/* ===== Event Title ===== */
 .event-card h3 {
-    font-size: 1.4rem;
-    color: #003580;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #000000;
 }
 
+/* ===== Event Info ===== */
 .event-card p {
-    color: #555;
-    font-size: 0.95rem;
+  font-size: 0.95rem;
+  color: #240101;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
+
+/* ===== Buttons ===== */
 .event-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px; /* Adjust the spacing as needed */
-    margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .know-more-btn, .schedule-btn {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 15px;
-    text-decoration: none; /* Remove underline */
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background: linear-gradient(135deg, #004aad, #0076d6);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .know-more-btn:hover, .schedule-btn:hover {
-    background-color: #020027;
+  background: linear-gradient(135deg, #ffdd57, #f7b500);
+  color: #0d1b2a;
+  transform: scale(1.05);
 }
 
-.schedule-btn:hover {
-    background-color: #020027;
-}
-
-/* Modal */
+/* ===== Modal Styles (if used) ===== */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 20px;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .modal-content {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    width: 100%;
-    max-width: 500px;
-    text-align: left;
-}
-
-.modal-content h2 {
-    font-size: 1.8rem;
-    color: #003580;
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.modal-content ul {
-    list-style-type: disc;
-    margin: 15px 0;
-    padding-left: 20px;
-    color: #555;
-}
-
-.modal-link {
-    display: block;
-    color: #005ea6;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: color 0.3s ease;
-}
-
-.modal-link:hover {
-    color: #003580;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .close-btn {
-    display: inline-block;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
+  background: #004aad;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
 .close-btn:hover {
-    background-color: #3d0300;
+  background: #001f3f;
 }
 
-/* Olympic Rings Background */
-.events-page::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    height: 150px;
-    width: 150px;
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 30%, transparent 30%);
-    background-size: 60px 60px;
-    opacity: 0.15;
-    z-index: -1;
-    border-radius: 50%;
-    animation: float 15s ease-in-out infinite;
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .events-title {
+    font-size: 2.2rem;
+    margin: 70px 0 30px;
+  }
+
+  .event-card {
+    padding: 20px;
+  }
+
+  .event-card h3 {
+    font-size: 1.3rem;
+  }
 }
 
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-    100% { transform: translateY(0); }
-}
+@media (max-width: 480px) {
+  .events-title {
+    font-size: 1.8rem;
+  }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    .events-title {
-        font-size: 2rem;
-    }
-
-    .event-card h3 {
-        font-size: 1.2rem;
-    }
+  .know-more-btn, .schedule-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
 }

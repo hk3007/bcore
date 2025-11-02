@@ -18,7 +18,7 @@ html, body {
 
 /* === HEADER === */
 .hpl-header {
-  background: linear-gradient(120deg, #0b0b1f, #004466);
+  background: linear-gradient(90deg, #000428, #02437b, #000428);
   padding: 10px 10px 20px;
   text-align: center;
   color: #fff;

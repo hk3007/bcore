@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 2000;
-  background: aliceblue;
+  background: rgba(240, 248, 255, 0.63);
   backdrop-filter: blur(10px);
 }
 
@@ -43,7 +43,7 @@
 ======================= */
 .navbar {
   position: relative;
-  background: rgba(255, 255, 218, 0.92);
+  background: rgba(253, 253, 175, 0.92);
   backdrop-filter: blur(12px);
   border-radius: 9999px;
   height: 55px;
@@ -270,3 +270,4 @@
   background: rgba(0, 0, 0, 0.4);
   z-index: 1500; /* below menu, above content */
 }
+

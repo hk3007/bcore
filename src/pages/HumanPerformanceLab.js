@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from 'react';
 // import AOS from "aos";
 // import "aos/dist/aos.css";
 import "./HumanPerformanceLab.css";
 
 const HumanPerformanceLab = () => {
+      useEffect(() => {
+          window.scrollTo(0, 0);
+      }, []);
   return (
     <div className="hpl-container">
       {/* === HEADER === */}

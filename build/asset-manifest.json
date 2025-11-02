@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.d9fc72ae.css",
-    "main.js": "/static/js/main.253b9394.js",
+    "main.css": "/static/css/main.5d200e67.css",
+    "main.js": "/static/js/main.34c5fbb4.js",
     "static/js/453.b2889c0a.chunk.js": "/static/js/453.b2889c0a.chunk.js",
-    "static/media/Sonika Bisht.png": "/static/media/Sonika Bisht.55340e925d616b380584.png",
     "static/media/Schedule.pdf": "/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Broucher.pdf": "/static/media/Broucher.ec41f6132fa75fd7b23b.pdf",
     "static/media/DESIGN COMPETITION.png": "/static/media/DESIGN COMPETITION.f1019428b00dfacc9c69.png",
     "static/media/Page 4.jpg": "/static/media/Page 4.5e0f709e5609cf549616.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.ce7f991f3d243b5f9c55.png",
+    "static/media/Bcore Night Run 2.png": "/static/media/Bcore Night Run 2.f8ea4055efeda5b811a3.png",
     "static/media/Yoonkyu Song.png": "/static/media/Yoonkyu Song.95984c606d4faa54566d.png",
-    "static/media/Manu Bhaker & Sarabjot Singh_Webslider1.jpg": "/static/media/Manu Bhaker & Sarabjot Singh_Webslider1.dbb93ebdd7cd4a4efc8d.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.1728e243ef2a3662cc50.png",
+    "static/media/Bcore Night Run 1.png": "/static/media/Bcore Night Run 1.727841adfe85d759d0be.png",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.494a4865820cb0ee9c41.png",
     "static/media/Maria Bogner.png": "/static/media/Maria Bogner.b0bda6680142ede35619.png",
     "static/media/Col Anant Kumar.png": "/static/media/Col Anant Kumar.10d9580d5e026fc30747.png",
@@ -20,7 +20,9 @@
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.9a89d80589597419ee44.png",
     "static/media/Lambis.png": "/static/media/Lambis.c948915babe7c1d2f40f.png",
     "static/media/Page 3.jpg": "/static/media/Page 3.3993c94643fdf0d3951a.jpg",
+    "static/media/Olympic Map.png": "/static/media/Olympic Map.804f1336e4230a28263d.png",
     "static/media/Page 2.jpg": "/static/media/Page 2.fdfe8b309c48825f1326.jpg",
+    "static/media/Sonika Bisht.png": "/static/media/Sonika Bisht.585884b82a47e9304583.png",
     "static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.jpg": "/static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.d47309858370eb372a2c.jpg",
     "static/media/Sumit Pandey.jpeg": "/static/media/Sumit Pandey.8f312937f4261604ee33.jpeg",
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "/static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
@@ -37,12 +39,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/index.html",
-    "main.d9fc72ae.css.map": "/static/css/main.d9fc72ae.css.map",
-    "main.253b9394.js.map": "/static/js/main.253b9394.js.map",
+    "main.5d200e67.css.map": "/static/css/main.5d200e67.css.map",
+    "main.34c5fbb4.js.map": "/static/js/main.34c5fbb4.js.map",
     "453.b2889c0a.chunk.js.map": "/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9fc72ae.css",
-    "static/js/main.253b9394.js"
+    "static/css/main.5d200e67.css",
+    "static/js/main.34c5fbb4.js"
   ]
 }

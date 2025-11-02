@@ -12,6 +12,8 @@ import Speaker from './Images/Yoonkyu Song.png';
 import speaker1 from './Images/Col Anant Kumar.png';
 import speaker2 from './Images/Lambis.png';
 import speaker3 from './Images/Maria Bogner.png';
+import BCORENightRunDetails from "./BCORENightRunDetails";
+
 export const EventDetails = () => {
     useEffect(() => {
         // Scroll to top when the component mounts
@@ -609,17 +611,8 @@ export const EventDetails = () => {
         },
         {
             id: 4,
-            name: 'BCORE Night Run',
-            date: '10 January 2026',
-            place: 'Gandhinagar, India',
-            description:
-                "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
-            details: [
-                'Rashtriya Raksha University, an Institution of National Importance under the Ministry of Home Affairs, Government of India, is planning to organize the BCORE Night Run (Raksha Olympism Run) — featuring a Half Marathon, 10 km, 5 km, and 3 km run — in the Inner Gandhinagar City on the 10th January 2026.',
-                'This event will serve as a symbolic extension of Sardar Vallabhbhai Patel’s dream of national unity — connecting the spirit of Raksha (Protection) and Olympism (Peace through Sport). Inspired by the ethos of the World Police and Fire Games 2029, this event will aim to bring together civilians with all protectors of the nation — including State Police Forces, Central Armed Police Forces, the Indian Army, Navy, Air Force, Fire and Emergency Services, First Responders, and both active and retired law enforcement personnel — who dedicate their lives to safeguarding our country.',
-                'The initiative-taker, BCORE, envisions that through this race two initiatives are built: the unity within law enforcement officers and with civilians, and secondly, to identify potential athlete’s under the age of 16 and train them in multi-sport facility of the Center.'
-            ],
         }
+
     ];
       
     
@@ -665,7 +658,9 @@ export const EventDetails = () => {
     }
 
     return (
-        <div className="event-details-page">
+        <div>
+        {event?.id === 4 && <BCORENightRunDetails />}   
+        {(event?.id !== 4) && (<div className="event-details-page">
         {event?.name && <h2>{event.name}</h2>}
 
         {(event?.date || event?.place) && (
@@ -822,25 +817,41 @@ export const EventDetails = () => {
         )}
 
         {event?.abstractGuidelines && (
-            <div className="abstract-guidelines-container">
+        <div className="abstract-guidelines-container">
             <h3>Abstract Submission Guidelines</h3>
             <div className="abstract-guidelines">
-                <h4>Format Requirements</h4>
-                <ul>
+            <h4>Format Requirements</h4>
+            <ul>
                 {event.abstractGuidelines?.formatRequirements?.map((req, index) => (
-                    <li key={index}>{req}</li>
+                <li key={index}>{req}</li>
                 ))}
-                </ul>
-                <h4>Content Structure</h4>
-                {event.abstractGuidelines?.contentStructure?.map((section, index) => (
+            </ul>
+
+            <h4>Content Structure</h4>
+            {event.abstractGuidelines?.contentStructure?.map((section, index) => (
                 <div key={index} className="guideline-section">
-                    <h5>{section.heading}</h5>
-                    <p>{section.description}</p>
+                <h5>{section.heading}</h5>
+                <p>{section.description}</p>
                 </div>
-                ))}
+            ))}
+
+            {/* ✅ Added full guideline link section */}
+            <div className="full-guideline-link">
+                <p>
+                <b>For the complete Paper Guidelines, please visit&nbsp;</b>
+                <a
+                    href="https://rru.ac.in/wp-content/uploads/2025/10/Guidelines-Full-Paper-Submission.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    this link
+                </a>.
+                </p>
             </div>
             </div>
+        </div>
         )}
+
 
         {event?.speakers?.length > 0 && (
             <section className="chief-guests">
@@ -1094,13 +1105,14 @@ export const EventDetails = () => {
         )}
 
              {/* Coming Soon Section */}
-        {hasOnlyBasicInfo && (
+        {/* {hasOnlyBasicInfo && (
             <div className="coming-soon">
                 <h3>✨ Coming Soon ✨</h3>
                 <p>More details about this event will be available shortly.</p>
             </div>
-            )}
+            )} */}
 
+       {event.id !== 4 && (
         <div className="map-section">
             <h3>Event Location</h3>
             <iframe
@@ -1113,6 +1125,7 @@ export const EventDetails = () => {
             title="Event location"
             ></iframe>
         </div>
+)}
 
         {event?.qrCode && (
             <div className="qr-section">
@@ -1122,7 +1135,7 @@ export const EventDetails = () => {
         )}
             
         </div>
-
-        
+        )}
+        </div>
     );
 };

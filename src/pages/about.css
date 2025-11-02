@@ -12,7 +12,7 @@
 .about-header {
     text-align: center;
     padding: 10px;
-    background: linear-gradient(135deg, #020028, #0290a9, #06012e);
+    background: linear-gradient(90deg, #000428, #004e92, #000428); /* Deep Olympic blue gradient */
     box-shadow: #020028 10px 10px 30px;
 }
 
@@ -31,7 +31,7 @@
     color: #ffffff;
 }
 
-/* Logo Section */
+/* ===== Logo Section ===== */
 .logo-section {
     display: flex;
     justify-content: center;
@@ -53,33 +53,52 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.logo:hover {
+.logo-Cont:hover {
     transform: scale(1.1);
 }
 
-/* Content Sections */
-.content-section {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* ===== Objectives Section (Map + Objectives in One Box) ===== */
+.objectives-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.mission-vision-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.objectives-box {
+    display: flex;
+    align-items: center;
     gap: 40px;
+    padding: 20px;
+    max-width: 1400px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Left Image */
+.objectives-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.objectives-image {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid #000000;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Right Objectives Text */
+.objectives-content {
+    flex: 1.2;
 }
 
 .content-card {
-    background-color: #112240;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease;
-}
-
-.content-card:hover {
-    transform: translateY(-10px);
+    background: transparent;
+    padding: 0;
 }
 
 .icon-title-group {
@@ -91,19 +110,21 @@
 
 .card-icon {
     font-size: 2.5rem;
-    color: #FFD700;
+    color: #000000;
 }
 
 .card-title {
-    font-size: 1.8rem;
-    color: #FFD700;
+    font-size: 2rem;
+    color: #000000;
     margin: 0;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .info-list {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
 .list-item-card {
@@ -112,77 +133,70 @@
     margin-bottom: 15px;
     position: relative;
     padding-left: 25px;
-    color: wheat;
+    color: #000000;
     text-align: justify;
 }
 
 .list-item-card::before {
-    content: '•';
-    color: #FFD700;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+    content: '▹';
+    color: #000000;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
 }
 
-/* Research Section */
-.research-section {
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: #FFD700;
-    margin-bottom: 10px;
-}
-
-.section-subtitle {
-    font-size: 1.1rem;
-    color: #8892B0;
-    margin-bottom: 40px;
-}
-
-.research-grid {
+/* ===== BCORE Overview Section ===== */
+.bcore-overview {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.research-item {
-    background-color: #112240;
-    padding: 25px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr 0.6fr 1fr;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 1300px;
+    background: #f0f8ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.research-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
-
-.research-icon {
-    font-size: 2.5rem;
-    color: #FFD700;
-    margin-bottom: 15px;
-}
-
-.research-text {
-    font-size: 1.1rem;
-    color: #CCD6F6;
+/* Headings and Texts */
+.bcore-overview h2 {
+    font-size: 1.6rem;
+    color: #003366;
+    margin-bottom: 1rem;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
+.bcore-overview p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333333;
+    margin: 0;
+    text-align: justify;
+}
+
+.bcore-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== Responsive Design ===== */
 @media (max-width: 992px) {
-    .mission-vision-section {
-        grid-template-columns: 1fr;
+    .objectives-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
     }
 
-    .logo-container {
-        gap: 50px;
+    .objectives-image {
+        max-width: 90%;
+    }
+
+    .bcore-overview {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        background: #f0f8ff;
     }
 }
 
@@ -196,12 +210,11 @@
     }
 
     .card-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
-    .logo-container {
-        flex-direction: column;
-        gap: 30px;
+    .list-item-card {
+        font-size: 1rem;
     }
 }
 
@@ -218,15 +231,8 @@
         font-size: 1rem;
     }
 
-    .content-section {
-        padding: 30px 15px;
-    }
-    
-    .list-item-card {
-        font-size: 1rem;
-    }
-
-    .research-text {
-        font-size: 1rem;
+    .objectives-box {
+        padding: 20px;
+        gap: 20px;
     }
 }

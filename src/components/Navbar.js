@@ -1,5 +1,3 @@
-"use client"
-
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -11,10 +9,7 @@ import {
   Calendar,
   ChevronDown,
 } from "lucide-react";
-import {
-  FaLinkedin,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../pages/Images/BCORE Logo.png";
 import "./navbar.css";
@@ -25,7 +20,6 @@ export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const navRef = useRef(null);
 
-  // ✅ Responsive check
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 1299px)");
     const apply = () => setIsMobile(mq.matches);
@@ -34,7 +28,6 @@ export const Navbar = () => {
     return () => mq.removeEventListener("change", apply);
   }, []);
 
-  // ✅ Close on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navRef.current && !navRef.current.contains(e.target)) {
@@ -46,7 +39,6 @@ export const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ Close on scroll
   useEffect(() => {
     const handleScroll = () => {
       setMenuOpen(false);
@@ -66,43 +58,40 @@ export const Navbar = () => {
     setOpenDropdown((cur) => (cur === idx ? null : idx));
   };
 
-const navItems = [
-  { to: "/", label: "Home", icon: Home },
-  { to: "/about", label: "About", icon: BookOpen },
-  {
-    label: "Events & Guidelines",
-    icon: Calendar,
-    dropdown: [
-      { to: "/upcomingevents", label: "Upcoming Events" },
-      { to: "/events", label: "Past Events" },
-      { to: "/ethics", label: "Ethics Statement and COPE Guidelines" },
-      { to: "/olympicresearchgrants", label: "Olympic Research Grants" },
-    ],
-  },
-  {
-    label: "Work With BCORE",
-    icon: Users,
-    dropdown: [
-      { to: "/team", label: "Team" },
-      { to: "/careers", label: "Careers" },
-    ],
-  },
-  { to: "/news", label: "News", icon: Newspaper },
-  { to: "/contact", label: "Contact", icon: Phone },
-];
+  const navItems = [
+    { to: "/", label: "Home", icon: Home },
+    { to: "/about", label: "About", icon: BookOpen },
+    {
+      label: "Events & Guidelines",
+      icon: Calendar,
+      dropdown: [
+        { to: "/upcomingevents", label: "Upcoming Events" },
+        { to: "/events", label: "Past Events" },
+        { to: "/ethics", label: "Ethics Statement and COPE Guidelines" },
+        { to: "/olympicresearchgrants", label: "Olympic Research Grants" },
+      ],
+    },
+    {
+      label: "Work With BCORE",
+      icon: Users,
+      dropdown: [
+        { to: "/team", label: "Team" },
+        { to: "/careers", label: "Careers" },
+      ],
+    },
+    { to: "/news", label: "News", icon: Newspaper },
+    { to: "/contact", label: "Contact", icon: Phone },
+  ];
 
   return (
     <header className="navbar-header" ref={navRef}>
-      {/* Left Logo */}
       <div className="nav-left">
         <Link to="/" className="nav-logo" onClick={closeMenu}>
           <img src={logo} alt="Logo" className="logo" />
         </Link>
       </div>
 
-      {/* Center Nav */}
       <nav className="navbar">
-        {/* Hamburger */}
         <button
           className={`menu ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}
@@ -115,16 +104,23 @@ const navItems = [
         </button>
 
         <ul className={menuOpen ? "nav-list open" : "nav-list"}>
-          {/* Mobile socials on top */}
           {isMobile && (
             <div className="mobile-socials">
               <a href="https://x.com/bcorerru" target="_blank" rel="noreferrer">
-                <FaXTwitter  />
+                <FaXTwitter />
               </a>
-              <a href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaLinkedin />
               </a>
-              <a href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg==" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg=="
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaInstagram />
               </a>
             </div>
@@ -159,7 +155,6 @@ const navItems = [
                         }
                         onClick={closeMenu}
                       >
-                        {drop.icon && <drop.icon className="nav-icon" />}
                         {drop.label}
                       </NavLink>
                     </li>
@@ -184,16 +179,23 @@ const navItems = [
         </ul>
       </nav>
 
-      {/* Right Socials (desktop only) */}
       {!isMobile && (
         <div className="nav-right">
           <a href="https://x.com/bcorerru" target="_blank" rel="noreferrer">
-            <FaXTwitter  />
+            <FaXTwitter />
           </a>
-          <a href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/company/bharat-centre-of-olympic-research-and-education-bcore/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg==" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg=="
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
         </div>

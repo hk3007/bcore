@@ -1,0 +1,346 @@
+/* 🌙 Vintage Base */
+.night-run-page {
+  background: #fdfcf7 url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  color: #1b1b33;
+  font-family: "Lora", serif;
+  overflow-x: hidden;
+}
+
+/* 🏁 Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  background: linear-gradient(90deg, #000428, #004e92, #000428); /* Deep Olympic blue gradient */
+  color: #fff;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  color: #fff3cc;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.btn-group {
+  display: flex;
+  gap: 16px; /* 👈 perfect spacing control */
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+
+.register-btn {
+  display: inline-block;
+  background: #caa64b;
+  color: #1b1b33;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.register-btn:hover {
+  background: #e2c76c;
+  transform: translateY(-2px);
+}
+
+/* 🎞️ Hero Image Crossfade */
+.hero-image-container {
+  flex: 1 1 45%;
+  position: relative;
+  max-width: 720px;
+  height: 380px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🏃 Enhanced Info Section */
+.enhanced-info {
+  background: #fffaf1;
+  padding: 80px 10%;
+  position: relative;
+}
+
+.info-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.info-card {
+  background: #ffffff;
+  border: 1px solid rgba(202, 166, 75, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  padding: 35px 30px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h2 {
+  color: #0d1b4c;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-left: 5px solid #caa64b;
+  padding-left: 14px;
+}
+
+.info-card p {
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.race-list {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.race-list li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.race-list li::before {
+  content: "🏃";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  font-size: 1rem;
+}
+
+/* 🏅 Awards Grid */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.award-item {
+  background: #fff8e5;
+  border: 1px solid #f3e0a3;
+  color: #1b1b33;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.award-item:hover {
+  background: #ffe9b0;
+}
+
+/* 🔗 Links */
+.info-card a {
+  color: #0d1b4c;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.info-card a:hover {
+  color: #caa64b;
+}
+
+/* 🎖️ Highlight Banner */
+.highlight-banner {
+  background: #0d1b4c;
+  color: #fff3cc;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-top: 25px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 5px 15px rgba(13, 27, 76, 0.3);
+}
+
+/* 📜 Legacy Info Section (if reused elsewhere) */
+.info-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  padding: 80px 10%;
+  flex-wrap: wrap;
+}
+
+.info-section:nth-child(even) {
+  flex-direction: row-reverse;
+  background: rgba(255, 248, 234, 0.6);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.info-image {
+  flex: 1 1 35%;
+  text-align: center;
+}
+
+.info-image img {
+  width: 85%;
+  max-width: 330px;
+  border-radius: 10px;
+  border: 2px solid #caa64b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.info-image img:hover {
+  transform: scale(1.05);
+}
+
+.info-content {
+  flex: 1 1 55%;
+  color: #2b2b2b;
+}
+
+.info-content h2 {
+  font-size: 1.9rem;
+  color: #0d1b4c;
+  margin-bottom: 15px;
+  border-left: 5px solid #caa64b;
+  padding-left: 14px;
+  font-family: "Playfair Display", serif;
+}
+
+.info-content p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+}
+
+.info-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 25px;
+}
+
+.info-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 22px;
+}
+
+.info-content li::before {
+  content: "•";
+  color: #caa64b;
+  position: absolute;
+  left: 0;
+  font-size: 1.4rem;
+  top: -2px;
+}
+
+.awards-list li::before {
+  content: "🏅";
+  font-size: 1.2rem;
+  left: 0;
+}
+
+/* 🪶 Notes */
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* 📱 Responsive */
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image-container {
+    height: 250px;
+    width: 80%;
+    margin: 20px auto 0;
+  }
+
+  .info-section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+  }
+
+  .info-section:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .info-image img {
+    width: 70%;
+    margin-bottom: 25px;
+  }
+
+  .info-content h2 {
+    border-left: none;
+    border-bottom: 3px solid #caa64b;
+    padding-bottom: 8px;
+  }
+
+  .info-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    padding: 25px 20px;
+  }
+
+  .info-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .register-btn {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+}
