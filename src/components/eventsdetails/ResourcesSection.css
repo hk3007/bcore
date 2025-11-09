@@ -1,0 +1,174 @@
+/* ==================================================
+   VINTAGE ROYAL THEME - 3D Animated Resources Section
+   Colors: Deep Royal Blue (#0a1931), Gold (#f5c518), Ivory White (#faf6f0)
+   Fonts: Cinzel (Title), Poppins (Body)
+   Effects: 3D hover, motion fade, floating shapes
+================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;500&display=swap");
+
+/* Container */
+.royal3d-container {
+  position: relative;
+  background: linear-gradient(135deg, #faf6f0 0%, #ffffff 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(10, 25, 49, 0.1);
+  padding: 70px 5%;
+  margin: 60px auto;
+  max-width: 1300px;
+  overflow: hidden;
+  text-align: left;
+  perspective: 1000px;
+}
+
+/* Floating Shapes (Background Motion) */
+.royal3d-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 197, 24, 0.6), transparent 70%);
+  animation: floatShape 10s infinite ease-in-out;
+  filter: blur(2px);
+}
+
+.royal3d-shape1 {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.royal3d-shape2 {
+  width: 80px;
+  height: 80px;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.royal3d-shape3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 80%;
+  animation-delay: 4s;
+}
+
+@keyframes floatShape {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Title */
+.royal3d-title {
+  font-family: "Cinzel", serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #0a1931;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.royal3d-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #f5c518, #0a1931);
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+/* Resource Cards Section */
+.royal3d-resources {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Individual Card */
+.royal3d-card {
+  background: linear-gradient(145deg, #0a1931, #102a5e);
+  color: #faf6f0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: 18px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 6px 18px rgba(10, 25, 49, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.royal3d-card:hover {
+  transform: translateY(-8px) rotateY(10deg);
+  box-shadow: 0 12px 30px rgba(10, 25, 49, 0.4);
+  background: linear-gradient(145deg, #f5c518, #caa112);
+  color: #0a1931;
+}
+
+.royal3d-arrow {
+  color: #f5c518;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.royal3d-card:hover .royal3d-arrow {
+  color: #0a1931;
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .royal3d-container {
+    padding: 50px 4%;
+    text-align: center;
+  }
+
+  .royal3d-title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .royal3d-resources {
+    justify-content: center;
+  }
+
+  .royal3d-card {
+    width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .royal3d-title {
+    font-size: 1.9rem;
+  }
+
+  .royal3d-card {
+    width: 90%;
+    font-size: 1rem;
+    padding: 15px 25px;
+  }
+
+  .royal3d-shape {
+    opacity: 0.3;
+  }
+}

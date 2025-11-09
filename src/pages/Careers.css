@@ -180,3 +180,97 @@
     padding: 32px 20px;
   }
 }
+/* ===============================
+   💼 JOB CARD (ALL INLINE)
+   =============================== */
+.job-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px 28px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.15);
+  border-color: #2563eb;
+}
+
+/* Job Title */
+.job-header h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Buttons container */
+.job-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.view-btn,
+.apply-btn {
+  display: inline-block;
+  padding: 9px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Outlined “View Details” */
+.view-btn {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  background: transparent;
+}
+
+.view-btn:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Filled “Apply Now” */
+.apply-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+}
+
+.apply-btn:hover {
+  background-color: #1e3a8a;
+  border-color: #1e3a8a;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .job-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job-actions {
+    width: 100%;
+  }
+
+  .view-btn,
+  .apply-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

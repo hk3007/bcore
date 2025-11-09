@@ -1,0 +1,212 @@
+/* ============================================
+   Olympic Rubik’s Cube + Call for Abstract Section
+   Colors: Royal Blue (#0033a0), Gold (#f5c518), Ivory (#faf6f0)
+   Fonts: Cinzel (Title), Poppins (Body)
+   Style: Modern, clean, and Olympic-inspired
+============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;500&display=swap");
+
+/* ======== Layout Container ======== */
+.abstract-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 60px 5%;
+}
+
+/* ======== LEFT SIDE (3D Rubik’s Cube) ======== */
+.abstract-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  margin-bottom: 40px;
+}
+
+/* Cube container for 3D perspective */
+.cube-container {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Cube core setup */
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotateCube 12s infinite linear;
+}
+
+/* ======== Rubik’s Cube Faces ======== */
+.face {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  transform-style: preserve-3d;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Each little cube piece */
+.face div {
+  border: 2px solid #000;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+/* ======== Cube Face Colors (Olympic-inspired) ======== */
+.front div { background: #0033a0; }  /* Royal Blue */
+.back div { background: #d32f2f; }   /* Red */
+.left div { background: #43a047; }   /* Green */
+.right div { background: #fbc02d; }  /* Gold/Yellow */
+.top div { background: #fafafa; }    /* White */
+.bottom div { background: #ff6f00; } /* Orange */
+
+/* ======== Face Positioning ======== */
+.front  { transform: translateZ(90px); }
+.back   { transform: rotateY(180deg) translateZ(90px); }
+.left   { transform: rotateY(-90deg) translateZ(90px); }
+.right  { transform: rotateY(90deg) translateZ(90px); }
+.top    { transform: rotateX(90deg) translateZ(90px); }
+.bottom { transform: rotateX(-90deg) translateZ(90px); }
+
+/* ======== Auto-Solving Animation ======== */
+@keyframes rotateCube {
+  0%   { transform: rotateX(0deg) rotateY(0deg); }
+  25%  { transform: rotateX(90deg) rotateY(180deg); }
+  50%  { transform: rotateX(180deg) rotateY(360deg); }
+  75%  { transform: rotateX(270deg) rotateY(540deg); }
+  100% { transform: rotateX(360deg) rotateY(720deg); }
+}
+
+/* ======== Optional Shadow for Depth ======== */
+.cube-container::before {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  bottom: -10px;
+  left: 0;
+  filter: blur(5px);
+  border-radius: 50%;
+  transform: rotateX(90deg);
+}
+
+/* ======== RIGHT SIDE (Text Content) ======== */
+.abstract-right {
+  flex: 2;
+  color: #000646;
+  padding-left: 60px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+}
+
+.abstract-heading {
+  font-family: "Cinzel", serif;
+  font-size: 2.3rem;
+  color: #000e3a;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.abstract-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #000646;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+/* ======== Info Section ======== */
+.abstract-info {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(21, 3, 186, 0.15);
+  border-bottom: 1px solid rgba(21, 3, 186, 0.15);
+  padding: 25px 0;
+}
+
+.abstract-email {
+  color: #00053e;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.abstract-email:hover {
+  color: #f5c518;
+}
+
+.abstract-item {
+  text-align: left;
+}
+
+.abstract-item h4 {
+  font-size: 1.1rem;
+  color: #1503ba;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.abstract-item p {
+  color: #000;
+  font-weight: 500;
+}
+
+/* ======== Hover Effects ======== */
+.face div:hover {
+  filter: brightness(1.15);
+}
+
+/* ======== Responsive Design ======== */
+@media (max-width: 1024px) {
+  .abstract-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .abstract-right {
+    padding-left: 0;
+  }
+
+  .abstract-info {
+    flex-direction: column;
+    border: none;
+  }
+
+  .abstract-item {
+    margin-top: 20px;
+  }
+
+  .cube-container {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cube-container {
+    display: none;
+    padding: 0px;
+  }
+
+  .abstract-heading {
+    font-size: 1.8rem;
+  }
+
+  .abstract-text {
+    font-size: 0.95rem;
+  }
+}

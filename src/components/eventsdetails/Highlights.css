@@ -1,0 +1,104 @@
+/* ==========================================
+   Highlights Section - Royal Olympic Theme
+   Colors: Royal Blue (#0a1931), Gold (#f5c518), White (#ffffff)
+   Look: Modern, Elegant, Readable, Subtle Vintage Touch
+========================================== */
+
+.highlights-container {
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  justify-content: center;
+}
+
+/* Title */
+.highlights-container h3 {
+  font-family: "Cinzel", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000; /* Gold */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  display: inline-block;
+}
+
+/* Underline */
+.highlights-container h3::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100px;
+  background: linear-gradient(90deg, #0c3c7b, #ffdb25, #1f18f5);
+  margin: 12px auto 0;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+/* List */
+.highlights-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Card */
+.highlights-container li {
+  background: linear-gradient(135deg, #000428, #004e92, #000428);
+  border: 1px solid #f5c518;
+  border-left: 7px solid #f5c518;
+  border-radius: 12px;
+  padding: 25px;
+  color: #ffffff;
+  width: 280px;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+
+  /* ✅ Center text perfectly inside box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Hover effect */
+.highlights-container li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(245, 197, 24, 0.25);
+  border-color: rgb(255, 200, 0);
+}
+
+.highlights-container li:hover::before {
+  background: linear-gradient(180deg, #ffe170, #f5c518);
+}
+
+/* Text */
+.highlights-container li span {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0 10px;
+  display: block;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .highlights-container {
+    padding: 50px 20px;
+  }
+
+  .highlights-container h3 {
+    font-size: 2.2rem;
+  }
+
+  .highlights-container li {
+    width: 90%;
+    padding: 20px;
+  }
+}

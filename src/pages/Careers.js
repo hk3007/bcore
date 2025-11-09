@@ -1,12 +1,13 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Briefcase, Mail, Users } from "lucide-react";
 import "./Careers.css";
+// 🔹 Make sure to place your document inside src/Documents/ and adjust the name
 
 const Careers = () => {
 
-     useEffect(() => {
-            window.scrollTo(0, 0);
-        }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="careers-page">
@@ -23,23 +24,44 @@ const Careers = () => {
       </div>
 
       {/* Contact */}
-        <div className="contact-card compact">
+      <div className="contact-card compact">
         <Mail className="contact-icon" />
         <span className="contact-text">
-            If you're interested in joining our team, please reach out to us at
+          If you're interested in joining our team, please reach out to us at
         </span>
         <a href="mailto:bcore@rru.ac.in" className="contact-email">
-            bcore@rru.ac.in
+          bcore@rru.ac.in
         </a>
-        </div>
+      </div>
 
 
       {/* Job Section */}
       <div className="job-section">
         <Briefcase className="icon" />
         <h2>Current Job Openings</h2>
-        <p>There are currently no open positions. Stay Tuned for further updates.</p>
-        <button disabled>No Openings</button>
+
+        {/* ✅ Job Opening Card */}
+        <div className="job-card">
+          <div className="job-header">
+            <h4>Design and Marketing Trainee</h4>
+          </div>
+
+          <div className="job-actions">
+            <a
+              href='https://rru.ac.in/wp-content/uploads/2025/11/Branding-and-Marketing-Project-Description-BCORE.pdf'
+              target="_blank"
+              rel="noopener noreferrer"
+              className="view-btn"
+            >
+              View Details
+            </a>
+          </div>
+        </div>
+
+        {/* Optional message */}
+        <p className="no-openings-note">
+          Stay tuned for more upcoming opportunities with BCORE.
+        </p>
       </div>
 
       {/* Equality Section */}

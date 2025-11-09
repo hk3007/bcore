@@ -1,0 +1,239 @@
+.vintage-timeline-wrapper {
+  color: #faf6f0;
+  text-align: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  padding: 30px;
+}
+
+.vintage-timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  opacity: 0.1;
+}
+
+/* Title */
+.vintage-timeline-title {
+  font-family: "Cinzel", serif;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #000000;
+  font-size: 2.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.vintage-timeline-title::after {
+  content: "";
+  display: block;
+  width: 220px;
+  height: 2px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, #010753, #ede314, #010753);
+  border-radius: 3px;
+}
+
+/* ==========================================
+   HORIZONTAL TIMELINE - DESKTOP (≥992px)
+========================================== */
+.vintage-timeline {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .vintage-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 40px 0;
+  }
+
+  .vintage-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, #f5c518, rgba(245, 197, 24, 0.6), #f5c518);
+    z-index: 0;
+    border-radius: 2px;
+    transform: translateY(-0%);
+
+  }
+
+  .vintage-timeline-item {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .vintage-timeline-marker {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+    height: 26px;
+    background: radial-gradient(circle, #f5c518 40%, #a57c00 100%);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 208, 24, 0.9);
+    z-index: 2;
+  }
+
+  .vintage-timeline-content {
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(245, 197, 24, 0.5);
+    border-top: 5px solid #f5c518;
+    padding: 20px 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .vintage-timeline-item:hover .vintage-timeline-content {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(255, 203, 16, 0.3);
+    border-top-color: #000000;
+  }
+
+  .vintage-timeline-event {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #011547;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .vintage-timeline-date {
+    color: #000000;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+}
+
+/* ==========================================
+   VERTICAL TIMELINE - TABLET & MOBILE (≤991px)
+========================================== */
+@media (max-width: 991px) {
+  .vintage-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-right: 30px;
+  }
+
+  .vintage-timeline::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #f5c518, rgba(245, 197, 24, 0.3));
+    z-index: 0;
+  }
+
+  .vintage-timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    text-align: left;
+  }
+
+  .vintage-timeline-marker {
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, #f5c518 40%, #a57c00 100%);
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(245, 197, 24, 0.8);
+    z-index: 2;
+  }
+
+  .vintage-timeline-content {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(245, 197, 24, 0.4);
+    border-left: 5px solid #f5c518;
+    padding: 22px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vintage-timeline-item:hover .vintage-timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgb(245, 197, 24);
+  }
+
+  .vintage-timeline-event {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #211a00;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .vintage-timeline-date {
+    color: #020100;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+}
+
+/* Tablet Specific Adjustments */
+@media (max-width: 991px) and (min-width: 768px) {
+  .vintage-timeline::before {
+    left: 38px;
+  }
+  .vintage-timeline-item {
+    padding-left: 90px;
+  }
+  .vintage-timeline-marker {
+    left: 25px;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+
+  .vintage-timeline-title {
+    font-size: 2rem;
+    margin-bottom: 60px;
+  }
+
+  .vintage-timeline::before {
+    left: 20px;
+  }
+
+  .vintage-timeline-item {
+    padding-left: 50px;
+    margin-bottom: 40px;
+  }
+
+  .vintage-timeline-marker {
+    left: 8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .vintage-timeline-content {
+    padding: 18px;
+    font-size: 0.95rem;
+  }
+
+  .vintage-timeline-event {
+    font-size: 1.15rem;
+  }
+}

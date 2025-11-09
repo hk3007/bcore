@@ -13,6 +13,12 @@ import speaker1 from './Images/Col Anant Kumar.png';
 import speaker2 from './Images/Lambis.png';
 import speaker3 from './Images/Maria Bogner.png';
 import BCORENightRunDetails from "./BCORENightRunDetails";
+import Highlights from "../components/eventsdetails/Highlights";
+import ImportantDates from "../components/eventsdetails/ImportantDates";
+import CallForAbstract from "../components/eventsdetails/CallForAbstract";
+import StepsToRegister from "../components/eventsdetails/StepsToRegister";
+import ResourcesSection  from "../components/eventsdetails/ResourcesSection";
+import AbstractGuidelines  from "../components/eventsdetails/AbstractGuidelines";
 
 export const EventDetails = () => {
     useEffect(() => {
@@ -694,22 +700,9 @@ export const EventDetails = () => {
         </section>
         )}
 
+        {event?.subpoints?.length > 0 && <Highlights subpoints={event.subpoints} />}
 
-
-        {event?.subpoints?.length > 0 && (
-            <div className="highlights-container">
-            <h3>Highlights</h3>
-            <ul>
-                {event.subpoints.map((point, index) => (
-                <li key={index}>
-                    <span>{point}</span>
-                </li>
-                ))}
-            </ul>
-            </div>
-        )}
-
-                {/* Event Details Section */}
+        {/* Event Details Section */}
         {event?.details?.length > 0 && (
         <div className="detail-container">
             <h3>Event Details</h3>
@@ -745,17 +738,7 @@ export const EventDetails = () => {
             </section>
         )}
 
-        {event?.importantDates?.length > 0 && (
-            <div className="important-dates-container">
-            <h3>Important Dates</h3>
-            {event.importantDates.map((date, index) => (
-                <div key={index} className="date-card">
-                <h4>{date.event}</h4>
-                <p>{date.date}</p>
-                </div>
-            ))}
-            </div>
-        )}
+        {event?.importantDates?.length > 0 && (<ImportantDates importantDates={event.importantDates} />)}
         
         {event?.schedule?.length > 0 && (
             <div className="event-schedule">
@@ -788,69 +771,12 @@ export const EventDetails = () => {
             </div>
         )}
 
-        {event?.callForAbstract && (
-            <div className="call-for-abstract-container olympic-theme">
-            <h3>Call for Abstract</h3>
-            <p className="animated-text">{event.callForAbstract.text}</p>
-            <p>
-                <strong>Submission Email:</strong>{" "}
-                <a href={`mailto:${event.callForAbstract.submissionEmail}`} className="email-link">
-                {event.callForAbstract.submissionEmail}
-                </a>
-            </p>
-            <p>
-                <strong>Last Date of Submission:</strong> {event.callForAbstract.deadline}
-            </p>
-            </div>
-        )}
+        {event?.callForAbstract && (<CallForAbstract callForAbstract={event.callForAbstract} />)}
         
-        {event?.Steps?.length > 0 && (
-            <div className="important-dates-container">
-            <h3>Steps to Register</h3>
-            {event.Steps.map((step, index) => (
-                <div key={index} className="date-card">
-                <h4>{step.event}</h4>
-                <p>{step.date}</p>
-                </div>
-            ))}
-            </div>
-        )}
+        {event?.Steps?.length > 0 && <StepsToRegister steps={event.Steps} />}
 
-        {event?.abstractGuidelines && (
-        <div className="abstract-guidelines-container">
-            <h3>Abstract Submission Guidelines</h3>
-            <div className="abstract-guidelines">
-            <h4>Format Requirements</h4>
-            <ul>
-                {event.abstractGuidelines?.formatRequirements?.map((req, index) => (
-                <li key={index}>{req}</li>
-                ))}
-            </ul>
+        {event?.abstractGuidelines && <AbstractGuidelines event={event} />}
 
-            <h4>Content Structure</h4>
-            {event.abstractGuidelines?.contentStructure?.map((section, index) => (
-                <div key={index} className="guideline-section">
-                <h5>{section.heading}</h5>
-                <p>{section.description}</p>
-                </div>
-            ))}
-
-            {/* ✅ Added full guideline link section */}
-            <div className="full-guideline-link">
-                <p>
-                <b>For the complete Paper Guidelines, please visit&nbsp;</b>
-                <a
-                    href="https://rru.ac.in/wp-content/uploads/2025/10/Guidelines-Full-Paper-Submission.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    this link
-                </a>.
-                </p>
-            </div>
-            </div>
-        </div>
-        )}
 
 
         {event?.speakers?.length > 0 && (
@@ -947,113 +873,14 @@ export const EventDetails = () => {
             event?.schedule?.[event.schedule?.length - 1]?.Schedule ||
             event?.schedule?.[event.schedule?.length - 1]?.brochure ||
             event?.schedule?.[event.schedule?.length - 1]?.registrationLink ||
-            event?.schedule?.[event.schedule?.length - 1]?.googleform) && (
-            <div className="additional-info">
-            <div className="resources-inline">
-                {event?.Schedule || event?.schedule?.[event.schedule?.length - 1]?.Schedule ? (
-                <a
-                    href={event?.Schedule || event?.schedule?.[event.schedule.length - 1]?.Schedule}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    View Schedule
-                </a>
-                ) : null}
-                {event?.brochure || event?.schedule?.[event.schedule?.length - 1]?.brochure ? (
-                <a
-                    href={event?.brochure || event?.schedule?.[event.schedule.length - 1]?.brochure}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    View Brochure
-                </a>
-                ) : null}
-                {event?.registrationLink || event?.schedule?.[event.schedule?.length - 1]?.registrationLink ? (
-                <a
-                    href={event?.registrationLink || event?.schedule?.[event.schedule.length - 1]?.registrationLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    Register Now
-                </a>
-                ) : null}
-                {event?.googleform || event?.schedule?.[event.schedule?.length - 1]?.googleform ? (
-                <a
-                    href={event?.googleform || event?.schedule?.[event.schedule.length - 1]?.googleform}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    Google Form
-                </a>
-                ) : null}
-            </div>
-            </div>
-        )
-        )}
+            event?.schedule?.[event.schedule?.length - 1]?.googleform) && <ResourcesSection resources={event?.resources}  />)}
         
         {/* Resources Section (inline) */}
         {(
         (event?.resources?.schedule ||
             event?.resources?.brochure ||
             event?.resources?.registrationLink ||
-            event?.resources?.googleForm) && (
-            <div className="additional-info">
-            <h3 className="resources-title">Resources</h3>
-            <div className="resources-inline">
-                {event?.resources?.schedule && (
-                <a
-                    href={event.resources.schedule}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    View Schedule
-                </a>
-                )}
-                {event?.resources?.brochure && (
-                <a
-                    href={event.resources.brochure}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    View Brochure
-                </a>
-                )}
-                {event?.resources?.registrationLink && (
-                <a
-                    href={event.resources.registrationLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    Register Now
-                </a>
-                )}
-                {event?.resources?.googleForm && (
-                <a
-                    href={event.resources.googleForm}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="modal-link"
-                >
-                    Google Form
-                </a>
-                )}
-            </div>
-            </div>
-        )
-        )}
-
-
-
-
-
-
+            event?.resources?.googleForm) && <ResourcesSection resources={event?.resources}  />)}
 
         {event?.accommodations?.length > 0 && (
             <div className="accommodation-container">
