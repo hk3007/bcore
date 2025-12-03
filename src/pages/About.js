@@ -4,6 +4,7 @@ import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png';
 import { FaBullseye, FaFlagCheckered } from 'react-icons/fa';
 import Map from './Images/Olympic Map.png';
+import { Helmet } from 'react-helmet';
 
 export const About = () => {
     useEffect(() => {
@@ -11,6 +12,11 @@ export const About = () => {
     }, []);
 
     return (
+    <>
+        <Helmet>
+        <title>About – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
         <div className="about-page">
             {/* === Header === */}
             <header className="about-header">
@@ -103,5 +109,6 @@ export const About = () => {
                 </div>
             </section>
         </div>
+    </>
     );
 };

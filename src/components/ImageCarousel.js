@@ -11,6 +11,7 @@ import page4 from '../pages/Slider/Page 4.jpg';
 
 const ImageCarousel = () => {
   const images = [
+    { src: "https://rru.ac.in/wp-content/uploads/2025/11/IMG_0935.jpeg", alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/06/1.png", alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/06/2-1.png", alt: "Slide 2" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/06/3.png", alt: "Slide 3" },

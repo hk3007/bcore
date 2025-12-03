@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./ContactForm.css";
+import { Helmet } from 'react-helmet';
 
 export const Contact = () => {
   useEffect(() => {
@@ -67,6 +68,10 @@ export const Contact = () => {
 
   return (
     <div className="contact-page">
+       <Helmet>
+        <title>Contact – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
       <div className="contact-grid">
         {/* Left Side: Contact Form */}
         <div className="contact-wrapper">

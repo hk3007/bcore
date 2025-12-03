@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./news.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import icons
+import { Helmet } from 'react-helmet';
 
 const NewsSection = () => {
     const [newsArticles, setNewsArticles] = useState([]);
@@ -35,6 +36,10 @@ const NewsSection = () => {
 
     return (
         <section className="news-section">
+             <Helmet>
+                <title>News – Bharat Centre of Olympic Research & Education</title>
+                <meta name="description" content="Home page of BCORE..." />
+            </Helmet>
             <h2 className="news-title">BCORE NEWS</h2>
             <div className="news-layout">
                 <div className="news-grid">

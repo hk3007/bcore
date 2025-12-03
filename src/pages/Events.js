@@ -10,6 +10,7 @@ import Image6 from './Images/Olympic Paronama Multidiciplinary Research and Educ
 import Image7 from './Images/DESIGN COMPETITION.png';
 import Image8 from './Images/Khelo India 1.jpg';
 import Image9 from './Images/Khelo india 2.jpg';
+import { Helmet } from 'react-helmet';
 
 // Events list
 const events = [
@@ -79,6 +80,10 @@ export const Events = () => {
 
   return (
     <div>
+       <Helmet>
+          <title>Past Events – Bharat Centre of Olympic Research & Education</title>
+          <meta name="description" content="Home page of BCORE..." />
+        </Helmet>
       <div className="events-page">
         <h2 className="events-title">Past Events</h2>
 

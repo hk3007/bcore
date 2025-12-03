@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Briefcase, Mail, Users } from "lucide-react";
 import "./Careers.css";
+import { Helmet } from 'react-helmet';
 // 🔹 Make sure to place your document inside src/Documents/ and adjust the name
 
 const Careers = () => {
@@ -11,6 +12,10 @@ const Careers = () => {
 
   return (
     <div className="careers-page">
+       <Helmet>
+        <title>Career – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
       {/* Header */}
       <div className="careers-header">
         <Users className="icon" />

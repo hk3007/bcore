@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   [
     {
       path: "/*",  // catch-all so your <App /> handles the <Routes />
@@ -17,7 +17,7 @@ const router = createHashRouter(
   ],
   {
     future: {
-      v7_startTransition: true, // ✅ enables new behavior now
+      v7_startTransition: true,
     },
   }
 );

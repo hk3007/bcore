@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './UpcomingEvents.css';
+import { Helmet } from 'react-helmet';
 
 export const UpComing = () => {
   useEffect(() => {
@@ -93,6 +94,10 @@ export const UpComing = () => {
 
   return (
     <div className="events-page">
+       <Helmet>
+        <title>Upcoming Events – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
       <h2 className="events-title">Upcoming Events</h2>
       {upcomingEvents.length > 0 ? (
         <div className="events-grid">

@@ -19,6 +19,7 @@ import CallForAbstract from "../components/eventsdetails/CallForAbstract";
 import StepsToRegister from "../components/eventsdetails/StepsToRegister";
 import ResourcesSection  from "../components/eventsdetails/ResourcesSection";
 import AbstractGuidelines  from "../components/eventsdetails/AbstractGuidelines";
+import EventHeader  from "../components/eventsdetails/EventHeader";
 
 export const EventDetails = () => {
     useEffect(() => {
@@ -32,7 +33,7 @@ export const EventDetails = () => {
             id: 1,
             name: '1st International Olympic Research Conference',
             date: '27 - 30 January 2025',
-            place: 'Bharat Centre of Olympic Research and Education (BCORE), Rashtriya Raksha University, Gandhinagar, India',
+            place: 'Bharat Centre of Olympic Research and Education (BCORE), Rashtriya Raksha University, Gandhinagar',
             description: 'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
             subpoints: [
                 'Renowned researchers and experts in Olympic studies will deliver lectures, conduct workshops, and facilitate discussions on current trends, challenges, and opportunities in the field.',
@@ -126,7 +127,7 @@ export const EventDetails = () => {
                     id: 3,
                     name: "Dr. PT USHA",
                     about: "PT Usha, fondly known as the 'Golden Girl of India,' is one of the greatest athletes in Indian history. A legendary sprinter, she has won numerous international medals and inspired generations with her dedication to sports and excellence.",
-                    img: "https://olympic.ind.in/public/images/news/1160776464.png",
+                    img: "https://c.ndtvimg.com/2022-11/nl30k5eg_pt-usha-twitter_625x300_28_November_22.jpg?im=FitAndFill,algorithm=dnn,width=1200,height=738",
                 },
                 {
                     id: 5,
@@ -560,7 +561,7 @@ export const EventDetails = () => {
                 'Sponsorships from Indian agencies/firms, with experts and scholars contributing expertise in return.',
             ],
             importantDates: [
-                { event: 'Abstract	Submission	Deadline', date: '30 November 2025' },
+                { event: 'Abstract	Submission	Deadline', date: '31 December 2025' },
                 { event: 'Notification of Acceptance:', date: 'Within 15 working days of abstract submission' },
                 { event: 'Full Paper Submission	Deadline:', date: '31 December 2025' },
             ],
@@ -613,6 +614,35 @@ export const EventDetails = () => {
                 { event: 'Step 2', date: 'Wait For confirmation' },
                 { event: 'Step 3', date: 'Register to the Olympics conference' },
                 { event: 'Step 4', date: 'Fill Google Form' },
+            ],
+            accommodations: [
+                                {
+                    name: 'Good Times, Dahegam',
+                    address: 'Good Times by Sangath IPL near Rashtriya Raksha University Lavad Dehgam',
+                    contact: 'For Bookings Contact - 8175991401 | Mr. Sandeep',
+                    image: 'https://goodtimesbysangathipl.com/wp-content/uploads/2022/04/gtl-2.png',
+                    link: 'https://goodtimesbysangathipl.com/'
+                },
+                {
+                    name: 'Malhaar Resort, Dahegam',
+                    address: 'Malhaar Resort, Uttam Dairy, Behind Dehgam Power Grid, Dahegam, Ahmedabad Gujarat, India.',
+                    contact: 'For Bookings Contact - 7575806021 | Mr. Bahadur Singh',
+                    image: 'https://r1imghtlak.mmtcdn.com/d8b02df056b711eeb25f0a58a9feac02.jpg',
+                    link: 'https://www.makemytrip.com/hotels/malhaar_resorts-details-dahegam.html'
+                },
+                {
+                    name: 'Hotel Neelkanth, Dahegam',
+                    address: '5R64+56H, Ahmedabad - Modasa Rd, Vrundavan Society, Nehru Society, Dahegam, Gujarat 382305',
+                    image: 'https://lh3.googleusercontent.com/p/AF1QipP9ZAJ0xs9tV2dMSOqfec29It65ZVHO_8ZJINgs=s1360-w1360-h1020',
+                    link: ''
+                },
+                {
+                    name: 'University Accomodation',
+                    address: 'Rashtriya Raksha University, Lavad, Gandhinagar, Gujarat 382305',
+                    image: 'https://rru.ac.in/wp-content/uploads/2022/08/6-scaled.jpg',
+                    link: 'https://rru.ac.in/liferru/',
+                    info: "Accommodation on a sharing basis inside the campus will be available. Please ensure that you book it in advance."
+                },
             ],
         },
         {
@@ -667,24 +697,7 @@ export const EventDetails = () => {
         <div>
         {event?.id === 4 && <BCORENightRunDetails />}   
         {(event?.id !== 4) && (<div className="event-details-page">
-        {event?.name && <h2>{event.name}</h2>}
-
-        {(event?.date || event?.place) && (
-            <div className="details-container">
-            {event?.date && (
-                <div className="details-card">
-                <h4>Date</h4>
-                <p>{event.date}</p>
-                </div>
-            )}
-            {event?.place && (
-                <div className="details-card">
-                <h4>Location</h4>
-                <p>{event.place}</p>
-                </div>
-            )}
-            </div>
-        )}
+        <EventHeader  title={event?.name} date={event?.date} location={event?.place}/>
 
         {event?.collaboration?.length > 0 && (
         <section className="partners-section">
@@ -885,6 +898,7 @@ export const EventDetails = () => {
         {event?.accommodations?.length > 0 && (
             <div className="accommodation-container">
             <h3>Accommodation Options</h3>
+            <p><i>Please click on the sections below to view detailed information.</i></p>
             <div className="accommodation-items">
                 {event.accommodations.map((accommodation, index) => (
                 <a
@@ -898,12 +912,13 @@ export const EventDetails = () => {
                     <div className="overlay">
                     <h4>{accommodation.name}</h4>
                     <p><strong>Address:</strong> {accommodation.address}</p>
-                    {accommodation.contact && <p><strong>Contact:</strong> {accommodation.contact}</p>}
+                    {accommodation.contact && <p><strong>Contact: </strong> {accommodation.contact}</p>}
+                    {accommodation.info && <p>{accommodation.info}</p>}
                     </div>
                 </a>
                 ))}
             </div>
-            <h5>For Accommodation-related queries - Janak Choudhari - +91 90992 69896</h5>
+            {/* <h5>For Accommodation-related queries - Janak Choudhari - +91 90992 69896</h5> */}
             </div>
         )}
 
@@ -951,6 +966,7 @@ export const EventDetails = () => {
             loading="lazy"
             title="Event location"
             ></iframe>
+
         </div>
 )}
 

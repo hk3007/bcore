@@ -1,122 +1,144 @@
-.ethics-page {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
-    font-family: "Segoe UI", sans-serif;
-    color: #1a202c;
+/* =======================================
+   BCORE Ethics Page — Vintage Royal Theme
+   Reference: HPL Page Layout
+   Colors: Royal Blue (#0a1931), Gold (#f5c518), White (#ffffff)
+======================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;500&display=swap");
+
+/* === MAIN CONTAINER === */
+.ethics-container {
+  font-family: "Poppins", sans-serif;
+  color: #f9fafb;
+  background: #0a1931;
+  line-height: 1.8;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* === HEADER === */
+.ethics-header {
+  background: linear-gradient(90deg, #000428, #004e92, #000428);
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  border-bottom: 3px solid #f5c518;
+}
+
+.ethics-header h1 {
+  font-family: "Cinzel", serif;
+  font-size: 2.6rem;
+  color: #f5c518;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.ethics-header p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #eaeaea;
+  line-height: 1.9;
+}
+
+/* === SECTIONS === */
+.ethics-section {
+  padding: 40px 20px;
+  background: #ffffff;
+}
+
+.ethics-section.alt {
+  background: #fffcf0;
+}
+
+.ethics-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ethics-section h2 {
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.ethics-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #f5c518, #f9dc5c);
+  border-radius: 3px;
+}
+
+.ethics-section p,
+.ethics-section li {
+  color: #000037;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.ethics-section ul {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+}
+
+/* === LINKS === */
+.ethics-section a {
+  color: #000000;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.ethics-section a:hover {
+  border-bottom: 2px solid #f5c518;
+  color: #180000;
+}
+
+/* === CONTACT SECTION === */
+.ethics-section.contact {
+  text-align: center;
+  border-top: 2px solid #f5c518;
+  padding: 50px 20px;
+}
+
+.ethics-section.contact h2 {
+  color: #000000;
+}
+
+.ethics-section.contact h2::after {
+  display: none;
+}
+
+.ethics-section.contact p {
+  color: #000000;
+  font-size: 1.1rem;
+}
+
+.ethics-section.contact a {
+  color: #f5c518;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .ethics-header h1 {
+    font-size: 2rem;
   }
-  
-  .page-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 2.5rem;
-    text-align: center;
-    color: #1a202c;
-    animation: fadeIn 1.2s ease-out;
-    background: linear-gradient(to right, #0071ce, #fcb131, #000000, #00a651, #ef3340);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+
+  .ethics-section h2 {
+    font-size: 1.4rem;
   }
-  
-  .section {
-    margin-bottom: 2rem;
+
+  .ethics-section p,
+  .ethics-section li {
+    font-size: 0.95rem;
   }
-  
-  .card {
-    border-radius: 1rem;
-    background: #ffffff;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 6px solid transparent;
-  }
-  
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card:nth-child(5n + 1) {
-    border-left-color: #0071ce; /* Blue */
-  }
-  .card:nth-child(5n + 2) {
-    border-left-color: #fcb131; /* Yellow */
-  }
-  .card:nth-child(5n + 3) {
-    border-left-color: #000000; /* Black */
-  }
-  .card:nth-child(5n + 4) {
-    border-left-color: #00a651; /* Green */
-  }
-  .card:nth-child(5n + 5) {
-    border-left-color: #ef3340; /* Red */
-  }
-  
-  .card-content {
-    padding: 2rem;
-  }
-  
-  .section-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #2d3748;
-    border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 0.5rem;
-  }
-  
-  .section-body p,
-  .section-body li {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #4a5568;
-    margin-bottom: 0.5rem;
-  }
-  
-  .section-body ul {
-    margin-left: 1.5rem;
-    list-style-type: disc;
-  }
-  
-  .section-body a {
-    color: #0071ce;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-  
-  .section-body a:hover {
-    color: #ef3340;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(25px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .page-title {
-      font-size: 2.2rem;
-    }
-  
-    .card-content {
-      padding: 1.5rem;
-    }
-  
-    .section-title {
-      font-size: 1.5rem;
-    }
-  
-    .section-body p,
-    .section-body li {
-      font-size: 0.95rem;
-    }
-  }
-  
+}

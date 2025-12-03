@@ -1,0 +1,234 @@
+/* WRAPPER */
+.gallery-carousel-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+/* MAIN CAROUSEL */
+.gallery-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 450px;
+  width: 100%;
+}
+
+/* CARD STYLE */
+.gallery-card {
+  position: absolute;
+  width: 350px;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CENTER CARD */
+.gallery-card.center {
+  opacity: 1;
+  z-index: 7;
+  transform: translateX(0) scale(1);
+}
+
+/* RIGHT SIDE */
+.gallery-card.right1 {
+  opacity: 0.9;
+  z-index: 6;
+  transform: translateX(300px) scale(0.9);
+}
+
+.gallery-card.right2 {
+  opacity: 0.7;
+  z-index: 5;
+  transform: translateX(550px) scale(0.8);
+}
+
+.gallery-card.right3 {
+  opacity: 0.5;
+  z-index: 4;
+  transform: translateX(800px) scale(0.7);
+}
+
+/* LEFT SIDE */
+.gallery-card.left1 {
+  opacity: 0.9;
+  z-index: 6;
+  transform: translateX(-300px) scale(0.9);
+}
+
+.gallery-card.left2 {
+  opacity: 0.7;
+  z-index: 5;
+  transform: translateX(-550px) scale(0.8);
+}
+
+.gallery-card.left3 {
+  opacity: 0.5;
+  z-index: 4;
+  transform: translateX(-800px) scale(0.7);
+}
+
+/* HIDDEN CARDS */
+.gallery-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* CONTROLS */
+.gallery-controls {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+.gallery-controls button {
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s ease;
+}
+
+.gallery-controls button:hover {
+  background: #444;
+}
+
+/* RESPONSIVE — LARGE TABLETS */
+@media (max-width: 1200px) {
+  .gallery-card {
+    width: 300px;
+    height: 390px;
+  }
+
+  .gallery-card.right3,
+  .gallery-card.left3 {
+    display: none;
+  }
+}
+
+/* TABLETS */
+@media (max-width: 900px) {
+  .gallery-card.right2,
+  .gallery-card.left2 {
+    display: none;
+  }
+
+  .gallery-card {
+    width: 250px;
+    height: 330px;
+  }
+
+  .gallery-card.right1 {
+    transform: translateX(220px) scale(0.85);
+  }
+
+  .gallery-card.left1 {
+    transform: translateX(-220px) scale(0.85);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .gallery-card {
+    width: 180px;
+    height: 240px;
+  }
+
+  .gallery-card.right1 {
+    transform: translateX(150px) scale(0.8);
+  }
+
+  .gallery-card.left1 {
+    transform: translateX(-150px) scale(0.8);
+  }
+}
+
+/* WRAP BUTTON INSIDE THE IMAGE AREA */
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+/* CONTAINER FOR IMAGE + CLOSE BUTTON */
+.popup-img-container {
+  position: relative;
+  max-width: 600px;    /* Fixed width */
+  max-height: 700px;   /* Fixed height */
+}
+
+/* IMAGE */
+.popup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* Keep aspect ratio filled, can also use 'contain' */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  animation: scaleIn 0.25s ease;
+}
+
+/* CLOSE BUTTON ON IMAGE */
+.close-btn1 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  width: 32px;
+  height: 32px;
+  background: white;
+  color: #222;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10000;
+  transition: 0.2s ease;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.close-btn1:hover {
+  background: #ddd;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .popup-img-container {
+    width: 300px;  /* Fixed mobile width */
+    height: 200px; /* Fixed mobile height */
+  }
+
+  .close-btn1 {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+}
+

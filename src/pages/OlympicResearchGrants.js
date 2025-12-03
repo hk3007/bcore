@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import "./OlympicResearchGrants.css";
+import Helmet from 'react-helmet';
 
 const FlowSection = ({ title, children, index }) => (
   <motion.div
@@ -177,13 +178,17 @@ export const OlympicResearchGrants = () => {
 
   return (
     <main className="olympic-page">
+       <Helmet>
+        <title>Olymmpic Research Grants – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
       <motion.div
         className="olympic-hero"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <div className="overlay"></div>
+        <div className="Grants-Overlay"></div>
         <h1 className="page-title">Olympic Research Grants 2025–26</h1>
         <p className="page-subtitle">
           Empowering Scholars to Shape India’s Olympic Future

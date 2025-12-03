@@ -7,9 +7,11 @@ import logo5 from './Images/Indian_Olympic_Association_logo.png'
 import sponser1 from './Images/Hyperlab Logo.png';
 import sponser2 from './Images/AISTS.png';
 import ImageCarousel from "../components/ImageCarousel";
-import PartnerSponsorSection from "../components/PartnerSponsorSection";
+import PastSpeakers from "../components/PastSpeakers";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from 'react-helmet';
+import GalleryCarousel from "../components/GalleryCarousel";
 
 export const BCORE = () => {
     const events = [
@@ -119,6 +121,10 @@ export const BCORE = () => {
 
     return (
         <div>
+             <Helmet>
+                <title>Bharat Centre of Olympic Research & Education</title>
+                <meta name="description" content="Home page of BCORE..." />
+            </Helmet>
             <ImageCarousel />
             <div className="banner-countdown vintage-theme">
             <div className="banner-left">
@@ -217,9 +223,6 @@ export const BCORE = () => {
             </div>
             </div>
 
-
-            <PartnerSponsorSection showPartners={true} showSponsors={true} />
-
             <section className="bcoreoverview">
                 <h2>Overview</h2>
                 <p>
@@ -249,8 +252,10 @@ export const BCORE = () => {
                 <h3>Work with BCORE</h3>
                 </Link>
             </div>
-            </section>
-
+        </section>
+        
+        <GalleryCarousel />
+        
         {/* BCORE Video Section */}
         <section className="bcore-video">
             <h2>Watch BCORE in Action</h2>
@@ -266,6 +271,8 @@ export const BCORE = () => {
                 ></iframe>
             </div>
         </section>
+        <PastSpeakers />
+        {/* <PartnerSponsorSection showPartners={true} showSponsors={true} /> */}
         </div>
     );
 }

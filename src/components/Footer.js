@@ -53,8 +53,7 @@ export const Footer = () => {
         <p>© {new Date().getFullYear()} BCORE. All Rights Reserved.</p>
         <p>
           Developed by{" "}
-          <a href="https://www.linkedin.com/in/harshil-khokhar/">Harshil Khokhar</a> &{" "}
-          <a href="https://www.linkedin.com/in/harshdipsinh-rathod/">Harshdipsinh Rathod</a>
+          <a href="https://www.linkedin.com/in/harshil-khokhar/">Harshil Khokhar</a>
         </p>
       </div>
     </footer>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 // import AOS from "aos";
 // import "aos/dist/aos.css";
 import "./HumanPerformanceLab.css";
+import { Helmet } from 'react-helmet';
 
 const HumanPerformanceLab = () => {
       useEffect(() => {
@@ -9,6 +10,10 @@ const HumanPerformanceLab = () => {
       }, []);
   return (
     <div className="hpl-container">
+       <Helmet>
+        <title>Human Performance Lab – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
       {/* === HEADER === */}
       <header className="hpl-header">
         <div className="hpl-header-content">

@@ -10,6 +10,7 @@ import image15 from '../pages/Images/TEAM/Intern 1.jpeg'
 import image4 from '../pages/Images/TEAM/Krishna Ramani.jpeg'
 import image5 from '../pages/Images/TEAM/Sumit Pandey.jpeg'
 import image6 from '../pages/Images/TEAM/Sonika Bisht.png'
+import { Helmet } from 'react-helmet';
 
 const teamMembers = [
   {
@@ -42,7 +43,7 @@ const teamMembers = [
     photo: 'https://rru.ac.in/wp-content/uploads/2023/05/Yash-Sharma-scaled.jpg',
     info: 'Mr. Yash Sharma is the I/c Director & Assistant Professor (Physical Education & Sports), with JRF/NET qualifications, specializing in sports science and physical education.'
   },
-    {
+  {
     name: 'Ms. Sonika Bisht',
     designation: 'Research Officer BCORE',
     photo: [image6],
@@ -85,6 +86,10 @@ export const Team = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>Team – Bharat Centre of Olympic Research & Education</title>
+        <meta name="description" content="Home page of BCORE..." />
+      </Helmet>
       <section className="overview">
         <h2>BCORE TEAM</h2>
       </section>

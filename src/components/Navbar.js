@@ -8,6 +8,7 @@ import {
   BookOpen,
   Calendar,
   ChevronDown,
+  Bell,
 } from "lucide-react";
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -18,7 +19,17 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [openAnnouncement, setOpenAnnouncement] = useState(false);
+
   const navRef = useRef(null);
+
+  // Example announcements – replace with API data
+  const announcements = [
+    "Abstract submissions are Date Extended till 31 December 2025 for the 2nd International Olympic Research Conference (ORC). ",
+    "Registrations for the BCORE Night run 2026 are now open. Organised by BCORE, the night run will be held on 10 January 2026, bringing together athletes, students, enthusiasts to promote fitness, resilience and the Spirit.",
+    "BCORE is proud to announce a forthcoming collaboration with the National Anti- Doping Agency ( NADA).",
+    "Bcore is pleased to announce that it will host the 2nd International ORC from 27-30 January 2026, bringing together global experts, scholars, and researchers to promote knowledge sharing in Olympic and sport research/ governance."
+  ];
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 1299px)");
@@ -39,11 +50,17 @@ export const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
+useEffect(() => {
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    // Only close if user scrolls DOWN at least 10px after menu is open
+    if (menuOpen && Math.abs(window.scrollY - lastScrollY) > 10) {
       setMenuOpen(false);
       setOpenDropdown(null);
-    };
+    }
+    lastScrollY = window.scrollY;
+  };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -57,6 +74,36 @@ export const Navbar = () => {
     if (!isMobile) return;
     setOpenDropdown((cur) => (cur === idx ? null : idx));
   };
+  
+useEffect(() => {
+  if (menuOpen || openAnnouncement) {
+    // ─── OPEN: Lock scroll + save position ───
+    const scrollY = document.documentElement.scrollTop || window.pageYOffset;
+
+    document.body.classList.add("body-lock");
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  } else {
+    // ─── CLOSE: Restore exact scroll position ───
+    const scrollY = document.body.style.top 
+      ? Math.abs(parseInt(document.body.style.top, 10)) 
+      : 0;
+
+    document.body.classList.remove("body-lock");
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+
+    // This is the magic line — restores scroll instantly without jump
+    window.scrollTo(0, scrollY);
+  }
+}, [menuOpen, openAnnouncement]);
+
 
   const navItems = [
     { to: "/", label: "Home", icon: Home },
@@ -92,6 +139,19 @@ export const Navbar = () => {
       </div>
 
       <nav className="navbar">
+
+        {/* MOBILE ANNOUNCEMENT ICON */}
+        {isMobile && (
+          <div
+            className="mobile-announcement"
+            onClick={() => setOpenAnnouncement(true)}
+          >
+            <Bell className="announcement-icon" />
+            <span className="announcement-badge">{announcements.length}</span>
+          </div>
+        )}
+
+        {/* HAMBURGER */}
         <button
           className={`menu ${menuOpen ? "open" : ""}`}
           onClick={toggleMenu}
@@ -103,6 +163,7 @@ export const Navbar = () => {
           <span></span>
         </button>
 
+        {/* MOBILE SIDEBAR LIST */}
         <ul className={menuOpen ? "nav-list open" : "nav-list"}>
           {isMobile && (
             <div className="mobile-socials">
@@ -117,7 +178,7 @@ export const Navbar = () => {
                 <FaLinkedin />
               </a>
               <a
-                href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg=="
+                href="https://www.instagram.com/bcore_rru"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -179,8 +240,19 @@ export const Navbar = () => {
         </ul>
       </nav>
 
+      {/* Desktop right side */}
       {!isMobile && (
         <div className="nav-right">
+
+          {/* DESKTOP ANNOUNCEMENT ICON */}
+          <div
+            className="announcement-wrapper"
+            onClick={() => setOpenAnnouncement(true)}
+          >
+            <Bell className="announcement-icon" />
+            <span className="announcement-badge">{announcements.length}</span>
+          </div>
+
           <a href="https://x.com/bcorerru" target="_blank" rel="noreferrer">
             <FaXTwitter />
           </a>
@@ -192,12 +264,40 @@ export const Navbar = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://www.instagram.com/bcore_rru?igsh=MXFxejQzbzlqbDNjeg=="
+            href="https://www.instagram.com/bcore_rru"
             target="_blank"
             rel="noreferrer"
           >
             <FaInstagram />
           </a>
+        </div>
+      )}
+
+      {/* ANNOUNCEMENT MODAL */}
+      {openAnnouncement && (
+        <div
+          className="announcement-modal-overlay"
+          onClick={() => setOpenAnnouncement(false)}
+        >
+          <div
+            className="announcement-modal"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2>Announcements</h2>
+
+            <ul>
+              {announcements.map((a, i) => (
+                <li key={i}>{a}</li>
+              ))}
+            </ul>
+
+            <button
+              className="close-modal"
+              onClick={() => setOpenAnnouncement(false)}
+            >
+              Close
+            </button>
+          </div>
         </div>
       )}
     </header>

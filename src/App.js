@@ -9,7 +9,7 @@ import { Footer } from './components/Footer';
 import { Team } from './pages/Team';
 import { Events } from './pages/Events';
 import { UpComing } from './pages/UpComingEvents';
-import { Ethics_Statement } from './pages/Ethics_Statement';
+import Ethics_Statement from './pages/Ethics_Statement';
 import { OlympicResearchGrants } from './pages/OlympicResearchGrants';
 import { Loader } from './components/Loader';
 import './components/loader.css';

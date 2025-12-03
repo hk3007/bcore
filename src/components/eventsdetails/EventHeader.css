@@ -1,0 +1,148 @@
+/* ================================
+   VINTAGE HEADER SECTION
+   Theme: Deep Royal Blue (#0a1931)
+   Accent: Olympic Gold (#f5c518)
+   Font: Cinzel (Title), Poppins (Body)
+================================ */
+
+.vintage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #000428, #004e92, #000428); /* Deep Royal Navy */
+  color: #f5c518; /* Gold Accent */
+  padding: 20px;
+  flex-wrap: wrap;
+  border-bottom: 4px solid #f5c518;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== LEFT SIDE: TITLE ========== */
+.vintage-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.vintage-left h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  color: #f5c518;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+  max-width: 700px;
+}
+
+/* ========== RIGHT SIDE: DATE & LOCATION ========== */
+.vintage-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Card (Equal Size for Date & Location) */
+.vintage-card {
+  position: relative;
+  background: #101d42; /* Slightly lighter navy */
+  border: 2px solid #f5c518;
+  border-radius: 14px;
+  width: 500px;
+  height: 100px; /* Equal height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.vintage-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 6px;
+  background: #f5c518;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.vintage-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.vintage-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5c518;
+  margin: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vintage-card p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .vintage-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vintage-left {
+    text-align: center;
+  }
+
+  .vintage-right {
+    align-items: center;
+  }
+
+  .vintage-card {
+    width: 420px;
+    height: 140px;
+  }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 600px) {
+  .vintage-header {
+    padding: 40px 20px;
+  }
+
+  .vintage-left h2 {
+    font-size: 2rem;
+  }
+
+  .vintage-right {
+    gap: 20px;
+  }
+
+  .vintage-card {
+    width: 100%;
+    max-width: 320px;
+    height: 120px;
+  }
+  .vintage-card h4 {
+    font-size: 0.9rem;
+  }
+    .vintage-card p {
+    font-size: 1rem;
+    }
+}

@@ -1,0 +1,215 @@
+/* =====================================================
+   PAST SPEAKERS — FULL FINAL VERSION (COMPLETE CSS)
+===================================================== */
+
+/* BACKGROUND SECTION */
+.past-speakers-section {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+ padding-bottom: 20px;
+}
+
+/* Overlay */
+.past-speakers-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+/* Title */
+.past-speakers-title {
+  font-family: "Cinzel", serif;
+  color: #0a1931;
+  text-align: center;
+  font-size: 44px;
+  margin-bottom: 45px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================================
+   SCROLL ROW (Horizontal Carousel)
+===================================================== */
+
+.speakers-carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.speakers-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* =====================================================
+   SPEAKER CARD — Premium Look
+===================================================== */
+
+.speaker-card {
+  width: 300px;
+  padding: 10px;
+  height: 470px;
+  background: linear-gradient(90deg, #000428, #004e92, #000428);
+  border-radius: 18px;
+  border: 2px solid #d4a017;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Disable hover */
+.speaker-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* =====================================================
+   IMAGE WRAPPER
+===================================================== */
+
+/* =====================================================
+   IMAGE WRAPPER — Fully Responsive
+===================================================== */
+
+.speaker-img-wrapper {
+  width: 100%;
+  height: auto;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #000428, #004e92, #000428);
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+}
+
+/* Responsive Image — No Crop, No Stretch */
+.speaker-img {
+  width: 80%;
+  height: 100%;
+  max-height: 260px;
+  border: 5px solid #d4a017;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #000428, #004e92, #000428);
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.speaker-info {
+  padding: 16px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.speaker-name {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  color: #f5c518;
+}
+
+.speaker-title {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.2;
+}
+
+/* =====================================================
+   RESPONSIVE — TABLET (Balanced Layout)
+===================================================== */
+
+@media (max-width: 992px) {
+  .past-speakers-title {
+    font-size: 36px;
+    margin-bottom: 35px;
+  }
+
+  .speaker-card {
+    width: 260px;
+    height: 420px;
+  }
+
+  .speaker-img-wrapper {
+    height: 220px;
+  }
+
+.speaker-img {
+  width: 65%;
+  max-height: 200px;
+}
+
+
+  .speaker-name {
+    font-size: 17px;
+  }
+
+  .speaker-title {
+    font-size: 13px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE (Ultra Clean)
+===================================================== */
+
+@media (max-width: 600px) {
+  .past-speakers-section {
+    padding: 25px 10px 20px;
+  }
+
+  .past-speakers-title {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+
+  .speakers-carousel {
+    gap: 16px;
+    padding-left: 8px;
+  }
+
+  .speaker-card {
+    width: 240px;
+    height: 400px;
+  }
+
+  .speaker-img-wrapper {
+    height: 185px;
+    margin-top: 10px;
+  }
+
+.speaker-img {
+  width: 65%;
+  max-height: 180px;
+  border-width: 4px;
+}
+
+
+  .speaker-info {
+    padding: 12px 10px;
+  }
+
+  .speaker-name {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .speaker-title {
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+}

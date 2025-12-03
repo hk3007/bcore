@@ -1,58 +1,3 @@
-/* Section: Date and Location */
-.details-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.details-card {
-    background: linear-gradient(145deg, #000f80, #ff0037);
-    color: #ffffff;
-    border-radius: 12px;
-    flex: 1 1 calc(40% - 20px);
-    text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    min-width: 150px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.details-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
-}
-
-.details-card h4 {
-    font-size: 1rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.details-card p {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    line-height: 1.5;
-}
-
-.event-details-page {
-    font-family: 'Poppins', sans-serif;
-    padding: 30px;
-    margin: 0 auto;
-}
-
-/* Title styling */
-.event-details-page h2 {
-    font-size: 2.5rem;
-    color: #0055a5; /* Olympic blue */
-    text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 3px solid #f8c32e; /* Olympic yellow */
-    display: flex;
-    padding-bottom: 10px;
-    justify-content: center;
-}
-
 /* Section titles */
 .event-details-page h3 {
     font-size: 2.5rem;
@@ -556,107 +501,156 @@
     }
 }
 
-/* Accommodation Section Styling */
+/* ============================
+   VINTAGE ACCOMMODATION SECTION
+=============================== */
 .accommodation-container {
-    margin-top: 40px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f7f2e7;
+  padding: 40px;
+  margin: 20px;
+  border: 2px solid #c8b28e;
+  border-radius: 12px;
+  margin-top: 40px;
+  font-family: "Georgia", serif;
+  box-shadow: 0 0 20px rgba(120, 90, 60, 0.15);
 }
 
+/* Heading */
 .accommodation-container h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #000000; /* Heading color */
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  color: #5a3e2b;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px dashed #c8b28e;
+  padding-bottom: 8px;
+}
+.accommodation-container p{
+  text-align: center;
 }
 
-/* Flexbox Container */
+/* FLEX LAYOUT – max 2 items per row */
 .accommodation-items {
-    display: flex;
-    flex-wrap: nowrap; /* No wrapping; scroll horizontally if overflow */
-    gap: 20px;
-    justify-content: space-between;
-    overflow-x: auto; /* Horizontal scrolling for overflow */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
 }
 
-/* Styling for individual accommodation boxes */
+/* Each Card */
 .accommodation-item {
-    position: relative; /* For overlay positioning */
-    border: 1px solid #ffae00;
-    border-radius: 8px;
-    width: 23%;
-    color: #011134; /* Text color */
-    overflow: hidden; /* Crop content that overflows */
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s ease-in-out;
-    text-decoration: none; /* Remove underline for links */
+  flex: 1 1 calc(50% - 28px); /* Max 2 per row */
+  max-width: calc(50% - 28px);
+  min-width: 300px;
+
+  position: relative;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #d6c7a1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(80, 160, 153, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Add an off-white overlay for better text visibility */
-.accommodation-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.498); /* Off-white semi-transparent layer */
-    z-index: 1; /* Place the overlay below the text */
+.accommodation-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 20px rgba(80, 60, 40, 0.35);
 }
 
-/* Content inside the accommodation item */
-.accommodation-item .overlay {
-    position: relative; /* For text above overlay */
-    z-index: 2; /* Ensure text is above the overlay */
-    padding: 15px;
-    text-align: left;
+/* Overlay - scrollable */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 97, 103, 0.75);
+  backdrop-filter: blur(1px);
+  color: #f7f2e7;
+  font-size: 15px;
+  padding: 18px;
+  overflow-y: auto;
 }
 
-/* Text styles */
-.accommodation-item h4 {
-    font-size: 18px;
-    color: #fefefe; /* Text color for headings */
-    text-decoration: none; /* Remove underline */
+/* Title inside card */
+.overlay h4 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+/* Description */
+.overlay p {
+  line-height: 1.5;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.overlay p strong {
+  margin-right: 6px;
+  color: #fff700;
+  font-weight: bolder;
+}
+
+/* Bottom note */
+.accommodation-container h5 {
+  margin-top: 25px;
+  text-align: center;
+  color: #5a3e2b;
+  font-size: 16px;
+  background: #efe3cf;
+  display: inline-block;
+  padding: 8px 14px;
+  border: 2px solid #c8b28e;
+  border-radius: 8px;
+}
+
+/* ============================
+   RESPONSIVE BREAKPOINTS
+=============================== */
+
+/* Tablet Screens */
+@media (max-width: 992px) {
+  .accommodation-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .overlay h4 {
+    font-size: 20px;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 600px) {
+  .accommodation-container {
+    padding: 20px;
     margin: 10px;
-    font-weight: bold;
-    text-align: justify;
+  }
+
+  .accommodation-item {
+    height: 330px;
+  }
+
+  .overlay {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .accommodation-container h3 {
+    font-size: 28px;
+  }
+
+  .accommodation-container h5 {
+    font-size: 14px;
+  }
 }
 
-.accommodation-item p {
-    font-size: 17px;
-    color: #330279; /* Text color for description */
-    line-height: 1.5;
-    margin: 5px 0;
-    font-weight: bold;
-    text-decoration: none; /* Remove underline */
-}
 
-/* For large screens */
-@media (min-width: 1024px) {
-    .accommodation-item {
-        width: 25%; /* 4 items per row */
-    }
-}
-
-/* For medium screens like tablets */
-@media (max-width: 1024px) {
-    .accommodation-item {
-        width: 48%; /* 2 items per row */
-    }
-}
-
-/* For mobile devices */
-@media (max-width: 768px) {
-    .accommodation-items {
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px; /* Add spacing between items */
-    }
-    .accommodation-item {
-        width: 100%; /* Full width for each item */
-    }
-}
 .partners-section {
     text-align: center;
     padding: 50px 20px;
@@ -1085,4 +1079,66 @@
 .full-guideline-link a:hover {
   color: #ffb400;
   text-decoration: underline;
+}
+
+/* ============================================
+   MAP SECTION — Vintage Olympic Theme
+   Theme: Royal Blue (#0a1931), Gold (#f5c518)
+   Fonts: Cinzel (Heading), Poppins (Body)
+============================================ */
+
+.map-section {
+  color: #faf6f0; /* Ivory white text */
+  text-align: center;
+  padding: 20px;
+}
+
+/* === HEADING STYLE === */
+.map-section h3 {
+  font-family: "Cinzel", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #040024;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 10px rgba(245, 197, 24, 0.3);
+}
+
+/* === IFRAME (Map container) === */
+.map-section iframe {
+  border-radius: 30px;
+  border: 2px solid #f5c518;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.map-section iframe:hover {
+  transform: scale(1.01);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .map-section {
+    padding: 40px 10px;
+  }
+
+  .map-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .map-section iframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-section h3 {
+    font-size: 1.5rem;
+  }
+
+  .map-section iframe {
+    height: 280px;
+  }
 }
