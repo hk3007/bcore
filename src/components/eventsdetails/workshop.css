@@ -1,0 +1,136 @@
+/* ---------- HERO ---------- */
+.workshop-hero {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* ---------- BLACK LAYER ---------- */
+.workshop-dark-layer {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- CONTENT WRAPPER ---------- */
+.workshop-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
+  padding: 20px;
+}
+
+/* ---------- CENTER TEXT ---------- */
+.workshop-sub {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 45px;
+  color: #fff;
+}
+
+/* ---------- GRID LAYOUT ---------- */
+.workshop-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ---------- LEFT SIDE ---------- */
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.logo-item img {
+  max-height: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-x {
+  font-size: 2.8rem;
+  font-weight: 900;
+}
+
+/* ---------- RIGHT SIDE ---------- */
+.workshop-title {
+  font-size: 3.4rem;
+  line-height: 1.08;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: right;
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.workshop-dates {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-align: right;
+  color: #fff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .workshop-title {
+    font-size: 2.8rem;
+  }
+
+  .workshop-sub {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .workshop-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .logo-row {
+    justify-content: center;
+  }
+
+  .workshop-title,
+  .workshop-dates {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .workshop-title {
+    font-size: 2.2rem;
+  }
+
+  .workshop-sub {
+    font-size: 1.25rem;
+  }
+
+  .logo-item img {
+    max-height: 80px;
+  }
+
+  .logo-x {
+    font-size: 2.2rem;
+  }
+}
+
+.workshop-sub .text{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 45px;
+  color: #fff;
+}

@@ -68,7 +68,8 @@ export const UpComing = () => {
       description:
         "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
       bookletLink:
-        'https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf',
+        'https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing',
+      faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing"
     },
     {
       id: 4,
@@ -142,6 +143,16 @@ export const UpComing = () => {
                     rel="noopener noreferrer"
                   >
                     IORC BOOKLET
+                  </a>
+                )}
+                {event.faQ && (
+                  <a
+                    href={event.faQ}
+                    className="schedule-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    FAQ
                   </a>
                 )}
               </div>

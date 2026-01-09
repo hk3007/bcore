@@ -1,22 +1,153 @@
-.loader {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+/* ============================
+   FUTURISTIC WHITE WAVE LOADER
+   ============================ */
+
+/* Full screen */
+.loader{
+  position:fixed;
+  inset:0;
+  background:#ffffff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  z-index:99999;
+  animation: exitWarp 1.2s ease 3.2s forwards;
+  margin: 10px;
 }
 
-.loader-image {
-  width: 300px; /* Increase the size of the image */
-  height: 200px;
-  animation: blink 1.5s ease-in-out infinite;
+/* ===== WAVE LAYERS ===== */
+.wave{
+  position:absolute;
+  top:0;
+  left:-20%;
+  width:140%;
+  height:100%;
+  background:linear-gradient(
+    to right,
+    rgba(240,245,255,0.35),
+    rgba(255,255,255,0.9),
+    rgba(240,245,255,0.35)
+  );
+  transform:skewX(-12deg);
+  filter:blur(18px);
+  animation: waveMove 3.5s ease-in-out infinite;
+  pointer-events:none;
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
+.wave:nth-child(1){
+  animation-delay:0s;
+}
+
+.wave:nth-child(2){
+  animation-delay:.4s;
+  opacity:.7;
+}
+
+.wave:nth-child(3){
+  animation-delay:.9s;
+  opacity:.5;
+}
+
+@keyframes waveMove{
+  0%{ transform:translateX(-25%) skewX(-12deg); }
+  50%{ transform:translateX(10%) skewX(-12deg); }
+  100%{ transform:translateX(40%) skewX(-12deg); }
+}
+
+/* ===== GLASS LOGO CARD ===== */
+.logo-box{
+  position:relative;
+  padding:22px 28px 18px;
+  border-radius:20px;
+  backdrop-filter:blur(16px);
+  background:rgba(255,255,255,.65);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.08),
+    inset 0 0 0 1px rgba(190,205,235,.35);
+  z-index:5;
+  text-align:center;
+}
+
+/* ===== LOGO SCAN WRAP (clips the scan to logo only) ===== */
+.logo-scan-wrap{
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+  border-radius:14px;
+}
+
+/* ===== LOGO ===== */
+.loader-logo{
+  width:260px;
+  object-fit:contain;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 18px rgba(110,140,200,.35));
+}
+
+/* Floating */
+@keyframes float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-9px); }
+}
+
+/* ===== SCAN ONLY ON IMAGE ===== */
+.scan-line{
+  position:absolute;
+  left:0;
+  right:0;
+  height:65px;
+  background:linear-gradient(
+    rgba(255,255,255,0),
+    rgba(255,255,255,.9),
+    rgba(255,255,255,0)
+  );
+  animation: scan 2.2s infinite;
+  top:-70px;
+  mix-blend: screen;
+}
+
+@keyframes scan{
+  to{ top:110%; }
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar{
+  width:100%;
+  height:6px;
+  margin-top:10px;
+  background:#eef3ff;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progress-bar div{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#7eacff,#b6d1ff);
+  animation: load 2.5s ease forwards;
+  border-radius:10px;
+}
+
+@keyframes load{
+  to{ width:100%; }
+}
+
+/* ===== TAGLINE ===== */
+.tagline{
+  text-align:center;
+  font-size:14px;
+  margin-top:8px;
+  color:#6e829c;
+  letter-spacing:.7px;
+  font-weight:500;
+}
+
+/* ===== EXIT REVEAL ===== */
+@keyframes exitWarp{
+  to{
+    transform:scale(1.1);
+    opacity:0;
+    pointer-events:none;
   }
 }

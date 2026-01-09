@@ -3,14 +3,15 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./imageCarousel.css";
 
-// ✅ Local imports (adjust paths if needed)
 import page1 from '../pages/Slider/Page 1.jpg';
 import page2 from '../pages/Slider/Page 2.jpg';
 import page3 from '../pages/Slider/Page 3.jpg';
 import page4 from '../pages/Slider/Page 4.jpg';
+import page5 from '../pages/Slider/Page 5.jpeg';
 
 const ImageCarousel = () => {
   const images = [
+    { src: page5, alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/11/IMG_0935.jpeg", alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/06/1.png", alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/06/2-1.png", alt: "Slide 2" },
@@ -30,20 +31,28 @@ const ImageCarousel = () => {
   ];
 
   return (
-    <div style={{ maxWidth: "1900px", margin: "0 auto" }}>
+    <div className="carousel-container">
       <Carousel
         showArrows={true}
         showThumbs={false}
         showStatus={false}
-        showIndicators={false}  // 🚀 Hides the dots
+        showIndicators={false}
         infiniteLoop={true}
         autoPlay={true}
         interval={3000}
         transitionTime={500}
+        swipeable={true}
+        emulateTouch={true}
+        dynamicHeight={false}   // 🔥 Prevents height jump (important)
       >
         {images.map((img, index) => (
           <div key={index}>
-            <img src={img.src} alt={img.alt} />
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="eager"             // 🔥 No lazy-load on hero slider (prevents CLS)
+              decoding="async"
+            />
           </div>
         ))}
       </Carousel>

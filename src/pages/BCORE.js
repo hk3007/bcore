@@ -12,6 +12,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Helmet } from 'react-helmet';
 import GalleryCarousel from "../components/GalleryCarousel";
+import WorkshopSection from "../components/eventsdetails/WorkshopSection";
+import NadaLogo from "./Images/NADA Logo.png"
+import IORC2 from "./Images/IORC2.png"
+
 
 export const BCORE = () => {
     const events = [
@@ -40,7 +44,29 @@ export const BCORE = () => {
             description:
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             brochure:
-              'https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf',
+              'https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing',
+            workshop: {
+                background: IORC2,
+
+                // Header / Partner Text
+                partnerLine1: "BCORE partners with",
+                partnerOrg: "NADA",
+                conferenceName: "2nd International Olympic Research Conference",
+                venue: "Rashtriya Raksha University",
+
+                // Logos
+                leftLogo: logo1,
+                rightLogo: NadaLogo,
+
+                // Workshop Title (broken for styling control)
+                titleLine1: "ANTI-DOPING &",
+                titleLine2: "RESEARCH",
+                titleLine3: "METHODOLOGY",
+                titleLine4: "WORKSHOP",
+
+                // Dates
+                dates: "28–29 Jan 2026",
+            },
         }
         ,
         {
@@ -167,8 +193,19 @@ export const BCORE = () => {
                 </h4>
             </div>
 
+           {events
+                .filter((event) => {
+                    const { end } = parseDateRange(event.date);
+                    return end >= new Date();
+                })
+                .map((event) => (
+                    <WorkshopSection key={event.id} event={event.workshop} />
+                ))}
+
             <div className="bcore-events">
             <h2 className="bcore-events__title">Upcoming Events</h2>
+
+
 
             <div className="bcore-events__grid">
                 {events

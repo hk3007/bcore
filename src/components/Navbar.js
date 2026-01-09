@@ -25,9 +25,12 @@ export const Navbar = () => {
 
   // Example announcements – replace with API data
   const announcements = [
+    "Please note: <br />All <i>FAQs</i> are available on the <i>IORC</i> event page for your reference.",
+    "Full Paper Submission and Registration Deadline extended to 15 January 2026 for the 2nd International Olympic Research Conference.",
+    "BCORE partners with NADA for the 2nd International Olympic Research Conference at Rashtriya Raksha University",
+    "Accommodation Notice: <br />Sharing-based campus accommodation is available for the International Olympic Research Conference 2026. Please book in advance. Visit the Accommodation section for details.",
     "Abstract submissions are Date Extended till 31 December 2025 for the 2nd International Olympic Research Conference (ORC). ",
     "Registrations for the BCORE Night run 2026 are now open. Organised by BCORE, the night run will be held on 10 January 2026, bringing together athletes, students, enthusiasts to promote fitness, resilience and the Spirit.",
-    "BCORE is proud to announce a forthcoming collaboration with the National Anti- Doping Agency ( NADA).",
     "Bcore is pleased to announce that it will host the 2nd International ORC from 27-30 January 2026, bringing together global experts, scholars, and researchers to promote knowledge sharing in Olympic and sport research/ governance."
   ];
 
@@ -287,9 +290,13 @@ useEffect(() => {
 
             <ul>
               {announcements.map((a, i) => (
-                <li key={i}>{a}</li>
+                <li
+                  key={i}
+                  dangerouslySetInnerHTML={{ __html: a }}
+                ></li>
               ))}
             </ul>
+
 
             <button
               className="close-modal"

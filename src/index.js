@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/*",  // catch-all so your <App /> handles the <Routes />
@@ -24,9 +24,7 @@ const router = createBrowserRouter(
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>
 );
 
 reportWebVitals();

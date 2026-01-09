@@ -45,7 +45,7 @@ const Careers = () => {
         <Briefcase className="icon" />
         <h2>Current Job Openings</h2>
 
-        {/* ✅ Job Opening Card */}
+        {/* ✅ Job Opening Card
         <div className="job-card">
           <div className="job-header">
             <h4>Design and Marketing Trainee</h4>
@@ -61,7 +61,7 @@ const Careers = () => {
               View Details
             </a>
           </div>
-        </div>
+        </div> */}
 
         {/* Optional message */}
         <p className="no-openings-note">

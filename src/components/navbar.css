@@ -370,6 +370,7 @@
   animation: scaleIn 0.25s ease;
   box-shadow: 0 10px 24px rgba(40, 25, 10, 0.25);
   font-family: "Cormorant Garamond", serif;
+  margin: 10px;
 }
 
 .announcement-modal h2 {
@@ -386,7 +387,39 @@
   list-style: none;
   padding: 0;
   margin: 0 0 10px;
+  max-height: 55vh;      /* 👈 set scroll height */
+  overflow-y: auto;      /* 👈 enable scrolling */
+  padding-right: 6px;    /* space for scrollbar */
 }
+
+/* ============================
+   Vintage Leather Scrollbar
+============================ */
+.announcement-modal ul {
+  scrollbar-width: thin;              /* Firefox */
+  scrollbar-color: #7a6241 #efe6d6;   /* Firefox */
+}
+
+/* Chrome / Edge / Safari */
+.announcement-modal ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.announcement-modal ul::-webkit-scrollbar-track {
+  background: #efe6d6;
+  border-radius: 10px;
+}
+
+.announcement-modal ul::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8a6b47, #6a5237);
+  border-radius: 10px;
+  border: 1px solid #4f3e2a;
+}
+
+.announcement-modal ul::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6f5639, #4c3a28);
+}
+
 
 .announcement-modal ul li {
   background: #fffaf1;
@@ -440,15 +473,51 @@
 /* ============================
    Responsive
 ============================ */
+/* ============================
+   Mobile Announcement Modal
+============================ */
 @media (max-width: 768px) {
-  .announcement-box {
-    max-width: 100%;
-    height: 130px;
-    font-size: 0.95rem;
+  .announcement-modal {
+    width: 92%;
+    max-width: 360px;
+    max-height: 70vh;          /* smaller modal height */
+    padding: 14px 14px 12px;
+    overflow: hidden;          /* contain scrolling inside */
   }
 
-  .announcement-modal {
-    max-width: 92%;
-    padding: 16px;
+  .announcement-modal h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  /* Scrollable announcements list */
+  .announcement-modal ul {
+    max-height: 45vh;          /* scroll area */
+    overflow-y: auto;
+    padding-right: 6px;        /* space for scrollbar */
+  }
+
+  .announcement-modal ul li {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+  }
+
+  /* Compact close button */
+  .close-modal {
+    padding: 6px 18px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  /* Subtle scrollbar */
+  .announcement-modal ul::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .announcement-modal ul::-webkit-scrollbar-thumb {
+    background: #7a6241;
+    border-radius: 8px;
   }
 }
+

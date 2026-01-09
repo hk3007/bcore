@@ -502,36 +502,38 @@
 }
 
 /* ============================
-   VINTAGE ACCOMMODATION SECTION
+   MODERN ACCOMMODATION SECTION
 =============================== */
 .accommodation-container {
-  background: #f7f2e7;
+  background: #faf7ef;
   padding: 40px;
   margin: 20px;
-  border: 2px solid #c8b28e;
-  border-radius: 12px;
+  border: 1px solid #e3d5b6;
+  border-radius: 14px;
   margin-top: 40px;
   font-family: "Georgia", serif;
-  box-shadow: 0 0 20px rgba(120, 90, 60, 0.15);
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
 }
 
 /* Heading */
 .accommodation-container h3 {
-  font-size: 38px;
+  font-size: 30px;
   text-align: center;
-  margin-bottom: 25px;
-  letter-spacing: 1px;
-  color: #5a3e2b;
+  margin-bottom: 20px;
+  color: #4c3a2d;
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom: 2px dashed #c8b28e;
-  padding-bottom: 8px;
-}
-.accommodation-container p{
-  text-align: center;
+  letter-spacing: 1px;
+  border-bottom: none;
 }
 
-/* FLEX LAYOUT – max 2 items per row */
+.accommodation-container p {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+/* FLEX LAYOUT */
 .accommodation-items {
   display: flex;
   flex-wrap: wrap;
@@ -541,114 +543,118 @@
 
 /* Each Card */
 .accommodation-item {
-  flex: 1 1 calc(50% - 28px); /* Max 2 per row */
+  flex: 1 1 calc(50% - 28px);
   max-width: calc(50% - 28px);
-  min-width: 300px;
+  min-width: 320px;
 
-  position: relative;
-  height: 280px;
   background-size: cover;
   background-position: center;
-  border: 2px solid #d6c7a1;
-  border-radius: 10px;
+  border-radius: 14px;
+  border: 1px solid #d8c7a8;
   overflow: hidden;
-  box-shadow: 0 6px 10px rgba(80, 160, 153, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .accommodation-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 20px rgba(80, 60, 40, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
-/* Overlay - scrollable */
+/* ============================
+   AUTO-HEIGHT OVERLAY (FINAL)
+=============================== */
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(47, 97, 103, 0.75);
-  backdrop-filter: blur(1px);
-  color: #f7f2e7;
-  font-size: 15px;
-  padding: 18px;
-  overflow-y: auto;
+  position: relative; /* allows auto height */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(20, 40, 50, 0.75); 
+  color: #fff;
+  padding: 25px;
+  backdrop-filter: blur(3px);
+  overflow: visible;  /* ensures NO SCROLLING */
+  border-radius: 14px;
 }
 
-/* Title inside card */
+/* Title */
 .overlay h4 {
-  font-size: 24px;
+  font-size: 26px;
   text-align: center;
   margin-bottom: 12px;
-  color: #fff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-/* Description */
+/* Text */
 .overlay p {
-  line-height: 1.5;
-  margin-bottom: 8px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #fdfdfd;
+  text-decoration: none;
 }
 
 .overlay p strong {
-  margin-right: 6px;
-  color: #fff700;
-  font-weight: bolder;
+  color: #ffd86b;
+  text-decoration: none;
 }
 
-/* Bottom note */
+/* ============================
+   BOTTOM NOTE
+=============================== */
 .accommodation-container h5 {
   margin-top: 25px;
   text-align: center;
-  color: #5a3e2b;
-  font-size: 16px;
-  background: #efe3cf;
-  display: inline-block;
+  color: #4c3a2d;
+  font-size: 15px;
+  background: #f2e6d0;
   padding: 8px 14px;
-  border: 2px solid #c8b28e;
   border-radius: 8px;
+  display: inline-block;
 }
 
 /* ============================
    RESPONSIVE BREAKPOINTS
 =============================== */
-
-/* Tablet Screens */
 @media (max-width: 992px) {
   .accommodation-item {
     flex: 1 1 100%;
     max-width: 100%;
-    height: 300px;
   }
 
   .overlay h4 {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
-/* Mobile Screens */
 @media (max-width: 600px) {
   .accommodation-container {
     padding: 20px;
     margin: 10px;
   }
 
-  .accommodation-item {
-    height: 330px;
-  }
-
   .overlay {
-    font-size: 14px;
-    padding: 14px;
+    padding: 18px;
   }
 
-  .accommodation-container h3 {
-    font-size: 28px;
+  .overlay h4 {
+    font-size: 20px;
   }
 
-  .accommodation-container h5 {
+  .overlay p {
     font-size: 14px;
   }
 }
+
+.accommodation-item,
+.accommodation-item * {
+  text-decoration: none !important;
+}
+
 
 
 .partners-section {
@@ -752,10 +758,15 @@
 }
 
 .chief-guests h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #333;
+  font-family: "Cinzel", serif;
+  color: #0a1931;
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  margin-bottom: 50px;
+  z-index: 1;
 }
 
 .chief-guests-grid {

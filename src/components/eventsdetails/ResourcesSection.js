@@ -10,7 +10,8 @@ if (
       resources.schedule ||
       resources.brochure ||
       resources.registrationLink ||
-      resources.googleForm
+      resources.googleForm ||
+      resources.faQ
     )
   )
     return null;
@@ -20,6 +21,7 @@ if (
     { label: "View Brochure", url: resources.brochure },
     { label: "Register Now", url: resources.registrationLink },
     { label: "Google Form", url: resources.googleForm },
+    { label: "FAQ", url: resources.faQ },
   ].filter((res) => res.url);
 
   return (

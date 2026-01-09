@@ -20,6 +20,10 @@ import StepsToRegister from "../components/eventsdetails/StepsToRegister";
 import ResourcesSection  from "../components/eventsdetails/ResourcesSection";
 import AbstractGuidelines  from "../components/eventsdetails/AbstractGuidelines";
 import EventHeader  from "../components/eventsdetails/EventHeader";
+import WorkshopSection from "../components/eventsdetails/WorkshopSection";
+import BcoreLogo from "./Images/BCORE Logo.png"
+import NadaLogo from "./Images/NADA Logo.png"
+import IORC2 from "./Images/IORC2.png"
 
 export const EventDetails = () => {
     useEffect(() => {
@@ -549,7 +553,7 @@ export const EventDetails = () => {
             description:
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             bookletLink:
-              'https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf',
+              'https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing',
             subpoints: [
                 'Ignite research reform and foster innovation in Olympic studies.',
                 'Integrate education, research, and governance for a cohesive Olympic development framework.',
@@ -563,7 +567,130 @@ export const EventDetails = () => {
             importantDates: [
                 { event: 'Abstract	Submission	Deadline', date: '31 December 2025' },
                 { event: 'Notification of Acceptance:', date: 'Within 15 working days of abstract submission' },
-                { event: 'Full Paper Submission	Deadline:', date: '31 December 2025' },
+                { event: 'Full Paper Submission	Deadline:', date: '15 January 2026' },
+                { event: 'Registration Deadline:', date: '15 January 2026' },
+            ],
+            speakers: [
+                {
+                    id: 1,
+                    name: "Mr. Nikolay Varfolomeev, Advisor to the ROC President",
+                    about: "Mr. Nikolay Varfolomeev serves as Advisor to the President of the Russian Olympic Committee, supporting strategic initiatives and international Olympic engagement.",
+                    img: "https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg"
+                },
+                {
+                    id: 2,
+                    name: "Mr. Alexey Slautin, Head of International Relations Department",
+                    about: "Mr. Alexey Slautin leads the International Relations Department, coordinating global partnerships and Olympic-related international cooperation.",
+                    img: "https://media.licdn.com/dms/image/v2/C4E03AQGOCi8fGxPpJA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517242563125?e=1768435200&v=beta&t=g_mc_NjPLbMSC8JBbX351oYodkuvBEz7tNkEbBBdV2s"
+                },
+                {
+                    id: 3,
+                    name: "Ms. Alexandra Karaiskou, Head of HOC President's Office, NOCs/NOAs Relations & International Olympic Academy (IOA)",
+                    about: "Ms. Alexandra Karaiskou heads the HOC President’s Office and oversees NOCs/NOAs relations while closely collaborating with the International Olympic Academy.",
+                    img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa378489dd_Alexandra%20Karaiskou%20.jpg"
+                },
+                {
+                    id: 4,
+                    name: "Mr. Makis Asimakopoulos, IOA Director",
+                    about: "Mr. Makis Asimakopoulos is the Director of the International Olympic Academy, guiding its educational mission and global Olympic learning initiatives.",
+                    img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa37849746_363501343_364681259262932_2813776722327982822_n.jpg"
+                },
+                {
+                    id: 5,
+                    name: "Prof. Yannis Pitsiladis, Professor, Hong Kong Baptist University",
+                    about: "Prof. Yannis Pitsiladis is a distinguished professor at Hong Kong Baptist University, recognized for his research contributions in sports science and Olympic studies.",
+                    img: "https://speh.hkbu.edu.hk/cache/img/ed72898b5b891ace11160bde5a5f7d1b.png"
+                },
+                {
+                    id: 6,
+                    name: "Mr. Tony Cunningham, Senior Manager, Education (Policy and Research), WADA",
+                    about: "Mr. Tony Cunningham serves as Senior Manager for Education Policy and Research at WADA, advancing global anti-doping education strategies.",
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGEt-QJfDcIzA/profile-displayphoto-shrink_800_800/B4EZbLGo6EHYAg-/0/1747164237885?e=1768435200&v=beta&t=6nl4CrlbtIfOcRdcz7hvogM68s-KrOY3NQpjFneklVY"
+                },
+                {
+                    id: 7,
+                    name: "Prof. Dr. Stephan Wassong, Head of Institute of Sport History & Director of the Olympic Studies Centre",
+                    about: "Prof. Dr. Stephan Wassong leads the Institute of Sport History and directs the Olympic Studies Centre, promoting scholarship on Olympic heritage and education.",
+                    img: "https://media.licdn.com/dms/image/v2/D4D22AQHewAVnBH4fyA/feedshare-shrink_800/feedshare-shrink_800/0/1693314425450?e=2147483647&v=beta&t=37RW1kRJrQ5vdyxZBwoqtXRPdMsZQzc2CGV8OxZJxKw"
+                },
+                {
+                    id: 8,
+                    name: "Mr. Grzegorz Botwina, Director, Polish Olympic Studies and Research Centre",
+                    about: "Mr. Grzegorz Botwina is Director of the Polish Olympic Studies and Research Centre, focusing on research and development in Olympic education and policy.",
+                    img: "https://sportacademy.com/wp-content/uploads/2024/09/1634903794601.jpeg"
+                },
+                {
+                    id: 9,
+                    name: "Mr. Wang Xinming, Minister-Counselor",
+                    about: "Mr. Wang Xinming serves as Minister-Counselor, contributing to diplomatic engagement and international collaboration within the Olympic and sports sectors.",
+                    img: "https://en.people.cn/NMediaFile/2019/0403/FOREIGN201904031634000527663791396.jpg"
+                },
+                {
+                    id: 10,
+                    name: "Mr. Anders Pettersson, Board Member of the Brazilian Olympic Committee & President of the Brazilian Snow Sports Federation",
+                    about: "Mr. Anders Pettersson is a Board Member of the Brazilian Olympic Committee and President of the Brazilian Snow Sports Federation, supporting winter sports development in Brazil.",
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQGgLLd8Y_uXTA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1543325756584?e=1768435200&v=beta&t=oNUTxTgpxAl4sqTpAI627RDStAAn4AeXtq0HYFBTkeE"
+                },
+                {
+                    id: 11,
+                    name: "Prof. Wolfgang Maennig, Chair of Economic Policy, University of Hamburg",
+                    about: "Prof. Wolfgang Maennig is Chair of Economic Policy at the University of Hamburg, specializing in the economics of sport and mega-events such as the Olympic Games.",
+                    img: "https://assets.rrz.uni-hamburg.de/instance_assets/fakws/14447474/maennig-640x361-75e48055c7df6d3b79ce8663e6e7ae0301cfcc41.jpg"
+                },
+                {
+                    id: 12,
+                    name: "Mr. Joseph Oluka, Assistant Administrator Technical, Uganda Olympic Committee",
+                    about: "Mr. Joseph Oluka works as Assistant Administrator Technical at the Uganda Olympic Committee, supporting programs that strengthen Olympic sport development in Uganda.",
+                    img: "https://nocuganda.org/wp-content/uploads/2025/11/Joseph.jpg"
+                },
+                {
+                    id: 13,
+                    name: "Mr. Arthur Gallois, French Olympic Committee",
+                    about: "Mr. Arthur Gallois represents the French Olympic Committee, contributing to its national and international Olympic initiatives.",
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGDtZPw-a6EGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687432072130?e=1768435200&v=beta&t=AonXkKtI44Ep208F1itZLa2T3h1bz3mqVR1rESJRKzM"
+                },
+                {
+                    id: 14,
+                    name: "Ms. Lina Marcela Vélez Sánchez — Faculty Member, Escuela Nacional del Deporte (Colombia)",
+                    about: "Ms. Lina Marcela Vélez Sánchez is a faculty member at Escuela Nacional del Deporte in Colombia and an active member of the IU END University Center for Olympic Studies.",
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQHRdZ4X7QFaOQ/profile-displayphoto-crop_800_800/B4EZngfdWdGUAI-/0/1760407968916?e=1768435200&v=beta&t=rRP4n_khT5dDevjIoh0SkKHbFWccX2HFmMpckiMSrCs"
+                },
+                {
+                    id: 15,
+                    name: "Mr. Daniel Afrifa, Division of Sport Sciences, Stellenbosch University, South Africa",
+                    about: "Mr. Daniel Afrifa is affiliated with the Division of Sport Sciences at Stellenbosch University, contributing to research and teaching in sports science and performance.",
+                    img:"https://www.exerciselabatsun.co.za/wp-content/uploads/2024/09/Daniel-150x150.jpg"
+                },
+                {
+                    id: 16,
+                    name: "Mr. Rodrigo Bravo Baeza, Professor and Researcher, Olympic Studies Centre – Escuela Nacional del Deporte University, Cali, Colombia",
+                    about: "Mr. Rodrigo Bravo Baeza is a professor and researcher representing the Olympic Studies Centre at Escuela Nacional del Deporte University in Cali, Colombia.",
+                    img: "https://endeporte.edu.co/info/endeporte/media/galeria/thumbs/thgaleria_400X400_4785.webp"
+                },
+                {
+                    id: 17,
+                    name: "Ms. Tanvi Hubli, Researcher, The University of Edinburgh",
+                    about: "Ms. Tanvi Hubli is a researcher at The University of Edinburgh, focusing on themes related to sport, society, and the Olympic Movement.",
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQFqMS3x3Vwf3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704564920961?e=1768435200&v=beta&t=Y6XHT-ZJ9buU7hQ5vvOIvY564OvhTTyys4Hq39hTIOw"
+                },
+                {
+                    id: 18,
+                    name: "Mr. Carlos Quiroz, Vice-Principal and Researcher, Escuela Nacional del Deporte University – Cali, Colombia",
+                    about: "Mr. Carlos Quiroz serves as Vice-Principal and researcher at Escuela Nacional del Deporte University in Cali, Colombia, contributing to academic and Olympic studies initiatives.",
+                    img: "https://i1.rgstatic.net/ii/profile.image/394317303697412-1471023979458_Q512/Carlos-Quiroz-Mora.jpg"
+                },
+                {
+                    id: 19,
+                    name: "Ms. Elizaveta Zhuk, PhD (Paris-Saclay University), Visiting Professor",
+                    about: "Ms. Elizaveta Zhuk holds a PhD from Paris-Saclay University and works as a visiting professor engaged in research and teaching related to sport and Olympic education.",
+                    img: "https://media.licdn.com/dms/image/v2/C4E03AQG01MDXsAUSPw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1619526693481?e=1768435200&v=beta&t=Up49NcMtNV3Kf10tx0ie_u4_QJoJeOnZqSMmYRgbo8g"
+                },
+                {
+                    id: 20,
+                    name: "Mr. Ward Janssen, TUE Manager, World ParaVolley; KU Leuven & Università di Bologna (BAES Programme)",
+                    about: "Mr. Ward Janssen is TUE Manager at World ParaVolley and is affiliated with KU Leuven and the Università di Bologna through the BAES Programme, supporting para-sport development and research.",
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQG_pCjL7EwFcQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654176641648?e=1768435200&v=beta&t=6tjYAI8arxFEAY_tAqtJWgdBidQCFlrrGQ0kF50yFn0"
+                }
             ],
             abstractGuidelines: {
                 formatRequirements: [
@@ -600,14 +727,15 @@ export const EventDetails = () => {
             },
             resources: {
 //                schedule: "https://example.com/schedule.pdf",
-              brochure: "https://rru.ac.in/wp-content/uploads/2025/10/2nd-IORC-Ahmedabad_compressed.pdf",
+              brochure: "https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing",
               registrationLink: "https://forms.eduqfix.com/secolycn/add",
-              googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfsd7Tl_kZo8x_4oE_ZocDMyaC5T_AQswO1Hrl9WGv_0jXZyg/viewform?usp=header"
+              googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfsd7Tl_kZo8x_4oE_ZocDMyaC5T_AQswO1Hrl9WGv_0jXZyg/viewform?usp=header",
+              faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing"
             },
             callForAbstract: {
                 text: `BCORE cordially invites abstracts for presentation at its International Olympic Research Conference at Rashtriya Raksha University. Submissions addressing hosting and organizing, Olympic education, sustainable development, and technological innovation are particularly welcomed. Early career researchers are encouraged to participate.`,
                 submissionEmail: 'olyresearchacademy.submissions@rru.ac.in',
-                deadline: '30th November 2025',
+                deadline: '31st December 2025',
             },
              Steps: [
                 { event: 'Step 1', date: ' Submit the abstract' },
@@ -615,13 +743,36 @@ export const EventDetails = () => {
                 { event: 'Step 3', date: 'Register to the Olympics conference' },
                 { event: 'Step 4', date: 'Fill Google Form' },
             ],
+            workshop: {
+                background: IORC2,
+
+                // Header / Partner Text
+                partnerLine1: "BCORE partners with",
+                partnerOrg: "NADA",
+                conferenceName: "2nd International Olympic Research Conference",
+                venue: "Rashtriya Raksha University",
+
+                // Logos
+                leftLogo: BcoreLogo,
+                rightLogo: NadaLogo,
+
+                // Workshop Title (broken for styling control)
+                titleLine1: "ANTI-DOPING &",
+                titleLine2: "RESEARCH",
+                titleLine3: "METHODOLOGY",
+                titleLine4: "WORKSHOP",
+
+                // Dates
+                dates: "28–29 Jan 2026",
+            },
             accommodations: [
                                 {
-                    name: 'Good Times, Dahegam',
+                    name: 'Villa Accommodation, Near Rashtriya Raksha University (RRU), Good Times, Dahegam',
                     address: 'Good Times by Sangath IPL near Rashtriya Raksha University Lavad Dehgam',
-                    contact: 'For Bookings Contact - 8175991401 | Mr. Sandeep',
+                    contact: 'For Bookings Contact - +91 8175991401 | Mr. Sandeep Mishra',
                     image: 'https://goodtimesbysangathipl.com/wp-content/uploads/2022/04/gtl-2.png',
-                    link: 'https://goodtimesbysangathipl.com/'
+                    link: 'https://drive.google.com/file/d/1qDj5LrUmdUCwhBuNFhycqEtuEZki7ID1/view?usp=sharing',
+                    info: 'Click on the Card To know more.'
                 },
                 {
                     name: 'Malhaar Resort, Dahegam',
@@ -633,15 +784,15 @@ export const EventDetails = () => {
                 {
                     name: 'Hotel Neelkanth, Dahegam',
                     address: '5R64+56H, Ahmedabad - Modasa Rd, Vrundavan Society, Nehru Society, Dahegam, Gujarat 382305',
-                    image: 'https://lh3.googleusercontent.com/p/AF1QipP9ZAJ0xs9tV2dMSOqfec29It65ZVHO_8ZJINgs=s1360-w1360-h1020',
+                    image: 'https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwzehTUVaaMUho29NGWtSjgt7VnlkaQ01AMp8MeS_78pjtGCn0AH-_BEdYIzmOkrfafgOlWm3flqbjuxxkbw5z5Va3Y_cecbnQEbOG6PE8jriVGGXKCXeehAMAmSjF1K-Vjp18=s1360-w1360-h1020-rw',
                     link: ''
                 },
                 {
                     name: 'University Accomodation',
                     address: 'Rashtriya Raksha University, Lavad, Gandhinagar, Gujarat 382305',
                     image: 'https://rru.ac.in/wp-content/uploads/2022/08/6-scaled.jpg',
-                    link: 'https://rru.ac.in/liferru/',
-                    info: "Accommodation on a sharing basis inside the campus will be available. Please ensure that you book it in advance."
+                    link: 'https://drive.google.com/file/d/14Y1rL6NImTpKrQ5b_9UpQuIShile6w-r/view?usp=sharing',
+                    info: "Accommodation on a sharing basis inside the campus will be available. Please ensure that you book it in advance. Click on the Card To know more."
                 },
             ],
         },
@@ -729,7 +880,6 @@ export const EventDetails = () => {
         </div>
         )}
 
-
         {event?.guests?.length > 0 && (
             <section className="chief-guests">
             <h2>Meet Our Guests</h2>
@@ -752,6 +902,9 @@ export const EventDetails = () => {
         )}
 
         {event?.importantDates?.length > 0 && (<ImportantDates importantDates={event.importantDates} />)}
+
+        {event?.workshop && <WorkshopSection event={event.workshop} />}
+
         
         {event?.schedule?.length > 0 && (
             <div className="event-schedule">
@@ -788,13 +941,14 @@ export const EventDetails = () => {
         
         {event?.Steps?.length > 0 && <StepsToRegister steps={event.Steps} />}
 
+
         {event?.abstractGuidelines && <AbstractGuidelines event={event} />}
 
 
 
         {event?.speakers?.length > 0 && (
             <section className="chief-guests">
-            <h2>Speakers</h2>
+            <h2>International Speakers & Presenters</h2>
             <div className="chief-guests-grid">
                 {event.speakers.map((speaker) => (
                 <div className="guest-card" key={speaker.id}>
@@ -893,34 +1047,39 @@ export const EventDetails = () => {
         (event?.resources?.schedule ||
             event?.resources?.brochure ||
             event?.resources?.registrationLink ||
-            event?.resources?.googleForm) && <ResourcesSection resources={event?.resources}  />)}
+            event?.resources?.googleForm ||
+            event?.resources?.faQ
+            ) && <ResourcesSection resources={event?.resources}  />)}
 
         {event?.accommodations?.length > 0 && (
-            <div className="accommodation-container">
-            <h3>Accommodation Options</h3>
-            <p><i>Please click on the sections below to view detailed information.</i></p>
-            <div className="accommodation-items">
-                {event.accommodations.map((accommodation, index) => (
-                <a
-                    key={index}
-                    href={accommodation.link || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="accommodation-item"
-                    style={{ backgroundImage: `url(${accommodation.image})` }}
-                >
-                    <div className="overlay">
-                    <h4>{accommodation.name}</h4>
-                    <p><strong>Address:</strong> {accommodation.address}</p>
-                    {accommodation.contact && <p><strong>Contact: </strong> {accommodation.contact}</p>}
-                    {accommodation.info && <p>{accommodation.info}</p>}
-                    </div>
-                </a>
-                ))}
-            </div>
-            {/* <h5>For Accommodation-related queries - Janak Choudhari - +91 90992 69896</h5> */}
-            </div>
-        )}
+  <div className="accommodation-container">
+    <h3>Accommodation Options</h3>
+    <p><i>Please click on the sections below to view detailed information.</i></p>
+
+    <div className="accommodation-items">
+      {event.accommodations.map((accommodation, index) => (
+        <a
+          key={index}
+          href={accommodation.link || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="accommodation-item"
+          style={{ backgroundImage: `url(${accommodation.image})` }}
+        >
+          <div className="overlay">
+            <h4>{accommodation.name}</h4>
+            <p><strong>Address:</strong> {accommodation.address}</p>
+            {accommodation.contact && (
+              <p><strong>Contact:</strong> {accommodation.contact}</p>
+            )}
+            {accommodation.info && <p>{accommodation.info}</p>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+)}
+
 
         {event?.NearBytransportation?.length > 0 && (
             <div className="accommodation-container">

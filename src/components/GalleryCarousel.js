@@ -22,7 +22,7 @@ export default function GalleryCarousel() {
   const nextSlide = () => setCurrent((c) => (c + 1) % images.length);
   const prevSlide = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
-  const closePopup = () => setPopupImage(null);   // ← FIXED
+  const closePopup = () => setPopupImage(null);
 
   useEffect(() => {
     const interval = setInterval(nextSlide, 3000);
@@ -51,7 +51,14 @@ export default function GalleryCarousel() {
                 className={`gallery-card ${position}`}
                 onClick={() => setPopupImage(img)}
               >
-                <img src={img} alt="gallery" />
+                {/* CLS-FIX: reserved height + aspect ratio */}
+                <img
+                  src={img}
+                  alt="gallery"
+                  loading="eager"
+                  decoding="async"
+                  className="gallery-img"
+                />
               </div>
             );
           })}
@@ -63,7 +70,6 @@ export default function GalleryCarousel() {
         </div>
       </div>
 
-      {/* POPUP IMAGE VIEWER */}
       {popupImage && (
         <div className="image-popup" onClick={closePopup}>
           <div className="popup-img-container" onClick={(e) => e.stopPropagation()}>

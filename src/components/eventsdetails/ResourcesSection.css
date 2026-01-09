@@ -75,6 +75,7 @@
   margin-bottom: 50px;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .royal3d-title::after {
@@ -85,6 +86,8 @@
   background: linear-gradient(90deg, #f5c518, #0a1931);
   border-radius: 2px;
   margin-top: 12px;
+  justify-content: center;
+  margin: 12px auto 0;
 }
 
 /* Resource Cards Section */
@@ -94,6 +97,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 30px;
+  justify-content: center;
   z-index: 2;
   position: relative;
 }
