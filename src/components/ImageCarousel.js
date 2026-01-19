@@ -11,6 +11,7 @@ import page5 from '../pages/Slider/Page 5.jpeg';
 
 const ImageCarousel = () => {
   const images = [
+    { src: "https://rru.ac.in/wp-content/uploads/2026/01/BCORE-Night-Run-Web-SM-scaled.jpg", alt: "Slide 1" },
     { src: page5, alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/11/IMG_0935.jpeg", alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/06/1.png", alt: "Slide 1" },

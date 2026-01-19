@@ -1,0 +1,201 @@
+/* Unique prefix 'rt-' to protect your layout */
+
+.rt-modern-section {
+  background-color: #ffffff;
+  padding: 60px 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  box-sizing: border-box;
+}
+
+.rt-inner-container {
+  width: 92%; /* Keeps a safe margin from screen edges */
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.rt-header-center {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.rt-top-label {
+  color: #d4af37;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.rt-section-title {
+  color: #002366; /* Royal Blue */
+  font-size: clamp(24px, 5vw, 36px);
+  margin: 0;
+  font-family: 'serif';
+  font-weight: 800;
+}
+
+.rt-gold-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.rt-gold-line {
+  height: 1px;
+  width: 60px;
+  background-color: #d4af37;
+}
+
+.rt-gold-diamond {
+  width: 8px;
+  height: 8px;
+  background-color: #d4af37;
+  transform: rotate(45deg);
+}
+
+/* Flexbox Grid - Responsive & Contained */
+.rt-flex-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 -10px; /* Counter-act column padding */
+}
+
+.rt-flex-column {
+  padding: 10px;
+  /* Logic: On large screens, try 4 per row (25%). 
+     Subtract gap to ensure it fits inside the container.
+  */
+  flex: 1 1 calc(25% - 40px); 
+  min-width: 280px; /* Prevents cards from getting too small */
+  max-width: 400px; /* Prevents cards from getting too large */
+  box-sizing: border-box;
+  display: flex;
+}
+
+/* Card Styling */
+.rt-main-card {
+  background: #ffffff;
+  text-decoration: none;
+  border: 1px solid #e8e8e8;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.rt-main-card:hover {
+  transform: translateY(-8px);
+  border-color: #d4af37;
+  box-shadow: 0 15px 30px rgba(0, 35, 102, 0.12);
+}
+
+/* Image Container */
+.rt-img-frame {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+}
+
+.rt-img-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.rt-main-card:hover .rt-img-element {
+  transform: scale(1.1);
+}
+
+/* Card Content */
+.rt-body-content {
+  padding: 25px 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rt-item-heading {
+  color: #002366;
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  font-family: 'serif';
+  font-weight: 700;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rt-info-stack {
+  margin-bottom: 15px;
+}
+
+.rt-info-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #d4af37;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.rt-info-desc {
+  color: #555;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.rt-footer-action {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.rt-action-link {
+  color: #002366;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #d4af37;
+  padding-bottom: 3px;
+  transition: all 0.3s ease;
+}
+
+.rt-main-card:hover .rt-action-link {
+  color: #d4af37;
+}
+
+/* --- Breakpoints for Perfect Flow --- */
+
+/* Tablets (approx 2 per row) */
+@media (max-width: 992px) {
+  .rt-flex-column {
+    flex: 1 1 calc(50% - 40px);
+  }
+}
+
+/* Mobile (1 per row, centered) */
+@media (max-width: 600px) {
+  .rt-flex-column {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .rt-modern-section {
+    padding: 40px 10px;
+  }
+  .rt-inner-container {
+    width: 95%;
+  }
+}

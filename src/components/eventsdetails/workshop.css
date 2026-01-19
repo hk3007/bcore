@@ -13,7 +13,7 @@
   height: 100%;
   background: rgba(0,0,0,0.55);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 /* ---------- CONTENT WRAPPER ---------- */
@@ -133,4 +133,44 @@
   line-height: 1.5;
   margin-bottom: 45px;
   color: #fff;
+}
+
+/* ---------- QR ROW (BOTTOM) ---------- */
+.workshop-qr-row {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.workshop-qr {
+  width: 110px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.workshop-qr-text p{
+  max-width: 620px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* ---------- MOBILE STACK ---------- */
+@media (max-width: 768px) {
+  .workshop-qr-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .workshop-qr {
+    width: 100px;
+  }
+
+  .workshop-qr-text {
+    font-size: 0.9rem;
+  }
 }

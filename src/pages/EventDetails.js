@@ -21,9 +21,11 @@ import ResourcesSection  from "../components/eventsdetails/ResourcesSection";
 import AbstractGuidelines  from "../components/eventsdetails/AbstractGuidelines";
 import EventHeader  from "../components/eventsdetails/EventHeader";
 import WorkshopSection from "../components/eventsdetails/WorkshopSection";
+import NearbyTransportation from '../components/eventsdetails/NearbyTransportation';
 import BcoreLogo from "./Images/BCORE Logo.png"
 import NadaLogo from "./Images/NADA Logo.png"
 import IORC2 from "./Images/IORC2.png"
+import WardJanssen from "./Images/Speakers/Ward Janssen.jpg"
 
 export const EventDetails = () => {
     useEffect(() => {
@@ -46,28 +48,6 @@ export const EventDetails = () => {
                 'BCORE will facilitate accommodation and local support for all participants throughout the academy.',
                 'Participants will enjoy a guided tour of the heritage city of Ahmedabad and Statue of Unity offering insights into Indian culture and history.',
                 'Attendees will have the unique opportunity to network and collaborate with industry experts and entrepreneurs.',
-            ],
-            partners: [
-                {
-                name: 'Knowledge Partner',
-                logo: logo5,
-                },
-                {
-                name: 'Merchandise Partner',
-                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s',
-                },
-                {
-                name: 'Innovation and Technology Partner',
-                logo: sponser1,
-                },
-                {
-                name: 'Strategic Partner',
-                logo: sponser2,
-                },
-                {
-                name: 'Industry Partner',
-                logo: 'https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png',
-                },
             ],
             Steps: [
                 { event: 'Step 1', date: ' Submit the abstract' },
@@ -419,18 +399,28 @@ export const EventDetails = () => {
             ],
             sponsors: [
                 {
-                name: 'Premium Sponsor',
+                logo: collaborator1,
+                },                
+                {
                 logo: 'https://adcbank.coop/wp-content/uploads/2023/05/logo.png',
                 },
                 {
-                name: 'Silver Sponsor',
                 logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvCZCgT7YBn7oemQ6DIZ1jbGwwW_-a3kT2g&s',
                 },
-            ],
-            collaboration: [
                 {
-                    name: 'Ministry of Youth Affairs and Sports, Government of India',
-                    logo: collaborator1,
+                logo: logo5,
+                },
+                {
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi2JGH-vII_4QfdvFstjfErRy6CrqXIAcM0A&s',
+                },
+                {
+                logo: sponser1,
+                },
+                {
+                logo: sponser2,
+                },
+                {
+                logo: 'https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png',
                 },
             ],
             bookletLink:
@@ -581,7 +571,7 @@ export const EventDetails = () => {
                     id: 2,
                     name: "Mr. Alexey Slautin, Head of International Relations Department",
                     about: "Mr. Alexey Slautin leads the International Relations Department, coordinating global partnerships and Olympic-related international cooperation.",
-                    img: "https://media.licdn.com/dms/image/v2/C4E03AQGOCi8fGxPpJA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517242563125?e=1768435200&v=beta&t=g_mc_NjPLbMSC8JBbX351oYodkuvBEz7tNkEbBBdV2s"
+                    img: "https://media.licdn.com/dms/image/v2/C4E03AQGOCi8fGxPpJA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517242563489?e=1770249600&v=beta&t=qW-t4kSTx1RFj22zYjHktQr-cBK6cQDXRuXNk2EMScc"
                 },
                 {
                     id: 3,
@@ -605,7 +595,7 @@ export const EventDetails = () => {
                     id: 6,
                     name: "Mr. Tony Cunningham, Senior Manager, Education (Policy and Research), WADA",
                     about: "Mr. Tony Cunningham serves as Senior Manager for Education Policy and Research at WADA, advancing global anti-doping education strategies.",
-                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGEt-QJfDcIzA/profile-displayphoto-shrink_800_800/B4EZbLGo6EHYAg-/0/1747164237885?e=1768435200&v=beta&t=6nl4CrlbtIfOcRdcz7hvogM68s-KrOY3NQpjFneklVY"
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGEt-QJfDcIzA/profile-displayphoto-shrink_400_400/B4EZbLGo6EHYAk-/0/1747164237885?e=1770249600&v=beta&t=pBgT2YBYvBgOZQ8jmgUpRdwK2vOio5D_ulzMPqPcujo"
                 },
                 {
                     id: 7,
@@ -629,7 +619,7 @@ export const EventDetails = () => {
                     id: 10,
                     name: "Mr. Anders Pettersson, Board Member of the Brazilian Olympic Committee & President of the Brazilian Snow Sports Federation",
                     about: "Mr. Anders Pettersson is a Board Member of the Brazilian Olympic Committee and President of the Brazilian Snow Sports Federation, supporting winter sports development in Brazil.",
-                    img: "https://media.licdn.com/dms/image/v2/C4D03AQGgLLd8Y_uXTA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1543325756584?e=1768435200&v=beta&t=oNUTxTgpxAl4sqTpAI627RDStAAn4AeXtq0HYFBTkeE"
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQGgLLd8Y_uXTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1543325756629?e=2147483647&v=beta&t=i6uGNhuZw7GgieV8pE2Tjlr47QCf4aifnXDA_np7jEo"
                 },
                 {
                     id: 11,
@@ -647,13 +637,13 @@ export const EventDetails = () => {
                     id: 13,
                     name: "Mr. Arthur Gallois, French Olympic Committee",
                     about: "Mr. Arthur Gallois represents the French Olympic Committee, contributing to its national and international Olympic initiatives.",
-                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGDtZPw-a6EGg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1687432072130?e=1768435200&v=beta&t=AonXkKtI44Ep208F1itZLa2T3h1bz3mqVR1rESJRKzM"
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGDtZPw-a6EGg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1687432072130?e=1770249600&v=beta&t=AOGsPVrX8AUtBSC3W039XF3jMeHdHEagppVqRwssHWU"
                 },
                 {
                     id: 14,
                     name: "Ms. Lina Marcela Vélez Sánchez — Faculty Member, Escuela Nacional del Deporte (Colombia)",
                     about: "Ms. Lina Marcela Vélez Sánchez is a faculty member at Escuela Nacional del Deporte in Colombia and an active member of the IU END University Center for Olympic Studies.",
-                    img: "https://media.licdn.com/dms/image/v2/D4E03AQHRdZ4X7QFaOQ/profile-displayphoto-crop_800_800/B4EZngfdWdGUAI-/0/1760407968916?e=1768435200&v=beta&t=rRP4n_khT5dDevjIoh0SkKHbFWccX2HFmMpckiMSrCs"
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQHRdZ4X7QFaOQ/profile-displayphoto-scale_400_400/B4EZngfdWdGUAg-/0/1760407969002?e=1770249600&v=beta&t=8sKpxDyuOclPU3olZy3GRmJcMqel1-7EQnljTKFIc0M"
                 },
                 {
                     id: 15,
@@ -671,7 +661,7 @@ export const EventDetails = () => {
                     id: 17,
                     name: "Ms. Tanvi Hubli, Researcher, The University of Edinburgh",
                     about: "Ms. Tanvi Hubli is a researcher at The University of Edinburgh, focusing on themes related to sport, society, and the Olympic Movement.",
-                    img: "https://media.licdn.com/dms/image/v2/D4E03AQFqMS3x3Vwf3Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1704564920961?e=1768435200&v=beta&t=Y6XHT-ZJ9buU7hQ5vvOIvY564OvhTTyys4Hq39hTIOw"
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQFqMS3x3Vwf3Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704564920961?e=1770249600&v=beta&t=y2wNjnVZvqO08s0k5ogJzOf4I_7RpuIFAceNGpUBAho"
                 },
                 {
                     id: 18,
@@ -683,14 +673,31 @@ export const EventDetails = () => {
                     id: 19,
                     name: "Ms. Elizaveta Zhuk, PhD (Paris-Saclay University), Visiting Professor",
                     about: "Ms. Elizaveta Zhuk holds a PhD from Paris-Saclay University and works as a visiting professor engaged in research and teaching related to sport and Olympic education.",
-                    img: "https://media.licdn.com/dms/image/v2/C4E03AQG01MDXsAUSPw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1619526693481?e=1768435200&v=beta&t=Up49NcMtNV3Kf10tx0ie_u4_QJoJeOnZqSMmYRgbo8g"
+                    img: "https://media.licdn.com/dms/image/v2/C4E03AQG01MDXsAUSPw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1619526693481?e=1770249600&v=beta&t=JxSXLp0xnAg6nXLWdUZpu9oViVtJ0tVWON1uVaJOmnI"
                 },
                 {
                     id: 20,
                     name: "Mr. Ward Janssen, TUE Manager, World ParaVolley; KU Leuven & Università di Bologna (BAES Programme)",
                     about: "Mr. Ward Janssen is TUE Manager at World ParaVolley and is affiliated with KU Leuven and the Università di Bologna through the BAES Programme, supporting para-sport development and research.",
-                    img: "https://media.licdn.com/dms/image/v2/C4D03AQG_pCjL7EwFcQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1654176641648?e=1768435200&v=beta&t=6tjYAI8arxFEAY_tAqtJWgdBidQCFlrrGQ0kF50yFn0"
+                    img: [WardJanssen]
                 }
+            ],
+            sponsors: [
+                {
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpT3BEIkI-Pilx5K8VhsC2jow8L3bPL2nKbw&s',
+                },
+                {
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Ministry_of_Youth_Affairs_and_Sports.svg',
+                },
+                {
+                logo: 'https://yt3.googleusercontent.com/ytc/AIdro_mnmDQZBohbWFYaYNWF2z0hdQcgxngJW2_Fagb10pg2BA=s900-c-k-c0x00ffffff-no-rj',
+                },
+                {
+                logo: 'https://www.bookmyad.com/services/uploads/logos/2019/03/11/85d6b77336ff7b536a3d495791ba6147.jpg',
+                },
+                {
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWzTpY39Fq8eUvCHPhKoYD4ncbOXiTozAj-A&s',
+                },
             ],
             abstractGuidelines: {
                 formatRequirements: [
@@ -793,6 +800,44 @@ export const EventDetails = () => {
                     image: 'https://rru.ac.in/wp-content/uploads/2022/08/6-scaled.jpg',
                     link: 'https://drive.google.com/file/d/14Y1rL6NImTpKrQ5b_9UpQuIShile6w-r/view?usp=sharing',
                     info: "Accommodation on a sharing basis inside the campus will be available. Please ensure that you book it in advance. Click on the Card To know more."
+                },
+            ],
+            NearBytransportation: [
+                {
+                    name: 'Sardar Vallabhbhai Patel International Airport',
+                    address: 'Hansol, Ahmedabad, Gujarat 380003',
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/SVPI_Airport%2C_Ahmedabad.jpg',
+                    link: 'https://www.adani.com/svpia-ahmedabad-airport'
+                },
+                {
+                    name: 'Kalupur Railway Station',
+                    address: 'Kapasia Bazar, Sakar Bazzar, Kalupur, Ahmedabad, Gujarat 380002',
+                    image: 'https://static.gujaratsamachar.com/content_image/content_image_87011ab4-1387-4672-b3d0-c2160e24d0b1.jpeg',
+                    link: 'https://www.irctc.co.in/nget/train-search'
+                },
+                {
+                    name: 'Gandhinagar Capital',
+                    address: 'Footover Bridge, Sector 13C, Sector 14, Gandhinagar, Gujarat 382016',
+                    image: 'https://akm-img-a-in.tosshub.com/aajtak/images/assets/202107/gandhinagar-railway-station-night-view.jpg',
+                    link: 'https://www.irctc.co.in/nget/train-search'
+                },
+                {
+                    name: 'Geeta Mandir ST Bus Stand',
+                    address: 'Gita Mandir, Ahmedabad, Gujarat 380001',
+                    image: 'https://content.jdmagicbox.com/comp/ahmedabad/93/079p250393/catalogue/gujarat-state-road-transport-corporation-geeta-mandir-road-ahmedabad-st-bus-depot-2qkhhet.jpg',
+                    link: 'https://gsrtc.in/site/'
+                },
+                {
+                    name: 'Nandol Dehegam Railway Station',
+                    address: 'Nandol Dehegam Railway Station, GIDC, Dahegam, Gujarat 382305',
+                    image: 'https://i.ytimg.com/vi/urM6UASMP0g/maxresdefault.jpg',
+                    link: 'https://www.irctc.co.in/nget/train-search'
+                },
+                {
+                    name: 'G.S.R.T.C Bus Stand (Dahegam)',
+                    address: 'G.S.R, 5RCC+69H T.C, BUS STAND, near AMBEDKAR STATUE, GIDC, Dahegam, Gujarat 382305',
+                    image: 'https://www.mappls.com/place/KTQVC2_1665750425813_0.png',
+                    link: 'https://gsrtc.in/site/'
                 },
             ],
         },
@@ -982,19 +1027,38 @@ export const EventDetails = () => {
         )}
 
 
-        {event?.sponsors?.length > 0 && (
-        <section className="partners-section">
-            <h2 className="partners-title">Our Sponsors</h2>
-            <div className="partners-grid">
-            {event.sponsors.map((sponsor, index) => (
-                <div className="partner-card" key={index}>
-                <img src={sponsor.logo} alt={sponsor.name} />
-                <p>{sponsor.name}</p>
-                </div>
-            ))}
+{event?.sponsors?.length > 0 && (
+  <section className="nexus-container">
+    <div className="nexus-bg-text">PARTNERS</div>
+    
+    <div className="nexus-header">
+      <div className="glitch-wrapper">
+        <h2 className="nexus-title" data-text="THE SYNDICATE">THE SYNDICATE</h2>
+      </div>
+      <div className="orbit-line"></div>
+    </div>
+
+    <div className="nexus-web">
+      {event.sponsors.map((sponsor, index) => (
+        <div className="nexus-node" key={index} style={{"--i": index}}>
+          <div className="node-inner">
+            <div className="node-hex">
+              <div className="hex-content">
+                <img src={sponsor.logo} alt={sponsor.name} className="node-logo" />
+              </div>
+              <div className="hex-border"></div>
             </div>
-        </section>
-        )}
+            <div className="node-info">
+              <p className="node-name">{sponsor.name}</p>
+            </div>
+          </div>
+          {/* Animated background flare */}
+          <div className="node-flare"></div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}
 
 
         {event?.organizingTeam?.length > 0 && (
@@ -1081,29 +1145,9 @@ export const EventDetails = () => {
 )}
 
 
-        {event?.NearBytransportation?.length > 0 && (
-            <div className="accommodation-container">
-            <h3>Nearby Transportation</h3>
-            <div className="accommodation-items">
-                {event.NearBytransportation.map((transportation, index) => (
-                <a
-                    key={index}
-                    href={transportation.link || "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="accommodation-item"
-                    style={{ backgroundImage: `url(${transportation.image})` }}
-                >
-                    <div className="overlay">
-                    <h4>{transportation.name}</h4>
-                    <p><strong>Address:</strong> {transportation.address}</p>
-                    {transportation.contact && <p><strong>Contact:</strong> {transportation.contact}</p>}
-                    </div>
-                </a>
-                ))}
-            </div>
-            </div>
-        )}
+            {event?.NearBytransportation?.length > 0 && (
+            <NearbyTransportation transportationData={event.NearBytransportation} />
+            )}
 
              {/* Coming Soon Section */}
         {/* {hasOnlyBasicInfo && (

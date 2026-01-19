@@ -7,8 +7,6 @@
 
 /* Paragraph styling */
 .event-details-page p {
-    font-size: 1.2rem;
-    line-height: 1.6;
     margin-bottom: 15px;
 }
 
@@ -657,98 +655,219 @@
 
 
 
-.partners-section {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #ffffff;
+/* THE NEXUS DESIGN: FUTURISTIC SYNDICATE 
+   Colors: White Background, Dark Royal Blue, Gold Accents
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+:root {
+  --royal-blue: #001a4d;
+  --gold-glint: #d4af37;
+  --white-core: #ffffff;
+  --neon-gold: rgba(212, 175, 55, 0.4);
+  --glass-stroke: rgba(0, 26, 77, 0.1);
 }
 
-.partners-title {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 40px;
-    font-weight: bold;
+.nexus-container {
+  background: var(--white-core);
+  padding: 100px 5%;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Syncopate', sans-serif;
 }
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    max-width: 1500px;
-    margin: 0 auto;
+/* Massive Ghost Text Background */
+.nexus-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15.5vw;
+  font-weight: 1000;
+  color: rgba(0, 26, 77, 0.03);
+  z-index: 0;
+  letter-spacing: -10px;
+  pointer-events: none;
+  user-select: none;
 }
 
-.partner-card {
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.nexus-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 120px;
 }
 
-.partner-card img {
-    width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+.nexus-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--royal-blue);
+  letter-spacing: 12px;
+  position: relative;
+  text-transform: uppercase;
 }
 
-.partner-card p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #555;
+/* The Neural Web Layout */
+.nexus-web {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  perspective: 2000px;
 }
 
-.partner-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+/* The Floating Hexagon Node */
+.nexus-node {
+  position: relative;
+  width: 220px;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-.partner-card img:hover {
-    transform: scale(1.1);
+/* STAGGERED LAYOUT LOGIC (Replaces the modulo error) */
+.nexus-node:nth-child(even) {
+  transform: translateY(80px);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .partners-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.nexus-node:nth-child(odd) {
+  transform: translateY(0px);
 }
 
+/* Hover States for Staggered Elements */
+.nexus-node:nth-child(odd):hover {
+  transform: translateY(-20px) scale(1.05);
+  z-index: 10;
+}
+
+.nexus-node:nth-child(even):hover {
+  transform: translateY(60px) scale(1.05); /* Stays staggered but lifts slightly */
+  z-index: 10;
+}
+
+/* Zero-Gravity Animation */
+@keyframes zeroGravity {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+.node-inner {
+  position: relative;
+  z-index: 2;
+  animation: zeroGravity 5s ease-in-out infinite;
+  /* Stagger animation start times */
+  animation-delay: calc(var(--index, 1) * 0.2s);
+}
+
+.node-hex {
+  width: 180px;
+  height: 200px;
+  background: var(--white-core);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid var(--glass-stroke);
+  box-shadow: 0 20px 40px rgba(0, 26, 77, 0.05);
+}
+
+.hex-border {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--royal-blue), var(--gold-glint));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  z-index: -1;
+  padding: 3px; 
+  opacity: 0.15;
+  transition: all 0.5s ease;
+}
+
+.node-logo {
+  width: 100px;
+  transition: all 0.5s ease;
+}
+
+/* Hover Effects: THE ACTIVATION */
+.nexus-node:hover .hex-border {
+  opacity: 1;
+  transform: rotate(60deg) scale(1.05);
+}
+
+.nexus-node:hover .node-logo {
+  filter: grayscale(0) opacity(1) drop-shadow(0 0 15px var(--neon-gold));
+  transform: scale(1.1);
+}
+
+.node-info {
+  margin-top: 25px;
+  text-align: center;
+  transition: 0.4s;
+}
+
+.node-tag {
+  display: block;
+  font-size: 0.55rem;
+  color: var(--gold-glint);
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.node-name {
+  color: var(--royal-blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* The Flare Effect */
+.node-flare {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, var(--neon-gold) 0%, transparent 70%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.nexus-node:hover .node-flare {
+  opacity: 0.6;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+/* Responsive Mobile Layout */
 @media (max-width: 768px) {
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
-        justify-content: center;
-    }
+  .nexus-web {
+    gap: 40px 10px;
+  }
+  
+  .nexus-node, .nexus-node:nth-child(even) {
+    transform: none !important;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .partner-card img {
-        width: 80px;
-    }
-}
+  .nexus-node:hover {
+    transform: scale(1.05) !important;
+  }
 
-@media (max-width: 480px) {
-    .partners-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .node-hex {
+    width: 130px;
+    height: 150px;
+  }
 
-    .partner-card {
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* Ensures spacing between image and text */
-        text-align: start; /* Aligns text to the left */
-    }
-
-    .partner-card img {
-        order: 2; /* Moves the image to the right */
-        width: 70px;
-        margin-left: 10px; /* Adds spacing between the text and the image */
-    }
-
-    .partner-card p {
-        order: 1; /* Moves the text to the left */
-        font-size: medium;
-        margin: 0; /* Removes default paragraph margin */
-    }
+  .node-logo {
+    width: 60px;
+  }
 }
 
 .chief-guests {

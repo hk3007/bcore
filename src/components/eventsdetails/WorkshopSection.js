@@ -2,6 +2,8 @@
 import React from "react";
 import "./workshop.css";
 
+import qrCode from "../../pages/Images/iroc2 workshop qr.jpeg";
+
 export default function WorkshopSection({ event }) {
   if (!event) return null;
 
@@ -38,7 +40,25 @@ export default function WorkshopSection({ event }) {
                   <img src={event.rightLogo} alt="Right Logo" />
                 </div>
               </div>
+                          {/* 🔹 QR + INFO BELOW ALL CONTENT */}
+            <div className="workshop-qr-row">
+              <img
+                src={qrCode}
+                alt="Conference Registration QR"
+                className="workshop-qr"
+              />
+
+              <p className="workshop-qr-text">
+                All participants who are registered for the Conference are
+                eligible to attend the workshop.
+                <br />
+                Individuals who wish to attend only the workshop (and not
+                the full Conference) must still complete registration using the same
+                Conference registration link.
+              </p>
             </div>
+            </div>
+
 
             {/* RIGHT */}
             <div className="right-block">

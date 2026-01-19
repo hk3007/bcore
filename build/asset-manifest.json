@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a8827ee6.css",
-    "main.js": "/static/js/main.0f7d0f92.js",
+    "main.css": "/static/css/main.9a397ee4.css",
+    "main.js": "/static/js/main.2f96c826.js",
     "static/js/453.b2889c0a.chunk.js": "/static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/IORC2.png": "/static/media/IORC2.b7c5da7af7ff0f195eff.png",
@@ -10,10 +10,8 @@
     "static/media/Page 4.jpg": "/static/media/Page 4.5e0f709e5609cf549616.jpg",
     "static/media/image 4.png": "/static/media/image 4.f823418bc9f1ca0b746d.png",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 3.ce7f991f3d243b5f9c55.png",
-    "static/media/Bcore Night Run 2.png": "/static/media/Bcore Night Run 2.f8ea4055efeda5b811a3.png",
     "static/media/Yoonkyu Song.png": "/static/media/Yoonkyu Song.95984c606d4faa54566d.png",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.1728e243ef2a3662cc50.png",
-    "static/media/Bcore Night Run 1.png": "/static/media/Bcore Night Run 1.727841adfe85d759d0be.png",
     "static/media/PT USHA 1.jpeg": "/static/media/PT USHA 1.8c7db93eef68e9246787.jpeg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.png": "/static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.494a4865820cb0ee9c41.png",
     "static/media/Maria Bogner.png": "/static/media/Maria Bogner.b0bda6680142ede35619.png",
@@ -34,23 +32,25 @@
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "/static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
     "static/media/Gaurav Singh Khushwah.jpg": "/static/media/Gaurav Singh Khushwah.558d615d360e189396ab.jpg",
     "static/media/Ministry_of_Youth_Affairs_and_Sports.png": "/static/media/Ministry_of_Youth_Affairs_and_Sports.ce20d0eb1e8e65a684e9.png",
+    "static/media/Ward Janssen.jpg": "/static/media/Ward Janssen.9183872722d6e1412a0d.jpg",
     "static/media/qr-code (2).png": "/static/media/qr-code (2).2971b0d10ba333f326f6.png",
     "static/media/Khelo India 1.jpg": "/static/media/Khelo India 1.324ef89bbc7ea94e6969.jpg",
     "static/media/AISTS.png": "/static/media/AISTS.c7884b6250db39916f64.png",
     "static/media/Intern 1.jpeg": "/static/media/Intern 1.16a4c77c3d416ebc0516.jpeg",
     "static/media/Krishna Ramani.jpeg": "/static/media/Krishna Ramani.bc3ccdabd82f62dca85c.jpeg",
+    "static/media/iroc2 workshop qr.jpeg": "/static/media/iroc2 workshop qr.fcfddc6c102200d006e6.jpeg",
     "static/media/Bimal Patel.jpeg": "/static/media/Bimal Patel.c85acf540c97f2f39118.jpeg",
     "static/media/Utsav Chaware.jpg": "/static/media/Utsav Chaware.4145c9d90fae8d6717a1.jpg",
     "static/media/BCORE Logo.png": "/static/media/BCORE Logo.178ff992bc088357a841.png",
     "static/media/Indian_Olympic_Association_logo.png": "/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/index.html",
-    "main.a8827ee6.css.map": "/static/css/main.a8827ee6.css.map",
-    "main.0f7d0f92.js.map": "/static/js/main.0f7d0f92.js.map",
+    "main.9a397ee4.css.map": "/static/css/main.9a397ee4.css.map",
+    "main.2f96c826.js.map": "/static/js/main.2f96c826.js.map",
     "453.b2889c0a.chunk.js.map": "/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8827ee6.css",
-    "static/js/main.0f7d0f92.js"
+    "static/css/main.9a397ee4.css",
+    "static/js/main.2f96c826.js"
   ]
 }

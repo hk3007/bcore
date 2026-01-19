@@ -1,346 +1,277 @@
-/* 🌙 Vintage Base */
-.night-run-page {
-  background: #fdfcf7 url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  color: #1b1b33;
-  font-family: "Lora", serif;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+/* Main Wrapper to prevent global leaks */
+.bcore-v26-wrapper {
+  --b-navy: #0c1b4d;
+  --b-gold: #caa64b;
+  --b-white: #ffffff;
+  --b-off-white: #f8f9fc;
+  --b-text-gray: #4a5568;
+  
+  background-color: var(--b-white);
+  color: var(--b-navy);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
-/* 🏁 Hero Section */
-.hero-section {
+.bcore-v26-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* NAVIGATION */
+.bcore-v26-nav {
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(12, 27, 77, 0.05);
+}
+
+.bcore-v26-nav-flex {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-left: 50px;
-  background: linear-gradient(90deg, #000428, #004e92, #000428); /* Deep Olympic blue gradient */
-  color: #fff;
-  flex-wrap: wrap;
-  gap: 40px;
+  align-items: center;
 }
 
-.hero-content {
-  flex: 1 1 50%;
-  min-width: 300px;
+.bcore-v26-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
-  font-family: "Playfair Display", serif;
-  color: #fff3cc;
+.bcore-v26-gold-text { color: var(--b-gold); }
+
+.bcore-v26-nav-cta {
+  background: var(--b-navy);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+/* HERO SECTION */
+.bcore-v26-hero {
+  padding: 120px 0 80px;
+  text-align: center;
+  background: radial-gradient(circle at top right, #fdfbf7, #ffffff);
+}
+
+.bcore-v26-eyebrow {
+  color: var(--b-gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: block;
   margin-bottom: 15px;
 }
 
-.hero-content p {
+.bcore-v26-hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.bcore-v26-hero-lead {
+  max-width: 700px;
+  margin: 0 auto 40px;
   font-size: 1.2rem;
-  color: #eaeaea;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  color: var(--b-text-gray);
 }
 
-.btn-group {
+.bcore-v26-btn-group {
   display: flex;
-  gap: 16px; /* 👈 perfect spacing control */
-  flex-wrap: wrap;
-  margin-top: 20px;
+  gap: 20px;
+  justify-content: center;
 }
 
-
-.register-btn {
-  display: inline-block;
-  background: #caa64b;
-  color: #1b1b33;
-  padding: 12px 26px;
+.bcore-v26-btn-solid {
+  background: var(--b-navy);
+  color: white;
+  padding: 18px 40px;
   border-radius: 8px;
-  font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  font-weight: 700;
+  transition: 0.3s;
 }
 
-.register-btn:hover {
-  background: #e2c76c;
-  transform: translateY(-2px);
+.bcore-v26-btn-outline {
+  border: 2px solid var(--b-navy);
+  color: var(--b-navy);
+  padding: 16px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
 }
 
-/* 🎞️ Hero Image Crossfade */
-.hero-image-container {
-  flex: 1 1 45%;
-  position: relative;
-  max-width: 720px;
-  height: 380px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+/* STATS STRIP */
+.bcore-v26-stats-strip {
+  background: var(--b-navy);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
-.hero-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.bcore-v26-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
 }
 
-/* 🏃 Enhanced Info Section */
-.enhanced-info {
-  background: #fffaf1;
-  padding: 80px 10%;
-  position: relative;
+.bcore-v26-stat-item h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--b-gold);
+  margin-bottom: 5px;
 }
 
-.info-wrapper {
+.bcore-v26-stat-item p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* RACE SELECTOR */
+.bcore-v26-race-selector { padding: 100px 0; background: var(--b-off-white); }
+.bcore-v26-section-title { text-align: center; margin-bottom: 60px; }
+.bcore-v26-section-title h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; }
+
+.bcore-v26-race-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  gap: 30px;
 }
 
-.info-card {
-  background: #ffffff;
-  border: 1px solid rgba(202, 166, 75, 0.3);
-  border-radius: 14px;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
-  padding: 35px 30px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.bcore-v26-race-card {
+  background: var(--b-white);
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,0,0,0.05);
   position: relative;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.info-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
+.bcore-v26-race-card:hover { transform: translateY(-10px); border-color: var(--b-gold); }
 
-.info-card h2 {
-  color: #0d1b4c;
-  font-family: "Playfair Display", serif;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  border-left: 5px solid #caa64b;
-  padding-left: 14px;
-}
-
-.info-card p {
-  line-height: 1.8;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.race-list {
-  list-style: none;
-  margin-top: 10px;
-  padding: 0;
-}
-
-.race-list li {
-  margin-bottom: 10px;
-  padding-left: 20px;
-  position: relative;
-}
-
-.race-list li::before {
-  content: "🏃";
+.bcore-v26-race-header {
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(48, 78, 179, 0.301);
   position: absolute;
-  left: 0;
-  top: -2px;
-  font-size: 1rem;
+  top: 20px;
+  right: 30px;
 }
 
-/* 🏅 Awards Grid */
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 12px;
-  margin-top: 20px;
-}
+.bcore-v26-featured { background: var(--b-navy) !important; color: white !important; }
+.bcore-v26-race-card h3 { font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 15px; }
 
-.award-item {
-  background: #fff8e5;
-  border: 1px solid #f3e0a3;
-  color: #1b1b33;
-  font-weight: 500;
-  text-align: center;
-  border-radius: 8px;
-  padding: 10px;
-  transition: background 0.3s ease;
-}
-
-.award-item:hover {
-  background: #ffe9b0;
-}
-
-/* 🔗 Links */
-.info-card a {
-  color: #0d1b4c;
-  font-weight: 600;
-  text-decoration: underline;
-  transition: color 0.3s;
-}
-
-.info-card a:hover {
-  color: #caa64b;
-}
-
-/* 🎖️ Highlight Banner */
-.highlight-banner {
-  background: #0d1b4c;
-  color: #fff3cc;
-  text-align: center;
-  padding: 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-top: 25px;
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0 5px 15px rgba(13, 27, 76, 0.3);
-}
-
-/* 📜 Legacy Info Section (if reused elsewhere) */
-.info-section {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 50px;
-  padding: 80px 10%;
-  flex-wrap: wrap;
-}
-
-.info-section:nth-child(even) {
-  flex-direction: row-reverse;
-  background: rgba(255, 248, 234, 0.6);
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-
-.info-image {
-  flex: 1 1 35%;
-  text-align: center;
-}
-
-.info-image img {
-  width: 85%;
-  max-width: 330px;
-  border-radius: 10px;
-  border: 2px solid #caa64b;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.info-image img:hover {
-  transform: scale(1.05);
-}
-
-.info-content {
-  flex: 1 1 55%;
-  color: #2b2b2b;
-}
-
-.info-content h2 {
-  font-size: 1.9rem;
-  color: #0d1b4c;
-  margin-bottom: 15px;
-  border-left: 5px solid #caa64b;
-  padding-left: 14px;
-  font-family: "Playfair Display", serif;
-}
-
-.info-content p {
-  line-height: 1.8;
-  margin-bottom: 15px;
-  font-size: 1.05rem;
-}
-
-.info-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 15px 0 25px;
-}
-
-.info-content li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-  position: relative;
-  padding-left: 22px;
-}
-
-.info-content li::before {
-  content: "•";
-  color: #caa64b;
+.bcore-v26-tag {
+  background: var(--b-gold);
+  color: var(--b-navy);
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
   position: absolute;
-  left: 0;
-  font-size: 1.4rem;
-  top: -2px;
+  top: -12px;
+  left: 40px;
 }
 
-.awards-list li::before {
-  content: "🏅";
-  font-size: 1.2rem;
-  left: 0;
-}
-
-/* 🪶 Notes */
-.note {
+/* LOGISTICS SECTION */
+.bcore-v26-logistics-wrapper { padding: 100px 0; }
+.bcore-v26-glass-panel { padding: 50px; border-radius: 20px; border: 1px solid #eee; background: white; position: relative; }
+.bcore-v26-navy-panel { background: var(--b-navy); color: white; }
+.bcore-v26-logistics-text { font-size: 1.4rem; margin: 20px 0; line-height: 1.4; }
+.bcore-v26-dark-navy { color: var(--b-navy); }
+.bcore-v26-map-placeholder { 
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 20px; 
+  border-radius: 10px; 
+  border: 1px dashed var(--b-gold);
+  text-align: center;
   font-size: 0.9rem;
-  color: #666;
-  font-style: italic;
+}
+.bcore-v26-bib-icon { font-size: 3.5rem; position: absolute; bottom: 20px; right: 30px; opacity: 0.1; }
+
+/* SPLIT CONTENT */
+.bcore-v26-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.bcore-v26-split-content { padding: 100px 0; background: var(--b-off-white); }
+.bcore-v26-split-content h2 { font-family: 'Cinzel', serif; font-size: 2.2rem; }
+.bcore-v26-modern-list { list-style: none; margin-top: 30px; padding: 0; }
+.bcore-v26-modern-list li { margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+
+.bcore-v26-discount-block { display: grid; gap: 15px; }
+.bcore-v26-d-unit { background: var(--b-white); padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #eee; }
+.bcore-v26-d-unit strong { font-size: 1.5rem; color: var(--b-gold); }
+
+/* SLIDER (LEFT TO RIGHT) */
+.bcore-v26-slider-container {
+  overflow: hidden;
+  padding: 20px 0;
+  background: white;
+  position: relative;
 }
 
-/* 📱 Responsive */
-@media (max-width: 900px) {
-  .hero-section {
-    padding: 20px;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-image-container {
-    height: 250px;
-    width: 80%;
-    margin: 20px auto 0;
-  }
-
-  .info-section {
-    flex-direction: column;
-    justify-content: center;
-    text-align: justify;
-  }
-
-  .info-section:nth-child(even) {
-    flex-direction: column;
-  }
-
-  .info-image img {
-    width: 70%;
-    margin-bottom: 25px;
-  }
-
-  .info-content h2 {
-    border-left: none;
-    border-bottom: 3px solid #caa64b;
-    padding-bottom: 8px;
-  }
-
-  .info-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .info-card {
-    padding: 25px 20px;
-  }
-
-  .info-card h2 {
-    font-size: 1.5rem;
-  }
+.bcore-v26-slider-track {
+  display: flex;
+  width: calc(200px * 36); /* (Approx width of image + gap) * count */
+  animation: bcore-scroll-right 30s linear infinite;
 }
 
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
+.bcore-v26-slide {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 30px;
+}
 
-  .hero-content p {
-    font-size: 1rem;
-  }
+.bcore-v26-slide img {
+  height: 55px;
+  max-width: 150px;
+  object-fit: contain;
+  transition: 0.3s;
+}
 
-  .register-btn {
-    padding: 10px 22px;
-    font-size: 0.9rem;
-  }
+.bcore-v26-slide img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@keyframes bcore-scroll-right {
+  0% { transform: translateX(calc(-200px * 18)); } /* Start from shifted left */
+  100% { transform: translateX(0); } /* End at zero to move Right */
+}
+
+/* FOOTER */
+.bcore-v26-royal-footer { padding: 60px 0 40px; text-align: center; border-top: 1px solid #eee; }
+.bcore-v26-awards-marquee { font-weight: 700; color: #a0aec0; margin-bottom: 30px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
+
+/* REVEAL ANIMATIONS */
+.bcore-v26-wrapper section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.bcore-v26-wrapper section.bcore-v26-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .bcore-v26-grid-2, .bcore-v26-grid-3 { grid-template-columns: 1fr; gap: 40px; }
+  .bcore-v26-hero-title { font-size: 3rem; }
 }

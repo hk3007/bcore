@@ -1,191 +1,164 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import "./BCORENightRunDetails.css";
 
-// Hero images (auto-fading)
-import heroImage1 from "./Images/Bcore Night Run 1.png";
-import heroImage2 from "./Images/Bcore Night Run 2.png";
-
 const BCORENightRunDetails = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = [heroImage1, heroImage2];
+  const sectionRefs = useRef([]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev === 0 ? 1 : 0));
-    }, 4000); 
-    return () => clearInterval(interval);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("bcore-v26-reveal");
+        });
+      },
+      { threshold: 0.1 }
+    );
+    sectionRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
+  const addToRefs = (el) => {
+    if (el && !sectionRefs.current.includes(el)) sectionRefs.current.push(el);
+  };
+
+  const partnerLogos = [
+    "adc.png", "108.png", "police.png", "GMC.png", "madhuram.png", 
+    "radio.png", "sbm.png", "sbm1.png", "smvs.png", "tripur.png", 
+    "union-bank.png", "gtpl.png", "hyperlab.png", "decathlon.png", 
+    "perfume91.png", "jaswal.png", "gsc.png", "ciss.png"
+  ];
+
   return (
-    <div className="night-run-page">
-
-      {/* 🌃 Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <motion.h1
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            BCORE Night Run 2026
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Experience Gandhinagar’s night sky come alive with endurance, unity,
-            and the Olympic spirit.
-          </motion.p>
-
-          <div className="btn-group">
-            <motion.a
-              href="https://rrulavad.nmediasoft.com/Marathon/MarathonRegistration"
-              target="_blank"
-              rel="noreferrer"
-              className="register-btn"
-              whileHover={{ scale: 1.05 }}
-            >
-              Register Now
-            </motion.a>
-
-            <motion.a
-              href="https://bcorenightrun.com"
-              target="_blank"
-              rel="noreferrer"
-              className="register-btn"
-              whileHover={{ scale: 1.05 }}
-            >
-              Official Website
-            </motion.a>
+    <div className="bcore-v26-wrapper">
+      {/* HERO SECTION */}
+      <section ref={addToRefs} className="bcore-v26-hero">
+        <div className="bcore-v26-container">
+          <h1 className="bcore-v26-hero-title">BCORE Night Run <br /><span className="bcore-v26-gold-text">Gandhinagar</span></h1>
+          <p className="bcore-v26-hero-lead">
+            Experience Gandhinagar’s night sky come alive with endurance, unity, and the Olympic spirit.
+          </p>
+          <div className="bcore-v26-btn-group">
+            <a href="https://rrulavad.nmediasoft.com/Marathon/MarathonRegistration" className="bcore-v26-btn-solid">Join the Movement</a>
+            <a href="https://bcorenightrun.com" className="bcore-v26-btn-outline">Official Website</a>
           </div>
-        </div>
-
-        <div className="hero-image-container">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImage}
-              src={images[currentImage]}
-              alt="BCORE Night Run Hero"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="hero-image"
-            />
-          </AnimatePresence>
         </div>
       </section>
 
-      {/* 🏃 Enhanced Info Section */}
-      <section className="info-section enhanced-info">
-        <div className="info-wrapper">
+      {/* STATS STRIP */}
+      <section ref={addToRefs} className="bcore-v26-stats-strip">
+        <div className="bcore-v26-container bcore-v26-grid-3">
+          <div className="bcore-v26-stat-item">
+            <h2>1,500+</h2>
+            <p>Expected Participants</p>
+          </div>
+          <div className="bcore-v26-stat-item">
+            <h2>500+</h2>
+            <p>Spectators</p>
+          </div>
+          <div className="bcore-v26-stat-item">
+            <h2>5+</h2>
+            <p>Major Sponsors</p>
+          </div>
+        </div>
+      </section>
 
-          {/* Overview Card */}
-          <div className="info-card">
-            <h2>🏁 General Overview</h2>
-            <p>
-              The <strong>BCORE Run 2026</strong> welcomes thousands of participants,
-              spectators, and sponsors — making it one of India’s most remarkable
-              night-time running festivals in the heart of Gandhinagar.
-            </p>
-            <p>
-              From <strong>law enforcement officers</strong> to <strong>civilians</strong>,
-              <strong>para-abled athletes</strong>, and <strong>under-16 runners</strong>,
-              everyone joins together for a night celebrating health, inclusion, and unity.
-            </p>
-            <div className="highlight-banner">
-              <span>✨ Be part of the movement — Register today!</span>
+      {/* RACE SELECTOR */}
+      <section ref={addToRefs} className="bcore-v26-race-selector">
+        <div className="bcore-v26-container">
+          <div className="bcore-v26-section-title">
+            <h2>Choose Your Perfect Race Distance</h2>
+            <p>From scenic city routes to family-friendly fun runs.</p>
+          </div>
+          <div className="bcore-v26-race-grid">
+            <div className="bcore-v26-race-card">
+              <div className="bcore-v26-race-header">10KM</div>
+              <h3>The Challenge</h3>
+              <p>Traverse Gandhinagar's most beautiful parks – from Swarnim Park to the iconic Salt Mount.</p>
+            </div>
+            <div className="bcore-v26-race-card bcore-v26-featured">
+              <div className="bcore-v26-race-header">5KM</div>
+              <h3>The Story</h3>
+              <p>Perfect for creating your own running story. Chill vibes suitable for young and old alike.</p>
+              <span className="bcore-v26-tag">Most Popular</span>
+            </div>
+            <div className="bcore-v26-race-card">
+              <div className="bcore-v26-race-header">3KM</div>
+              <h3>The Inclusive</h3>
+              <p>Big smiles and excitement! Celebrating inclusivity, ideal for our next generation of runners.</p>
             </div>
           </div>
+        </div>
+      </section>
 
-                    {/* 🎓 BCORE & RRU Section */}
-          <div className="info-card">
-            <h2>🎓 BCORE and RRU</h2>
-            <p>
-              RRU, an Institution of National Importance under the Ministry of Home Affairs,
-              Government of India, is committed to advancing excellence in the education,
-              security, and sport science sectors.
+      {/* LOGISTICS SECTION */}
+      <section ref={addToRefs} className="bcore-v26-logistics-wrapper">
+        <div className="bcore-v26-container bcore-v26-grid-2">
+          <div className="bcore-v26-glass-panel bcore-v26-navy-panel">
+            <h3 className="bcore-v26-gold-text">Where is the Race Route?</h3>
+            <p className="bcore-v26-logistics-text">
+              <strong>LIC Ground, Sector-11</strong><br />
+              Gandhinagar, Gujarat, India
             </p>
-
-            <p>
-              Through the <strong>Bharat Centre of Olympic Research and Education (BCORE)</strong>,
-              South Asia’s first <strong>Olympic Studies Centre</strong> recognized by the 
-              International Olympic Committee, RRU continues to promote the Olympic values.
-            </p>
-
-            <p>
-              RRU has also played a key role in securing the 
-              <strong> 2029 World Police and Fire Games for India</strong> and has been entrusted
-              to host nine disciplines in the university.
-            </p>
-          </div>
-
-          {/* Races Info */}
-          <div className="info-card">
-            <h2>🏃‍♀️ Races Information</h2>
-            <ul className="race-list">
-              <li><strong>Half Marathon –</strong> Set new endurance records under IOC guidance.</li>
-              <li><strong>10KM Run –</strong> Explore Gandhinagar’s scenic Swarnim Park and Salt Mount.</li>
-              <li><strong>5KM Run –</strong> For those chasing their personal running story.</li>
-              <li><strong>3KM Run –</strong> Open to under-16 and para-abled participants.</li>
-              <li><strong>Team Run “Bhaag Milkar Bhaag” –</strong> 3-person relay symbolizing unity.</li>
-            </ul>
-          </div>
-
-          {/* 🏆 Event Categories */}
-          <div className="info-card">
-            <h2>📊 Event Categories & Distances</h2>
-
-            <div className="category-table">
-              <h3>General Public (Male & Female)</h3>
-              <ul>
-                <li>Under 16yr & Para-Abled – 3K</li>
-                <li>Under 30yr – 5K | 10K | 21K</li>
-                <li>Above 30yr – 5K | 10K | 21K</li>
-              </ul>
-
-              <h3>Army & NCC (Male & Female)</h3>
-              <ul>
-                <li>All Ages – 5K | 10K | 21K</li>
-              </ul>
-
-              <h3>Team Run (Male, Female, Mixed)</h3>
-              <ul>
-                <li>All Ages – 5K</li>
-              </ul>
+            <div className="bcore-v26-map-placeholder">
+              <span>📍 Route starts and finishes at Sector-11</span>
             </div>
           </div>
+          <div className="bcore-v26-glass-panel">
+            <h3>What time is bib collection?</h3>
+            <p className="bcore-v26-logistics-text bcore-v26-dark-navy">
+              <strong>11:00 AM to 6:00 PM</strong><br />
+              on 10th January 2026
+            </p>
+            <p className="bcore-v26-location-detail">Location: LIC Ground, Sector-11, Gandhinagar.</p>
+            <div className="bcore-v26-bib-icon">🎫</div>
+          </div>
+        </div>
+      </section>
 
-          {/* 🛡 Safe Section */}
-          <div className="info-card">
-            <h2>🛡 Safe Sport & Safe Space</h2>
-            <p>The Night Run shall be offering exclusive discount for women participants:</p>
-            <ul className="discount-list">
-              <li><strong>Above 51 years:</strong> 50% Discount</li>
-              <li><strong>Between 41 and 50 years:</strong> 25% Discount</li>
-              <li><strong>Between 31 and 40 years:</strong> 10% Discount</li>
+      {/* BCORE & RRU */}
+      <section ref={addToRefs} className="bcore-v26-split-content">
+        <div className="bcore-v26-container bcore-v26-grid-2">
+          <div className="bcore-v26-text-block">
+            <h2>BCORE & Rashtriya Raksha University</h2>
+            <p>
+              RRU, under the Ministry of Home Affairs, promotes excellence in 
+              security and sport science. Through BCORE, Olympic values reach the next generation.
+            </p>
+            <ul className="bcore-v26-modern-list">
+              <li>✦ Women safety & evening security focus</li>
+              <li>✦ Glow-in-the-night run & after-party</li>
+              <li>✦ Engraved medals & premium T-shirts</li>
+              <li>✦ No 6AM wake-up — Run under the stars</li>
             </ul>
           </div>
+          <div className="bcore-v26-discount-block">
+            <h3>Safe Sport Discounts</h3>
+            <div className="bcore-v26-d-unit"><strong>50%</strong> <span>51+ Yrs</span></div>
+            <div className="bcore-v26-d-unit"><strong>25%</strong> <span>41-50 Yrs</span></div>
+            <div className="bcore-v26-d-unit"><strong>10%</strong> <span>31-40 Yrs</span></div>
+          </div>
+        </div>
+      </section>
 
-          {/* Awards */}
-          <div className="info-card">
-            <h2>🏅 Awards & Recognitions</h2>
-            <div className="awards-grid">
-              {[
-                "Best Costume", "Corporate Challenge", "Charity Champion",
-                "Super Senior Award", "Super Junior Award", "Inclusivity Award",
-                "Best Team Name", "Sponsor Award", "Underprivileged Runners Recognition"
-              ].map((award, index) => (
-                <div className="award-item" key={index}>{award}</div>
+      {/* FOOTER & LOGO SLIDER */}
+      <footer ref={addToRefs} className="bcore-v26-royal-footer">
+        <div className="bcore-v26-container">
+          <div className="bcore-v26-awards-marquee">
+            <span>Costume Awards</span> • <span>Corporate Challenge</span> • <span>Charity Champion</span> • <span>Inclusivity Awards</span>
+          </div>
+          
+          <div className="bcore-v26-slider-container">
+            <div className="bcore-v26-slider-track">
+              {/* Double the array to create seamless loop */}
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                <div className="bcore-v26-slide" key={index}>
+                  <img src={`https://www.bcorenightrun.com/images/logo/${logo}`} alt="Partner" />
+                </div>
               ))}
             </div>
           </div>
-
         </div>
-      </section>
+      </footer>
     </div>
   );
 };
