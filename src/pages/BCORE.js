@@ -41,6 +41,7 @@ export const BCORE = () => {
             name: '2nd International Olympic Research Conference',
             date: '27 - 30 January 2026',
             place: 'Rashtriya Raksha University, Gandhinagar, India',
+            scheduleLink: '/event/3/schedule',
             description:
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             brochure:
@@ -76,6 +77,33 @@ export const BCORE = () => {
             place: 'Gandhinagar, India',
         }
     ];
+
+        // Countdown setup
+    const countdownDate = new Date("27 January 2026 09:00:00").getTime();
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            setTimeLeft({ days, hours, minutes, seconds });
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
 
     // Parse both start and end date
     const parseDateRange = (dateString) => {
@@ -119,32 +147,6 @@ export const BCORE = () => {
     });
     }, []);
 
-    // Countdown setup
-    const countdownDate = new Date("27 January 2026 00:00:00").getTime();
-    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            if (distance < 0) {
-                clearInterval(timer);
-                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            setTimeLeft({ days, hours, minutes, seconds });
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, []);
-
     return (
         <div>
              <Helmet>
@@ -152,29 +154,32 @@ export const BCORE = () => {
                 <meta name="description" content="Home page of BCORE..." />
             </Helmet>
             <ImageCarousel />
+            {/* Only render if there is time remaining in at least one unit */}
+            {(timeLeft.days > 0 || timeLeft.hours > 0 || timeLeft.minutes > 0 || timeLeft.seconds > 0) && (
             <div className="banner-countdown vintage-theme">
-            <div className="banner-left">
+                <div className="banner-left">
                 <p>Get Ready for the 2nd International Olympic Research Conference</p>
+                </div>
+                <div className="banner-right">
+                <div className="countdown-item">
+                    <span>{timeLeft.days}</span>
+                    <small>DAYS</small>
+                </div>
+                <div className="countdown-item">
+                    <span>{timeLeft.hours}</span>
+                    <small>HOURS</small>
+                </div>
+                <div className="countdown-item">
+                    <span>{timeLeft.minutes}</span>
+                    <small>MINUTES</small>
+                </div>
+                <div className="countdown-item">
+                    <span>{timeLeft.seconds}</span>
+                    <small>SECONDS</small>
+                </div>
+                </div>
             </div>
-            <div className="banner-right">
-                <div className="countdown-item">
-                <span>{timeLeft.days}</span>
-                <small>DAYS</small>
-                </div>
-                <div className="countdown-item">
-                <span>{timeLeft.hours}</span>
-                <small>HOURS</small>
-                </div>
-                <div className="countdown-item">
-                <span>{timeLeft.minutes}</span>
-                <small>MINUTES</small>
-                </div>
-                <div className="countdown-item">
-                <span>{timeLeft.seconds}</span>
-                <small>SECONDS</small>
-                </div>
-            </div>
-            </div>
+            )}
 
 
             <section className="logo-section-1">
@@ -202,18 +207,15 @@ export const BCORE = () => {
                     <WorkshopSection key={event.id} event={event.workshop} />
                 ))}
 
-            <div className="bcore-events">
-            <h2 className="bcore-events__title">Upcoming Events</h2>
-
-
-
-            <div className="bcore-events__grid">
-                {events
+            {events
                 .filter((event) => {
                     const { end } = parseDateRange(event.date);
                     return end >= new Date();
                 })
                 .map((event) => (
+            <div className="bcore-events">
+            <h2 className="bcore-events__title">Upcoming Events</h2>
+            <div className="bcore-events__grid">
                     <div className="bcore-event-card" key={event.id}>
                     <div className="bcore-event-card__content">
                         <h3 className="bcore-event-card__name">{event.name}</h3>
@@ -232,11 +234,18 @@ export const BCORE = () => {
                         <Link to={`/event/${event.id}`} className="bcore-btn bcore-btn--gold">
                         Know More
                         </Link>
-
+                        {event.scheduleLink && (
+                            <Link 
+                            to={`/event/${event.id}/schedule`}
+                            className="bcore-btn bcore-btn--gold"
+                            >
+                            View Schedule
+                            </Link>
+                        )}
                         {event.schedule && (
                         <Link
                             to={`/event/${event.id}/schedule`}
-                            className="bcore-btn bcore-btn--blue"
+                            className="bcore-btn bcore-btn--gold"
                         >
                             View Schedule
                         </Link>
@@ -245,7 +254,7 @@ export const BCORE = () => {
                         {event.brochure && (
                         <a
                             href={event.brochure}
-                            className="bcore-btn bcore-btn--red"
+                            className="bcore-btn bcore-btn--gold"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -256,9 +265,9 @@ export const BCORE = () => {
                         )}
                     </div>
                     </div>
-                ))}
             </div>
             </div>
+            ))}
 
             <section className="bcoreoverview">
                 <h2>Overview</h2>

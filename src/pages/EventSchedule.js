@@ -12,6 +12,7 @@ export const EventSchedule = () => {
     const events = [
         {
             id: 1,
+            name: '1st International Olympic Research Conference',
             schedule: [
                 {
                     day: 'Day 1',
@@ -84,70 +85,123 @@ export const EventSchedule = () => {
             
         },
         {
-        id: 2,
-        schedule: [
-            {
-                day: 'DAY 1',
-                date: '23rd JUNE 2025',
-                sessions: [
-                    {
-                        time: '09:30 AM - 11:00 AM',
-                        sessionType: 'Opening Ceremony',
-                        topic: 'Welcome, Keynote, Guest Speeches',
-                        speakers: 'Chief Guest Dr. Hari Ranjan Rao',
-                    },
-                    {
-                        time: '11:30 AM - 01:00 PM',
-                        sessionType: 'Expert Session 1',
-                        topic: 'Developing Sports Human Capital & High-Performance Infrastructure',
-                        speakers: 'Dr. Kinjal Suratwala, Dr. Shyamal Vallabhjee, Gagan Narang, Dr. B.K. Tripathi, Col. Rajyavardhan Rathore',
-                    },
-                    {
-                        time: '02:00 PM - 03:30 PM',
-                        sessionType: 'Panel Discussion 1',
-                        topic: 'Institutionalizing Sports Excellence Across CAPFs & SPOs',
-                        speakers: 'Dr. Pankaj Jain, Deepa Malik, Rajesh Puri, Brig. Rajesh Nair, Dr. Vedamurthy',
-                    },
-                    {
-                        time: '04:00 PM - 05:30 PM',
-                        sessionType: 'Breakout Session',
-                        topic: 'Best Practices in Sports Development within Forces',
-                        speakers: 'Nominated officers from CAPFs and SPOs, moderated by BCORE faculty',
-                    },
-                ],
-            },
-            {
-                day: 'DAY 2',
-                date: '24th JUNE 2025',
-                sessions: [
-                    {
-                        time: '09:30 AM - 11:00 AM',
-                        sessionType: 'Expert Session 2',
-                        topic: 'Career Transition Pathways for Athletes and Personnel',
-                        speakers: 'Anju Bobby George, Col. Vijay Bist, Shiba Prasad, Prof. Ratnakar Shetty, Aparna Popat',
-                    },
-                    {
-                        time: '11:30 AM - 01:00 PM',
-                        sessionType: 'Expert Session 3',
-                        topic: 'Formalizing Sports Education for Forces: Role of RRU & BCORE',
-                        speakers: 'Prof. B.P. Sharma, Dr. Suman Sharma, Dr. Parth Goswami, Dr. Aashish Contractor, Abhinav Bindra',
-                    },
-                    {
-                        time: '02:00 PM - 03:30 PM',
-                        sessionType: 'Panel Discussion 2',
-                        topic: 'Progressive Sports Policies for India’s Security Forces',
-                        speakers: 'Dr. Shaji Prabhakaran, Brig. J.S. Bhatia, Tushar Arothe, Dr. Manisha Malhotra, Senior CAPF Officer',
-                    },
-                    {
-                        time: '03:30 PM - 04:30 PM',
-                        sessionType: 'Closing Ceremony',
-                        topic: 'Summary, Recommendations, Felicitation',
-                        speakers: 'Secretary - Sports (MYAS), Organizing Chair (BCORE), National Anthem',
-                    },
-                ],
-            },
-        ],
-    }
+            id: 3,
+            name: '2nd International Olympic Research Conference',
+            pdfUrl: 'https://drive.google.com/file/d/1_eGqtkwx0gCidaNvjMU_7OFQYeQRtym_/view?usp=sharing',
+            schedule: [
+                {
+                    day: 'Day 1',
+                    topic: 'THE EDUCATION – Schools, Universities, and Academies',
+                    sessions: [
+                        { 
+                            time: '08:30 AM - 09:45 AM', 
+                            title: 'Registration and Kit Distribution' 
+                        },
+                        { 
+                            time: '10:00 AM - 11:30 AM', 
+                            title: 'Opening Ceremony' 
+                        },
+                        { 
+                            time: '11:30 AM - 11:45 AM', 
+                            title: 'Special Briefing', 
+                            topic: 'Plan for the Research and Education Initiatives in India'
+                        },
+                        { 
+                            time: '11:45 AM - 12:15 PM', 
+                            title: 'Refreshment, Networking & Official Photography' 
+                        },
+                        { 
+                            time: '12:15 PM - 01:30 PM', 
+                            title: 'Session 1 (Keynote)',
+                            topic: 'Education as the Cornerstone: Shaping a Sustainable Future for Sport and Olympism'
+                        },
+                        { 
+                            time: '01:30 PM - 02:30 PM', 
+                            title: 'Lunch Break' 
+                        },
+                        { 
+                            time: '02:30 PM - 03:15 PM', 
+                            title: 'Expert Session',
+                            topic: 'The Role of NOAs in Olympic Education: From Values to Action'
+                        },
+                        { 
+                            time: '03:15 PM - 04:00 PM', 
+                            title: 'Expert Session',
+                            topic: 'Architecting Sports Management Education Excellence in Emerging Markets'
+                        },
+                        { 
+                            time: '04:00 PM - 04:30 PM', 
+                            title: 'Refreshment and Networking Break' 
+                        },
+                        { 
+                            time: '04:30 PM - 05:30 PM', 
+                            title: 'Panel Discussion',
+                            topic: 'Building a Sustainable Athlete Development Ecosystem Through Institutional Integration: Schools,Universities, and High-Performance Academies'
+                        },
+                        { 
+                            time: '07:30 PM - 09:00 PM', 
+                            title: 'Dinner' 
+                        }
+                    ]
+                },
+                {
+                    day: 'Day 2',
+                    topic: 'THE GOVERNANCE – Policy & Anti-Doping (Auditorium) Parallel Paper Presentation Sessions (Seminar Hall)',
+                    sessions: [
+                        { time: '09:30 AM - 10:00 AM', title: 'Reporting & Registration', topic: 'Opening Circle: Session Introductions | Meet & Greet' },
+                        { time: '10:00 AM - 10:45 AM', title: 'Session 1', topic: 'Sports Governance Outlook: Global Alignment for an Olympic Future' },
+                        { time: '10:45 AM - 11:15 AM', title: 'Refreshment and Networking Break' },
+                        { time: '11:15 AM - 12:00 PM', title: 'Keynote Session', topic: 'Transparency, Accountability, and Anti-Corruption strategies in mega-events' },
+                        { time: '12:00 PM - 01:00 PM', title: 'Joint Session', topic: 'Sports Governance in India; Role of NOCs in Governance & insights from the Sports Governance Act 2025' },
+                        { time: '01:00 PM - 02:00 PM', title: 'Lunch Break' },
+                        { time: '02:00 PM - 03:00 PM', title: 'Special Keynote', topic: 'Building a Holistic Anti-doping Model; 3Ps for a Credible Anti-doping System' },
+                        { time: '03:00 PM - 04:00 PM', title: 'Workshop Session 1', topic: 'Promoting Clean Sports; NADA\'s Role, Awareness, Education and Research Initiatives' },
+                        { time: '04:00 PM - 04:30 PM', title: 'Refreshment and Networking Break' },
+                        { time: '04:30 PM - 05:30 PM', title: 'Workshop Session 2', topic: 'Building a Holistic Anti-doping Model; 3Ps for a Credible Anti-doping System' },
+                        { time: '05:30 PM - 06:00 PM', title: 'Paper Presentations (Main Hall)', topic: 'Research Presentations of Selected articles on Governance & Anti-Doping' },
+                        { time: '08:00 PM Onwards', title: 'Gala Dinner & Cultural Performances' }
+                    ]
+                },
+                {
+                    day: 'Day 3',
+                    topic: 'THE RESEARCH – Academia and Coaches (Auditorium) | Parallel Paper Presentation Sessions (Seminar Hall)',
+                    sessions: [
+                            { time: '09:30 AM - 09:45 AM', title: 'Reporting', topic: 'Opening Circle: Session Introductions | Meet & Greet' },
+                            { time: '09:45 AM - 11:00 AM', title: 'Joint Session', topic: 'Bridging the Research–Coach Divide: Translating Research into Practice' },
+                            { time: '11:00 AM - 11:30 AM', title: 'Refreshment and Networking Break' },
+                            { time: '11:30 AM - 12:15 PM', title: 'Expert Session', topic: 'High-Performance Models: Training & Monitoring in Academies' },
+                            { time: '12:15 PM - 01:00 PM', title: 'Demonstration & Panel', topic: 'Indigenous & Affordable Technologies; Evidence-Based Coaching Practices' },
+                            { time: '01:00 PM - 02:00 PM', title: 'Lunch Break' },
+                            { time: '02:00 PM - 03:15 PM', title: 'Session 3', topic: 'Anti-Doping Education and Research Workshop: India-Centric AntiIndia-Centric Anti-Doping Research & Education: NADA\'s Priority Needs -Doping Research & Education: NADA\'s Priority Needs' },
+                            { time: '03:00 PM - 04:00 PM', title: 'Workshop Session 4', topic: 'Advanced Anti-Doping Topics: Case Studies, TUEs & Whereabouts System' },
+                            { time: '04:15 PM - 05:00 PM', title: 'Workshop Session 5', topic: 'How to Build Fundable Anti-Doping Research: A Global Orientation and Workshop' },
+                            { time: '05:00 PM - 06:00 PM', title: 'Parallel Session (Auditorium)', topic: 'Research Presentations of Selected articles on Sports Science and Anti-Doping' },
+                            { time: '05:00 PM - 06:00 PM', title: 'Parallel Session (Expo Area)', topic: 'Research Networking Platform & Technology Expo (Affordable Tech)' },
+                            { time: '08:00 PM Onwards', title: 'Dinner' }
+                        ]
+                },
+                {
+                    day: 'Day 4',
+                    topic: 'CASE STUDIES – Mega Event Organizing Strategies',
+                    sessions: [
+                            { time: '09:30 - 10:30', title: 'OSRC Presentations', topic: 'Olympic Studies Research Centres\' Sessions | International OSRC Representatives' },
+                            { time: '10:30 - 11:15', title: 'Session 1', topic: 'World Police and Fire Games (WPFG) Case Studies: Organising Strategies & Lessons for Ahmedabad 2029' },
+                            { time: '11:15 - 11:45', title: 'Refreshment and Networking Break' },
+                            { time: '11:45 - 12:30', title: 'Panel Discussion', topic: 'Comparative Analysis of Mega-Sporting Events: Operations, Legacy & Sustainability' },
+                            { time: '12:30 - 13:15', title: 'Session 2', topic: 'India´s Olympic Bid – Potential Next Steps' },
+                            { time: '13:15 - 14:30', title: 'Closing Ceremony', topic: 'Certificate Distribution, Vote of Thanks & Concluding Remarks' },
+                            { time: '14:30', title: 'Lunch' },
+                            { time: 'Evening', title: 'Local Sports Infra Visit' }
+                            ]
+                },
+                {
+                    day: 'Day 5',
+                    topic: ' CULTURAL TOUR FOR INTERNATIONAL PARTICIPANTS AND DELEGATES',
+                    sessions: []
+                }
+            ],
+            
+        },
 ];
 
     const event = events.find((e) => e.id === parseInt(id));
@@ -157,28 +211,79 @@ export const EventSchedule = () => {
     }
 
     return (
-        <div className="event-schedule-container">
-            <header className="schedule-header">
-                <h1>Event Schedule</h1>
+<div className="axiom-root">
+            {/* Global Header Section */}
+            <header className="axiom-main-header">
+                <div className="axiom-header-container">
+                    <h1 className="axiom-main-title">Event Schedule</h1>
+                    
+                    <div className="axiom-header-divider">
+                        <div className="axiom-gold-dot"></div>
+                        <div className="axiom-gold-path"></div>
+                        <div className="axiom-gold-dot"></div>
+                    </div>
+
+                    <p className="axiom-event-name">{event.name}</p>
+
+                    {/* Conditional Rendering: Only shows if event.pdfUrl exists */}
+                    {event.pdfUrl && (
+                        <div className="axiom-download-wrapper">
+                            <a 
+                                href={event.pdfUrl} 
+                                download={`${event.name}-Schedule.pdf`} 
+                                className="axiom-download-btn"
+                            >
+                                Download Full Schedule
+                            </a>
+                        </div>
+                    )}
+                </div>
             </header>
-            {event.schedule.map((day, index) => (
-                <section key={index} className="schedule-section">
-                   <h2 className="day-title">
-                        <span>{day.day}</span> {day.date && `- ${day.date}`} {day.topic && `: ${day.topic}`}
-                    </h2>
-                    <div className="schedule-list">
-                        {day.sessions.map((session, idx) => (
-                        <div key={idx} className="schedule-item">
-                            <div className="time">{session.time}</div>
-                            <div className="details">
-                                <h3>{session.title || session.sessionType}</h3>
-                                {session.topic && <p><strong>Topic:</strong> {session.topic}</p>}
+
+            <div className="axiom-container">
+                {event.schedule.map((day, dIdx) => (
+                    <div key={dIdx} className="axiom-day-row">
+                        
+                        {/* Left Side: Static Day & Topic Pillar */}
+                        <div className="axiom-left-pillar">
+                            <div className="axiom-sticky-content">
+                                <h2 className="axiom-day-text">{day.day}</h2>
+                                
+                                {/* Topic written directly below Day */}
+                                {day.topic && <p className="axiom-day-topic">{day.topic}</p>}
+                                
+                                <div className="axiom-day-line"></div>
+                                <p className="axiom-date-text">{day.date}</p>
                             </div>
                         </div>
-                    ))}
+
+                        {/* Right Side: Session Stream */}
+                        <div className="axiom-right-stream">
+                            {day.sessions.map((session, sIdx) => (
+                                <div key={sIdx} className="axiom-session-node">
+                                    <div className="axiom-arrow-system">
+                                        <div className="axiom-line"></div>
+                                        <div className="axiom-arrowhead"></div>
+                                    </div>
+                                    
+                                    <div className="axiom-session-details">
+                                        <div className="axiom-time-box">{session.time}</div>
+                                        <div className="axiom-content-wrapper">
+                                            <h3 className="axiom-session-title">{session.title || session.sessionType}</h3>
+                                            {session.topic && (
+                                                <div className="axiom-topic-row">
+                                                    <span className="axiom-topic-label">OBJECTIVE</span>
+                                                    <p className="axiom-topic-desc">{session.topic}</p>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </section>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

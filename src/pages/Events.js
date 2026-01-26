@@ -124,77 +124,70 @@ export const Events = () => {
   }, []);
 
   return (
-    <div>
-      <Helmet>
-        <title>Past Events – Bharat Centre of Olympic Research & Education</title>
-        <meta
-          name="description"
-          content="Explore past events conducted by the Bharat Centre of Olympic Research & Education (BCORE)."
-        />
-      </Helmet>
+<div className="regal-archive-container">
+  <Helmet>
+    <title>Past Events – Bharat Centre of Olympic Research & Education</title>
+  </Helmet>
 
-      <div className="events-page">
-        <h2 className="events-title">Past Events</h2>
+  <div className="regal-header">
+    <h2 className="regal-title">Past Events</h2>
+  </div>
 
-        {/* ===== EVENTS LIST ===== */}
-        <div className="events-grid">
-          {sortedEvents.map((event) => (
-            <div className="event-card" key={event.id}>
-              {event.name && <h3>{event.name}</h3>}
-              {event.date && <p>{event.date}</p>}
-              {event.place && <p>{event.place}</p>}
+  <div className="regal-content-wrapper">
+    {/* ===== EVENTS LIST ===== */}
+    <div className="regal-list">
+      {sortedEvents.map((event) => (
+        <div className="regal-event-row" key={event.id}>
+          <div className="regal-date-col">
+            <span className="regal-year">
+              {event.date ? event.date.split(" ").pop() : ""}
+            </span>
+            <span className="regal-full-date">{event.date}</span>
+          </div>
 
-              <div className="event-buttons">
-                <Link to={`/event/${event.id}`} className="know-more-btn">
-                  Know More
+          <div className="regal-info-col">
+            <h3 className="regal-event-name">{event.name}</h3>
+            <p className="regal-venue">{event.place}</p>
+
+            <div className="regal-btn-group">
+              <Link to={`/event/${event.id}`} className="regal-btn primary">
+                View Details
+              </Link>
+              {event.scheduleLink && (
+                <Link to={event.scheduleLink} className="regal-btn secondary">
+                  Schedule
                 </Link>
-
-                {/* ✅ Schedule button only if link exists */}
-                {event.scheduleLink && (
-                  <Link
-                    to={event.scheduleLink}
-                    className="schedule-btn"
-                  >
-                    View Schedule
-                  </Link>
-                )}
-
-                {event.booklet && (
-                  <a
-                    href={event.booklet}
-                    className="schedule-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    IORC BOOKLET
-                  </a>
-                )}
-              </div>
+              )}
+              {event.booklet && (
+                <a href={event.booklet} target="_blank" rel="noreferrer" className="regal-btn secondary">
+                  Booklet
+                </a>
+              )}
             </div>
-          ))}
+          </div>
         </div>
-
-        <br />
-
-        {/* ===== IMAGE GALLERIES ===== */}
-        <div className="EventsContainer">
-          {eventsData.map((event, index) => (
-            <div key={index} className="EventItem">
-              <h2 className="EventSubHeading">{event.title}</h2>
-              <div className="EventImages">
-                {event.images.map((image, idx) => (
-                  <img
-                    key={idx}
-                    className="EventImage"
-                    src={image}
-                    alt={`${event.title} ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      ))}
     </div>
+
+    {/* ===== IMAGE GALLERIES ===== */}
+    <div className="regal-gallery-container">
+      {eventsData.map((event, index) => (
+        <div key={index} className="regal-gallery-item">
+          <h2 className="regal-gallery-subheading">{event.title}</h2>
+          <div className="regal-gallery-grid">
+            {event.images.map((image, idx) => (
+              <img
+                key={idx}
+                className="regal-gallery-image"
+                src={image}
+                alt={`${event.title} ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
   );
 };

@@ -25,6 +25,7 @@ export const Navbar = () => {
 
   // Example announcements – replace with API data
   const announcements = [
+    "Guidelines, schedule, and paper presentation details have been updated on the 2nd IORC event page. Please check for the latest information.",
     "Please note: <br />All <i>FAQs</i> are available on the <i>IORC</i> event page for your reference.",
     "Full Paper Submission and Registration Deadline extended to 15 January 2026 for the 2nd International Olympic Research Conference.",
     "BCORE partners with NADA for the 2nd International Olympic Research Conference at Rashtriya Raksha University",

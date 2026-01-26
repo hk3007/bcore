@@ -25,7 +25,7 @@ import NearbyTransportation from '../components/eventsdetails/NearbyTransportati
 import BcoreLogo from "./Images/BCORE Logo.png"
 import NadaLogo from "./Images/NADA Logo.png"
 import IORC2 from "./Images/IORC2.png"
-import WardJanssen from "./Images/Speakers/Ward Janssen.jpg"
+import GoBananas from "./Images/Go Bananas.png"
 
 export const EventDetails = () => {
     useEffect(() => {
@@ -544,6 +544,7 @@ export const EventDetails = () => {
                 "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
             bookletLink:
               'https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing',
+            Schedule: [schedule],
             subpoints: [
                 'Ignite research reform and foster innovation in Olympic studies.',
                 'Integrate education, research, and governance for a cohesive Olympic development framework.',
@@ -563,141 +564,210 @@ export const EventDetails = () => {
             speakers: [
                 {
                     id: 1,
-                    name: "Mr. Nikolay Varfolomeev, Advisor to the ROC President",
-                    about: "Mr. Nikolay Varfolomeev serves as Advisor to the President of the Russian Olympic Committee, supporting strategic initiatives and international Olympic engagement.",
-                    img: "https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg"
-                },
-                {
-                    id: 2,
-                    name: "Mr. Alexey Slautin, Head of International Relations Department",
-                    about: "Mr. Alexey Slautin leads the International Relations Department, coordinating global partnerships and Olympic-related international cooperation.",
-                    img: "https://media.licdn.com/dms/image/v2/C4E03AQGOCi8fGxPpJA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517242563489?e=1770249600&v=beta&t=qW-t4kSTx1RFj22zYjHktQr-cBK6cQDXRuXNk2EMScc"
-                },
-                {
-                    id: 3,
-                    name: "Ms. Alexandra Karaiskou, Head of HOC President's Office, NOCs/NOAs Relations & International Olympic Academy (IOA)",
-                    about: "Ms. Alexandra Karaiskou heads the HOC President’s Office and oversees NOCs/NOAs relations while closely collaborating with the International Olympic Academy.",
-                    img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa378489dd_Alexandra%20Karaiskou%20.jpg"
-                },
-                {
-                    id: 4,
-                    name: "Mr. Makis Asimakopoulos, IOA Director",
+                    name: "Mr. Makis Asimakopoulos",
                     about: "Mr. Makis Asimakopoulos is the Director of the International Olympic Academy, guiding its educational mission and global Olympic learning initiatives.",
                     img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa37849746_363501343_364681259262932_2813776722327982822_n.jpg"
                 },
                 {
+                    id: 2,
+                    name: "Ms. Alexandra Karaiskou",
+                    about: "Ms. Alexandra Karaiskou heads the HOC President’s Office and oversees NOCs/NOAs relations while closely collaborating with the International Olympic Academy.",
+                    img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa378489dd_Alexandra%20Karaiskou%20.jpg"
+                },
+                {
+                    id: 3,
+                    name: "Prof. Dr. Ravi Prakash Ranjan",
+                    about: "Prof. Dr. Ravi Prakash Ranjan is an Assistant Professor of Business Analytics & AI at Africa Business School, specializing in data-driven decision-making and artificial intelligence in business.",
+                    img: "https://media.licdn.com/dms/image/v2/D5603AQGEiVXBoQbjTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1715592382605?e=2147483647&v=beta&t=rX2ZD-d0ato7DZOdf3FCHnamZ_D4rOShvR4KIcv-iXs"
+                },
+                {
+                    id: 4,
+                    name: "Mr. Rushdee Warley",
+                    about: "Rushdee Warley is a High Performance Consultant, specializing in optimizing elite performance through strategic training, leadership, and evidence-based performance systems.",
+                    img: "https://media.licdn.com/dms/image/v2/D4D03AQE9Z4lIlYqrrA/profile-displayphoto-shrink_200_200/B4DZY9GXqXHIAY-/0/1744781802569?e=1770854400&v=beta&t=VOwfHDaSxkzfw81EoGqdknsfnc5RD0KAMo6neDeKb6w"
+                },
+                {
                     id: 5,
-                    name: "Prof. Yannis Pitsiladis, Professor, Hong Kong Baptist University",
-                    about: "Prof. Yannis Pitsiladis is a distinguished professor at Hong Kong Baptist University, recognized for his research contributions in sports science and Olympic studies.",
-                    img: "https://speh.hkbu.edu.hk/cache/img/ed72898b5b891ace11160bde5a5f7d1b.png"
+                    name: "Mr. Pradyut Voleti",
+                    about: "Pradyut Voleti, Founder and Head Coach of Dribble Academy, is dedicated to developing skilled, confident footballers through structured training and passion for the game.",
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQHP1v0g2dNsew/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1644645267112?e=1770854400&v=beta&t=qRdsDZWnH1JgyR9bVy7jVNTG3VeBM5gua2hxPv3vijE"
                 },
                 {
                     id: 6,
-                    name: "Mr. Tony Cunningham, Senior Manager, Education (Policy and Research), WADA",
-                    about: "Mr. Tony Cunningham serves as Senior Manager for Education Policy and Research at WADA, advancing global anti-doping education strategies.",
-                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGEt-QJfDcIzA/profile-displayphoto-shrink_400_400/B4EZbLGo6EHYAk-/0/1747164237885?e=1770249600&v=beta&t=pBgT2YBYvBgOZQ8jmgUpRdwK2vOio5D_ulzMPqPcujo"
+                    name: "Dr. Usha Sujit Nair",
+                    about: "Dr. Usha Sujit Nair, Former Vice Chancellor of the National Sports University, is a respected academic leader in sports education and governance.",
+                    img: "https://rru.ac.in/wp-content/uploads/2025/12/USNair.jpg"
                 },
                 {
                     id: 7,
-                    name: "Prof. Dr. Stephan Wassong, Head of Institute of Sport History & Director of the Olympic Studies Centre",
-                    about: "Prof. Dr. Stephan Wassong leads the Institute of Sport History and directs the Olympic Studies Centre, promoting scholarship on Olympic heritage and education.",
-                    img: "https://media.licdn.com/dms/image/v2/D4D22AQHewAVnBH4fyA/feedshare-shrink_800/feedshare-shrink_800/0/1693314425450?e=2147483647&v=beta&t=37RW1kRJrQ5vdyxZBwoqtXRPdMsZQzc2CGV8OxZJxKw"
-                },
-                {
-                    id: 8,
-                    name: "Mr. Grzegorz Botwina, Director, Polish Olympic Studies and Research Centre",
+                    name: "Mr. Grzegorz Botwina",
                     about: "Mr. Grzegorz Botwina is Director of the Polish Olympic Studies and Research Centre, focusing on research and development in Olympic education and policy.",
                     img: "https://sportacademy.com/wp-content/uploads/2024/09/1634903794601.jpeg"
                 },
                 {
-                    id: 9,
-                    name: "Mr. Wang Xinming, Minister-Counselor",
-                    about: "Mr. Wang Xinming serves as Minister-Counselor, contributing to diplomatic engagement and international collaboration within the Olympic and sports sectors.",
-                    img: "https://en.people.cn/NMediaFile/2019/0403/FOREIGN201904031634000527663791396.jpg"
-                },
-                {
-                    id: 10,
-                    name: "Mr. Anders Pettersson, Board Member of the Brazilian Olympic Committee & President of the Brazilian Snow Sports Federation",
-                    about: "Mr. Anders Pettersson is a Board Member of the Brazilian Olympic Committee and President of the Brazilian Snow Sports Federation, supporting winter sports development in Brazil.",
-                    img: "https://media.licdn.com/dms/image/v2/C4D03AQGgLLd8Y_uXTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1543325756629?e=2147483647&v=beta&t=i6uGNhuZw7GgieV8pE2Tjlr47QCf4aifnXDA_np7jEo"
-                },
-                {
-                    id: 11,
-                    name: "Prof. Wolfgang Maennig, Chair of Economic Policy, University of Hamburg",
+                    id: 8,
+                    name: "Prof. Wolfgang Maennig",
                     about: "Prof. Wolfgang Maennig is Chair of Economic Policy at the University of Hamburg, specializing in the economics of sport and mega-events such as the Olympic Games.",
                     img: "https://assets.rrz.uni-hamburg.de/instance_assets/fakws/14447474/maennig-640x361-75e48055c7df6d3b79ce8663e6e7ae0301cfcc41.jpg"
                 },
                 {
+                    id: 9,
+                    name: "Mr. Tony Cunningham",
+                    about: "Mr. Tony Cunningham serves as Senior Manager for Education Policy and Research at WADA, advancing global anti-doping education strategies.",
+                    img: "https://media.licdn.com/dms/image/v2/D4E03AQGEt-QJfDcIzA/profile-displayphoto-shrink_400_400/B4EZbLGo6EHYAk-/0/1747164237885?e=1770249600&v=beta&t=pBgT2YBYvBgOZQ8jmgUpRdwK2vOio5D_ulzMPqPcujo"
+                },
+                {
+                    id: 10,
+                    name: "Dr Ankush Gupta",
+                    about: "Dr. Ankush Gupta is a Senior Project Officer at the National Anti-Doping Agency (NADA), contributing to anti-doping initiatives and clean sport programs.",
+                    img: "https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg"
+                },
+                {
+                    id: 11,
+                    name: "Prof. Yannis Pitsiladis",
+                    about: "Prof. Yannis Pitsiladis is a distinguished professor at Hong Kong Baptist University, recognized for his research contributions in sports science and Olympic studies.",
+                    img: "https://speh.hkbu.edu.hk/cache/img/ed72898b5b891ace11160bde5a5f7d1b.png"
+                },
+                {
                     id: 12,
-                    name: "Mr. Joseph Oluka, Assistant Administrator Technical, Uganda Olympic Committee",
+                    name: "Dr. Rohit K. Thapa",
+                    about: "Dr. Rohit K. Thapa is an Assistant Professor at the Symbiosis School of Sports, specializing in sports education and academic excellence.",
+                    img: 'https://rru.ac.in/wp-content/uploads/2021/12/pic-1.jpeg'
+                },
+                {
+                    id: 13,
+                    name: "Prof Dr Alka Beotra",
+                    about: "Former Director of Anti-Doping Laboratories (Qatar & India), ex-Scientific Director of NDTL New Delhi, Professor of Practice/Eminence in Sports Science, and WADA–ISO certified international consultant.L",
+                    img: 'https://media.licdn.com/dms/image/v2/D4D03AQHUeEME9KQ98w/profile-displayphoto-scale_200_200/B4DZmLIFUHGwAY-/0/1758975791608?e=1770854400&v=beta&t=7RgVFVzjNemqBqE5gVg7bwfPXa3hqsHpuFXSAYivYPQ'
+                },
+                {
+                    id: 14,
+                    name: "Mr. Alexey Slautin",
+                    about: "Mr. Alexey Slautin leads the International Relations Department, coordinating global partnerships and Olympic-related international cooperation.",
+                    img: "https://media.licdn.com/dms/image/v2/C4E03AQGOCi8fGxPpJA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1517242563489?e=1770249600&v=beta&t=qW-t4kSTx1RFj22zYjHktQr-cBK6cQDXRuXNk2EMScc"
+                },
+                {
+                    id: 15,
+                    name: "Prof. Dr. Stephan Wassong",
+                    about: "Prof. Dr. Stephan Wassong leads the Institute of Sport History and directs the Olympic Studies Centre, promoting scholarship on Olympic heritage and education.",
+                    img: "https://media.licdn.com/dms/image/v2/D4D22AQHewAVnBH4fyA/feedshare-shrink_800/feedshare-shrink_800/0/1693314425450?e=2147483647&v=beta&t=37RW1kRJrQ5vdyxZBwoqtXRPdMsZQzc2CGV8OxZJxKw"
+                },
+                {
+                    id: 16,
+                    name: "Mr. Wang Xinming",
+                    about: "Mr. Wang Xinming serves as Minister-Counselor, contributing to diplomatic engagement and international collaboration within the Olympic and sports sectors.",
+                    img: "https://en.people.cn/NMediaFile/2019/0403/FOREIGN201904031634000527663791396.jpg"
+                },
+                {
+                    id: 17,
+                    name: "Mr. Anders Pettersson",
+                    about: "Mr. Anders Pettersson is a Board Member of the Brazilian Olympic Committee and President of the Brazilian Snow Sports Federation, supporting winter sports development in Brazil.",
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQGgLLd8Y_uXTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1543325756629?e=2147483647&v=beta&t=i6uGNhuZw7GgieV8pE2Tjlr47QCf4aifnXDA_np7jEo"
+                },
+                {
+                    id: 18,
+                    name: "Mr. Joseph Oluka",
                     about: "Mr. Joseph Oluka works as Assistant Administrator Technical at the Uganda Olympic Committee, supporting programs that strengthen Olympic sport development in Uganda.",
                     img: "https://nocuganda.org/wp-content/uploads/2025/11/Joseph.jpg"
                 },
                 {
-                    id: 13,
-                    name: "Mr. Arthur Gallois, French Olympic Committee",
+                    id: 19,
+                    name: "Mr. Arthur Gallois",
                     about: "Mr. Arthur Gallois represents the French Olympic Committee, contributing to its national and international Olympic initiatives.",
                     img: "https://media.licdn.com/dms/image/v2/D4E03AQGDtZPw-a6EGg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1687432072130?e=1770249600&v=beta&t=AOGsPVrX8AUtBSC3W039XF3jMeHdHEagppVqRwssHWU"
                 },
                 {
-                    id: 14,
-                    name: "Ms. Lina Marcela Vélez Sánchez — Faculty Member, Escuela Nacional del Deporte (Colombia)",
-                    about: "Ms. Lina Marcela Vélez Sánchez is a faculty member at Escuela Nacional del Deporte in Colombia and an active member of the IU END University Center for Olympic Studies.",
-                    img: "https://media.licdn.com/dms/image/v2/D4E03AQHRdZ4X7QFaOQ/profile-displayphoto-scale_400_400/B4EZngfdWdGUAg-/0/1760407969002?e=1770249600&v=beta&t=8sKpxDyuOclPU3olZy3GRmJcMqel1-7EQnljTKFIc0M"
-                },
-                {
-                    id: 15,
-                    name: "Mr. Daniel Afrifa, Division of Sport Sciences, Stellenbosch University, South Africa",
+                    id: 20,
+                    name: "Mr. Daniel Afrifa",
                     about: "Mr. Daniel Afrifa is affiliated with the Division of Sport Sciences at Stellenbosch University, contributing to research and teaching in sports science and performance.",
                     img:"https://www.exerciselabatsun.co.za/wp-content/uploads/2024/09/Daniel-150x150.jpg"
                 },
                 {
-                    id: 16,
-                    name: "Mr. Rodrigo Bravo Baeza, Professor and Researcher, Olympic Studies Centre – Escuela Nacional del Deporte University, Cali, Colombia",
+                    id: 21,
+                    name: "Mr. Rodrigo Bravo Baeza",
                     about: "Mr. Rodrigo Bravo Baeza is a professor and researcher representing the Olympic Studies Centre at Escuela Nacional del Deporte University in Cali, Colombia.",
                     img: "https://endeporte.edu.co/info/endeporte/media/galeria/thumbs/thgaleria_400X400_4785.webp"
                 },
                 {
-                    id: 17,
-                    name: "Ms. Tanvi Hubli, Researcher, The University of Edinburgh",
+                    id: 22,
+                    name: "Ms. Tanvi Hubli",
                     about: "Ms. Tanvi Hubli is a researcher at The University of Edinburgh, focusing on themes related to sport, society, and the Olympic Movement.",
                     img: "https://media.licdn.com/dms/image/v2/D4E03AQFqMS3x3Vwf3Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704564920961?e=1770249600&v=beta&t=y2wNjnVZvqO08s0k5ogJzOf4I_7RpuIFAceNGpUBAho"
                 },
                 {
-                    id: 18,
-                    name: "Mr. Carlos Quiroz, Vice-Principal and Researcher, Escuela Nacional del Deporte University – Cali, Colombia",
+                    id: 23,
+                    name: "Mr. Carlos Quiroz",
                     about: "Mr. Carlos Quiroz serves as Vice-Principal and researcher at Escuela Nacional del Deporte University in Cali, Colombia, contributing to academic and Olympic studies initiatives.",
                     img: "https://i1.rgstatic.net/ii/profile.image/394317303697412-1471023979458_Q512/Carlos-Quiroz-Mora.jpg"
                 },
                 {
-                    id: 19,
-                    name: "Ms. Elizaveta Zhuk, PhD (Paris-Saclay University), Visiting Professor",
+                    id: 24,
+                    name: "Ms. Elizaveta Zhuk",
                     about: "Ms. Elizaveta Zhuk holds a PhD from Paris-Saclay University and works as a visiting professor engaged in research and teaching related to sport and Olympic education.",
                     img: "https://media.licdn.com/dms/image/v2/C4E03AQG01MDXsAUSPw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1619526693481?e=1770249600&v=beta&t=JxSXLp0xnAg6nXLWdUZpu9oViVtJ0tVWON1uVaJOmnI"
-                },
-                {
-                    id: 20,
-                    name: "Mr. Ward Janssen, TUE Manager, World ParaVolley; KU Leuven & Università di Bologna (BAES Programme)",
-                    about: "Mr. Ward Janssen is TUE Manager at World ParaVolley and is affiliated with KU Leuven and the Università di Bologna through the BAES Programme, supporting para-sport development and research.",
-                    img: [WardJanssen]
                 }
             ],
             sponsors: [
                 {
-                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpT3BEIkI-Pilx5K8VhsC2jow8L3bPL2nKbw&s',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Ministry_of_Home_Affairs_India.svg',
+                name: 'Ministry of Home Affairs India'
                 },
                 {
                 logo: 'https://upload.wikimedia.org/wikipedia/commons/2/29/Ministry_of_Youth_Affairs_and_Sports.svg',
+                name: 'Ministry of Youth Affairs and Sports India'
                 },
                 {
-                logo: 'https://yt3.googleusercontent.com/ytc/AIdro_mnmDQZBohbWFYaYNWF2z0hdQcgxngJW2_Fagb10pg2BA=s900-c-k-c0x00ffffff-no-rj',
+                logo: 'https://nadaindia.yas.gov.in/wp-content/uploads/GOV-NADA-Logo_Revised-02-1024x433.png',
+                name: 'National Anti Doping Agency India'
+                },
+                {
+                logo: 'https://upload.wikimedia.org/wikipedia/en/b/bc/Rashtriya_Raksha_University_logo.png',
+                name: 'Rashtriya Raksha University'
+                },
+                {
+                logo: 'https://rru.ac.in/wp-content/uploads/2022/04/4-scaled.jpg',
+                name: 'School of Physical Education and Sports'
+                },
+                {
+                logo: [GoBananas],
+                name: 'Premium Sponsor'
+                },
+                {
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpT3BEIkI-Pilx5K8VhsC2jow8L3bPL2nKbw&s',
+                name: 'Banking Partner'
+                },
+                {
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNLjx2uZ6c0o3_gqRQPm4faf5nu6aRZznJVLW5DlO27-zf-NdBHIzyqZNC85ScQNyAmu8&usqp=CAU',
+                name: 'Refreshment Partner'
+                },
+                {
+                logo: 'https://companieslogo.com/img/orig/GTPL.NS_BIG-94b70da1.png?t=1720244492',
+                name: 'TV Partner'
                 },
                 {
                 logo: 'https://www.bookmyad.com/services/uploads/logos/2019/03/11/85d6b77336ff7b536a3d495791ba6147.jpg',
+                name: 'Radio Partner'
                 },
                 {
                 logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWzTpY39Fq8eUvCHPhKoYD4ncbOXiTozAj-A&s',
+                name: 'Technology Partner'
                 },
+                {
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRugFt2avPuqvkyfRSdiQCq97EycfgkBVs24g&s',
+                name: 'Gifting Partner'
+                },
+                {
+                logo: 'https://upload.wikimedia.org/wikipedia/en/f/f2/BankOfBarodaLogo.svg',
+                name: 'Supporting Sponser'
+                },
+                {
+                logo: 'https://yt3.googleusercontent.com/sAUzcsfr0JwUZurEmC3O1fCcDnS560CZt8_uYddbYlEoTs3Oyk-YNERBo_KnwxrXqYTTxfhR=s900-c-k-c0x00ffffff-no-rj',
+                name: 'Supporting Sponser'
+                },
+            ],
+            stats: [
+                { label: 'No Of Abstract', value: '120' },
+                { label: 'International And National Experts', value: '50' },
             ],
             abstractGuidelines: {
                 formatRequirements: [
@@ -732,19 +802,47 @@ export const EventDetails = () => {
                     }
                 ]
             },
+            guests: [
+                {
+                    id: 1,
+                    name: "Shri (Dr.) Mansukh Mandaviya",
+                    about: "Shri (Dr.) Mansukh Mandaviya is the current Union Minister of Health and Family Welfare, Chemicals, and Fertilizers, Government of India. Known for his visionary leadership, he has been instrumental in driving key healthcare reforms and fostering India's self-reliance in the pharmaceutical sector.",
+                    img: "https://youthparliamentofindia.co.in/wp-content/uploads/2021/10/Mansukh_Mandaviya.jpg",
+                },
+                {
+                    id: 2,
+                    name: "Shri Harsh Sanghavi",
+                    about: "Harsh Sanghavi is the Minister of State for Home, Industries, and Youth Affairs in the Government of Gujarat. A dynamic leader, he is known for his proactive approach to governance and engaging with youth for progressive development initiatives.",
+                    img: "https://harshsanghavi.in/img/ss11.png ",
+                },
+                {
+                    id: 3,
+                    name: "Shri Bhupendra Rajnikant Patel",
+                    about: "Shri Bhupendra Rajnikant Patel is the Hon’ble Chief Minister of Gujarat, known for his focus on good governance, development, and public welfare.",
+                    img: "https://media.assettype.com/nationalherald%2F2021-09%2F7844e501-1fe8-4928-a0cb-fdbe4e93f784%2Fbhupendra_patel.jpg?auto=format%2Ccompress&fmt=webp&w=1200",
+                },
+                {
+                    id: 5,
+                    name: "Prof. Bimal N Patel, VC, RRU",
+                    about: "Prof. (Dr.) Bimal N. Patel is the Vice-Chancellor of Rashtriya Raksha University (RRU), a premier security and police university in India. He is also a Member of the National Security Advisory Board (NSAB) of India and the UN International Law Commission (2023-2027)",
+                    img: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Prof.%28Dr.%29_Bimal_N._Patel.jpg"
+                }
+            ],
             resources: {
-//                schedule: "https://example.com/schedule.pdf",
+              schedule: "https://drive.google.com/file/d/1_eGqtkwx0gCidaNvjMU_7OFQYeQRtym_/view?usp=sharing",
               brochure: "https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing",
               registrationLink: "https://forms.eduqfix.com/secolycn/add",
               googleForm: "https://docs.google.com/forms/d/e/1FAIpQLSfsd7Tl_kZo8x_4oE_ZocDMyaC5T_AQswO1Hrl9WGv_0jXZyg/viewform?usp=header",
-              faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing"
+              faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing",
+              guidlines: "https://drive.google.com/file/d/1J6qexrSRz2iMWlkcfEkLO69GZzRiR3Ph/view?usp=sharing",
+              paperPresentation: "https://docs.google.com/presentation/d/15_AXdox-V61RCQBT8Ky0xQueT94hklN6/edit?usp=sharing&ouid=114727181775494699337&rtpof=true&sd=true",    
             },
             callForAbstract: {
                 text: `BCORE cordially invites abstracts for presentation at its International Olympic Research Conference at Rashtriya Raksha University. Submissions addressing hosting and organizing, Olympic education, sustainable development, and technological innovation are particularly welcomed. Early career researchers are encouraged to participate.`,
                 submissionEmail: 'olyresearchacademy.submissions@rru.ac.in',
                 deadline: '31st December 2025',
             },
-             Steps: [
+            Steps: [
                 { event: 'Step 1', date: ' Submit the abstract' },
                 { event: 'Step 2', date: 'Wait For confirmation' },
                 { event: 'Step 3', date: 'Register to the Olympics conference' },
@@ -773,7 +871,7 @@ export const EventDetails = () => {
                 dates: "28–29 Jan 2026",
             },
             accommodations: [
-                                {
+                {
                     name: 'Villa Accommodation, Near Rashtriya Raksha University (RRU), Good Times, Dahegam',
                     address: 'Good Times by Sangath IPL near Rashtriya Raksha University Lavad Dehgam',
                     contact: 'For Bookings Contact - +91 8175991401 | Mr. Sandeep Mishra',
@@ -909,6 +1007,25 @@ export const EventDetails = () => {
         </section>
         )}
 
+        {/* Royal Futuristic Stats Section */}
+        {event?.stats?.length > 0 && (
+        <section className="stats-royal-wrapper">
+            <div className="stats-grid">
+            {event.stats.map((stat, index) => (
+                <div key={index} className="stat-card">
+                <div className="card-border-top"></div>
+                <div className="stat-content">
+                    <span className="stat-value">{stat.value}</span>
+                    <div className="stat-gold-line"></div>
+                    <span className="stat-label">{stat.label}</span>
+                </div>
+                <div className="gold-corner"></div>
+                </div>
+            ))}
+            </div>
+        </section>
+        )}
+
         {event?.subpoints?.length > 0 && <Highlights subpoints={event.subpoints} />}
 
         {/* Event Details Section */}
@@ -924,6 +1041,7 @@ export const EventDetails = () => {
             </ul>
         </div>
         )}
+
 
         {event?.guests?.length > 0 && (
             <section className="chief-guests">
@@ -993,7 +1111,7 @@ export const EventDetails = () => {
 
         {event?.speakers?.length > 0 && (
             <section className="chief-guests">
-            <h2>International Speakers & Presenters</h2>
+            <h2>Speakers & Presenters</h2>
             <div className="chief-guests-grid">
                 {event.speakers.map((speaker) => (
                 <div className="guest-card" key={speaker.id}>
@@ -1039,23 +1157,29 @@ export const EventDetails = () => {
     </div>
 
     <div className="nexus-web">
-      {event.sponsors.map((sponsor, index) => (
-        <div className="nexus-node" key={index} style={{"--i": index}}>
-          <div className="node-inner">
+    {event.sponsors.map((sponsor, index) => (
+        <div 
+        className="nexus-node" 
+        key={index} 
+        style={{ "--index": index }} /* Changed --i to --index to match your CSS */
+        >
+        <div className="node-inner">
             <div className="node-hex">
-              <div className="hex-content">
+            <div className="hex-content">
                 <img src={sponsor.logo} alt={sponsor.name} className="node-logo" />
-              </div>
-              <div className="hex-border"></div>
             </div>
+            <div className="hex-border"></div>
+            </div>
+            
+            {/* Text is now inside node-inner so it floats and moves WITH the hex */}
             <div className="node-info">
-              <p className="node-name">{sponsor.name}</p>
+            <span className="node-tag">{sponsor.category}</span> {/* Add category if available */}
+            <p className="node-name">{sponsor.name}</p>
             </div>
-          </div>
-          {/* Animated background flare */}
-          <div className="node-flare"></div>
         </div>
-      ))}
+        <div className="node-flare"></div>
+        </div>
+    ))}
     </div>
   </section>
 )}

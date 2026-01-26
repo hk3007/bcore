@@ -1,173 +1,312 @@
-/* ========== Base Styles ========== */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    background: #f9fafc;
-    color: #333;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&family=Playfair+Display:ital,wght@1,700&display=swap');
+
+:root {
+  --axiom-royal-dark: #001a4d;
+  --axiom-royal-bright: #000620;
+  --axiom-gold-foil: linear-gradient(135deg, #bd9333 0%, #e8c477 50%, #bd9333 100%);
+  --axiom-gold-solid: #bd9333;
+  --axiom-white: #ffffff;
+  --axiom-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.axiom-root {
+  background-color: var(--axiom-white);
+  color: var(--axiom-royal-dark);
+  font-family: 'Outfit', sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ========== Main Header Section ========== */
+.axiom-main-header {
+  padding: 100px 20px 60px;
+  text-align: center;
+  background: radial-gradient(circle at top, #fcfcfc 0%, #ffffff 100%);
+}
+
+.axiom-header-container {
+  margin: 0 auto;
+}
+
+.axiom-header-tag {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--axiom-gold-solid);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.axiom-main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  line-height: 0.85;
+}
+
+.axiom-header-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.axiom-gold-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--axiom-gold-solid);
+  border-radius: 50%;
+}
+
+.axiom-gold-path {
+  width: 200px;
+  height: 1px;
+  background: var(--axiom-gold-foil);
+}
+
+.axiom-event-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2.5rem;
+  color: #555;
+  margin: 0 auto;
+  line-height: 1.3;
+}
+
+/* Container for the button to give it some top spacing */
+.axiom-download-wrapper {
+  margin-top: 30px;
+}
+
+.axiom-download-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: transparent;
+  border: 1px solid var(--axiom-gold-solid);
+  color: var(--axiom-gold-solid);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.axiom-download-btn:hover {
+  background-color: var(--axiom-gold-solid);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 /* ========== Container ========== */
-.event-schedule-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.axiom-container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* ========== Header Section ========== */
-.schedule-header {
-    text-align: center;
-    background: linear-gradient(135deg, #ef2800, #002ffe);
-    color: white;
-    padding: 40px 20px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    animation: fadeIn 1s ease-in-out;
+/* ========== Day Row Layout ========== */
+.axiom-day-row {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  border-bottom: 2px solid rgba(0, 26, 77, 0.08);
 }
 
-.schedule-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+/* ========== Left Pillar (Sticky) ========== */
+.axiom-left-pillar {
+  padding: 80px 60px;
+  border-right: 3px solid rgba(189, 147, 51, 0.15);
+  background: linear-gradient(to right, #ffffff, #fcfcfc);
+  position: relative;
 }
 
-.schedule-header p {
-    font-size: 1.2rem;
-    font-weight: 300;
+.axiom-sticky-content {
+  position: sticky;
+  top: 100px;
+  z-index: 10;
 }
 
-/* ========== Day Title Section ========== */
-.schedule-section {
-    margin-bottom: 40px;
-    animation: slideUp 0.7s ease-in-out;
+.axiom-phase-tag {
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  color: var(--axiom-gold-solid);
+  font-weight: 800;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.day-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #0078ff;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.axiom-day-text {
+  font-size: 4.5rem;
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -2px;
 }
 
-.day-title span {
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: #ff6f61;
+.axiom-day-topic {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--axiom-royal-bright);
+  margin-top: 15px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
 }
 
-/* ========== Session List ========== */
-.schedule-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.axiom-day-line {
+  width: 80px;
+  height: 5px;
+  background: var(--axiom-gold-foil);
+  margin: 30px 0;
+  border-radius: 2px;
 }
 
-/* ========== Session Item ========== */
-.schedule-item {
-    display: flex;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    align-items: flex-start;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    gap: 15px;
+.axiom-date-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: #777;
+  margin: 0;
 }
 
-.schedule-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+/* ========== Right Stream (Sessions) ========== */
+.axiom-right-stream {
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
 }
 
-/* Time */
-.time {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #444;
-    white-space: nowrap;
-    flex-shrink: 0;
+.axiom-session-node {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--axiom-transition);
+  animation: axiomFadeIn 0.8s forwards;
 }
 
-/* Session Details */
-.details {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+@keyframes axiomFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(30px); }
 }
 
-.details h3 {
-    font-size: 1.2rem;
-    margin: 0;
-    color: #222;
-    font-weight: 600;
+/* ========== The Arrow System ========== */
+.axiom-arrow-system {
+  display: flex;
+  align-items: center;
+  margin-top: 1.8rem;
+  flex-shrink: 0;
 }
 
-.details p {
-    margin: 0;
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.4;
+.axiom-line {
+  width: 80px;
+  height: 1px;
+  background: rgba(0, 26, 77, 0.15);
+  position: relative;
+  transition: var(--axiom-transition);
+}
+
+.axiom-arrowhead {
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--axiom-gold-solid);
+  border-right: 2px solid var(--axiom-gold-solid);
+  transform: rotate(45deg);
+  margin-left: -6px;
+  transition: var(--axiom-transition);
+}
+
+/* Interaction Effects */
+.axiom-session-node:hover .axiom-line {
+  width: 130px;
+  background: var(--axiom-royal-bright);
+  box-shadow: 0 0 20px rgba(0, 71, 254, 0.2);
+}
+
+.axiom-session-node:hover .axiom-arrowhead {
+  border-color: var(--axiom-royal-bright);
+  transform: rotate(45deg) scale(1.3);
+}
+
+/* ========== Session Details ========== */
+.axiom-session-details {
+  flex: 1;
+}
+
+.axiom-time-box {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--axiom-gold-solid);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.axiom-session-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  transition: var(--axiom-transition);
+}
+
+.axiom-session-node:hover .axiom-session-title {
+  color: var(--axiom-royal-bright);
+  transform: translateX(10px);
+}
+
+.axiom-topic-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 3px solid #f0f0f0;
+  padding-left: 25px;
+  transition: var(--axiom-transition);
+}
+
+.axiom-session-node:hover .axiom-topic-row {
+  border-left-color: var(--axiom-gold-solid);
+}
+
+.axiom-topic-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #bbb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.axiom-topic-desc {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+  max-width: 700px;
 }
 
 /* ========== Responsive Design ========== */
-@media (max-width: 768px) {
-    .schedule-header h1 {
-        font-size: 2rem;
-    }
-
-    .schedule-header p {
-        font-size: 1rem;
-    }
-
-    .day-title {
-        font-size: 1.3rem;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .day-title span {
-        font-size: 1.2rem;
-    }
-
-    .schedule-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .time {
-        font-size: 1rem;
-        margin-bottom: 5px;
-    }
-
-    .details h3 {
-        font-size: 1.1rem;
-    }
+@media (max-width: 1100px) {
+  .axiom-main-title { font-size: 3.5rem; }
+  .axiom-day-row { grid-template-columns: 1fr; }
+  .axiom-left-pillar { border-right: none; border-bottom: 1px solid #eee; padding: 60px 40px; }
+  .axiom-sticky-content { position: relative; top: 0; }
+  .axiom-right-stream { padding: 60px 40px; }
+  .axiom-line { width: 40px; }
 }
 
-/* ========== Animations ========== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@media (max-width: 600px) {
+  .axiom-main-title { font-size: 2.5rem; }
+  .axiom-event-name { font-size: 1.2rem; }
+  .axiom-day-text { font-size: 2.8rem; }
+  .axiom-session-title { font-size: 1.6rem; }
+  .axiom-arrow-system { display: none; }
 }

@@ -52,14 +52,6 @@ export const UpComing = () => {
         'https://rru.ac.in/wp-content/uploads/2025/03/IORC-Booklet_-05-03-2025-10-MB_compressed.pdf',
     },
     {
-      id: 2,
-      name: 'SPORTS EXCELLENCE SEMINAR',
-      date: '23rd June 2025',
-      place: 'Rashtriya Raksha University, Gandhinagar, India',
-      description:
-        'A gathering of sports experts, enthusiasts, and professionals to discuss sports innovation, technology, and more.',
-    },
-    {
       id: 3,
       name: '2nd International Olympic Research Conference',
       startDate: new Date('2026-01-27'),
@@ -69,7 +61,11 @@ export const UpComing = () => {
         "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
       bookletLink:
         'https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing',
-      faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing"
+      paymentLink: "https://forms.eduqfix.com/secolycn/add",
+      faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing",
+      scheduleLink: '/event/3/schedule',
+      guidlines: "https://drive.google.com/file/d/1J6qexrSRz2iMWlkcfEkLO69GZzRiR3Ph/view?usp=sharing",
+      paperPresentation: "https://docs.google.com/presentation/d/15_AXdox-V61RCQBT8Ky0xQueT94hklN6/edit?usp=sharing&ouid=114727181775494699337&rtpof=true&sd=true",
     },
     {
       id: 4,
@@ -94,76 +90,72 @@ export const UpComing = () => {
   });
 
   return (
-    <div className="events-page">
-       <Helmet>
-        <title>Upcoming Events – Bharat Centre of Olympic Research & Education</title>
-        <meta name="description" content="Home page of BCORE..." />
-      </Helmet>
-      <h2 className="events-title">Upcoming Events</h2>
-      {upcomingEvents.length > 0 ? (
-        <div className="events-grid">
-          {upcomingEvents.map((event) => (
-            <div className="event-card" key={event.id}>
-              <h3>{event.name}</h3>
-              <p>
-                {event.date
-                  ? formatDate(event.date)
-                  : `${event.startDate.toLocaleDateString('en-US', {
-                      day: 'numeric',
-                      month: 'short',
-                    })} – ${event.endDate.toLocaleDateString('en-US', {
-                      day: 'numeric',
-                      month: 'short',
-                      year: 'numeric',
-                    })}`}
-              </p>
-              {event.place && <p>{event.place}</p>}
-              {event.accomodation && (
-                <p>
-                  <b>{event.accomodation}</b>
-                </p>
-              )}
-              <div className="event-buttons">
-                <Link to={`/event/${event.id}`} className="know-more-btn">
-                  Know More
-                </Link>
-                {event.scheduleLink && (
-                  <Link
-                    to={`/event/${event.id}/schedule`}
-                    className="schedule-btn"
-                  >
-                    View Schedule
-                  </Link>
-                )}
-                {event.bookletLink && (
-                  <a
-                    href={event.bookletLink}
-                    className="schedule-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    IORC BOOKLET
-                  </a>
-                )}
-                {event.faQ && (
-                  <a
-                    href={event.faQ}
-                    className="schedule-btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    FAQ
-                  </a>
-                )}
+<div className="chrono-events-container">
+  <Helmet>
+    <title>Upcoming Events – Bharat Centre of Olympic Research & Education</title>
+  </Helmet>
+
+  <div className="chrono-banner-header">
+    <div className="chrono-banner-content">
+      <h2 className="chrono-banner-title">Upcoming Events</h2>
+      <div className="chrono-banner-accent">
+        <span className="line"></span>
+        <span className="diamond"></span>
+        <span className="line"></span>
+      </div>
+    </div>
+    {/* Decorative background element */}
+    <div className="chrono-banner-bg-text">EVENTS</div>
+  </div>
+
+  {upcomingEvents.length > 0 ? (
+    <div className="chrono-list">
+      {upcomingEvents.map((event) => (
+        <div className="chrono-item" key={event.id}>
+          <div className="chrono-date-box">
+            <span className="chrono-day">
+              {event.date ? new Date(event.date).getDate() : event.startDate.getDate()}
+            </span>
+            <span className="chrono-month">
+              {event.date 
+                ? new Date(event.date).toLocaleString('default', { month: 'short' }) 
+                : event.startDate.toLocaleString('default', { month: 'short' })}
+            </span>
+          </div>
+
+          <div className="chrono-content">
+            <h3 className="chrono-event-name">{event.name}</h3>
+            <div className="chrono-meta">
+              <span><i className="location-icon"></i> {event.place || "TBA"}</span>
+              {event.accomodation && <span className="chrono-badge">{event.accomodation}</span>}
+            </div>
+            
+            <div className="chrono-actions">
+              <Link to={`/event/${event.id}`} className="chrono-btn-primary">
+                Details
+              </Link>
+              
+              {/* Secondary Actions - Grouped for cleaner look */}
+              <div className="chrono-btn-group">
+                {event.scheduleLink && <Link to={`/event/${event.id}/schedule`}>Schedule</Link>}
+                {event.bookletLink && <a href={event.bookletLink} target="_blank" rel="noreferrer">Booklet</a>}
+                {event.paymentLink && <a href={event.paymentLink} target="_blank" rel="noreferrer">Payment</a>}
+                {event.faQ && <a href={event.faQ} target="_blank" rel="noreferrer">FAQ</a>}
+                {event.guidlines && <a href={event.guidlines} target="_blank" rel="noreferrer">Guidelines</a>}
+                {event.paperPresentation && <a href={event.paperPresentation} target="_blank" rel="noreferrer">Paper Presentation</a>}
               </div>
             </div>
-          ))}
+          </div>
+          
+          <div className="chrono-hover-bg"></div>
         </div>
-      ) : (
-        <p className="no-events-message">
-          Stay tuned! More exciting events are coming soon.
-        </p>
-      )}
+      ))}
     </div>
+  ) : (
+    <div className="chrono-empty">
+      <p>The arena is being prepared. Stay tuned.</p>
+    </div>
+  )}
+</div>
   );
 };
