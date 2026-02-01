@@ -42,6 +42,23 @@ const events = [
     // ✅ Visible ONLY from 11 Jan 2026 onwards
     visibleFrom: new Date('2026-01-11'),
   },
+  {
+    id: 3,
+    name: '2nd International Olympic Research Conference',
+    date: '27 - 30 January 2026',
+    startDate: new Date('2026-01-27'),
+    endDate: new Date('2026-01-30'),
+    place: 'Rashtriya Raksha University, Gandhinagar, India',
+    description:
+      "To address critical Olympic challenges in India's Olympic aspirations and develop long-term, sustainable solutions through integrated research, education, and governance",
+    bookletLink:
+      'https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing',
+    paymentLink: "https://forms.eduqfix.com/secolycn/add",
+    faQ: "https://drive.google.com/file/d/1m1xHmHf20D3La7ZMw3ERuKzQIgdmIKfr/view?usp=sharing",
+    scheduleLink: '/event/3/schedule',
+    guidlines: "https://drive.google.com/file/d/1J6qexrSRz2iMWlkcfEkLO69GZzRiR3Ph/view?usp=sharing",
+    paperPresentation: "https://docs.google.com/presentation/d/15_AXdox-V61RCQBT8Ky0xQueT94hklN6/edit?usp=sharing&ouid=114727181775494699337&rtpof=true&sd=true",
+  }
 ];
 
 /* =========================
@@ -129,8 +146,17 @@ export const Events = () => {
     <title>Past Events – Bharat Centre of Olympic Research & Education</title>
   </Helmet>
 
-  <div className="regal-header">
-    <h2 className="regal-title">Past Events</h2>
+  <div className="past-events-banner-header">
+    <div className="past-events-banner-content">
+      <h2 className="past-events-banner-title">Past Events</h2>
+      <div className="past-events-banner-accent">
+        <span className="line"></span>
+        <span className="diamond"></span>
+        <span className="line"></span>
+      </div>
+    </div>
+    {/* Decorative background element */}
+    <div className="past-events-banner-bg-text">EVENTS</div>
   </div>
 
   <div className="regal-content-wrapper">

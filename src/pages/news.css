@@ -1,159 +1,208 @@
-/* Olympic-themed colors */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap');
+
 :root {
-    --primary-color: #005EB8; /* Olympic blue */
-    --secondary-color: #F4A900; /* Olympic gold */
-    --accent-color: #E91E63; /* Pink for contrast */
-    --font-family: 'Poppins', sans-serif;
-  }
-  
-  /* General Styles */
-  body {
-    font-family: var(--font-family);
-    background-color: #f0f0f0;
-  }
-  
-  .news-section {
-    padding: 50px 20px;
-    background-color: white;
+    --royal-blue: #002366;
+    --gold: #C5A059;
+    --gold-faded: rgba(197, 160, 89, 0.1);
+    --white: #ffffff;
+    --text-gray: #555;
+}
+
+.royal-news-root {
+    background: var(--white);
+    color: var(--royal-blue);
+    font-family: 'Montserrat', sans-serif;
+    padding: 100px 0;
+}
+
+/* Header */
+.royal-hero {
     text-align: center;
-  }
-  
-  .news-title {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 40px;
-    position: relative;
-    font-weight: bold;
-  }
-  
-  .news-title:after {
-    content: '';
-    width: 150px;
-    height: 5px;
-    background-color: var(--secondary-color);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
-    border-radius: 10px;
-  }
-  
-  /* News Grid */
-  .news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
-  .news-card {
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .news-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Image */
-  .news-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  /* Content */
-  .news-content {
-    padding: 20px;
-  }
-  
-  .news-heading {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-  }
-  
-  .news-date {
-    color: var(--accent-color);
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-  }
-  
-  .news-link {
-    font-size: 1rem;
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
+    margin-bottom: 80px;
+}
+
+.royal-meta {
+    display: flex;
+    align-items: center;
     justify-content: center;
-  }
-  
-  .news-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive Media Queries */
-  @media (max-width: 768px) {
-    .news-title {
-      font-size: 2rem;
-    }
-  
-    .news-card {
-      margin: 0 auto;
-    }
-    .pagination {
-        gap: 8px;
-    }
+    gap: 15px;
+    margin-bottom: 15px;
+}
 
-    .pagination-btn {
-        min-width: 80px; /* Smaller width for mobile */
-        padding: 8px 12px;
-        font-size: 0.9rem; /* Slightly smaller text */
-    }
+.royal-line {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+}
 
-    .pagination-text {
-        font-size: 0.9rem;
-    }
-  }
+.royal-edition {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 
+.royal-main-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--royal-blue);
+    margin: 0;
+}
 
-  .pagination {
+.royal-main-title span {
+    color: var(--gold);
+}
+
+.royal-subtitle {
+    font-style: italic;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* Grid */
+.royal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.royal-news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* Card */
+.royal-card {
+    background: #fff;
+    border: 1px solid #eee;
+    transition: all 0.4s ease;
+    border-top: 4px solid var(--royal-blue);
+}
+
+.royal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 35, 102, 0.1);
+    border-top-color: var(--gold);
+}
+
+.royal-image-wrapper {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.royal-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.royal-card:hover .royal-image-wrapper img {
+    transform: scale(1.1);
+}
+
+.royal-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--royal-blue);
+    color: white;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.royal-card-content {
+    padding: 25px;
+}
+
+.royal-date {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.royal-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin: 15px 0 20px;
+    line-height: 1.4;
+    color: var(--royal-blue);
+}
+
+.royal-read-btn {
+    text-decoration: none;
+    color: var(--royal-blue);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.royal-read-btn:hover {
+    color: var(--gold);
+}
+
+/* Pagination */
+.royal-pagination {
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    gap: 30px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
 }
 
-.pagination-btn {
-    background: #000000;
+.royal-pagi-btn {
+    background: var(--royal-blue);
     color: white;
     border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 6px;
+    padding: 12px 25px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s;
     display: flex;
     align-items: center;
-    gap: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
+    gap: 10px;
 }
 
-.pagination-btn:disabled {
+.royal-pagi-btn:disabled {
     background: #ccc;
     cursor: not-allowed;
 }
 
-.pagination-btn:hover:not(:disabled) {
-    background: #0056b3;
+.royal-pagi-btn:hover:not(:disabled) {
+    background: var(--gold);
 }
 
-.pagination-text {
-    font-size: 1rem;
-    color: #333;
-    margin: 0 10px;
+.royal-pagi-status b {
+    color: var(--gold);
 }
-  
+
+/* Loader */
+.royal-loader-box {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.royal-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--gold-faded);
+    border-top: 3px solid var(--gold);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

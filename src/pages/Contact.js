@@ -8,18 +8,8 @@ export const Contact = () => {
   }, []);
 
   const formRef = useRef(null);
-  const [formStatus, setFormStatus] = useState({
-    submitted: false,
-    message: "",
-    error: false,
-  });
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const [formStatus, setFormStatus] = useState({ submitted: false, message: "", error: false });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
@@ -48,19 +38,28 @@ export const Contact = () => {
         setFormData({ name: "", email: "", message: "" });
         setFormStatus({
           submitted: true,
-          message: "✅ Your message has been sent successfully!",
+          message: "Your message has been sent successfully!",
           error: false,
         });
+
+        // Clear message after 3 seconds
+        setTimeout(() => {
+          setFormStatus({ submitted: false, message: "", error: false });
+        }, 3000);
       } else {
         throw new Error("Network error");
       }
     } catch (error) {
-      console.error(error);
       setFormStatus({
         submitted: true,
-        message: "❌ Failed to submit. Please try again.",
+        message: "Failed to submit. Please try again.",
         error: true,
       });
+
+              // Clear message after 3 seconds
+        setTimeout(() => {
+          setFormStatus({ submitted: false, message: "", error: false });
+        }, 3000);
     } finally {
       setSubmitting(false);
     }
@@ -68,75 +67,87 @@ export const Contact = () => {
 
   return (
     <div className="contact-page">
-       <Helmet>
-        <title>Contact – Bharat Centre of Olympic Research & Education</title>
-        <meta name="description" content="Home page of BCORE..." />
+      <Helmet>
+        <title>Contact</title>
       </Helmet>
+
       <div className="contact-grid">
-        {/* Left Side: Contact Form */}
+        {/* Left Side: Modern Form */}
         <div className="contact-wrapper">
-          <h2>Contact Us</h2>
+          <h2>Get In <br />Touch</h2>
 
           {formStatus.submitted && (
-            <p className={formStatus.error ? "error-message" : "success-message"}>
+            <div className={formStatus.error ? "error-message" : "success-message"}>
               {formStatus.message}
-            </p>
+            </div>
           )}
 
           <form ref={formRef} className="contact-form" onSubmit={Submit}>
-            <input
-              placeholder="Your Name"
-              name="name"
-              type="text"
-              pattern="[A-Za-z ]{2,30}"
-              value={formData.name}
-              onChange={handleChange}
-              disabled={submitting}
-              required
-            />
-            <input
-              placeholder="Your Email"
-              name="email"
-              type="email"
-              pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-              value={formData.email}
-              onChange={handleChange}
-              disabled={submitting}
-              required
-            />
-            <textarea
-              placeholder="Your Message"
-              name="message"
-              minLength={10}
-              maxLength={500}
-              value={formData.message}
-              onChange={handleChange}
-              disabled={submitting}
-              required
-            />
+            <div className="input-group">
+              <input
+                placeholder="NAME"
+                name="name"
+                type="text"
+                value={formData.name}
+                onChange={handleChange}
+                disabled={submitting}
+                required
+              />
+            </div>
+            
+            <div className="input-group">
+              <input
+                placeholder="EMAIL"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                disabled={submitting}
+                required
+              />
+            </div>
+
+            <div className="input-group">
+              <textarea
+                placeholder="YOUR MESSAGE"
+                name="message"
+                rows="4"
+                value={formData.message}
+                onChange={handleChange}
+                disabled={submitting}
+                required
+              />
+            </div>
+
             <button type="submit" disabled={submitting}>
-              {submitting ? "Sending..." : "Submit"}
+              {submitting ? "Sending..." : "SEND MESSAGE"}
             </button>
           </form>
         </div>
 
-        {/* Right Side: Contact Info + Map */}
+        {/* Right Side: Royal & Gold Info */}
         <div className="contact-right">
-          <div className="contact-info">
-            <h3>Get in Touch</h3>
-            <p><strong>Address:</strong> Bharat Centre of Olympic Research and Education, Rashtriya Raksha University, Raksha Shakti Road, Lavad, Gandhinagar - Gujarat 382305</p>
-            <p><strong>Email:</strong> bcore.office@rru.ac.in</p>
+          <div className="contact-info">            
+            <div className="info-item">
+              <label>Address</label>
+              <p>Bharat Centre of Olympic Research and Education, RRU, Lavad, Gandhinagar - 382305</p>
+            </div>
+
+            <div className="info-item">
+              <label>Email</label>
+              <p>bcore.office@rru.ac.in</p>
+            </div>
           </div>
 
           <div className="map-section">
             <iframe
               src="https://www.google.com/maps/d/u/0/embed?mid=1qBrfyqNsIAM85EshihXYSfOAKeDYrEA&ehbc=2E312F&noprof=1"
               width="100%"
-              height="300"
+              height="200"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
-              title="Event location"
+              title="RRU Location"
             ></iframe>
           </div>
         </div>

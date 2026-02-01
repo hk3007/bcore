@@ -9,8 +9,15 @@ import page3 from '../pages/Slider/Page 3.jpg';
 import page4 from '../pages/Slider/Page 4.jpg';
 import page5 from '../pages/Slider/Page 5.jpeg';
 
+import slider1 from '../pages/Slider/2nd IORC 1.jpg';
+import slider2 from '../pages/Slider/2nd IORC 2.jpg';
+import slider3 from '../pages/Slider/2nd IORC 3.jpg';
+
 const ImageCarousel = () => {
   const images = [
+    { src: slider1, alt: "Slide 1" },
+    { src: slider2, alt: "Slide 2" },
+    { src: slider3, alt: "Slide 3" },
     { src: "https://rru.ac.in/wp-content/uploads/2026/01/BCORE-Night-Run-Web-SM-scaled.jpg", alt: "Slide 1" },
     { src: page5, alt: "Slide 1" },
     { src: "https://rru.ac.in/wp-content/uploads/2025/11/IMG_0935.jpeg", alt: "Slide 1" },

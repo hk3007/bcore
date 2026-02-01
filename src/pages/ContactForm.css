@@ -1,144 +1,194 @@
-/* Page Container */
-.contact-page {
-    max-width: 1400px;
-  margin: auto;
-  height: 100vh; /* full viewport height */
-  display: flex;
-  align-items: center;
+:root {
+  --royal-blue: #002366;
+  --gold-primary: #d4af37;
+  --gold-gradient: linear-gradient(45deg, #704b00, #d7c600, #8a5e00, #fbf5b7, #aa771c);
+  --glass-white: rgba(255, 255, 255, 0.8);
+  --futuristic-shadow: 0 20px 50px rgba(245, 227, 227, 0.1);
 }
 
-/* Two-column grid for desktop */
+.contact-page {
+  min-height: 100vh;
+  background: #ffffff;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(0, 35, 102, 0.05) 0%, transparent 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0; /* Merged aesthetic */
+  max-width: 1200px;
   width: 100%;
-  align-items: stretch;
+  position: relative;
 }
 
-/* Left Side: Form */
+/* The Futuristic Shard (Form Side) */
 .contact-wrapper {
-  padding: 2rem;
-  background: linear-gradient(145deg, #f0f4ff, #ffffff);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background: var(--glass-white);
+  padding: 3.5rem;
+  border-left: 5px solid;
+  border-image: var(--gold-gradient) 1;
+  box-shadow: var(--futuristic-shadow);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Asymmetric cut */
 }
 
 .contact-wrapper h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  color: #003366;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 1rem;
-  border: 1.8px solid #b0c4de;
-  border-radius: 10px;
+  width: 100%;
+  padding: 1.2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: var(--royal-blue);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #005fa3;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 95, 163, 0.15);
+  border-bottom: 2px solid var(--gold-primary);
+  padding-left: 1.5rem;
 }
 
+/* Submit Button - The Hero Element */
 .contact-form button {
-  background: linear-gradient(to right, #005fa3, #003366);
+  background: var(--royal-blue);
   color: white;
-  padding: 0.8rem;
-  font-size: 1.1rem;
-  font-weight: 600;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   border: none;
-  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  margin-top: 1rem;
+  box-shadow: 0 10px 20px rgba(0, 35, 102, 0.3);
+}
+
+.contact-form button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: var(--gold-gradient);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.contact-form button:hover::before {
+  left: 0;
 }
 
 .contact-form button:hover {
-  transform: scale(1.03);
-  background: linear-gradient(to right, #004080, #001f4d);
+  color: #000;
+  transform: translateY(-3px);
 }
 
-.success-message,
-.error-message {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 8px;
-  padding: 0.75rem;
-}
-
-.success-message {
-  background: #dfffe0;
-  color: #117a00;
-  border: 1px solid #a6e3ab;
-}
-
-.error-message {
-  background: #ffe2e2;
-  color: #a10000;
-  border: 1px solid #f5a3a3;
-}
-
-/* Right Side: Info + Map */
+/* Right Side - Information Panel */
 .contact-right {
+  background: var(--royal-blue);
+  color: white;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.contact-info {
-  background: #f9f9ff;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  justify-content: center;
+  position: relative;
+  margin-left: -50px; /* Overlap effect */
+  padding-left: 80px;
+  clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .contact-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #003366;
+  font-size: 1.8rem;
+  color: var(--gold-primary);
+  margin-bottom: 1.5rem;
+  position: relative;
 }
 
-.contact-info p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  color: #333;
+.info-item {
+  margin-bottom: 2rem;
 }
 
+.info-item label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+}
+
+.info-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Map - Futuristic Overlay */
 .map-section {
-  margin-top: 1.5rem;
-  text-align: center;
+  margin-top: 2rem;
+  filter: opacity(0.9) contrast(1.2); /* Makes map match the dark futuristic theme */
+  transition: 0.5s;
 }
 
-.map-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #003366;
+.map-section:hover {
+  filter: grayscale(0) invert(0);
 }
 
-/* Responsive: stack for mobile */
+/* Success/Error Styling */
+.success-message {
+  border-left: 4px solid #d4af37;
+  color: var(--gold-primary);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Responsive */
 @media (max-width: 900px) {
-  .contact-page {
-    height: auto;
-  }
-
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
-  .map-section iframe {
-    height: 250px;
+  .contact-wrapper, .contact-right {
+    clip-path: none;
+    margin-left: 0;
+    padding: 2rem;
+  }
+  .contact-wrapper h2 {
+    font-size: 2rem;
   }
 }

@@ -207,3 +207,88 @@
     padding: 40px 5%;
   }
 }
+
+.past-events-banner-header {
+  position: relative;
+  background-color: #ffffff;
+  padding: 100px 20px;
+  margin-bottom: 60px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Big ghost text in the background */
+.past-events-banner-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15vw;
+  font-weight: 900;
+  color: rgba(0, 26, 77, 0.03); /* Very faint Royal Blue */
+  z-index: 0;
+  letter-spacing: 20px;
+  pointer-events: none;
+}
+
+.past-events-banner-content {
+  position: relative;
+  z-index: 1;
+}
+
+.past-events-banner-tag {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c5a059; /* Gold */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.past-events-banner-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  color: #001a4d; /* Dark Royal Blue */
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+}
+
+/* Sophisticated line divider with diamond */
+.past-events-banner-accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.past-events-banner-accent .line {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #001a4d);
+}
+
+.past-events-banner-accent .line:last-child {
+  background: linear-gradient(90deg, #001a4d, transparent);
+}
+
+.past-events-banner-accent .diamond {
+  width: 10px;
+  height: 10px;
+  background: #c5a059; /* Gold */
+  transform: rotate(45deg);
+}
+
+/* Responsive Tweak */
+@media (max-width: 768px) {
+  .past-events-banner-header {
+    padding: 60px 15px;
+  }
+  .past-events-banner-accent .line {
+    width: 40px;
+  }
+}

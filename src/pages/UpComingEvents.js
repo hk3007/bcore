@@ -16,28 +16,6 @@ export const UpComing = () => {
     return new Date(cleanDateStr + ' 2025'); // Assume year is 2025 for consistency
   };
 
-  const formatDate = (dateStr) => {
-    const options = { day: 'numeric', month: 'short', year: 'numeric' };
-
-    if (dateStr.includes('-')) {
-      const [start, end] = dateStr.split('-').map((s) => s.trim());
-      const cleanStart = start.replace(/(\d+)(st|nd|rd|th)/, '$1');
-      const cleanEnd = end.replace(/(\d+)(st|nd|rd|th)/, '$1');
-
-      const startDate = new Date(cleanStart + ' 2025');
-      const endDate = new Date(cleanEnd + ' 2025');
-
-      return `${startDate.getDate()}–${endDate.getDate()} ${endDate.toLocaleString(
-        'default',
-        { month: 'short' }
-      )} ${endDate.getFullYear()}`;
-    } else {
-      const clean = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
-      const date = new Date(clean + ' 2025');
-      return date.toLocaleDateString('en-US', options);
-    }
-  };
-
   const events = [
     {
       id: 1,
@@ -153,7 +131,7 @@ export const UpComing = () => {
     </div>
   ) : (
     <div className="chrono-empty">
-      <p>The arena is being prepared. Stay tuned.</p>
+      <p>Stay tuned for Further Updates</p>
     </div>
   )}
 </div>

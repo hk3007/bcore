@@ -564,79 +564,79 @@ export const EventDetails = () => {
             speakers: [
                 {
                     id: 1,
-                    name: "Mr. Makis Asimakopoulos",
+                    name: "Mr. Makis Asimakopoulos, Director International Olympic Academy",
                     about: "Mr. Makis Asimakopoulos is the Director of the International Olympic Academy, guiding its educational mission and global Olympic learning initiatives.",
                     img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa37849746_363501343_364681259262932_2813776722327982822_n.jpg"
                 },
                 {
                     id: 2,
-                    name: "Ms. Alexandra Karaiskou",
+                    name: "Ms. Alexandra Karaiskou, IOA President's Office, NOAs Relations",
                     about: "Ms. Alexandra Karaiskou heads the HOC President’s Office and oversees NOCs/NOAs relations while closely collaborating with the International Olympic Academy.",
                     img: "https://cdn.prod.website-files.com/670e864f22f28caa378487f2/670e864f22f28caa378489dd_Alexandra%20Karaiskou%20.jpg"
                 },
                 {
                     id: 3,
-                    name: "Prof. Dr. Ravi Prakash Ranjan",
+                    name: "Prof. Dr. Ravi Prakash Ranjan, Assistant Professor, Africa Business School ",
                     about: "Prof. Dr. Ravi Prakash Ranjan is an Assistant Professor of Business Analytics & AI at Africa Business School, specializing in data-driven decision-making and artificial intelligence in business.",
                     img: "https://media.licdn.com/dms/image/v2/D5603AQGEiVXBoQbjTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1715592382605?e=2147483647&v=beta&t=rX2ZD-d0ato7DZOdf3FCHnamZ_D4rOShvR4KIcv-iXs"
                 },
                 {
                     id: 4,
-                    name: "Mr. Rushdee Warley",
+                    name: "Mr. Rushdee Warley, High Performance Consultant",
                     about: "Rushdee Warley is a High Performance Consultant, specializing in optimizing elite performance through strategic training, leadership, and evidence-based performance systems.",
                     img: "https://media.licdn.com/dms/image/v2/D4D03AQE9Z4lIlYqrrA/profile-displayphoto-shrink_200_200/B4DZY9GXqXHIAY-/0/1744781802569?e=1770854400&v=beta&t=VOwfHDaSxkzfw81EoGqdknsfnc5RD0KAMo6neDeKb6w"
                 },
                 {
                     id: 5,
-                    name: "Mr. Pradyut Voleti",
+                    name: "Mr. Pradyut Voleti, Founder and Head Coach of Dribble Academy",
                     about: "Pradyut Voleti, Founder and Head Coach of Dribble Academy, is dedicated to developing skilled, confident footballers through structured training and passion for the game.",
                     img: "https://media.licdn.com/dms/image/v2/C4D03AQHP1v0g2dNsew/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1644645267112?e=1770854400&v=beta&t=qRdsDZWnH1JgyR9bVy7jVNTG3VeBM5gua2hxPv3vijE"
                 },
                 {
                     id: 6,
-                    name: "Dr. Usha Sujit Nair",
+                    name: "Dr. Usha Sujit Nair, Former Vice Chancellor, National Sports University",
                     about: "Dr. Usha Sujit Nair, Former Vice Chancellor of the National Sports University, is a respected academic leader in sports education and governance.",
                     img: "https://rru.ac.in/wp-content/uploads/2025/12/USNair.jpg"
                 },
                 {
                     id: 7,
-                    name: "Mr. Grzegorz Botwina",
+                    name: "Mr. Grzegorz Botwina, Director, Polish Olympic Studies and Research Centre",
                     about: "Mr. Grzegorz Botwina is Director of the Polish Olympic Studies and Research Centre, focusing on research and development in Olympic education and policy.",
                     img: "https://sportacademy.com/wp-content/uploads/2024/09/1634903794601.jpeg"
                 },
                 {
                     id: 8,
-                    name: "Prof. Wolfgang Maennig",
+                    name: "Prof. Wolfgang Maennig, Chair of Economic Policy, University of Hamburg",
                     about: "Prof. Wolfgang Maennig is Chair of Economic Policy at the University of Hamburg, specializing in the economics of sport and mega-events such as the Olympic Games.",
                     img: "https://assets.rrz.uni-hamburg.de/instance_assets/fakws/14447474/maennig-640x361-75e48055c7df6d3b79ce8663e6e7ae0301cfcc41.jpg"
                 },
                 {
                     id: 9,
-                    name: "Mr. Tony Cunningham",
+                    name: "Mr. Tony Cunningham, Manager, Education (Policy and Research) WADA",
                     about: "Mr. Tony Cunningham serves as Senior Manager for Education Policy and Research at WADA, advancing global anti-doping education strategies.",
                     img: "https://media.licdn.com/dms/image/v2/D4E03AQGEt-QJfDcIzA/profile-displayphoto-shrink_400_400/B4EZbLGo6EHYAk-/0/1747164237885?e=1770249600&v=beta&t=pBgT2YBYvBgOZQ8jmgUpRdwK2vOio5D_ulzMPqPcujo"
                 },
                 {
                     id: 10,
-                    name: "Dr Ankush Gupta",
+                    name: "Dr Ankush Gupta, Senior Project Officer, National Anti-Doping Agency (NADA)",
                     about: "Dr. Ankush Gupta is a Senior Project Officer at the National Anti-Doping Agency (NADA), contributing to anti-doping initiatives and clean sport programs.",
                     img: "https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg"
                 },
                 {
                     id: 11,
-                    name: "Prof. Yannis Pitsiladis",
+                    name: "Prof. Yannis Pitsiladis, Distinguished professor at Hong Kong Baptist University",
                     about: "Prof. Yannis Pitsiladis is a distinguished professor at Hong Kong Baptist University, recognized for his research contributions in sports science and Olympic studies.",
                     img: "https://speh.hkbu.edu.hk/cache/img/ed72898b5b891ace11160bde5a5f7d1b.png"
                 },
                 {
                     id: 12,
-                    name: "Dr. Rohit K. Thapa",
+                    name: "Dr. Rohit K. Thapa, Assistant Professor at the Symbiosis School of Sports",
                     about: "Dr. Rohit K. Thapa is an Assistant Professor at the Symbiosis School of Sports, specializing in sports education and academic excellence.",
                     img: 'https://rru.ac.in/wp-content/uploads/2021/12/pic-1.jpeg'
                 },
                 {
                     id: 13,
-                    name: "Prof Dr Alka Beotra",
+                    name: "Prof Dr Alka Beotra, Former Director of Anti-Doping Laboratories (Qatar & India)",
                     about: "Former Director of Anti-Doping Laboratories (Qatar & India), ex-Scientific Director of NDTL New Delhi, Professor of Practice/Eminence in Sports Science, and WADA–ISO certified international consultant.L",
                     img: 'https://media.licdn.com/dms/image/v2/D4D03AQHUeEME9KQ98w/profile-displayphoto-scale_200_200/B4DZmLIFUHGwAY-/0/1758975791608?e=1770854400&v=beta&t=7RgVFVzjNemqBqE5gVg7bwfPXa3hqsHpuFXSAYivYPQ'
                 },
@@ -654,19 +654,37 @@ export const EventDetails = () => {
                 },
                 {
                     id: 16,
-                    name: "Mr. Wang Xinming",
+                    name: "Mr. Wang Xinming, Minister-Counselor",
                     about: "Mr. Wang Xinming serves as Minister-Counselor, contributing to diplomatic engagement and international collaboration within the Olympic and sports sectors.",
                     img: "https://en.people.cn/NMediaFile/2019/0403/FOREIGN201904031634000527663791396.jpg"
                 },
                 {
                     id: 17,
-                    name: "Mr. Anders Pettersson",
+                    name: "Mr. Anders Pettersson, Board Member, Brazilian Olympic Committee",
                     about: "Mr. Anders Pettersson is a Board Member of the Brazilian Olympic Committee and President of the Brazilian Snow Sports Federation, supporting winter sports development in Brazil.",
                     img: "https://media.licdn.com/dms/image/v2/C4D03AQGgLLd8Y_uXTA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1543325756629?e=2147483647&v=beta&t=i6uGNhuZw7GgieV8pE2Tjlr47QCf4aifnXDA_np7jEo"
                 },
                 {
                     id: 18,
-                    name: "Mr. Joseph Oluka",
+                    name: "Cedric Vanden Bogaerde, Executive Director (AISTS)",
+                    about: "Cédric Vanden Bogaerde is the Executive Director of the International Academy of Sport Science and Technology (AISTS), leading its global sport management education and strategy efforts after a decade of strategic work with the International Olympic Committee",
+                    img: "https://media.licdn.com/dms/image/v2/C4D03AQFOZrieHAx5lQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1594632976397?e=1770854400&v=beta&t=lelsF3CzgLqx5h2H-CD8M16e6WcXFrqhsGmaL0CFci4"
+                },
+                {
+                    id: 19,
+                    name: "Shri Adille Sumariwalla, Founder and Managing Director of InterSpace Communications Pvt. Ltd.",
+                    about: "Adille J. Sumariwalla is the Founder and Managing Director of InterSpace Communications Pvt. Ltd. and serves as President of TERF, bringing visionary leadership at the intersection of sports, education, and strategic communications.",
+                    img: "https://static.toiimg.com/thumb/msid-70393719,width-400,resizemode-4/70393719.jpg",
+                },
+                {
+                    id: 20,
+                    name: "Parth Goswami, Legal Head and Member - Disciplinary and Appeals Panel -@World Athletics",
+                    about: "Parth Goswami is the Legal Head and Member of the Disciplinary and Appeals Panel at World Athletics, bringing legal expertise to sports governance.",
+                    img: "https://media.licdn.com/dms/image/v2/D5603AQFK7v-S_auBTw/profile-displayphoto-scale_200_200/B56ZoqDPMrJkAY-/0/1761642084579?e=1770854400&v=beta&t=rYiSz4pM7a7DNjrApVhkk_j__uCi12KvLwkNMPy-Khc",
+                },
+                {
+                    id: 18,
+                    name: "Mr. Joseph Oluka, Assistant Administrator Technical at Uganda Olympic Committee",
                     about: "Mr. Joseph Oluka works as Assistant Administrator Technical at the Uganda Olympic Committee, supporting programs that strengthen Olympic sport development in Uganda.",
                     img: "https://nocuganda.org/wp-content/uploads/2025/11/Joseph.jpg"
                 },
@@ -684,19 +702,19 @@ export const EventDetails = () => {
                 },
                 {
                     id: 21,
-                    name: "Mr. Rodrigo Bravo Baeza",
+                    name: "Mr. Rodrigo Bravo Baeza, professor and researcher, Olympic Studies Centre at Escuela Nacional del Deporte University",
                     about: "Mr. Rodrigo Bravo Baeza is a professor and researcher representing the Olympic Studies Centre at Escuela Nacional del Deporte University in Cali, Colombia.",
                     img: "https://endeporte.edu.co/info/endeporte/media/galeria/thumbs/thgaleria_400X400_4785.webp"
                 },
                 {
                     id: 22,
-                    name: "Ms. Tanvi Hubli",
+                    name: "Ms. Tanvi Hubli, Researcher at The University of Edinburgh",
                     about: "Ms. Tanvi Hubli is a researcher at The University of Edinburgh, focusing on themes related to sport, society, and the Olympic Movement.",
                     img: "https://media.licdn.com/dms/image/v2/D4E03AQFqMS3x3Vwf3Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704564920961?e=1770249600&v=beta&t=y2wNjnVZvqO08s0k5ogJzOf4I_7RpuIFAceNGpUBAho"
                 },
                 {
                     id: 23,
-                    name: "Mr. Carlos Quiroz",
+                    name: "Mr. Carlos Quiroz, Vice-Principal and researcher at Escuela Nacional del Deporte University",
                     about: "Mr. Carlos Quiroz serves as Vice-Principal and researcher at Escuela Nacional del Deporte University in Cali, Colombia, contributing to academic and Olympic studies initiatives.",
                     img: "https://i1.rgstatic.net/ii/profile.image/394317303697412-1471023979458_Q512/Carlos-Quiroz-Mora.jpg"
                 },
@@ -705,6 +723,24 @@ export const EventDetails = () => {
                     name: "Ms. Elizaveta Zhuk",
                     about: "Ms. Elizaveta Zhuk holds a PhD from Paris-Saclay University and works as a visiting professor engaged in research and teaching related to sport and Olympic education.",
                     img: "https://media.licdn.com/dms/image/v2/C4E03AQG01MDXsAUSPw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1619526693481?e=1770249600&v=beta&t=JxSXLp0xnAg6nXLWdUZpu9oViVtJ0tVWON1uVaJOmnI"
+                },
+                {
+                    id: 24,
+                    name: "Mr. Chris Hadley-Hawley, Forming partnerships to deliver the best World Games in Perth, 2027",
+                    about: "Chris Hadley-Hawley leads the development of strategic partnerships to support the successful delivery of the World Games, Perth 2027. He focuses on collaboration and long-term value to create a truly world-class global sporting event.",
+                    img: "https://media.licdn.com/dms/image/v2/C5603AQHdIlQehHePHA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517345563351?e=1770854400&v=beta&t=DM1KJa7tM2ELQ3K6P2QGOC1afCVpZ7PfEl7eiKSD07Y"
+                },
+                {
+                    id: 24,
+                    name: "Ms. Ekaterina Lazareva, Third Secretary Culture, Education & Sports, Embassy of Russia in India",
+                    about: "Ms. Ekaterina Lazareva is the Third Secretary for Culture, Education & Sports at the Embassy of Russia in India.",
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvU8-LhpfZ5bHLPuI8YJzT9xNZzSYcHtWSag&s"
+                },
+                {
+                    id: 24,
+                    name: "Mr. Fred Quek, Technical Lead SEA Games Federation Office",
+                    about: "Mr. Fred Quek is the Technical Lead at the SEA Games Federation Office.",
+                    img: "https://media.licdn.com/dms/image/v2/D5603AQGKM3FdoTUafQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1706100847207?e=1770854400&v=beta&t=lAXYw63FZWBB9kIVWfn4GS1Bus1F_qAJdLJMsRtXJx4"
                 }
             ],
             sponsors: [
@@ -802,32 +838,6 @@ export const EventDetails = () => {
                     }
                 ]
             },
-            guests: [
-                {
-                    id: 1,
-                    name: "Shri (Dr.) Mansukh Mandaviya",
-                    about: "Shri (Dr.) Mansukh Mandaviya is the current Union Minister of Health and Family Welfare, Chemicals, and Fertilizers, Government of India. Known for his visionary leadership, he has been instrumental in driving key healthcare reforms and fostering India's self-reliance in the pharmaceutical sector.",
-                    img: "https://youthparliamentofindia.co.in/wp-content/uploads/2021/10/Mansukh_Mandaviya.jpg",
-                },
-                {
-                    id: 2,
-                    name: "Shri Harsh Sanghavi",
-                    about: "Harsh Sanghavi is the Minister of State for Home, Industries, and Youth Affairs in the Government of Gujarat. A dynamic leader, he is known for his proactive approach to governance and engaging with youth for progressive development initiatives.",
-                    img: "https://harshsanghavi.in/img/ss11.png ",
-                },
-                {
-                    id: 3,
-                    name: "Shri Bhupendra Rajnikant Patel",
-                    about: "Shri Bhupendra Rajnikant Patel is the Hon’ble Chief Minister of Gujarat, known for his focus on good governance, development, and public welfare.",
-                    img: "https://media.assettype.com/nationalherald%2F2021-09%2F7844e501-1fe8-4928-a0cb-fdbe4e93f784%2Fbhupendra_patel.jpg?auto=format%2Ccompress&fmt=webp&w=1200",
-                },
-                {
-                    id: 5,
-                    name: "Prof. Bimal N Patel, VC, RRU",
-                    about: "Prof. (Dr.) Bimal N. Patel is the Vice-Chancellor of Rashtriya Raksha University (RRU), a premier security and police university in India. He is also a Member of the National Security Advisory Board (NSAB) of India and the UN International Law Commission (2023-2027)",
-                    img: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Prof.%28Dr.%29_Bimal_N._Patel.jpg"
-                }
-            ],
             resources: {
               schedule: "https://drive.google.com/file/d/1_eGqtkwx0gCidaNvjMU_7OFQYeQRtym_/view?usp=sharing",
               brochure: "https://drive.google.com/file/d/1166eN6ZlTAL8r2vHmNToTwFrqkXvZb_I/view?usp=sharing",
