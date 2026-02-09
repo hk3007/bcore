@@ -15,6 +15,8 @@ import GalleryCarousel from "../components/GalleryCarousel";
 import WorkshopSection from "../components/eventsdetails/WorkshopSection";
 import NadaLogo from "./Images/NADA Logo.png"
 import IORC2 from "./Images/IORC2.png"
+import LinkedInHoneycomb from "../components/LinkedInHoneycomb";
+import BcoreWork from "../components/BentoEcosystem";
 
 
 export const BCORE = () => {
@@ -182,21 +184,59 @@ export const BCORE = () => {
             )}
 
 
-            <section className="logo-section-1">
-                <div className="logos-1">
-                    <img src={logo1} alt="Logo 3" className="logo-1" />
-                    <img src={logo5} alt="Logo 5" className="logo-1" />
+            <section className="bcore-prestige-section">
+            <div className="bcore-prestige-container">
+                
+                {/* NEW: Integrated Logo Header (Hidden on Mobile) */}
+                <div className="prestige-logo-row">
+                    <img src={logo1} alt="International Olympic Committee" className="prestige-logo" />
+                    <div className="logo-divider"></div>
+                    <img src={logo5} alt="Indian Olympic Association" className="prestige-logo" />
                 </div>
-            </section>
 
-            <div className="content-container">
-                <h4>
-                Rashtriya Raksha University (RRU) is honored to announce the establishment of the Bharat Centre for Olympic Research and Education (BCORE), 
-                a landmark initiative that positions India at the forefront of global Olympic scholarship. This groundbreaking center emerged as the 71st Olympic Studies Research Centre (OSRC) 
-                globally and the first dedicated Olympic research facility in India and South Asia, officially recognized by the International Olympic Committee (IOC) Olympic Studies Centre and endorsed by the Indian Olympic Association (IOA). 
-                BCORE is now an active member in the global network of academic Olympic Studies and Research Centres, contributing to the international discourse on Olympic studies and research.
-                </h4>
+                <div className="prestige-split-layout">
+                    {/* LEFT SIDE: The Achievement Metrics */}
+                    <div className="prestige-left">
+                        <div className="metric-card" data-aos="fade-right">
+                            <span className="metric-num">71<sup>th</sup></span>
+                            <span className="metric-label">Global OSRC Hub</span>
+                            <div className="metric-progress-line"></div>
+                        </div>
+                        
+                        <div className="metric-card" data-aos="fade-right" data-aos-delay="200">
+                            <span className="metric-num">01<sup>st</sup></span>
+                            <span className="metric-label">In India & S. Asia</span>
+                            <div className="metric-progress-line"></div>
+                        </div>
+
+                        <div className="endorsement-badges">
+                            <div className="badge-item">IOC Recognized</div>
+                            <div className="badge-item">IOA Endorsed</div>
+                        </div>
+                    </div>
+
+                    {/* RIGHT SIDE: The Narrative Information */}
+                    <div className="prestige-right" data-aos="fade-left">
+                        <div className="content-glass-box">
+                            <h3 className="announcement-title">A Landmark Where Olympism Meets Education</h3>
+                            <p className="primary-text">
+                                <span className="highlight-rru">Rashtriya Raksha University (RRU)</span> is honored 
+                                to announce the establishment of the Bharat Centre for Olympic Research and Education (BCORE).
+                            </p>
+                            <p className="secondary-text">
+                                This groundbreaking center positions India at the forefront of global Olympic scholarship, 
+                                officially recognized by the <strong>International Olympic Committee (IOC) </strong> 
+                                Olympic Studies Centre. 
+                            </p>
+                            <p className="secondary-text">
+                                As an active member in the global network of academic Olympic Studies, BCORE contributes 
+                                to the international discourse, fostering research and Olympic ideals across the region.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            </section>
 
            {events
                 .filter((event) => {
@@ -268,55 +308,112 @@ export const BCORE = () => {
             </div>
             </div>
             ))}
+            <section className="bcore-overview-main">
+             <div className="bcore-overview-v2">
+                <div className="bcore-overview-container">
+                    <div className="bcore-accent-blob"></div>
+                    
+                    <div className="bcore-content-wrapper">
+                        <header className="bcore-header-area">
+                            <span className="bcore-tag">Institutional Hub</span>
+                            <h2>Overview</h2>
+                            <div className="bcore-olympic-divider">
+                                <span className="ring-blue"></span>
+                                <span className="ring-yellow"></span>
+                                <span className="ring-black"></span>
+                                <span className="ring-green"></span>
+                                <span className="ring-red"></span>
+                            </div>
+                        </header>
 
-            <section className="bcoreoverview">
-                <h2>Overview</h2>
-                <p>
-                    The Bharat Centre for Olympic Research and Education (BCORE) at Rashtriya Raksha University aims to serve as a hub for disseminating research-based knowledge to scholars, professionals, sports personnel, coaches, and enthusiasts with a focus on promoting Olympism and fostering Olympic ideals within the country. This Centre will offer a wide array of resources and information to support academic pursuits, professional development, and sports management initiatives.
-                </p>
+                        {/* NEW: Impact Numbers Section */}
+                        <div className="bcore-stats-row">
+                            <div className="stat-item">
+                                <span className="stat-number">01</span>
+                                <span className="stat-label">Promoting <br/>Olympism</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">02</span>
+                                <span className="stat-label">Fostering <br/>Ideals</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">03</span>
+                                <span className="stat-label">Academic <br/>Support</span>
+                            </div>
+                            <div className="stat-item">
+                                <span className="stat-number">04</span>
+                                <span className="stat-label">Sports <br/>Management</span>
+                            </div>
+                        </div>
+
+                        <div className="bcore-text-card">
+                            <div className="bcore-quote-mark">“</div>
+                            <p>
+                                The Bharat Centre for Olympic Research and Education (BCORE) at 
+                                Rashtriya Raksha University aims to serve as a hub for disseminating 
+                                research-based knowledge to scholars, professionals, sports personnel, 
+                                coaches, and enthusiasts with a focus on promoting Olympism and 
+                                fostering Olympic ideals within the country. 
+                            </p>
+                            <p>
+                                This Centre will offer a wide array of resources and information 
+                                to support academic pursuits, professional development, and sports 
+                                management initiatives.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </section>
 
-            <section className="bcore-sections">
-            <h2>Explore BCORE</h2>
-            <div className="sections-grid">
-                <Link to="/olympicresearchgrants" className="section-card card-1" data-aos="fade-up">
-                <h3>BCORE Grants</h3>
-                </Link>
-                <Link to="/HumanPerformanceLab" className="section-card card-2" data-aos="fade-up" data-aos-delay="100">
-                <h3>Human Performance Lab</h3>
-                </Link>
-                <Link to="#" className="section-card card-3" data-aos="fade-up" data-aos-delay="200">
-                <h3>Research Activities</h3>
-                </Link>
-                <Link to="/upcomingevents" className="section-card card-4" data-aos="fade-up" data-aos-delay="300">
-                <h3>Events</h3>
-                </Link>
-                <Link to="#" className="section-card card-5" data-aos="fade-up" data-aos-delay="400">
-                <h3>Newsletter</h3>
-                </Link>
-                <Link to="/careers" className="section-card card-6" data-aos="fade-up" data-aos-delay="500">
-                <h3>Work with BCORE</h3>
-                </Link>
-            </div>
-        </section>
-        
+            <BcoreWork />
+            {/* 🏅 OLYMPIC CINEMATIC VIDEO SECTION */}
+            <section className="oly-cinema-outer-wrapper">
+                {/* Moving Olympic-Themed Background Objects */}
+                <div className="oly-bg-shape oly-ring-blue"></div>
+                <div className="oly-bg-shape oly-ring-yellow"></div>
+                <div className="oly-bg-shape oly-ring-green"></div>
+                <div className="oly-bg-shape oly-ring-red"></div>
+                
+                <div className="oly-cinema-container">
+                    <header className="oly-cinema-header">
+                        <div className="oly-badge">
+                            <span className="oly-pulse"></span>
+                            PREMIUM CONTENT
+                        </div>
+                        <h2 className="oly-main-title">
+                            Watch <span className="oly-text-gradient">BCORE</span> in Action
+                        </h2>
+                        <p className="oly-subtitle">Experience the next generation of athletic performance</p>
+                    </header>
+
+                    <div className="oly-video-projection">
+                        {/* The decorative "Hud" frame */}
+                        <div className="oly-hud-frame">
+                            <div className="oly-corner oly-tl"></div>
+                            <div className="oly-corner oly-tr"></div>
+                            <div className="oly-corner oly-bl"></div>
+                            <div className="oly-corner oly-br"></div>
+                        </div>
+                        
+                        <div className="oly-iframe-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/7Mhy_s0Nv7E?autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1&loop=1&playlist=7Mhy_s0Nv7E"
+                                title="BCORE Video"
+                                frameBorder="0"
+                                allow="autoplay; encrypted-media; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                            {/* Tech Scanline Effect */}
+                            <div className="oly-scanline"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <LinkedInHoneycomb />
+
         <GalleryCarousel />
         
-        {/* BCORE Video Section */}
-        <section className="bcore-video">
-            <h2>Watch BCORE in Action</h2>
-            <div className="video-wrapper">
-                <iframe
-                    width="100%"
-                    height="500"
-                    src="https://www.youtube.com/embed/7Mhy_s0Nv7E?autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1&loop=1&playlist=7Mhy_s0Nv7E"
-                    title="BCORE Video"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
-            </div>
-        </section>
         <PastSpeakers />
         {/* <PartnerSponsorSection showPartners={true} showSponsors={true} /> */}
         </div>

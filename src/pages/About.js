@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import './about.css'; // Updated CSS
+import './about.css'; 
 import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png';
-import { FaBullseye, FaFlagCheckered } from 'react-icons/fa';
+import { FaBullseye, FaFlagCheckered, FaQuoteLeft, FaGlobeAmericas } from 'react-icons/fa';
 import Map from './Images/Olympic Map.png';
 import { Helmet } from 'react-helmet';
 
@@ -14,98 +14,97 @@ export const About = () => {
     return (
     <>
         <Helmet>
-        <title>About – Bharat Centre of Olympic Research & Education</title>
-        <meta name="description" content="Home page of BCORE..." />
-      </Helmet>
-        <div className="about-page">
-            {/* === Header === */}
-            <header className="about-header">
-                <h1 className="main-title">About Us</h1>
-                <p className="subtitle">Our mission, vision, and the pursuit of excellence in Olympic education.</p>
-            </header>
-
-            {/* === Logo Section === */}
-            <section className="logo-section">
-                <div className="logo-container">
-                    <img src={logo1} alt="BCORE Logo" className="logo-Cont" />
-                    <img src={logo5} alt="Indian Olympic Association Logo" className="logo-Cont" />
+            <title>About – Bharat Centre of Olympic Research & Education</title>
+            <meta name="description" content="Learn about BCORE's mission and history." />
+        </Helmet>
+        
+        <div className="about-container">
+            {/* --- Hero Section --- */}
+            <section className="about-hero">
+                <div className="hero-overlay"></div>
+                <div className="hero-content">
+                    <span className="hero-badge">Established 2024</span>
+                    <h1 className="hero-title">Elevating the <span className="gold-text">Olympic</span> Spirit</h1>
+                    <p className="hero-subtitle">Bharat Centre of Olympic Research & Education</p>
                 </div>
             </section>
 
-            <section className="objectives-section">
-            <div className="objectives-box">
-                {/* Right Objectives Card */}
-                <div className="objectives-content">
-                <div className="content-card">
-                    <div className="icon-title-group">
-                    <FaBullseye className="card-icon" />
-                    <h2 className="card-title">INTRODUCTION</h2>
-                    </div>
-                    <ul className="info-list">
-                    <li className="list-item-card">The idea of creating an Olympic Studies Centre can be traced back to the reviver of the Modern Olympic Games, Baron Pierre de Coubertin, who said shortly before his death: “I believe that a centre of Olympic studies would aid the preservation and progress of my work more than anything else.” The IOC Olympic Studies Centre was created under the Antonio Samaranch presidency in 1982 with the objective to contribute to the understanding, education and studies of Olympism.</li>
-                    <li className="list-item-card">Inspired from the words of Baron Pierre de Coubertin, the Bharat Center of Olympic Research and Education (BCORE) was established in 2024. The BCORE as per its Director, Utsav Chaware is envisioned to have “sports and education go hand in hand, where disciplines merge to create a robust Olympic ecosystem. The seeds we sow today will shape the next generation of Olympic scholars, workforce and leaders”.</li>
-                    <li className="list-item-card">Being the first Indian and South Asian Olympic Study Center, the BCORE aims to carry forward the following objectives</li>
-                    </ul>
-                </div>
-                </div>
-                {/* Left Image */}
-                <div className="objectives-image-container">
-                <img src={Map} alt="Olympic Education" className="objectives-image" />
-                </div>
-
+            {/* --- Partnership Logos --- */}
+            <div className="partnership-strip">
+                <img src={logo1} alt="BCORE Logo" />
+                <div className="vertical-divider"></div>
+                <img src={logo5} alt="Indian Olympic Association Logo" />
             </div>
-            </section>
 
-            <section className="objectives-section">
-            <div className="objectives-box">
-                {/* Right Objectives Card */}
-                <div className="objectives-content">
-                <div className="content-card">
-                    <div className="icon-title-group">
-                    <FaFlagCheckered className="card-icon" />
-                    <h2 className="card-title">OBJECTIVES</h2>
+            {/* --- Introduction Section --- */}
+            <section className="intro-section">
+                <div className="container">
+                    <div className="intro-grid">
+                        <div className="intro-text">
+                            <div className="section-label"><FaBullseye /> Introduction</div>
+                            <h2>The Legacy of <br/> Modern Olympism</h2>
+                            <p>The idea of creating an Olympic Studies Centre can be traced back to the reviver of the Modern Olympic Games, Baron Pierre de Coubertin, who said shortly before his death: <strong>“I believe that a centre of Olympic studies would aid the preservation and progress of my work more than anything else.”</strong></p>
+                            <p>The IOC Olympic Studies Centre was created under the Antonio Samaranch presidency in 1982. Inspired by these words, BCORE was established in 2024 as the first South Asian Olympic Study Center.</p>
+                        </div>
+                        <div className="intro-image">
+                            <img src={Map} alt="Olympic Map" className="map-visual" />
+                            <div className="image-accent-box"></div>
+                        </div>
                     </div>
-                    <ul className="info-list">
-                    <li className="list-item-card">
-                        To develop, offer and organize educational programs, courses, and
-                        activities contributing to Olympic education in India as well as in
-                        South Asia.
-                    </li>
-                    <li className="list-item-card">
-                        Encourage research and innovation in Olympic studies that contribute
-                        to the advancement of Olympic knowledge.
-                    </li>
-                    <li className="list-item-card">
-                        Creating a database for Olympic Education, literature, personalities,
-                        and documentaries and facilitating as a resource center in Olympic
-                        Education.
-                    </li>
-                    <li className="list-item-card">
-                        Collaborate with national sports bodies, government agencies, and other
-                        sports organizations to assist in the development of policies and
-                        strategies promoting the organization of sporting events, including
-                        hosting the Olympic Games.
-                    </li>
-                    </ul>
                 </div>
-                </div>
-            </div>
             </section>
 
-            {/* === BCORE Overview Section === */}
-            <section className="bcore-overview">
-                <div className="text-left">
-                    <h2>BCORE's Unique Specialization</h2>
-                    <p>
-                        BCORE's unique area of specialization lies in the nuanced intersection of Olympic policies and international relations, where it contributes to advancing scholarly understanding and shaping policy discourse in this critical domain. Furthermore, BCORE actively champions the cause of sports for peace, leveraging the universal appeal of sports to bridge divides and promote harmony on both national and global scales.
-                    </p>
+            {/* --- Quote Section --- */}
+            <section className="quote-breakout">
+                <FaQuoteLeft className="quote-icon" />
+                <blockquote className="director-quote">
+                    "Sports and education go hand in hand, where disciplines merge to create a robust Olympic ecosystem. The seeds we sow today will shape the next generation of Olympic scholars."
+                </blockquote>
+                <cite>— Utsav Chaware, Director</cite>
+            </section>
+
+            {/* --- Objectives Section (Grid) --- */}
+            <section className="objectives-modern">
+                <div className="container">
+                    <div className="section-label center"><FaFlagCheckered /> Our Mission</div>
+                    <h2 className="section-title">Core Objectives</h2>
+                    <div className="obj-grid">
+                        <div className="obj-card">
+                            <div className="obj-num">01</div>
+                            <p>To develop, offer and organize educational programs and activities contributing to Olympic education in India and South Asia.</p>
+                        </div>
+                        <div className="obj-card">
+                            <div className="obj-num">02</div>
+                            <p>Encourage research and innovation in Olympic studies that contribute to the advancement of Olympic knowledge.</p>
+                        </div>
+                        <div className="obj-card">
+                            <div className="obj-num">03</div>
+                            <p>Creating a database for Olympic Education and facilitate as a resource center for literature and documentaries.</p>
+                        </div>
+                        <div className="obj-card">
+                            <div className="obj-num">04</div>
+                            <p>Collaborate with national sports bodies to assist in development of policies for hosting the Olympic Games.</p>
+                        </div>
+                    </div>
                 </div>
-                <img src="https://www.asiaeducationreview.com/uploaded_images/newstransfer/xkpa2Olympic0.jpg" alt="Olympic Policies" className="bcore-image" />
-                <div className="text-right">
-                    <h2>BCORE's Outreach and Impact</h2>
-                    <p>
-                        Notably, BCORE, stationed in pioneering national security and police university of India, it extends its outreach to internal security forces, imparting the principles of Olympism to personnel within these essential institutions. Through tailored programs and training initiatives, BCORE initiates a pivotal role in enhancing the physical and mental resilience of security personnel, thereby contributing to the broader goal of national security and well-being.
-                    </p>
+            </section>
+
+            {/* --- Impact Section --- */}
+            <section className="impact-section">
+                <div className="container">
+                    <div className="impact-row">
+                        <div className="impact-card">
+                            <h3>Unique Specialization</h3>
+                            <p>BCORE's area of specialization lies in the intersection of Olympic policies and international relations, contributing to policy discourse and sports for peace.</p>
+                        </div>
+                        <div className="impact-visual">
+                            <img src="https://www.asiaeducationreview.com/uploaded_images/newstransfer/xkpa2Olympic0.jpg" alt="Impact" />
+                        </div>
+                        <div className="impact-card">
+                            <h3>Outreach & Impact</h3>
+                            <p>Stationed in a pioneering national security university, BCORE extends Olympism to internal security forces, enhancing resilience through tailored training.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>

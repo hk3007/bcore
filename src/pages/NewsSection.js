@@ -67,7 +67,7 @@ const NewsSection = () => {
     return (
         <section className="royal-news-root">
             <Helmet>
-                <title>BCORE | Royal Gazette</title>
+                <title>BCORE NEWS</title>
             </Helmet>
 
             <header className="royal-hero">
@@ -84,7 +84,7 @@ const NewsSection = () => {
                 {loading && currentArticles.length === 0 ? (
                     <div className="royal-loader-box">
                         <div className="royal-spinner"></div>
-                        <p>Accessing Imperial Archives...</p>
+                        <p>Accessing Archives...</p>
                     </div>
                 ) : (
                     <>

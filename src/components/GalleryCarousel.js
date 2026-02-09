@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./GalleryCarousel.css";
 
 import img2 from "../pages/Images/PT USHA/PT USHA 1.jpeg";
@@ -6,78 +6,49 @@ import img3 from "../pages/Images/Lovlina Boxing Academy/Lovlina Boxing Academy 
 import img7 from "../pages/Images/image 4.png";
 
 const images = [
-  "https://rru.ac.in/wp-content/uploads/2025/11/Hyperlab-1.png",
-  img2,
-  img3,
-  "https://rru.ac.in/wp-content/uploads/2025/11/Image-1.png",
-  "https://rru.ac.in/wp-content/uploads/2025/11/Image-2.png",
-  "https://rru.ac.in/wp-content/uploads/2025/11/Image-3.png",
-  img7
+  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Hyperlab-1.png", title: "Hyperlab" },
+  { src: img2, title: "1st IORC" },
+  { src: img3, title: "Lovlina Academy" },
+  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Image-1.png", title: "" },
+  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Image-2.png", title: "" },
+  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Image-3.png", title: "1st IORC" },
+  { src: img7, title: "1st IORC" }
 ];
 
 export default function GalleryCarousel() {
-  const [current, setCurrent] = useState(2);
   const [popupImage, setPopupImage] = useState(null);
 
-  const nextSlide = () => setCurrent((c) => (c + 1) % images.length);
-  const prevSlide = () => setCurrent((c) => (c - 1 + images.length) % images.length);
-
-  const closePopup = () => setPopupImage(null);
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <>
-      <div className="gallery-carousel-wrapper">
-        <div className="gallery-carousel">
-          {images.map((img, index) => {
-            const offset = (index - current + images.length) % images.length;
-
-            let position = "hidden";
-            if (offset === 0) position = "center";
-            else if (offset === 1) position = "right1";
-            else if (offset === 2) position = "right2";
-            else if (offset === 3) position = "right3";
-            else if (offset === images.length - 1) position = "left1";
-            else if (offset === images.length - 2) position = "left2";
-            else if (offset === images.length - 3) position = "left3";
-
-            return (
-              <div
-                key={index}
-                className={`gallery-card ${position}`}
-                onClick={() => setPopupImage(img)}
-              >
-                {/* CLS-FIX: reserved height + aspect ratio */}
-                <img
-                  src={img}
-                  alt="gallery"
-                  loading="eager"
-                  decoding="async"
-                  className="gallery-img"
-                />
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="gallery-controls">
-          <button onClick={prevSlide}>←</button>
-          <button onClick={nextSlide}>→</button>
-        </div>
+    <section className="gallery-section">
+      <div className="gallery-header">
+        <h2>Our Gallery</h2>
+        <p>Capturing moments of excellence and dedication.</p>
       </div>
 
+      <div className="bento-grid">
+        {images.map((img, index) => (
+          <div 
+            key={index} 
+            className={`grid-item item-${index}`}
+            onClick={() => setPopupImage(img.src)}
+          >
+            <img src={img.src} alt={img.title} loading="lazy" />
+            <div className="grid-overlay">
+              <span>{img.title}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Lightbox / Popup */}
       {popupImage && (
-        <div className="image-popup" onClick={closePopup}>
-          <div className="popup-img-container" onClick={(e) => e.stopPropagation()}>
-            <span className="close-btn1" onClick={closePopup}>×</span>
-            <img src={popupImage} className="popup-img" alt="Full View" />
+        <div className="gallery-lightbox" onClick={() => setPopupImage(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-lightbox" onClick={() => setPopupImage(null)}>×</button>
+            <img src={popupImage} alt="Full view" />
           </div>
         </div>
       )}
-    </>
+    </section>
   );
 }

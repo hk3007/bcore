@@ -1,0 +1,199 @@
+:root {
+  --st-blue: #0a66c2;
+  --st-ink: #050505;
+  --st-white: #ffffff;
+}
+
+.st-ln-stage {
+  background: var(--st-white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.st-ln-bg-text {
+  position: absolute;
+  font-size: 20vw;
+  font-weight: 900;
+  color: #f8f8f8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.st-ln-central-flow {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.st-ln-intro {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.st-ln-status-pill {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--st-blue);
+}
+
+.st-ln-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -3px;
+  color: var(--st-ink);
+}
+
+.st-ln-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--st-blue);
+  margin: 20px auto;
+}
+
+.st-ln-flex-canvas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 40px;
+}
+
+.st-ln-flex-item {
+  contain: layout style paint;
+  position: relative;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transform: rotate(var(--rotation));
+}
+
+.st-ln-card-vessel {
+  display: flex;
+  flex-direction: column;
+  height: min-content; /* Shrinks to fit content */
+  background: #fff;
+  border: 1px solid #ededed;
+  padding: 10px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.03);
+}
+
+/* Corrected Logic using passed variables */
+
+/* Laptop: 3 Columns */
+@media (min-width: 1201px) {
+  .st-ln-flex-item {
+    flex: 0 0 calc(33.33% - 40px);
+    /* No Modulo error here! */
+    margin-top: calc(var(--mod-2) * 40px); 
+  }
+}
+
+/* Tablet: 2 Columns */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .st-ln-flex-item {
+    flex: 0 0 calc(50% - 40px);
+    margin-top: calc(var(--mod-2) * 40px);
+  }
+}
+
+/* Mobile: 1 Column */
+@media (max-width: 768px) {
+  .st-ln-flex-item {
+    backface-visibility: hidden;
+    transform: translateZ(0); 
+    will-change: transform;
+    flex: 0 0 100%;
+    margin-top: 0 !important;
+  }
+  .st-ln-stage { padding: 60px 20px; }
+}
+
+.st-ln-iframe-wrapper {
+  position: relative;
+  width: 100%;
+  /* Using aspect-ratio ensures the card feels proportional */
+  /* If most posts are long, use 3/4. If they are short, use 1/1 */
+  aspect-ratio: 4 / 5; 
+  background: #fdfdfd;
+  overflow: hidden;
+}
+
+.st-ln-embed {
+width: 100%;
+  height: 100%;
+  border: none;
+  /* This prevents the internal LinkedIn scrollbars from looking messy */
+  overflow: hidden; 
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.st-ln-flex-item:hover {
+  transform: scale(1.03) rotate(0deg) translateY(-15px) !important;
+  z-index: 20;
+}
+
+.st-ln-flex-item:hover .st-ln-embed { filter: grayscale(0); }
+.st-ln-flex-item:hover .st-ln-card-scanner { opacity: 0.6; }
+
+.st-ln-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5px 5px;
+}
+
+.st-ln-id { font-family: monospace; font-size: 0.65rem; color: #bbb; }
+.st-ln-brand-in {
+  background: var(--st-blue);
+  color: #fff;
+  width: 20px; height: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; font-size: 0.6rem;
+}
+
+/* --- Mobile Performance Optimization --- */
+@media (max-width: 768px) {
+  .st-ln-flex-item {
+    flex: 0 0 100%;
+    transform: none !important;
+    margin-top: 0 !important;
+    /* Helps prevent the "hanging" feel by promoting the layer to GPU */
+    will-change: transform; 
+  }
+
+  .st-ln-embed {
+    /* Filters on iframes are very expensive on mobile. 
+       Disable grayscale on mobile to keep scrolling smooth. */
+    filter: none !important; 
+  }
+
+  .st-ln-mobile-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: transparent;
+  }
+
+  .st-ln-card-vessel {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .st-ln-stage {
+    /* Smooth scrolling for iOS devices */
+    -webkit-overflow-scrolling: touch; 
+  }
+}
+

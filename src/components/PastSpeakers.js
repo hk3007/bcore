@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay, FreeMode} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -56,46 +56,57 @@ const PastSpeakers = () => {
   }, []);
 
   return (
-    <section className="past-speakers-section">
-      <h2 className="past-speakers-title" data-aos="fade-up">
-        Past Speakers
-      </h2>
-
-    <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    spaceBetween={20}
-    slidesPerView={4}
-    autoplay={{ delay: 0, disableOnInteraction: false }}
-    speed={5000}
-    loop={true}
-    breakpoints={{
-        320: { slidesPerView: 1.2 },
-        480: { slidesPerView: 1.5 },
-        768: { slidesPerView: 2.5 },
-        1024: { slidesPerView: 3.5 },
-        1400: { slidesPerView: 4.5 }
-    }}
-    >
-    {speakers.map((sp) => (
-        <SwiperSlide key={sp.id}>
-        <div className="speaker-card">
-            <div className="speaker-img-wrapper">
-            <img
-                src={Array.isArray(sp.img) ? sp.img[0] : sp.img}
-                alt={sp.name}
-                className="speaker-img"
-            />
-            </div>
-
-            <div className="speaker-info">
-            <h3>{sp.name}</h3>
-            <p>{sp.about}</p>
-            </div>
+<section className="hall-of-fame-wrapper">
+      {/* Background Tech Elements */}
+      <div className="hall-grid-overlay"></div>
+      
+      <div className="hall-container">
+        <div className="hall-header" data-aos="fade-down">
+          <span className="hall-tag">Global Expertise</span>
+          <h2 className="hall-title">Past <span className="gold-text">Speakers</span></h2>
+          <div className="hall-divider"></div>
         </div>
-        </SwiperSlide>
-    ))}
-    </Swiper>
 
+        <Swiper
+          modules={[Autoplay, FreeMode]}
+          spaceBetween={30}
+          slidesPerView={1.5}
+          loop={true}
+          freeMode={true}
+          speed={6000} // Ultra smooth crawl
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            640: { slidesPerView: 2.5 },
+            1024: { slidesPerView: 3.5 },
+            1440: { slidesPerView: 4.5 },
+          }}
+          className="hall-swiper"
+        >
+          {speakers.map((sp) => (
+            <SwiperSlide key={sp.id}>
+              <div className="fame-card">
+                <div className="fame-glow"></div>
+                <div className="fame-image-box">
+                  <img 
+                    src={Array.isArray(sp.img) ? sp.img[0] : sp.img} 
+                    alt={sp.name} 
+                  />
+                </div>
+                <div className="fame-content">
+                  <h3 className="fame-name">{sp.name.split(',')[0]}</h3>
+                  <div className="fame-org-box">
+                    <p className="fame-org">{sp.name.split(',').slice(1).join(',')}</p>
+                  </div>
+                  <p className="fame-about">{sp.about}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 };

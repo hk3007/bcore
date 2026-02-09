@@ -423,8 +423,31 @@ export const EventDetails = () => {
                 logo: 'https://www.sportscom.in/wp-content/uploads/2021/11/logo-u1-1.png',
                 },
             ],
-            bookletLink:
-              'https://rru.ac.in/wp-content/uploads/2024/11/RRU-BCORE-Olympic-research-Academy-Brochure.pdf'
+            bookletLink:'https://rru.ac.in/wp-content/uploads/2024/11/RRU-BCORE-Olympic-research-Academy-Brochure.pdf',
+            videos: [
+            {
+                title: 'Day 1 - Inauguration of 1st International Olympic Research Conference at BCORE RRU',
+                url: 'https://youtu.be/5ELsHViBiY4?si=z06BIv_ENtGGTruJ',
+                link: 'https://www.youtube.com/embed/5ELsHViBiY4?si=zFVWtVLH_gw_z8_h'
+            },
+            {
+                title: 'Day 1 - Session 1 of 1st International Olympic Research Conference at BCORE RRU',
+                url: 'https://youtu.be/Rmygyf4Ive0?si=GD8YhLK0yVbAuMnR',
+                link: 'https://www.youtube.com/embed/Rmygyf4Ive0?si=0u7GgoilWFgYqrgQ'
+            },
+            {
+                title: 'Day 1 - Session 2 of 1st International Olympic Research Conference at BCORE RRU',
+                url: 'https://youtu.be/q1tSqFiw-EE?si=zUdwYttTXj-j3kkQ',
+                link: 'https://www.youtube.com/embed/q1tSqFiw-EE?si=cZX-MpnYALZXew8K'
+            },
+            {
+                title: 'Day 1 - Session 3 of 1st International Olympic Research Conference at BCORE RRU',
+                url: 'https://youtu.be/f8J-geIPcbw?si=e2gK8autcykb3u0f',
+                link: 'https://www.youtube.com/embed/f8J-geIPcbw?si=9fIjwdPul8hiG7xO'
+            }
+
+        ]
+
         },
         {
         id: 2,
@@ -948,6 +971,29 @@ export const EventDetails = () => {
                     link: 'https://gsrtc.in/site/'
                 },
             ],
+            videos: [
+            {
+                title: '2nd International Olympic Research Conference - Day 1',
+                link: 'https://www.youtube.com/embed/p4kFi2wzMKI?si=lvCtlfmNl9dE5LKC',
+                url: 'https://www.youtube.com/live/p4kFi2wzMKI?si=dUkhozRDPIEiZTs9'
+            },
+            {
+                title: '2nd International Olympic Research Conference - Day 2',
+                link: 'https://www.youtube.com/embed/1uZZwy0Kljk?si=U469uoLox7_oaNKK',
+                url: 'https://www.youtube.com/live/1uZZwy0Kljk?si=V4EwdkHrv_AFpqsL'
+            },
+            {
+                title: '2nd International Olympic Research Conference - Day 3',
+                link: 'https://www.youtube.com/embed/lqWiXAgM4b0?si=Dt0mc_r1paPVO-uN',
+                url: 'https://www.youtube.com/live/lqWiXAgM4b0?si=npN7sugNpFqdG_Oc'
+            }
+            ,
+            {
+                title: '2nd International Olympic Research Conference - Day 4',
+                link: 'https://www.youtube.com/embed/1_KMNSLgn2c?si=0hImdCSv4yJpLzlZ',
+                url: 'https://www.youtube.com/live/1_KMNSLgn2c?si=WBqBrTH4GUPU9ZNv'
+            }
+        ]        
         },
         {
             id: 4,
@@ -960,29 +1006,29 @@ export const EventDetails = () => {
     const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
 
      
-    const hasOnlyBasicInfo = !(
-    event?.collaboration?.length > 0 ||
-    event?.details?.length > 0 ||
-    event?.subpoints?.length > 0 ||
-    event?.guests?.length > 0 ||
-    event?.importantDates?.length > 0 ||
-    event?.schedule?.length > 0 ||
-    event?.callForAbstract ||
-    event?.abstractGuidelines ||
-    event?.Steps?.length > 0 ||
-    event?.speakers?.length > 0 ||
-    event?.partners?.length > 0 ||
-    event?.sponsors?.length > 0 ||
-    event?.organizingTeam?.length > 0 ||
-    event?.email ||
-    event?.Schedule ||
-    event?.brochure ||
-    event?.registrationLink ||
-    event?.googleform ||
-    event?.accommodations?.length > 0 ||
-    event?.NearBytransportation?.length > 0 ||
-    event?.qrCode
-  );
+//     const hasOnlyBasicInfo = !(
+//     event?.collaboration?.length > 0 ||
+//     event?.details?.length > 0 ||
+//     event?.subpoints?.length > 0 ||
+//     event?.guests?.length > 0 ||
+//     event?.importantDates?.length > 0 ||
+//     event?.schedule?.length > 0 ||
+//     event?.callForAbstract ||
+//     event?.abstractGuidelines ||
+//     event?.Steps?.length > 0 ||
+//     event?.speakers?.length > 0 ||
+//     event?.partners?.length > 0 ||
+//     event?.sponsors?.length > 0 ||
+//     event?.organizingTeam?.length > 0 ||
+//     event?.email ||
+//     event?.Schedule ||
+//     event?.brochure ||
+//     event?.registrationLink ||
+//     event?.googleform ||
+//     event?.accommodations?.length > 0 ||
+//     event?.NearBytransportation?.length > 0 ||
+//     event?.qrCode
+//   );
 
     // Utility: Check if event is in the future
     const isFutureEvent = (dateString) => {
@@ -1150,6 +1196,46 @@ export const EventDetails = () => {
                 <p>{partner.name}</p>
                 </div>
             ))}
+            </div>
+        </section>
+        )}
+
+        {/* Video Gallery Section */}
+        {event?.videos?.length > 0 && (
+        <section className="video-section">
+            <div className="video-grid">
+            {event.videos.map((video, index) => {
+                // Handles both standard links and YouTube Shorts links for embedding
+                const embedLink = video.link
+                .replace("watch?v=", "embed/")
+                .replace("shorts/", "embed/");
+                
+                return (
+                <div className="video-card" key={index}>
+                    <div className="video-container">
+                    <iframe
+                        src={embedLink}
+                        title={video.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                    </div>
+                    <div className="video-info">
+                    {/* Title matches the "title" key in your data list */}
+                    <p className="video-title">{video.title}</p>
+                    <a 
+                        href={video.url} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="video-external-link"
+                    >
+                        Watch on YouTube
+                    </a>
+                    </div>
+                </div>
+                );
+            })}
             </div>
         </section>
         )}
