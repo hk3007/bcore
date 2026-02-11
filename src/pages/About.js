@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './about.css'; 
 import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png';
-import { FaBullseye, FaFlagCheckered, FaQuoteLeft, FaGlobeAmericas } from 'react-icons/fa';
+import { FaQuoteLeft } from 'react-icons/fa';
 import Map from './Images/Olympic Map.png';
 import { Helmet } from 'react-helmet';
 
@@ -41,10 +41,9 @@ export const About = () => {
                 <div className="container">
                     <div className="intro-grid">
                         <div className="intro-text">
-                            <div className="section-label"><FaBullseye /> Introduction</div>
                             <h2>The Legacy of <br/> Modern Olympism</h2>
-                            <p>The idea of creating an Olympic Studies Centre can be traced back to the reviver of the Modern Olympic Games, Baron Pierre de Coubertin, who said shortly before his death: <strong>“I believe that a centre of Olympic studies would aid the preservation and progress of my work more than anything else.”</strong></p>
-                            <p>The IOC Olympic Studies Centre was created under the Antonio Samaranch presidency in 1982. Inspired by these words, BCORE was established in 2024 as the first South Asian Olympic Study Center.</p>
+                            <p className="obj-p">The idea of creating an Olympic Studies Centre can be traced back to the reviver of the Modern Olympic Games, Baron Pierre de Coubertin, who said shortly before his death: <strong>“I believe that a centre of Olympic studies would aid the preservation and progress of my work more than anything else.”</strong></p>
+                            <p className="obj-p">The IOC Olympic Studies Centre was created under the Antonio Samaranch presidency in 1982. Inspired by these words, BCORE was established in 2024 as the first South Asian Olympic Study Center.</p>
                         </div>
                         <div className="intro-image">
                             <img src={Map} alt="Olympic Map" className="map-visual" />
@@ -66,46 +65,53 @@ export const About = () => {
             {/* --- Objectives Section (Grid) --- */}
             <section className="objectives-modern">
                 <div className="container">
-                    <div className="section-label center"><FaFlagCheckered /> Our Mission</div>
                     <h2 className="section-title">Core Objectives</h2>
                     <div className="obj-grid">
                         <div className="obj-card">
                             <div className="obj-num">01</div>
-                            <p>To develop, offer and organize educational programs and activities contributing to Olympic education in India and South Asia.</p>
+                            <p className="obj-p">To develop, offer and organize educational programs and activities contributing to Olympic education in India and South Asia.</p>
                         </div>
                         <div className="obj-card">
                             <div className="obj-num">02</div>
-                            <p>Encourage research and innovation in Olympic studies that contribute to the advancement of Olympic knowledge.</p>
+                            <p className="obj-p">Encourage research and innovation in Olympic studies that contribute to the advancement of Olympic knowledge.</p>
                         </div>
                         <div className="obj-card">
                             <div className="obj-num">03</div>
-                            <p>Creating a database for Olympic Education and facilitate as a resource center for literature and documentaries.</p>
+                            <p className="obj-p">Creating a database for Olympic Education, literature, personalities, and documentaries and facilitating as a resource center in Olympic Education.</p>
                         </div>
                         <div className="obj-card">
                             <div className="obj-num">04</div>
-                            <p>Collaborate with national sports bodies to assist in development of policies for hosting the Olympic Games.</p>
+                            <p className="obj-p">Collaborate with national sports bodies, government agencies, and other sports organizations to assist in the development of policies and strategies promoting the organization of sporting events, including hosting the Olympic Games.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* --- Impact Section --- */}
-            <section className="impact-section">
-                <div className="container">
-                    <div className="impact-row">
-                        <div className="impact-card">
-                            <h3>Unique Specialization</h3>
-                            <p>BCORE's area of specialization lies in the intersection of Olympic policies and international relations, contributing to policy discourse and sports for peace.</p>
-                        </div>
-                        <div className="impact-visual">
-                            <img src="https://www.asiaeducationreview.com/uploaded_images/newstransfer/xkpa2Olympic0.jpg" alt="Impact" />
-                        </div>
-                        <div className="impact-card">
-                            <h3>Outreach & Impact</h3>
-                            <p>Stationed in a pioneering national security university, BCORE extends Olympism to internal security forces, enhancing resilience through tailored training.</p>
-                        </div>
+            <section className="impact-clean">
+            <div className="impact-wrapper">
+                <div className="impact-header">
+                <h2 className="impact-main-title">OPERATIONAL EXCELLENCE</h2>
+                </div>
+
+                <div className="impact-grid-text">
+                <div className="impact-box">
+                    <div className="impact-info">
+                    <span className="impact-index">01</span>
+                    <h3>Unique Specialization</h3>
+                    <p className="obj-p">BCORE's unique area of specialization lies in the nuanced intersection of Olympic policies and international relations, where it contributes to advancing scholarly understanding and shaping policy discourse in this critical domain. Furthermore, BCORE actively champions the cause of sports for peace, leveraging the universal appeal of sports to bridge divides and promote harmony on both national and global scales.</p>
                     </div>
                 </div>
+
+                <div className="impact-box">
+                    <div className="impact-info">
+                    <span className="impact-index">02</span>
+                    <h3>Outreach & Impact</h3>
+                    <p className="obj-p">Notably, BCORE, stationed in pioneering national security and police university of India, it extends its outreach to internal security forces, imparting the principles of Olympism to personnel within these essential institutions. Through tailored programs and training initiatives, BCORE initiates a pivotal role in enhancing the physical and mental resilience of security personnel, thereby contributing to the broader goal of national security and well-being.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
             </section>
         </div>
     </>

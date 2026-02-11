@@ -377,10 +377,6 @@ export const BCORE = () => {
                 
                 <div className="oly-cinema-container">
                     <header className="oly-cinema-header">
-                        <div className="oly-badge">
-                            <span className="oly-pulse"></span>
-                            PREMIUM CONTENT
-                        </div>
                         <h2 className="oly-main-title">
                             Watch <span className="oly-text-gradient">BCORE</span> in Action
                         </h2>

@@ -6,12 +6,8 @@ import img3 from "../pages/Images/Lovlina Boxing Academy/Lovlina Boxing Academy 
 import img7 from "../pages/Images/image 4.png";
 
 const images = [
-  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Hyperlab-1.png", title: "Hyperlab" },
   { src: img2, title: "1st IORC" },
   { src: img3, title: "Lovlina Academy" },
-  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Image-1.png", title: "" },
-  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Image-2.png", title: "" },
-  { src: "https://rru.ac.in/wp-content/uploads/2025/11/Image-3.png", title: "1st IORC" },
   { src: img7, title: "1st IORC" }
 ];
 

@@ -22,7 +22,7 @@ const teamMembers = [
   {
     name: 'Dr. Jasbirkaur Thadhani',
     designation: 'University Dean (I/c)',
-    photo: 'https://rru.ac.in/wp-content/uploads/2022/11/Jasbir-img-2-scaled.jpg',
+    photo: 'https://legacy.rru.ac.in/wp-content/uploads/2025/02/Jasbir-img-2-scaled-1.jpg',
     info: 'Dr. Jasbirkaur Thadhani is the University Dean (I/c) & Assistant Professor at SBSFI'
   },
   {
@@ -40,7 +40,7 @@ const teamMembers = [
   {
     name: 'Mr. Yash Sharma',
     designation: 'I/c Director and Assistant Professor (Physical Education & Sports)',
-    photo: 'https://rru.ac.in/wp-content/uploads/2023/05/Yash-Sharma-scaled.jpg',
+    photo: 'https://legacy.rru.ac.in/wp-content/uploads/2023/05/Yash-Sharma-scaled.jpg',
     info: 'Mr. Yash Sharma is the I/c Director & Assistant Professor (Physical Education & Sports), with JRF/NET qualifications, specializing in sports science and physical education.'
   },
   {
