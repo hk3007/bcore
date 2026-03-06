@@ -1,24 +1,43 @@
-/* Layout Styling */
+/* --- LAYOUT CONTAINER --- */
 .olympic-bento-section {
   max-width: 1300px;
-  margin: 80px auto;
-  padding: 0 40px;
-  font-family: sans-serif;
+  margin: 60px auto;
+  padding: 0 20px;
+  font-family: 'Inter', -apple-system, sans-serif;
 }
 
-.bento-header { margin-bottom: 50px; text-align: center; }
-.olympic-badge {
-  display: inline-block; font-size: 0.7rem; font-weight: 800;
-  letter-spacing: 3px; color: #0081C8; border: 1.5px solid #0081C8;
-  padding: 6px 15px; border-radius: 50px; margin-bottom: 15px;
+.bento-header { 
+  margin-bottom: 50px; 
+  text-align: center; 
 }
-.bento-title { font-size: 4rem; font-weight: 900; letter-spacing: -2px; }
+
+.olympic-badge {
+  display: inline-block; 
+  font-size: 0.7rem; 
+  font-weight: 800;
+  letter-spacing: 3px; 
+  color: #0081C8; 
+  border: 1.5px solid #0081C8;
+  padding: 6px 15px; 
+  border-radius: 50px; 
+  margin-bottom: 15px;
+}
+
+.bento-title { 
+  font-size: clamp(2.5rem, 8vw, 4rem); 
+  font-weight: 900; 
+  letter-spacing: -2px; 
+  margin: 0;
+}
+
 .text-thin { font-weight: 100; color: #ccc; }
 
+/* --- BENTO GRID SYSTEM --- */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 300px;
+  /* Use minmax to prevent text overflow while maintaining a base height */
+  grid-auto-rows: minmax(280px, auto);
   gap: 20px;
 }
 
@@ -31,88 +50,156 @@
   padding: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Keeps text at the bottom */
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .span-2 { grid-column: span 2; }
 
-/* Shape Containers */
+/* --- CONTENT STYLING --- */
+.bento-content {
+  position: relative;
+  z-index: 2; /* Ensures text stays above background shapes */
+}
+
+.bento-meta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.bento-content h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.bento-content p {
+  margin: 10px 0 0 0;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  /* Limits description to 3 lines on small cards to prevent overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* --- SHAPE CONTAINERS --- */
 .shape-wrapper {
   position: absolute;
-  top: 20px; right: 20px;
-  width: 120px; height: 120px;
-  display: flex; align-items: center; justify-content: center;
+  top: 20px; 
+  right: 20px;
+  width: 100px; 
+  height: 100px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   perspective: 1000px;
+  pointer-events: none; /* Allows clicks to pass through to the link */
 }
 
 /* --- CSS SHAPES --- */
-
-/* 1. Gold Poly (Grants) */
 .css-poly-gold {
-  width: 60px; height: 60px;
+  width: 50px; height: 50px;
   background: linear-gradient(135deg, #FFD700, #B8860B);
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   animation: rotate 6s infinite linear;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
 }
 
-/* 2. Pulsing Sphere (Lab) */
 .css-sphere-pulse {
-  width: 70px; height: 70px;
+  width: 60px; height: 60px;
   background: radial-gradient(circle at 30% 30%, #EE334E, #8b1e2e);
   border-radius: 50%;
   animation: pulse 2s infinite ease-in-out;
 }
 
-/* 3. Research Bars */
-.css-bars { display: flex; gap: 8px; transform: rotate(-20deg); }
+.css-bars { display: flex; gap: 6px; transform: rotate(-15deg); }
 .css-bars span {
-  width: 10px; height: 40px; background: #00A651;
+  width: 8px; height: 35px; background: #00A651;
   animation: barFlow 1.5s infinite ease-in-out;
 }
 .css-bars span:nth-child(2) { animation-delay: 0.2s; }
 .css-bars span:nth-child(3) { animation-delay: 0.4s; }
 
-/* 4. Wireframe Globe (Events) */
 .css-wireframe {
-  width: 60px; height: 60px;
+  width: 50px; height: 50px;
   border: 2px dashed #FCB131;
   border-radius: 50%;
   animation: rotate 10s infinite linear;
 }
 
-/* 5. Cylinder (Newsletter) */
 .css-cylinder {
-  width: 40px; height: 70px;
-  background: linear-gradient(to right, #333, #000, #333);
-  border-radius: 10px;
+  width: 35px; height: 60px;
+  background: linear-gradient(to right, #444, #111, #444);
+  border-radius: 8px;
 }
 
-/* 6. Careers Ring */
 .css-ring-sphere {
-  width: 60px; height: 60px;
+  width: 50px; height: 50px;
   border: 4px solid #0081C8;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
 }
 .css-ring-sphere::after {
-  content: ''; width: 20px; height: 20px; background: #0081C8; border-radius: 50%;
+  content: ''; width: 18px; height: 18px; background: #0081C8; border-radius: 50%;
 }
 
-/* Animations */
+/* --- ANIMATIONS --- */
 @keyframes rotate { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-@keyframes barFlow { 0%, 100% { height: 40px; } 50% { height: 60px; } }
+@keyframes barFlow { 0%, 100% { height: 35px; } 50% { height: 50px; } }
 
-/* Hover States */
-.bento-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-.color-grants:hover { border-bottom: 5px solid #FFD700; }
-.color-lab:hover { border-bottom: 5px solid #EE334E; }
-/* ... Add others as needed ... */
+/* --- HOVER EFFECTS --- */
+.bento-item:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+  background: #fff;
+}
+.color-grants:hover { border-bottom: 6px solid #FFD700; }
+.color-lab:hover { border-bottom: 6px solid #EE334E; }
+.color-research:hover { border-bottom: 6px solid #00A651; }
+.color-events:hover { border-bottom: 6px solid #FCB131; }
+.color-newsletter:hover { border-bottom: 6px solid #333; }
+.color-careers:hover { border-bottom: 6px solid #0081C8; }
 
-@media (max-width: 900px) {
-  .bento-grid { grid-template-columns: repeat(2, 1fr); }
-  .span-2 { grid-column: span 1; }
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .olympic-bento-section { padding: 0 15px; }
+  
+  .bento-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-auto-rows: auto; /* Let content define height */
+    gap: 15px;
+  }
+
+  .bento-item {
+    padding: 25px;
+    min-height: 180px; /* Smaller min-height for mobile */
+    grid-column: span 1 !important; /* Reset span-2 items */
+  }
+
+  .shape-wrapper {
+    width: 70px;
+    height: 70px;
+    top: 15px;
+    right: 15px;
+    opacity: 0.6; /* Fade shapes slightly so text is more readable */
+  }
+
+  .bento-content h3 { font-size: 1.3rem; }
 }

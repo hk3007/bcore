@@ -25,7 +25,7 @@ const BentoEcosystem = () => {
   const items = [
     { to: "/olympicresearchgrants", type: "grants", title: "BCORE Grants", meta: "Excellence", desc: "Strategic funding for athletes.", size: "span-2" },
     { to: "/HumanPerformanceLab", type: "lab", title: "Human Performance Lab", meta: "Science", desc: "Advanced biomechanics.", size: "span-2" },
-    { to: "#", type: "research", title: "Research", meta: "Insights", size: "" },
+    { to: "/publications", type: "research", title: "Publications", meta: "Insights", size: "" },
     { to: "/upcomingevents", type: "events", title: "Events", meta: "Global", size: "" },
     { to: "#", type: "newsletter", title: "Newsletter", meta: "Connect", size: "" },
     { to: "/careers", type: "careers", title: "Careers", meta: "Talent", size: "" }

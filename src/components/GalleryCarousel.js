@@ -7,8 +7,12 @@ import img7 from "../pages/Images/image 4.png";
 
 const images = [
   { src: img2, title: "1st IORC" },
+  { src: "https://pbs.twimg.com/media/G_phJgUaEAAL1Hz.jpg", title: "2nd IORC" },
+  { src: "https://static.pib.gov.in/WriteReadData/userfiles/image/2GYEQ.jpg", title: "Press Conference" },
+  { src: "https://static.pib.gov.in/WriteReadData/userfiles/image/IMG_1784690F.JPG", title: "Bcore Night Run" },
   { src: img3, title: "Lovlina Academy" },
-  { src: img7, title: "1st IORC" }
+  { src: "https://pbs.twimg.com/media/G_7O-pmbAAA8uvb.jpg", title: "2nd IORC" },
+  { src: img7, title: "1st IORC" },
 ];
 
 export default function GalleryCarousel() {
