@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/bcore/static/css/main.4f898a64.css",
-    "main.js": "/bcore/static/js/main.d52343f2.js",
+    "main.css": "/bcore/static/css/main.28a32de8.css",
+    "main.js": "/bcore/static/js/main.e40d3e6a.js",
     "static/js/453.b2889c0a.chunk.js": "/bcore/static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "/bcore/static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/IORC2.png": "/bcore/static/media/IORC2.b7c5da7af7ff0f195eff.png",
@@ -23,6 +23,7 @@
     "static/media/Khelo india 2.jpg": "/bcore/static/media/Khelo india 2.b5df9c73a34a65947d7d.jpg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.png": "/bcore/static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.9a89d80589597419ee44.png",
     "static/media/Lambis.png": "/bcore/static/media/Lambis.c948915babe7c1d2f40f.png",
+    "static/media/EOI 1.pdf": "/bcore/static/media/EOI 1.dadcea9086f79d02fc4f.pdf",
     "static/media/Page 5.jpeg": "/bcore/static/media/Page 5.48491cec1c5ae94d2015.jpeg",
     "static/media/Page 3.jpg": "/bcore/static/media/Page 3.3993c94643fdf0d3951a.jpg",
     "static/media/Olympic Map.png": "/bcore/static/media/Olympic Map.804f1336e4230a28263d.png",
@@ -48,12 +49,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "/bcore/static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "/bcore/static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "/bcore/index.html",
-    "main.4f898a64.css.map": "/bcore/static/css/main.4f898a64.css.map",
-    "main.d52343f2.js.map": "/bcore/static/js/main.d52343f2.js.map",
+    "main.28a32de8.css.map": "/bcore/static/css/main.28a32de8.css.map",
+    "main.e40d3e6a.js.map": "/bcore/static/js/main.e40d3e6a.js.map",
     "453.b2889c0a.chunk.js.map": "/bcore/static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f898a64.css",
-    "static/js/main.d52343f2.js"
+    "static/css/main.28a32de8.css",
+    "static/js/main.e40d3e6a.js"
   ]
 }
