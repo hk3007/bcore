@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.7e0d333b.css",
-    "main.js": "./static/js/main.515d5558.js",
+    "main.css": "./static/css/main.6452f757.css",
+    "main.js": "./static/js/main.5fcc3d6b.js",
     "static/js/453.b2889c0a.chunk.js": "./static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "./static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/IORC2.png": "./static/media/IORC2.b7c5da7af7ff0f195eff.png",
@@ -18,6 +18,7 @@
     "static/media/Maria Bogner.png": "./static/media/Maria Bogner.b0bda6680142ede35619.png",
     "static/media/Col Anant Kumar.png": "./static/media/Col Anant Kumar.10d9580d5e026fc30747.png",
     "static/media/2nd IORC 1.jpg": "./static/media/2nd IORC 1.a21a5f495ef1d2b4b28b.jpg",
+    "static/media/SIX LEACIES WEB SLIDER.jpg": "./static/media/SIX LEACIES WEB SLIDER.b549ee75f1aeb0f55a99.jpg",
     "static/media/Page 1.jpg": "./static/media/Page 1.b70e3c2636d9c18dd065.jpg",
     "static/media/2nd IORC 3.jpg": "./static/media/2nd IORC 3.8f6a1003b388d0c32a0b.jpg",
     "static/media/Khelo india 2.jpg": "./static/media/Khelo india 2.b5df9c73a34a65947d7d.jpg",
@@ -49,12 +50,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "./static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "./static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "./index.html",
-    "main.7e0d333b.css.map": "./static/css/main.7e0d333b.css.map",
-    "main.515d5558.js.map": "./static/js/main.515d5558.js.map",
+    "main.6452f757.css.map": "./static/css/main.6452f757.css.map",
+    "main.5fcc3d6b.js.map": "./static/js/main.5fcc3d6b.js.map",
     "453.b2889c0a.chunk.js.map": "./static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e0d333b.css",
-    "static/js/main.515d5558.js"
+    "static/css/main.6452f757.css",
+    "static/js/main.5fcc3d6b.js"
   ]
 }
