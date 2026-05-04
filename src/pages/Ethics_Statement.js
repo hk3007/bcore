@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./ethics.css";
+import { ShieldCheck, FileText, Search, Users, CheckCircle, Award, Globe, Star, Scale } from "lucide-react";
 import { Helmet } from 'react-helmet';
 
 const Ethics_Statement = () => {
@@ -14,11 +15,76 @@ const Ethics_Statement = () => {
         <meta name="description" content="Home page of BCORE..." />
       </Helmet>
       {/* === HEADER === */}
-      <header className="ethics-header">
-        <div className="ethics-header-content">
-          <h1>BCORE Olympics Research Conference</h1>
+      <section className="bcore-hero">
+        <div className="bcore-bg-graphics">
+          <div className="bcore-grid-mesh"></div>
+          <div className="bcore-radial-glow"></div>
+          
+          {/* Moving objects related to Ethics & Research */}
+          <div className="bcore-career-objects">
+            <ShieldCheck className="obj obj-1" size={24} />
+            <Scale className="obj obj-2" size={30} />
+            <FileText className="obj obj-3" size={20} />
+            <Globe className="obj obj-4" size={26} />
+            <Award className="obj obj-5" size={18} />
+          </div>
         </div>
-      </header>
+
+        <div className="bcore-container bcore-hero-flex">
+          <div className="bcore-hero-text">
+            <h1 className="bcore-title">Conference <br /><span className="gold-accent">Ethics</span> & Integrity</h1>
+            <p className="bcore-lead">BCORE International Olympics Research Conference</p>
+          </div>
+
+          {/* Right Side: Ethics Infographic */}
+          <div className="bcore-hero-infographic">
+            <div className="infographic-box main-node">
+              <ShieldCheck className="gold-accent" size={32} />
+              <span>COPE Standards</span>
+            </div>
+            <div className="node-connector line-1"></div>
+            <div className="infographic-box sub-node-1">Integrity</div>
+            <div className="infographic-box sub-node-2">Authorship</div>
+            <div className="infographic-box sub-node-3">Transparency</div>
+          </div>
+        </div>
+
+        {/* Professional Wave Curve */}
+        <div className="bcore-wave-bottom">
+          <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="white" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,112C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </div>
+      </section>
+
+      <section className="ethics-bcore-flow-section">
+        <div className="ethics-bcore-container">
+          <div className="ethics-bcore-section-title">
+            <h2>Our Ethical <span className="blue-accent">Review Process</span></h2>
+            <p>Ensuring scholarly excellence through double-blind standards and COPE guidelines.</p>
+          </div>
+          
+          <div className="ethics-bcore-process-grid">
+            <div className="ethics-process-card">
+              <div className="ethics-process-icon"><Search /></div>
+              <h3>01. Originality Check</h3>
+              <p>Submissions undergo rigorous plagiarism and data integrity screening.</p>
+            </div>
+            <div className="ethics-process-arrow"></div>
+            <div className="ethics-process-card">
+              <div className="ethics-process-icon"><Users /></div>
+              <h3>02. Double-Blind Review</h3>
+              <p>Identities are concealed to ensure objective, merit-based evaluation.</p>
+            </div>
+            <div className="ethics-process-arrow"></div>
+            <div className="ethics-process-card">
+              <div className="ethics-process-icon"><CheckCircle /></div>
+              <h3>03. Publication</h3>
+              <p>Final acceptance based on transparency and Olympic research relevance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* === INTRODUCTION === */}
       <section className="ethics-section">

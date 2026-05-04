@@ -159,6 +159,7 @@
   line-height: 1.6;
   color: #334155;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .secondary-text {
@@ -166,6 +167,7 @@
   line-height: 1.7;
   color: #64748b;
   margin-bottom: 15px;
+  text-align: justify;
 }
 
 .highlight-rru {
@@ -467,7 +469,7 @@
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
-    text-align: left; /* Changed from justify for better mobile flow */
+    text-align: justify /* Changed from justify for better mobile flow */
 }
 
 .bcore-text-card p:last-child { margin-bottom: 0; }
@@ -503,7 +505,7 @@
 .stat-item:hover {
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.08);
-    border-color: #F4C300; /* Gold hover border */
+    border-color: rgb(255, 196, 0); /* Gold hover border */
 }
 
 .stat-number {
@@ -511,7 +513,7 @@
     font-size: 2.5rem;
     font-weight: 900;
     /* Olympic Gold Gradient */
-    background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+    background: linear-gradient(135deg, rgb(255, 196, 0) 0%, #B8860B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 10px;
@@ -1427,5 +1429,170 @@
 
   .bcore-btn {
     width: 100%;
+  }
+}
+
+/* =========================
+   🌐 SECTION BASE
+========================= */
+.bcore-video-section {
+  padding: 50px;
+}
+
+/* =========================
+   📦 GRID CONTAINER
+========================= */
+.bcore-video-container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  animation: bcore-video-fadeUp 0.9s ease;
+}
+
+/* =========================
+   🎥 VIDEO CARD
+========================= */
+.bcore-video-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.bcore-video-card:hover {
+  transform: translateY(-8px) scale(1.01);
+}
+
+.bcore-video-player {
+  width: 100%;
+  display: block;
+  border-radius: 24px;
+}
+
+/* Badge */
+.bcore-video-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   📝 CONTENT CARD
+========================= */
+.bcore-video-content-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.4);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.bcore-video-content-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Quote Icon */
+.bcore-video-quote-icon {
+  font-size: 60px;
+  color: rgba(3, 133, 200, 0.15);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* =========================
+   🔥 TYPOGRAPHY
+========================= */
+.bcore-video-heading {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #0f172a, #0385c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bcore-video-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.bcore-video-author {
+  margin-top: 25px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* =========================
+   ✨ ANIMATION
+========================= */
+@keyframes bcore-video-fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .bcore-video-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bcore-video-content-card {
+    text-align: center;
+  }
+
+  .bcore-video-quote-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .bcore-video-section {
+    padding: 70px 15px;
+  }
+
+  .bcore-video-heading {
+    font-size: 1.8rem;
+  }
+
+  .bcore-video-content-card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bcore-video-heading {
+    font-size: 1.6rem;
+  }
+
+  .bcore-video-text {
+    font-size: 0.95rem;
   }
 }

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet';
 import { FaFilePdf, FaSearch, FaCalendarAlt } from 'react-icons/fa';
+import BOA1 from '../pages/PDF/Abstract Book IORC1.pdf';
 import './Publications.css';
 
 const PUB_DATA = [
@@ -14,6 +15,36 @@ const PUB_DATA = [
     authors: "Utsav Chaware, Director, BCORE, RRU, India",
     venue: "",
     link: "https://himjournals.com/hjel/1468/1488/the-critical-imperative-of-olympic-education-and-research-in-india-bridging-the-gap-from-participation-to-excellence-in-the-quest-for-2036-17271/"
+  },
+  {
+    id: 2,
+    date: "2026-01-27", // Used for sorting
+    displayDate: "27 Jan 2026", // User-friendly format
+    type: "Book Of Abstracts",
+    title: "2nd International Olympic Research Conference (IORC) 2026: Book of Abstracts",
+    authors: "",
+    venue: "Rashtriya Raksha University, Gandhinagar, India",
+    link: "https://drive.google.com/file/d/1qZYMJwOEf18SVs9RwtpKK2kVRC0bYoa8/view?usp=sharing"
+  },
+  {
+    id: 3,
+    date: "2026-01-27", // Used for sorting
+    displayDate: "27 Jan 2026", // User-friendly format
+    type: "Research Report",
+    title: "ANTI-DOPING EDUCATION AND RESEARCH REPORT",
+    authors: "Dr. Utsav Chaware, Mr. Nittan Sharma, Mr. Chandra Uday Singh ",
+    venue: "",
+    link: "https://drive.google.com/file/d/1OVRttarRIuLgBVFJLjdH2mlaP2fx2mUy/view?usp=sharing"
+  },
+  {
+    id: 4,
+    date: "2025-01-27", // Used for sorting
+    displayDate: "27 Jan 2025", // User-friendly format
+    type: "Book Of Abstracts",
+    title: "1st International Olympic Research Conference (IORC) 2025: Book of Abstracts",
+    authors: "",
+    venue: "Rashtriya Raksha University, Gandhinagar, India",
+    link: BOA1
   }
 ];
 
@@ -90,7 +121,6 @@ const Publications = () => {
                   <h3 className="pub-row-title">{pub.title}</h3>
                   <div className="pub-row-sub">
                     <span className="row-author">{pub.authors}</span>
-                    <span className="row-sep">•</span>
                     <span className="row-venue">{pub.venue}</span>
                   </div>
                 </div>

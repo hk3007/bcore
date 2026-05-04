@@ -65,7 +65,7 @@ export const About = () => {
             {/* --- Objectives Section (Grid) --- */}
             <section className="objectives-modern">
                 <div className="container">
-                    <h2 className="section-title">Core Objectives</h2>
+                    <h2 className="section-title">CORE OBJECTIVES</h2>
                     <div className="obj-grid">
                         <div className="obj-card">
                             <div className="obj-num">01</div>

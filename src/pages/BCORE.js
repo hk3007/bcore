@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import "./home.css";
@@ -17,6 +17,7 @@ import NadaLogo from "./Images/NADA Logo.png"
 import IORC2 from "./Images/IORC2.png"
 import LinkedInHoneycomb from "../components/LinkedInHoneycomb";
 import BcoreWork from "../components/BentoEcosystem";
+import video1 from "./video/RRU 5th Convocation.mp4";
 
 
 export const BCORE = () => {
@@ -139,6 +140,39 @@ export const BCORE = () => {
     // Scroll to top on mount
     useEffect(() => {
         window.scrollTo(0, 0);
+    }, []);
+
+    // Video autoplay on intersection
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+        if (!videoRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    // Video is in viewport
+                    if (videoRef.current && videoRef.current.paused) {
+                        videoRef.current.play().catch(() => {
+                            // Autoplay failed - browser might have restrictions
+                            console.log('Autoplay prevented by browser');
+                        });
+                    }
+                } else {
+                    // Video is out of viewport
+                    if (videoRef.current && !videoRef.current.paused) {
+                        videoRef.current.pause();
+                    }
+                }
+            },
+            { threshold: 0.5 } // Trigger when 50% of video is visible
+        );
+
+        observer.observe(videoRef.current);
+
+        return () => {
+            if (videoRef.current) observer.unobserve(videoRef.current);
+        };
     }, []);
 
     useEffect(() => {
@@ -366,6 +400,64 @@ export const BCORE = () => {
                 </div>
             </section>
 
+            {/* Video Section - Outside Overview */}
+            <div className="bcore-video-section">
+
+            <div className="bcore-video-container">
+
+                {/* LEFT - VIDEO */}
+                <div className="bcore-video-card">
+                <video 
+                    ref={videoRef}
+                    controls
+                    className="bcore-video-player"
+                    playsInline
+                >
+                    <source src={video1} type="video/mp4" />
+                </video>
+                </div>
+
+                {/* RIGHT - CONTENT */}
+                <div className="bcore-video-content-card">
+
+                <div className="bcore-video-quote-icon">❝</div>
+
+                <h2 className="bcore-video-heading">
+                    Message from the President of India
+                </h2>
+
+                <p className="bcore-video-text">
+                    I am pleased to note that Rashtriya Raksha University is actively contributing 
+                    not only in academics but also in the fields of sports and physical education.
+                </p>
+
+                <p className="bcore-video-text">
+                    A student of this university, Ms. Naorem Roshibina Devi , has won medals in several 
+                    international competitions, including the Asian Games. I extend my heartfelt 
+                    congratulations to her achievements.
+                </p>
+
+                <p className="bcore-video-text">
+                    The Bharat Centre for Olympic Research and Education is a commendable initiative 
+                    that reflects the university’s vision towards excellence in sports.
+                </p>
+
+                <p className="bcore-video-text">
+                    Academics, physical fitness, and mental strength go hand in hand. Supported by 
+                    the Ministry of Youth Affairs and Sports, this initiative is creating a meaningful 
+                    impact on security and police organizations.
+                </p>
+
+                <div className="bcore-video-author">
+                    — President of India
+                </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
             <BcoreWork />
             {/* 🏅 OLYMPIC CINEMATIC VIDEO SECTION */}
             <section className="oly-cinema-outer-wrapper">
@@ -394,7 +486,7 @@ export const BCORE = () => {
                         
                         <div className="oly-iframe-wrapper">
                             <iframe
-                                src="https://www.youtube.com/embed/7Mhy_s0Nv7E?autoplay=1&mute=1&rel=0&showinfo=0&modestbranding=1&loop=1&playlist=7Mhy_s0Nv7E"
+                                src="https://www.youtube.com/embed/tO6hkYHkRBo?si=gy4dYFb4xzG1n_4e"
                                 title="BCORE Video"
                                 frameBorder="0"
                                 allow="autoplay; encrypted-media; picture-in-picture"

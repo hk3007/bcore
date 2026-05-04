@@ -1,118 +1,248 @@
-/* Flexbox for Team Section */
-.team {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-  gap: 30px;
+:root {
+  --gold: #d4af37;
+  --royal: #002366;
+  --white: #ffffff;
+  --jakarta: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* Flip Card Container */
-.flip-card {
-  background-color: transparent;
-  width: 270px;
-  height: 370px;
-  perspective: 1000px;
-  margin: 20px;
-}
-
-/* Inner Flip Card */
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.tm-futuristic-root {
+  background-color: var(--white);
+  font-family: var(--jakarta) !important;
+  color: #1a1a1a;
+  overflow-x: hidden;
   position: relative;
-  border-radius: 15px;
+  perspective: 1500px;
 }
 
-/* Flip Card on Hover */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Front and Back Faces */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
+/* --- 3D BACKGROUND SCENE --- */
+.tm-3d-scene {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
   overflow: hidden;
+}
+
+/* 3D Olympic Inspired Rings */
+.tm-ring {
+  position: absolute;
+  border: 2px solid rgba(212, 175, 55, 0.15);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+}
+
+.tm-ring-1 {
+  width: 500px; height: 500px;
+  top: -100px; right: -100px;
+  animation: rotate3D 25s linear infinite;
+}
+
+.tm-ring-2 {
+  width: 350px; height: 350px;
+  bottom: 50px; left: -50px;
+  border-color: rgba(0, 35, 102, 0.1);
+  animation: rotate3D 20s linear infinite reverse;
+}
+
+/* 3D Floating Cubes */
+.tm-cube {
+  position: absolute;
+  width: 60px; height: 60px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  animation: float3D 8s ease-in-out infinite;
+}
+
+.tm-cube-1 { top: 20%; left: 10%; }
+.tm-cube-2 { bottom: 20%; right: 15%; animation-delay: -4s; }
+
+.tm-glow-blob {
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate3D {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg); }
+}
+
+@keyframes float3D {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-40px) rotate(90deg); }
+}
+
+/* --- HERO SECTION --- */
+.tm-hero-v2 {
+  height: 85vh;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.5)), 
+              url('https://static.pib.gov.in/WriteReadData/userfiles/image/WhatsAppImage2025-01-29at8.46.32PMAWYH.jpeg') center/cover;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Front Face */
-.flip-card-front {
-  background-color: #ffffff;
-  color: black;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Back Face */
-.flip-card-back {
-  background-color: #004d99;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-/* Image Styling */
-.flip-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 15px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Add Shadow on Hover */
-.flip-card:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* Flip Card Content */
-.flip-card-back h3, .flip-card-back p {
-  margin: 10px 0;
-}
-
-.overview {
-  padding: 0.5rem;
-  background: linear-gradient(90deg, #000428, #004e92, #000428);
-  box-shadow: #020028 10px 10px 30px;
+  justify-content: center;
   text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: white;
+  position: relative;
+  margin-bottom: 80px;
 }
 
-.overview h2 {
-  font-size: 3rem;
-  font-weight: bolder;
-  font-family: "Cinzel", serif;
-  color: #f5c518;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.tm-hero-badge {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  border: 1px solid var(--gold);
+  padding: 8px 20px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .team {
-    flex-direction: column;
-    align-items: center;
-  }
+.tm-hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin: 0;
+  font-weight: 700;
+}
 
-  .flip-card {
-    width: 100%;
-    max-width: 300px;
-  }
+.tm-hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
 
-  .overview h2 {
-    font-size: 2.5rem;
-  }
+.tm-hero-line {
+  width: 100px; height: 4px;
+  background: var(--gold);
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+.tm-gold-text { color: var(--gold); }
+
+/* --- CONTENT GRID --- */
+.tm-main-container {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.tm-section-heading h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.2rem;
+  color: var(--royal);
+  margin-bottom: 50px;
+  border-left: 5px solid var(--gold);
+  padding-left: 20px;
+}
+
+.tm-margin-top { margin-top: 120px; }
+
+.tm-grid-v2 {
+  display: grid;
+  gap: 20px;
+}
+
+/* --- GLASS CARDS --- */
+.tm-glass-card {
+  background: white;
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tm-glass-card:hover {
+  transform: translateY(-15px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.15);
+}
+
+.tm-image-frame {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.tm-profile-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.tm-glass-card:hover .tm-profile-img { transform: scale(1.1); }
+
+.tm-label {
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tm-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin: 5px 0 20px;
+}
+
+.tm-card-footer {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/** * BREAKPOINTS PER YOUR REQUEST:
+ * 1. Ultra-wide (>1600px): 6 cards
+ * 2. Wide Desktop (1200px - 1599px): 4 cards
+ * 3. Tablet Landscape (992px - 1199px): 3 cards
+ * 4. Tablet Portrait (600px - 991px): 2 cards
+ * 5. Mobile (<600px): 1 card
+ */
+
+@media (min-width: 1600px) {
+  .tm-grid-v2 { grid-template-columns: repeat(6, 1fr); }
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .tm-grid-v2 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tm-grid-v2 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 600px) and (max-width: 991px) {
+  .tm-grid-v2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 599px) {
+  .tm-grid-v2 { grid-template-columns: 1fr; }
+  .tm-hero-title { font-size: 2.5rem; }
+  .tm-hero-v2 { height: 50vh; }
+}
+
+.tm-wave-bottom {
+  position: absolute;
+  bottom: -1px; /* Ensures no gap between sections */
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 10;
+}
+
+.tm-wave-bottom svg {
+  width: 100%;
+  height: 120px; /* Controls how "deep" the curve is */
 }

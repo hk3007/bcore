@@ -79,7 +79,7 @@
 ======================= */
 .navbar {
   position: relative;
-  background: rgb(255, 231, 95);
+  background: rgb(255, 196, 0);
   backdrop-filter: blur(12px);
   border-radius: 9999px;
   height: 55px;
@@ -114,6 +114,8 @@
   text-decoration: none;
   transition: all 0.2s ease;
   white-space: nowrap;
+  font-weight: bolder;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 .nav-btn:hover {
   color: #ffffff;
@@ -137,6 +139,8 @@
   align-items: center;
   gap: 6px;
   font-size: 0.95rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: bolder;
 }
 
 .chev { transition: transform .2s ease; }
@@ -169,9 +173,10 @@
   color: #ffffff;
   text-decoration: none;
   border-radius: 6px;
+  font-weight: bolder;
 }
 .nav-dropdown a:hover {
-  background: #ffe550;
+  background: rgb(255, 196, 0);
   color: #000000;
   margin-left: 10px;
   margin-right: 10px;

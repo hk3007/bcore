@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { Newspaper, Megaphone, Award, Globe, Search, Bell } from 'lucide-react';
 import "./news.css";
 import { FaChevronLeft, FaChevronRight, FaCrown, FaStar } from "react-icons/fa";
 import { Helmet } from 'react-helmet';
@@ -70,15 +71,49 @@ const NewsSection = () => {
                 <title>BCORE NEWS</title>
             </Helmet>
 
-            <header className="royal-hero">
-                <div className="royal-meta">
-                    <span className="royal-line"></span>
-                    <FaCrown className="royal-crown-icon" />
-                    <span className="royal-line"></span>
-                </div>
-                <h1 className="royal-main-title">The BCORE <span>Bulletin</span></h1>
-                <p className="royal-subtitle">Official News & Olympic Research Updates</p>
-            </header>
+        <section className="news-hero-section">
+        {/* Dynamic Background Layer */}
+        <div className="news-bg-graphics">
+            <div className="news-grid-mesh"></div>
+            <div className="news-radial-glow"></div>
+            
+            {/* Floating Newspaper Names */}
+            <div className="news-floating-papers">
+            <div className="news-paper-tag paper-1">The Indian EXPRESS</div>
+            <div className="news-paper-tag paper-2">Daily Pioneer</div>
+            <div className="news-paper-tag paper-3">Gujarat Samachar</div>
+            <div className="news-paper-tag paper-4">Times of India</div>
+            <div className="news-paper-tag paper-5">Divya Bhaskar</div>
+            <div className="news-paper-tag paper-6">Press Trust of India</div>
+            </div>
+        </div>
+
+        <div className="news-container news-hero-flex">
+            <div className="news-hero-text">
+            <h1 className="news-main-title">
+                The BCORE <br />
+                <span className="news-gold-accent">Bulletin</span>
+            </h1>
+            <p className="news-lead-text">Official News & Olympic Research Updates</p>
+            </div>
+
+            <div className="news-hero-infographic">
+            <div className="news-info-box news-main-node">
+                <Award className="news-gold-accent" size={32} />
+                <span>Latest Updates</span>
+            </div>
+            <div className="news-info-box news-sub-node-1">Research</div>
+            <div className="news-info-box news-sub-node-2">Olympic Hub</div>
+            <div className="news-info-box news-sub-node-3">Innovation</div>
+            </div>
+        </div>
+
+        <div className="news-wave-bottom">
+            <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="#ffffff" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,112C672,107,768,149,864,165.3C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        </section>
 
             <div className="royal-container">
                 {loading && currentArticles.length === 0 ? (
@@ -99,7 +134,6 @@ const NewsSection = () => {
                                             <div className="royal-badge">{article.source}</div>
                                         </div>
                                         <div className="royal-card-content">
-                                            {isSpotlight && <div className="important-tag"><FaStar /> Featured Update</div>}
                                             <span className="royal-date">
                                                 {new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                                             </span>

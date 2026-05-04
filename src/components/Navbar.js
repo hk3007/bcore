@@ -24,16 +24,7 @@ export const Navbar = () => {
   const navRef = useRef(null);
 
   // Example announcements – replace with API data
-  const announcements = [
-    "Guidelines, schedule, and paper presentation details have been updated on the 2nd IORC event page. Please check for the latest information.",
-    "Please note: <br />All <i>FAQs</i> are available on the <i>IORC</i> event page for your reference.",
-    "Full Paper Submission and Registration Deadline extended to 15 January 2026 for the 2nd International Olympic Research Conference.",
-    "BCORE partners with NADA for the 2nd International Olympic Research Conference at Rashtriya Raksha University",
-    "Accommodation Notice: <br />Sharing-based campus accommodation is available for the International Olympic Research Conference 2026. Please book in advance. Visit the Accommodation section for details.",
-    "Abstract submissions are Date Extended till 31 December 2025 for the 2nd International Olympic Research Conference (ORC). ",
-    "Registrations for the BCORE Night run 2026 are now open. Organised by BCORE, the night run will be held on 10 January 2026, bringing together athletes, students, enthusiasts to promote fitness, resilience and the Spirit.",
-    "Bcore is pleased to announce that it will host the 2nd International ORC from 27-30 January 2026, bringing together global experts, scholars, and researchers to promote knowledge sharing in Olympic and sport research/ governance."
-  ];
+  const announcements = [];
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 1299px)");
