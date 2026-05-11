@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.c00dda39.css",
-    "main.js": "./static/js/main.dfc57ba1.js",
+    "main.js": "./static/js/main.9d8fc5ee.js",
     "static/js/453.b2889c0a.chunk.js": "./static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "./static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Tonmoy Paul.png": "./static/media/Tonmoy Paul.d5190f82efd9011a35b7.png",
@@ -34,7 +34,6 @@
     "static/media/Page 2.jpg": "./static/media/Page 2.fdfe8b309c48825f1326.jpg",
     "static/media/Lovlina Boxing Academy 1.jpeg": "./static/media/Lovlina Boxing Academy 1.7aa8b39811c8ffe59f69.jpeg",
     "static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.jpg": "./static/media/ATHLETE & COACHES DEVELOPMENT PROGRAM 1.d47309858370eb372a2c.jpg",
-    "static/media/Sumit Pandey.jpeg": "./static/media/Sumit Pandey.8f312937f4261604ee33.jpeg",
     "static/media/NADA Logo.png": "./static/media/NADA Logo.afe23d3e5d001f123438.png",
     "static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.jpg": "./static/media/ANTI DOPING IN SPORTS ETHICAL AND SCIENTIFIC PERSPECTIVES.245e3ec5ce1ad29705e1.jpg",
     "static/media/Gaurav Singh Khushwah.jpg": "./static/media/Gaurav Singh Khushwah.558d615d360e189396ab.jpg",
@@ -42,7 +41,6 @@
     "static/media/qr-code (2).png": "./static/media/qr-code (2).2971b0d10ba333f326f6.png",
     "static/media/Khelo India 1.jpg": "./static/media/Khelo India 1.324ef89bbc7ea94e6969.jpg",
     "static/media/AISTS.png": "./static/media/AISTS.c7884b6250db39916f64.png",
-    "static/media/Intern 1.jpeg": "./static/media/Intern 1.16a4c77c3d416ebc0516.jpeg",
     "static/media/Krishna Ramani.jpeg": "./static/media/Krishna Ramani.bc3ccdabd82f62dca85c.jpeg",
     "static/media/Sonika Bisht.jpeg": "./static/media/Sonika Bisht.18b26ab0fa46d42730b4.jpeg",
     "static/media/iroc2 workshop qr.jpeg": "./static/media/iroc2 workshop qr.fcfddc6c102200d006e6.jpeg",
@@ -54,11 +52,11 @@
     "static/media/Hyperlab Logo.png": "./static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "./index.html",
     "main.c00dda39.css.map": "./static/css/main.c00dda39.css.map",
-    "main.dfc57ba1.js.map": "./static/js/main.dfc57ba1.js.map",
+    "main.9d8fc5ee.js.map": "./static/js/main.9d8fc5ee.js.map",
     "453.b2889c0a.chunk.js.map": "./static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c00dda39.css",
-    "static/js/main.dfc57ba1.js"
+    "static/js/main.9d8fc5ee.js"
   ]
 }
