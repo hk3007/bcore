@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.c00dda39.css",
-    "main.js": "./static/js/main.a3b37af7.js",
+    "main.js": "./static/js/main.d38d104e.js",
     "static/js/453.b2889c0a.chunk.js": "./static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "./static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Tonmoy Paul.png": "./static/media/Tonmoy Paul.d5190f82efd9011a35b7.png",
@@ -52,11 +52,11 @@
     "static/media/Hyperlab Logo.png": "./static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "./index.html",
     "main.c00dda39.css.map": "./static/css/main.c00dda39.css.map",
-    "main.a3b37af7.js.map": "./static/js/main.a3b37af7.js.map",
+    "main.d38d104e.js.map": "./static/js/main.d38d104e.js.map",
     "453.b2889c0a.chunk.js.map": "./static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c00dda39.css",
-    "static/js/main.a3b37af7.js"
+    "static/js/main.d38d104e.js"
   ]
 }
