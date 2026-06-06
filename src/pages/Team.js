@@ -9,9 +9,7 @@ import { Helmet } from 'react-helmet';
 import image2 from '../pages/Images/TEAM/Bimal Patel.jpeg';
 import image3 from '../pages/Images/TEAM/Gaurav Singh Khushwah.jpg';
 import image12 from '../pages/Images/TEAM/Utsav Chaware.jpg';
-import image15 from '../pages/Images/TEAM/Intern 1.jpeg';
 import image4 from '../pages/Images/TEAM/Krishna Ramani.jpeg';
-import image5 from '../pages/Images/TEAM/Sumit Pandey.jpeg';
 import image6 from '../pages/Images/TEAM/Sonika Bisht.jpeg';
 import image7 from '../pages/Images/TEAM/Tonmoy Paul.png';
 
@@ -26,9 +24,7 @@ const teamMembers = [
 ];
 
 const interns = [
-  { name: 'Kushi Sriram', schoolName: 'School of Criminal Law and Military Law', photo: [image15], info: 'Research And Publication' },
   { name: 'Krishna Ramani', schoolName: 'School of Internal Security, Defence and Strategic Studies', photo: [image4], info: 'Sponsership And Events' },
-  { name: 'Sumit Pandey', schoolName: 'School of Applied Science and Engineering Technology', photo: [image5], info: 'Public Relations And Marketing' },
   { name: 'Tonmoy Paul', schoolName: 'School of Internal Security, Defence and Strategic Studies', photo: [image7], info: 'Multimedia Content Architect' }
 ];
 

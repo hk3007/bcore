@@ -4,6 +4,7 @@ import "./news.css";
 import { FaChevronLeft, FaChevronRight, FaCrown, FaStar } from "react-icons/fa";
 import { Helmet } from 'react-helmet';
 
+
 const NewsSection = () => {
     const [newsCache, setNewsCache] = useState({}); // State Cache: { 1: [...], 2: [...] }
     const [currentPage, setCurrentPage] = useState(1);
