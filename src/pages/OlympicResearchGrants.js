@@ -51,7 +51,7 @@ export const OlympicResearchGrants = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           >
-            <SectionTag>2025 – 26 Cohort</SectionTag>
+            <SectionTag>2026 Cohort</SectionTag>
             <h1 className="grp-hero__title">
               Olympic<br />
               <em>Research Grants</em>
@@ -328,7 +328,7 @@ const BCOREGrant = () => (
     <div className="grant-panel__header grant-panel__header--bcore">
       <div>
         <div className="grant-panel__label">BCORE Olympic Research Grant</div>
-        <h3 className="grant-panel__title">2025 – 26 Cohort</h3>
+        <h3 className="grant-panel__title">2026 Cohort</h3>
         <p className="grant-panel__sub">
           Open to Master's & PhD scholars across India & South Asia. Submit your application form with CV and research proposal.
         </p>
@@ -346,7 +346,7 @@ const BCOREGrant = () => (
           <span>How to Apply</span>
         </div>
         <p className="apply-desc">
-          Download and complete the BCORE Olympic Research Grant 2025 Application Form. Submit it along with your CV and a <strong>300–500 word research proposal summary</strong> to <strong>bcore@rru.ac.in</strong>. Ensure all information provided is accurate and up to date.
+          Download and complete the BCORE Olympic Research Grant 2026 Application Form. Submit it along with your CV and a <strong>300–500 word research proposal summary</strong> to <strong>bcore@rru.ac.in</strong>. Ensure all information provided is accurate and up to date.
         </p>
         <div className="apply-links">
           <a
