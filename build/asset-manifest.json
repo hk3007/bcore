@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.8afac824.css",
-    "main.js": "./static/js/main.855a671d.js",
+    "main.css": "./static/css/main.6b6ce3a1.css",
+    "main.js": "./static/js/main.c54d4118.js",
     "static/js/453.b2889c0a.chunk.js": "./static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "./static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Tonmoy Paul.png": "./static/media/Tonmoy Paul.d5190f82efd9011a35b7.png",
@@ -28,6 +28,7 @@
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.png": "./static/media/Olympic Paronama Multidiciplinary Research and Education Program 4.9a89d80589597419ee44.png",
     "static/media/Lambis.png": "./static/media/Lambis.c948915babe7c1d2f40f.png",
     "static/media/EOI 1.pdf": "./static/media/EOI 1.dadcea9086f79d02fc4f.pdf",
+    "static/media/Guidlines Olympic Research Grant by BCORE.pdf": "./static/media/Guidlines Olympic Research Grant by BCORE.1982ed25902d6fa769c1.pdf",
     "static/media/Page 5.jpeg": "./static/media/Page 5.48491cec1c5ae94d2015.jpeg",
     "static/media/Page 3.jpg": "./static/media/Page 3.3993c94643fdf0d3951a.jpg",
     "static/media/Olympic Map.png": "./static/media/Olympic Map.804f1336e4230a28263d.png",
@@ -51,12 +52,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "./static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "./static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "./index.html",
-    "main.8afac824.css.map": "./static/css/main.8afac824.css.map",
-    "main.855a671d.js.map": "./static/js/main.855a671d.js.map",
+    "main.6b6ce3a1.css.map": "./static/css/main.6b6ce3a1.css.map",
+    "main.c54d4118.js.map": "./static/js/main.c54d4118.js.map",
     "453.b2889c0a.chunk.js.map": "./static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8afac824.css",
-    "static/js/main.855a671d.js"
+    "static/css/main.6b6ce3a1.css",
+    "static/js/main.c54d4118.js"
   ]
 }

@@ -9,6 +9,8 @@ import {
   BookOpen, Zap, Globe, Clock, Star
 } from "lucide-react";
 
+import Guidelines from "../pages/Broucher/Guidlines Olympic Research Grant by BCORE.pdf";
+
 const SectionTag = ({ children }) => (
   <span className="section-tag">{children}</span>
 );
@@ -358,7 +360,7 @@ const BCOREGrant = () => (
             <Download size={14} /> Application Form (PDF)
           </a>
           <a
-            href="https://rru.ac.in/wp-content/uploads/2025/06/Guidlines-Olympic-Research-Grant-by-BCORE.pdf"
+            href={Guidelines}
             target="_blank"
             rel="noreferrer"
             className="apply-link apply-link--secondary"
