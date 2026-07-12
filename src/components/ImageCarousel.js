@@ -13,9 +13,13 @@ import slider1 from '../pages/Slider/2nd IORC 1.jpg';
 import slider2 from '../pages/Slider/2nd IORC 2.jpg';
 import slider3 from '../pages/Slider/2nd IORC 3.jpg';
 import slider4 from '../pages/Slider/SIX LEACIES WEB SLIDER.jpg';
+import legacy1 from "../pages/Slider/LEGACY 1.png"
+import legacy2 from "../pages/Slider/LEGACY 2.png"
 
 const ImageCarousel = () => {
   const images = [
+    { src: legacy2, alt: "Slide 4" },
+    { src: legacy1, alt: "Slide 4" },
     { src: slider4, alt: "Slide 4" },
     { src: slider1, alt: "Slide 1" },
     { src: slider2, alt: "Slide 2" },

@@ -24,7 +24,7 @@ export const Navbar = () => {
   const navRef = useRef(null);
 
   // Example announcements – replace with API data
-  const announcements = [];
+  const announcements = ["Be a part of India's Safe Sport movement. Join the Foundation Programme in Safe Sport and Safeguarding (21–23 October 2026) and contribute to building a sporting ecosystem founded on safety, respect, dignity and Olympic values."];
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 1299px)");

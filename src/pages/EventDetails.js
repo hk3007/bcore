@@ -13,6 +13,7 @@ import speaker1 from './Images/Col Anant Kumar.png';
 import speaker2 from './Images/Lambis.png';
 import speaker3 from './Images/Maria Bogner.png';
 import BCORENightRunDetails from "./BCORENightRunDetails";
+import SafeSportEvent from '../components/EventPages/SafeSportEvent';
 import Highlights from "../components/eventsdetails/Highlights";
 import ImportantDates from "../components/eventsdetails/ImportantDates";
 import CallForAbstract from "../components/eventsdetails/CallForAbstract";
@@ -997,6 +998,11 @@ export const EventDetails = () => {
         },
         {
             id: 4,
+            type: "External"
+        },
+                {
+            id: 5,
+            type: "External"
         }
 
     ];
@@ -1045,8 +1051,10 @@ export const EventDetails = () => {
 
     return (
         <div>
-        {event?.id === 4 && <BCORENightRunDetails />}   
-        {(event?.id !== 4) && (<div className="event-details-page">
+        {(event.type === "External" && event.id === 4) && <BCORENightRunDetails />}
+        {(event.type === "External" && event.id === 5) && <SafeSportEvent />}   
+
+        {(event.type !== "External") && (<div className="event-details-page">
         <EventHeader  title={event?.name} date={event?.date} location={event?.place}/>
 
         {event?.collaboration?.length > 0 && (

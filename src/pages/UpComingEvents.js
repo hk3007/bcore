@@ -52,6 +52,12 @@ export const UpComing = () => {
       endDate: new Date('2026-01-10'),
       place: 'Gandhinagar, India',
     },
+    {
+      id: 5,
+      name: 'Foundation Programme in Safe Sport and Safeguarding',
+      startDate: new Date('2026-08-21'),
+      endDate: new Date('2026-08-23'),
+    },
   ];
 
   const today = new Date();
@@ -68,72 +74,72 @@ export const UpComing = () => {
   });
 
   return (
-<div className="chrono-events-container">
-  <Helmet>
-    <title>Upcoming Events – Bharat Centre of Olympic Research & Education</title>
-  </Helmet>
+    <div className="chrono-events-container">
+      <Helmet>
+        <title>Upcoming Events – Bharat Centre of Olympic Research & Education</title>
+      </Helmet>
 
-  <div className="chrono-banner-header">
-    <div className="chrono-banner-content">
-      <h2 className="chrono-banner-title">Upcoming Events</h2>
-      <div className="chrono-banner-accent">
-        <span className="line"></span>
-        <span className="diamond"></span>
-        <span className="line"></span>
-      </div>
-    </div>
-    {/* Decorative background element */}
-    <div className="chrono-banner-bg-text">EVENTS</div>
-  </div>
-
-  {upcomingEvents.length > 0 ? (
-    <div className="chrono-list">
-      {upcomingEvents.map((event) => (
-        <div className="chrono-item" key={event.id}>
-          <div className="chrono-date-box">
-            <span className="chrono-day">
-              {event.date ? new Date(event.date).getDate() : event.startDate.getDate()}
-            </span>
-            <span className="chrono-month">
-              {event.date 
-                ? new Date(event.date).toLocaleString('default', { month: 'short' }) 
-                : event.startDate.toLocaleString('default', { month: 'short' })}
-            </span>
+      <div className="chrono-banner-header">
+        <div className="chrono-banner-content">
+          <h2 className="chrono-banner-title">Upcoming Events</h2>
+          <div className="chrono-banner-accent">
+            <span className="line"></span>
+            <span className="diamond"></span>
+            <span className="line"></span>
           </div>
-
-          <div className="chrono-content">
-            <h3 className="chrono-event-name">{event.name}</h3>
-            <div className="chrono-meta">
-              <span><i className="location-icon"></i> {event.place || "TBA"}</span>
-              {event.accomodation && <span className="chrono-badge">{event.accomodation}</span>}
-            </div>
-            
-            <div className="chrono-actions">
-              <Link to={`/event/${event.id}`} className="chrono-btn-primary">
-                Details
-              </Link>
-              
-              {/* Secondary Actions - Grouped for cleaner look */}
-              <div className="chrono-btn-group">
-                {event.scheduleLink && <Link to={`/event/${event.id}/schedule`}>Schedule</Link>}
-                {event.bookletLink && <a href={event.bookletLink} target="_blank" rel="noreferrer">Booklet</a>}
-                {event.paymentLink && <a href={event.paymentLink} target="_blank" rel="noreferrer">Payment</a>}
-                {event.faQ && <a href={event.faQ} target="_blank" rel="noreferrer">FAQ</a>}
-                {event.guidlines && <a href={event.guidlines} target="_blank" rel="noreferrer">Guidelines</a>}
-                {event.paperPresentation && <a href={event.paperPresentation} target="_blank" rel="noreferrer">Paper Presentation</a>}
-              </div>
-            </div>
-          </div>
-          
-          <div className="chrono-hover-bg"></div>
         </div>
-      ))}
+        {/* Decorative background element */}
+        <div className="chrono-banner-bg-text">EVENTS</div>
+      </div>
+
+      {upcomingEvents.length > 0 ? (
+        <div className="chrono-list">
+          {upcomingEvents.map((event) => (
+            <div className="chrono-item" key={event.id}>
+              <div className="chrono-date-box">
+                <span className="chrono-day">
+                  {event.date ? new Date(event.date).getDate() : event.startDate.getDate()}
+                </span>
+                <span className="chrono-month">
+                  {event.date
+                    ? new Date(event.date).toLocaleString('default', { month: 'short' })
+                    : event.startDate.toLocaleString('default', { month: 'short' })}
+                </span>
+              </div>
+
+              <div className="chrono-content">
+                <h3 className="chrono-event-name">{event.name}</h3>
+                <div className="chrono-meta">
+                  <span><i className="location-icon"></i> {event.place || "TBA"}</span>
+                  {event.accomodation && <span className="chrono-badge">{event.accomodation}</span>}
+                </div>
+
+                <div className="chrono-actions">
+                  <Link to={`/event/${event.id}`} className="chrono-btn-primary">
+                    Details
+                  </Link>
+
+                  {/* Secondary Actions - Grouped for cleaner look */}
+                  <div className="chrono-btn-group">
+                    {event.scheduleLink && <Link to={`/event/${event.id}/schedule`}>Schedule</Link>}
+                    {event.bookletLink && <a href={event.bookletLink} target="_blank" rel="noreferrer">Booklet</a>}
+                    {event.paymentLink && <a href={event.paymentLink} target="_blank" rel="noreferrer">Payment</a>}
+                    {event.faQ && <a href={event.faQ} target="_blank" rel="noreferrer">FAQ</a>}
+                    {event.guidlines && <a href={event.guidlines} target="_blank" rel="noreferrer">Guidelines</a>}
+                    {event.paperPresentation && <a href={event.paperPresentation} target="_blank" rel="noreferrer">Paper Presentation</a>}
+                  </div>
+                </div>
+              </div>
+
+              <div className="chrono-hover-bg"></div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="chrono-empty">
+          <p>Stay tuned for Further Updates</p>
+        </div>
+      )}
     </div>
-  ) : (
-    <div className="chrono-empty">
-      <p>Stay tuned for Further Updates</p>
-    </div>
-  )}
-</div>
   );
 };

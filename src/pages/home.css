@@ -1535,6 +1535,45 @@
   text-align: justify;
 }
 
+.bcore-president-info {
+    margin: 15px 0 30px;
+    text-align: center;
+}
+
+.bcore-president-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0b3d91;
+    margin-bottom: 6px;
+}
+
+.bcore-president-designation {
+    font-size: 1.05rem;
+    color: #777;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.bcore-video-author {
+    margin-top: 35px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    strong {
+        font-size: 1.15rem;
+        color: #0b3d91;
+    }
+
+    span {
+        font-size: 0.95rem;
+        color: #666;
+        font-style: italic;
+    }
+}
+
+
 .bcore-video-author {
   margin-top: 25px;
   font-weight: 600;
