@@ -20,6 +20,7 @@ import { ScrollToTopButton } from './components/ScrollToTopButton';
 import Careers from './pages/Careers';
 import HumanPerformanceLab from './pages/HumanPerformanceLab';
 import Publications from './pages/Publications';
+import LegacyPage from './pages/Legacy';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -61,6 +62,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/HumanPerformanceLab" element={<HumanPerformanceLab />} />
         <Route path="/publications" element={<Publications />} />
+        <Route path="/legacy" element={<LegacyPage />} />
         <Route path="/event/:id/schedule" element={<EventSchedule />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

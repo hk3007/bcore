@@ -24,7 +24,7 @@ const teamMembers = [
 ];
 
 const interns = [
-  { name: 'Krishna Ramani', schoolName: 'School of Internal Security, Defence and Strategic Studies', photo: [image4], info: 'Sponsership And Events' },
+  { name: 'Krishna Ramani', schoolName: 'School of Internal Security, Defence and Strategic Studies', photo: [image4], info: 'Operations and Management' },
   { name: 'Tonmoy Paul', schoolName: 'School of Internal Security, Defence and Strategic Studies', photo: [image7], info: 'Multimedia Content Architect' }
 ];
 

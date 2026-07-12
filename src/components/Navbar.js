@@ -111,6 +111,7 @@ useEffect(() => {
         { to: "/events", label: "Past Events" },
         { to: "/ethics", label: "Ethics Statement and COPE Guidelines" },
         { to: "/olympicresearchgrants", label: "Olympic Research Grants" },
+        { to: "/legacy", label: "Legacy" },
       ],
     },
     {
