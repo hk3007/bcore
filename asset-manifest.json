@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.f1b8d1be.css",
-    "main.js": "./static/js/main.ddb01cae.js",
+    "main.css": "./static/css/main.95d86eea.css",
+    "main.js": "./static/js/main.c59bfb26.js",
     "static/js/453.b2889c0a.chunk.js": "./static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "./static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/Tonmoy Paul.png": "./static/media/Tonmoy Paul.d5190f82efd9011a35b7.png",
@@ -20,6 +20,7 @@
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.png": "./static/media/Olympic Paronama Multidiciplinary Research and Education Program 2.1728e243ef2a3662cc50.png",
     "static/media/PT USHA 1.jpeg": "./static/media/PT USHA 1.8c7db93eef68e9246787.jpeg",
     "static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.png": "./static/media/Olympic Paronama Multidiciplinary Research and Education Program 1.494a4865820cb0ee9c41.png",
+    "static/media/National Safe Sport Brochure.pdf": "./static/media/National Safe Sport Brochure.959a0b85878267d3b2da.pdf",
     "static/media/Maria Bogner.png": "./static/media/Maria Bogner.b0bda6680142ede35619.png",
     "static/media/Col Anant Kumar.png": "./static/media/Col Anant Kumar.10d9580d5e026fc30747.png",
     "static/media/2nd IORC 1.jpg": "./static/media/2nd IORC 1.a21a5f495ef1d2b4b28b.jpg",
@@ -54,12 +55,12 @@
     "static/media/Indian_Olympic_Association_logo.png": "./static/media/Indian_Olympic_Association_logo.8c31b16c582b6adb1dfc.png",
     "static/media/Hyperlab Logo.png": "./static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "./index.html",
-    "main.f1b8d1be.css.map": "./static/css/main.f1b8d1be.css.map",
-    "main.ddb01cae.js.map": "./static/js/main.ddb01cae.js.map",
+    "main.95d86eea.css.map": "./static/css/main.95d86eea.css.map",
+    "main.c59bfb26.js.map": "./static/js/main.c59bfb26.js.map",
     "453.b2889c0a.chunk.js.map": "./static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1b8d1be.css",
-    "static/js/main.ddb01cae.js"
+    "static/css/main.95d86eea.css",
+    "static/js/main.c59bfb26.js"
   ]
 }
