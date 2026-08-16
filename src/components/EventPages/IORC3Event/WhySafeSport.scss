@@ -1,0 +1,60 @@
+.irc-section--why {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4.5rem 2rem;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 6px;
+    height: calc(100% - 100px);
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #0085c7, #f4c300, #009f3d, #df0024);
+  }
+}
+
+.irc-why-block {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  border: 1px solid $line;
+  box-shadow: 0 18px 45px rgba(10, 26, 51, 0.08);
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    @include display-font;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $navy;
+    margin: 0 0 0.9rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #384158;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .irc-section--why {
+    padding: 3rem 1.25rem;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .irc-why-block {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,125 @@
+.irc-cs-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+
+  @media (max-width: $bp-tablet) {
+    padding: 3rem 1.25rem;
+  }
+}
+
+.irc-cs-heading {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+
+  &__eyebrow {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: $olympic-blue;
+    margin-bottom: 0.9rem;
+  }
+
+  &__title {
+    @include display-font;
+    font-weight: 600;
+    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+    color: $navy;
+    margin: 0 0 0.9rem;
+  }
+
+  &__lead {
+    color: $muted;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
+.irc-cs-track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.irc-cs-item {
+  display: flex;
+  gap: 1.5rem;
+
+  &__rail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    padding-top: 0.3rem;
+  }
+
+  &__node {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid;
+    background: $paper;
+    flex-shrink: 0;
+  }
+
+  &__line {
+    flex: 1;
+    width: 2px;
+    background: $line;
+    margin: 0.3rem 0;
+  }
+
+  &__card {
+    padding-bottom: 2.5rem;
+  }
+
+  &:last-child &__card {
+    padding-bottom: 0;
+  }
+
+  &__day {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  &__title {
+    @include display-font;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $navy;
+    margin: 0 0 0.9rem;
+  }
+
+  &__sessions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: #384158;
+      font-size: 0.95rem;
+      line-height: 1.6;
+
+      &::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: $olympic-yellow-dark;
+        font-weight: 700;
+      }
+    }
+  }
+}

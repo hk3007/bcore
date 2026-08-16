@@ -1,0 +1,47 @@
+.irc-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media (max-width: $bp-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.irc-feature-card {
+  position: relative;
+  padding: 1.5rem 1.4rem 1.3rem;
+  border-radius: 14px;
+  background: $paper;
+  border: 1px solid $line;
+  box-shadow: 0 10px 26px -22px rgba(10, 26, 51, 0.25);
+
+  &__ring {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid;
+    margin-bottom: 0.9rem;
+  }
+
+  &__title {
+    @include display-font;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: $navy;
+    margin: 0 0 0.55rem;
+  }
+
+  &__text {
+    color: #384158;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+}

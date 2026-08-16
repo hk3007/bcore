@@ -1,0 +1,10 @@
+.irc-map-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid $line;
+  margin-top: 1rem;
+
+  iframe {
+    display: block;
+  }
+}

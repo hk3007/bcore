@@ -1,0 +1,70 @@
+.irc-reg-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1.75rem;
+  border: 1px solid $line;
+  border-radius: 14px;
+}
+
+.irc-reg-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+  font-size: 0.92rem;
+
+  th,
+  td {
+    padding: 0.9rem 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid $line;
+  }
+
+  thead th {
+    @include display-font;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(95deg, $navy, #103a6e);
+    white-space: nowrap;
+
+    span {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 0.2rem;
+    }
+  }
+
+  tbody tr:nth-child(even) {
+    background: $tint;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody td:first-child {
+    font-weight: 600;
+    color: $navy;
+  }
+
+  tbody td:not(:first-child) {
+    color: #384158;
+    font-weight: 600;
+  }
+}
+
+.irc-reg-note {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #384158;
+  margin: 0 0 0.9rem;
+
+  strong {
+    color: $navy;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

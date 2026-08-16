@@ -1,25 +1,40 @@
 import React from "react";
+import Brochure from "../../../pages/PDF/National Safe Sport Brochure.pdf";
 
 export default function HeroShowcase() {
   return (
     <section className="hs-showcase">
       <div className="hs-showcase__panel hs-showcase__panel--copy">
-        <span className="hs-eyebrow">BCORE &middot; Rashtriya Raksha University</span>
+        <span className="hs-eyebrow">
+          BCORE &middot; Rashtriya Raksha University
+        </span>
         <h2 className="hs-headline">
-          Every athlete deserves a <span className="hs-headline__accent">safe field of play.</span>
+          Every athlete deserves a{" "}
+          <span className="hs-headline__accent">safe field of play.</span>
         </h2>
         <p className="hs-lead">
-          A three-day foundation programme built on Olympic values, Indian
-          safeguarding law and international best practice &mdash; designed to turn
-          policy into everyday practice across India&rsquo;s sporting ecosystem.
+          A three-day foundation Programme built on Olympic values, Indian
+          safeguarding law and international best practice — designed to turn
+          policy into everyday practice across India’s sporting ecosystem.
         </p>
         <div className="hs-cta-row">
-          <button className="hs-btn hs-btn--primary" type="button">
-            Register Now
-          </button>
-          <button className="hs-btn hs-btn--ghost" type="button">
-            Download Brochure
-          </button>
+          {/* Register Now Button (redirect to link) */}
+          <a
+            href="https://rise.rru.ac.in/Course/688/779"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="hs-btn hs-btn--primary" type="button">
+              Register Now
+            </button>
+          </a>
+
+          {/* Download Brochure Button (PDF from public folder) */}
+          <a href={Brochure} download>
+            <button className="hs-btn hs-btn--ghost" type="button">
+              Download Brochure
+            </button>
+          </a>
         </div>
         <div className="hs-meta-row">
           <div className="hs-meta">
@@ -50,18 +65,52 @@ export default function HeroShowcase() {
           <span className="hs-visual-dot hs-visual-dot--green"></span>
           <p>Policy &amp; legal grounding</p>
         </div>
-        <svg className="hs-visual-mask" viewBox="0 0 480 480" aria-hidden="true">
+        <svg
+          className="hs-visual-mask"
+          viewBox="0 0 480 480"
+          aria-hidden="true"
+        >
           <defs>
-            <linearGradient id="hsTrackGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient
+              id="hsTrackGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
               <stop offset="0%" stopColor="#0085C7" />
               <stop offset="35%" stopColor="#F4C300" />
               <stop offset="70%" stopColor="#009F3D" />
               <stop offset="100%" stopColor="#DF0024" />
             </linearGradient>
           </defs>
-          <circle cx="240" cy="240" r="190" fill="none" stroke="url(#hsTrackGradient)" strokeWidth="2" strokeDasharray="6 10" />
-          <circle cx="240" cy="240" r="150" fill="none" stroke="#0085C7" strokeOpacity="0.15" strokeWidth="36" />
-          <circle cx="240" cy="240" r="150" fill="none" stroke="url(#hsTrackGradient)" strokeWidth="3" strokeDasharray="120 822" />
+          <circle
+            cx="240"
+            cy="240"
+            r="190"
+            fill="none"
+            stroke="url(#hsTrackGradient)"
+            strokeWidth="2"
+            strokeDasharray="6 10"
+          />
+          <circle
+            cx="240"
+            cy="240"
+            r="150"
+            fill="none"
+            stroke="#0085C7"
+            strokeOpacity="0.15"
+            strokeWidth="36"
+          />
+          <circle
+            cx="240"
+            cy="240"
+            r="150"
+            fill="none"
+            stroke="url(#hsTrackGradient)"
+            strokeWidth="3"
+            strokeDasharray="120 822"
+          />
         </svg>
       </div>
     </section>

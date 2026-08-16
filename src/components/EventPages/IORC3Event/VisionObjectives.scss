@@ -1,0 +1,58 @@
+.irc-vision-text {
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: $navy;
+  margin: 0 0 2.25rem;
+  padding: 1.5rem 1.75rem;
+  background: $tint;
+  border-left: 4px solid $olympic-blue;
+  border-radius: 0 12px 12px 0;
+}
+
+.irc-objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.irc-objective-card {
+  position: relative;
+  padding: 1.5rem 1.5rem 1.4rem;
+  border: 1px solid $line;
+  border-radius: 14px;
+  background: $paper;
+  box-shadow: 0 10px 26px -22px rgba(10, 26, 51, 0.25);
+
+  &__ring {
+    position: absolute;
+    top: 1.3rem;
+    right: 1.3rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid;
+  }
+
+  &__tag {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  &__text {
+    color: #384158;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin: 0;
+    padding-right: 1.5rem;
+  }
+}

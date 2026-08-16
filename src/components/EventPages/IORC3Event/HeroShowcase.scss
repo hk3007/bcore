@@ -1,0 +1,136 @@
+.irc-showcase {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: start;
+  gap: 3rem;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4.5rem;
+
+  @media (max-width: $bp-desktop) {
+    gap: 2.25rem;
+  }
+  @media (max-width: $bp-tablet) {
+    grid-template-columns: 1fr;
+    padding: 3.5rem 1.25rem 3rem;
+  }
+}
+
+.irc-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: $olympic-blue;
+  margin-bottom: 1.1rem;
+}
+
+.irc-headline {
+  @include display-font;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  line-height: 1.15;
+  color: $navy;
+  margin: 0 0 1.35rem;
+
+  &__accent {
+    background: linear-gradient(95deg, $olympic-blue, $olympic-green 60%, $olympic-yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.irc-lead {
+  color: $muted;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  margin: 0 0 2rem;
+
+  em {
+    color: $navy;
+    font-style: normal;
+    font-weight: 600;
+  }
+}
+
+.irc-meta-row {
+  display: flex;
+  gap: 2.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.irc-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  strong {
+    @include display-font;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: $navy;
+  }
+  span {
+    font-size: 0.82rem;
+    color: $muted;
+    letter-spacing: 0.02em;
+  }
+}
+
+.irc-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.irc-badge {
+  @include body-font;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+
+  &--primary {
+    color: $navy;
+    background: $tint;
+    border: 1.5px solid $line;
+  }
+  &--ghost {
+    color: #fff;
+    background: linear-gradient(95deg, $olympic-blue, #005b96);
+    box-shadow: 0 14px 30px -12px rgba(0, 133, 199, 0.55);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.irc-showcase__panel--about {
+  background: $tint;
+  border: 1px solid $line;
+  border-radius: 18px;
+  padding: 2rem;
+}
+
+.irc-about-title {
+  @include display-font;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $navy;
+  margin: 0 0 0.9rem;
+}
+
+.irc-showcase__panel--about p {
+  color: #384158;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0;
+}

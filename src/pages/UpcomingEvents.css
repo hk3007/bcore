@@ -1,351 +1,365 @@
-/* ====== CHRONO-AURA THEME ====== */
+/* ======================================================================
+   UPCOMING EVENTS — hero styled after the Safe Sport programme header
+   (dark navy showcase, glow orbs, gradient title) + a modern two-up
+   card grid for the event list, aligned with the Regal Nexus theme
+   used across the Past Events page and other BCORE pages.
+   ====================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ue-blue: #001a4d;
+  --ue-navy: #0a1a33;
+  --ue-navy-deep: #050f1f;
+  --ue-gold: #c5a059;
+  --ue-gold-light: #ffd980;
+  --ue-white: #ffffff;
+  --ue-bg-light: #f9f9f9;
+  --ue-transition: all 0.3s ease-in-out;
+}
 
 .chrono-events-container {
   background-color: #fcfcfc;
-  font-family: 'Inter', sans-serif; /* Recommended font */
+  font-family: 'Cinzel', serif;
   color: #1a1a1a;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
+  overflow-x: hidden;
 }
 
-/* ===== CHRONO BANNER HEADING ===== */
+.regal-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
 
-.chrono-banner-header {
+/* =====================================================================
+   HERO — Safe Sport showcase styling (dark gradient, glow orbs, gradient title)
+   ===================================================================== */
+
+.ue-hero {
   position: relative;
-  background-color: #ffffff;
-  padding: 100px 20px;
+  padding: 110px 24px 90px;
   margin-bottom: 60px;
   text-align: center;
+  color: #fff;
   overflow: hidden;
-  border-bottom: 1px solid #f0f0f0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(197, 160, 89, 0.35), transparent 42%),
+    radial-gradient(circle at 88% 20%, rgba(47, 107, 255, 0.28), transparent 40%),
+    linear-gradient(155deg, var(--ue-navy) 0%, var(--ue-navy-deep) 100%);
 }
 
-/* Big ghost text in the background */
-.chrono-banner-bg-text {
+.ue-hero-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 15vw;
-  font-weight: 900;
-  color: rgba(0, 26, 77, 0.03); /* Very faint Royal Blue */
-  z-index: 0;
-  letter-spacing: 20px;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: ue-drift 12s ease-in-out infinite;
   pointer-events: none;
 }
 
-.chrono-banner-content {
+.ue-hero-glow-1 {
+  width: 340px;
+  height: 340px;
+  top: -100px;
+  left: -70px;
+  background: var(--ue-gold);
+}
+
+.ue-hero-glow-2 {
+  width: 280px;
+  height: 280px;
+  bottom: -110px;
+  right: -40px;
+  background: #2f6bff;
+  animation-delay: 3s;
+}
+
+@keyframes ue-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(24px, -18px) scale(1.08); }
+}
+
+.ue-hero-content {
   position: relative;
-  z-index: 1;
-}
-
-.chrono-banner-tag {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #c5a059; /* Gold */
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  margin-bottom: 15px;
-}
-
-.chrono-banner-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  color: #001a4d; /* Dark Royal Blue */
-  font-weight: 900;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
-}
-
-/* Sophisticated line divider with diamond */
-.chrono-banner-accent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.chrono-banner-accent .line {
-  width: 80px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #001a4d);
-}
-
-.chrono-banner-accent .line:last-child {
-  background: linear-gradient(90deg, #001a4d, transparent);
-}
-
-.chrono-banner-accent .diamond {
-  width: 10px;
-  height: 10px;
-  background: #c5a059; /* Gold */
-  transform: rotate(45deg);
-}
-
-/* Responsive Tweak */
-@media (max-width: 768px) {
-  .chrono-banner-header {
-    padding: 60px 15px;
-  }
-  .chrono-banner-accent .line {
-    width: 40px;
-  }
-}
-
-/* List Styling */
-.chrono-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 1000px;
+  z-index: 2;
+  max-width: 720px;
   margin: 0 auto;
 }
 
-.chrono-item {
-  position: relative;
-  display: flex;
+.ue-hero-kicker {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ue-gold-light);
+  margin: 0 0 16px;
+}
+
+.ue-hero-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  letter-spacing: -0.01em;
+  margin: 0 0 16px;
+  font-weight: 600;
+  line-height: 1.1;
+  background: linear-gradient(95deg, #fff 0%, var(--ue-gold-light) 55%, #fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ue-hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.02rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 auto 28px;
+  line-height: 1.6;
+  max-width: 620px;
+}
+
+.ue-hero-badge {
+  display: inline-flex;
   align-items: center;
-  background: #fff;
-  padding: 40px;
-  border: 1px solid #eee;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  overflow: hidden;
-  cursor: pointer;
+  gap: 0.6rem;
+  padding: 0.75rem 1.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-family: 'Inter', sans-serif;
 }
 
-.chrono-item:hover {
-  transform: translateX(15px);
-  border-color: #004aad;
-}
-
-/* Date Branding */
-.chrono-date-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 80px;
-  margin-right: 40px;
-  border-right: 2px solid #004aad;
-  padding-right: 30px;
-}
-
-.chrono-day {
-  font-size: 2.5rem;
-  font-weight: 900;
+.ue-hero-badge strong {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ue-gold-light);
   line-height: 1;
 }
 
-.chrono-month {
+.ue-hero-badge span {
   text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #666;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-/* Content Area */
-.chrono-content {
-  flex-grow: 1;
-  z-index: 2;
+@media (prefers-reduced-motion: reduce) {
+  .ue-hero-glow {
+    animation: none;
+  }
 }
 
-.chrono-event-name {
-  font-size: 1.6rem;
-  margin: 0 0 10px 0;
-  font-weight: 700;
-  transition: color 0.3s;
+/* =====================================================================
+   EVENT CARD GRID — modern two-up layout for laptop / desktop
+   ===================================================================== */
+
+.ue-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin: 0 auto 60px;
 }
 
-.chrono-meta {
+@media (min-width: 900px) {
+  .ue-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+.ue-card {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  color: #666;
-  font-size: 0.9rem;
+  flex-direction: column;
+  background: var(--ue-white);
+  border: 1px solid #eef0f5;
+  border-top: 4px solid transparent;
+  border-radius: 18px;
+  padding: 32px 30px;
+  box-shadow: 0 4px 20px rgba(0, 26, 77, 0.05);
+  transition: var(--ue-transition);
 }
 
-.chrono-badge {
-  background: #f0f0f0;
-  padding: 4px 12px;
+.ue-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 26, 77, 0.12);
+  border-top-color: var(--ue-gold);
+}
+
+.ue-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ue-card-date {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: rgba(0, 26, 77, 0.05);
+  border-radius: 10px;
+  padding: 8px 16px;
+  line-height: 1.35;
+}
+
+.ue-card-date__range {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--ue-blue);
+}
+
+.ue-card-date__year {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ue-gold);
+}
+
+.ue-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ue-blue);
+  line-height: 1.35;
+  margin: 0 0 14px;
+}
+
+.ue-venue {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-style: italic;
+  margin: 0 0 20px 0;
+  color: #555;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.ue-venue-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--ue-gold);
+}
+
+.ue-badge {
+  display: inline-block;
+  background: rgba(197, 160, 89, 0.12);
+  padding: 4px 14px;
   border-radius: 20px;
   font-weight: 600;
-  font-size: 0.75rem;
-  color: #004aad;
+  font-size: 0.72rem;
+  color: var(--ue-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
-/* Buttons and Links */
-.chrono-actions {
-  margin-top: 25px;
+/* Buttons */
+.ue-btn-group {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
 }
 
-.chrono-btn-primary {
-  background: #111;
-  color: #fff;
-  padding: 12px 30px;
+.ue-btn {
   text-decoration: none;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  transition: background 0.3s;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  transition: var(--ue-transition);
+  display: inline-block;
 }
 
-.chrono-btn-primary:hover {
-  background: #004aad;
+.ue-btn.primary {
+  background: var(--ue-blue);
+  color: #fff;
 }
 
-.chrono-btn-group {
-  display: flex;
-  gap: 15px;
+.ue-btn.primary:hover {
+  background: var(--ue-gold);
+  color: var(--ue-blue);
+  transform: translateY(-2px);
 }
 
-.chrono-btn-group a {
-  text-decoration: none;
-  color: #888;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s;
+.ue-btn.secondary {
+  border: 1px solid var(--ue-blue);
+  color: var(--ue-blue);
 }
 
-.chrono-btn-group a:hover {
-  color: #004aad;
-  border-bottom: 1px solid #004aad;
+.ue-btn.secondary:hover {
+  border-color: var(--ue-gold);
+  color: var(--ue-gold);
+  background: rgba(197, 160, 89, 0.05);
 }
 
-/* Background Animated Flare */
-.chrono-hover-bg {
-  position: absolute;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 74, 173, 0.03));
-  transition: right 0.6s ease;
-  z-index: 1;
-}
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
 
-.chrono-item:hover .chrono-hover-bg {
-  right: 0;
-}
-
-/* ====== RESPONSIVE DESIGN: TABLETS & MOBILE ====== */
-
-/* Tablet Device Adjustments (up to 1024px) */
 @media (max-width: 1024px) {
-  .chrono-events-container {
-    padding: 60px 5%;
-  }
-
-  .chrono-list {
-    max-width: 90%;
-  }
-
-  .chrono-item {
-    padding: 30px;
-  }
-
-  .chrono-btn-group {
-    flex-wrap: wrap; /* Prevent links from overflowing */
-    gap: 10px 15px;
+  .ue-hero {
+    padding: 90px 20px 70px;
   }
 }
 
-/* Mobile & Small Tablet (up to 768px) */
 @media (max-width: 768px) {
-  .chrono-banner-header {
-    padding: 60px 15px;
+  .regal-content-wrapper {
+    padding: 0 5%;
+  }
+
+  .ue-hero {
+    padding: 70px 18px 56px;
     margin-bottom: 40px;
   }
 
-  .chrono-banner-title {
-    font-size: 2.8rem; /* Scale down the massive title */
-  }
-
-  .chrono-item {
-    flex-direction: column; /* Stack Date above Content */
-    align-items: flex-start;
-    padding: 25px;
-    gap: 20px;
-  }
-
-  .chrono-item:hover {
-    transform: translateY(-5px); /* Lift up instead of sliding right on mobile */
-  }
-
-  .chrono-date-box {
-    border-right: none;
-    border-bottom: 2px solid #004aad;
-    flex-direction: row; /* Day and Month side-by-side */
-    gap: 12px;
-    min-width: auto;
-    margin-right: 0;
-    padding-right: 0;
-    padding-bottom: 10px;
-    width: 100%; /* Line spans across */
-  }
-
-  .chrono-day {
-    font-size: 1.8rem;
-  }
-
-  .chrono-month {
+  .ue-hero-subtitle {
     font-size: 1rem;
-    align-self: center;
   }
 
-  .chrono-event-name {
-    font-size: 1.3rem;
+  .ue-card {
+    padding: 26px 22px;
   }
 
-  .chrono-meta {
+  .ue-card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ue-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .ue-card-top {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
 
-  .chrono-actions {
-    flex-direction: column; /* Stack Details button above secondary links */
-    align-items: stretch; /* Buttons take full width */
-    width: 100%;
-    gap: 20px;
-  }
-
-  .chrono-btn-primary {
-    text-align: center;
-    padding: 15px;
-  }
-
-  .chrono-btn-group {
-    justify-content: center; /* Center the "Schedule, Booklet" links */
-    width: 100%;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-  }
-}
-
-/* Small Mobile (up to 480px) */
-@media (max-width: 480px) {
-  .chrono-banner-title {
-    font-size: 2.2rem;
-  }
-
-  .chrono-banner-accent .line {
-    width: 30px;
-  }
-
-  .chrono-btn-group {
-    display: grid; /* Grid layout for links to keep them organized */
+  .ue-btn-group {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: center;
-    gap: 15px;
   }
-} 
+}
 
 /* ====== CHRONO-EMPTY STATE (Consistent with Aura Theme) ====== */
 
@@ -358,7 +372,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px;
-  
+
   /* Theme Colors from your root */
   background: linear-gradient(135deg, #001a4d 0%, #002b66 100%);
   border: 1px solid #c5a059;

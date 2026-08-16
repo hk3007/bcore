@@ -1,104 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap');
+
 /* ==========================================
-   Highlights Section - Royal Olympic Theme
-   Colors: Royal Blue (#0a1931), Gold (#f5c518), White (#ffffff)
-   Look: Modern, Elegant, Readable, Subtle Vintage Touch
+   Highlights Section — Modern Olympic Theme
+   Palette: Midnight Navy · Championship Gold · Ivory
 ========================================== */
 
 .highlights-container {
-  color: #ffffff;
+  padding: 64px 40px;
+  background: #F8F6F0;
   text-align: center;
   overflow: hidden;
-  justify-content: center;
 }
 
 /* Title */
 .highlights-container h3 {
-  font-family: "Cinzel", serif;
-  font-size: 2.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
   font-weight: 700;
-  color: #000000; /* Gold */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 50px;
+  color: #001B45;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
   display: inline-block;
 }
 
-/* Underline */
+/* Gold underline accent */
 .highlights-container h3::after {
-  content: "";
+  content: '';
   display: block;
   height: 3px;
-  width: 100px;
-  background: linear-gradient(90deg, #0c3c7b, #ffdb25, #1f18f5);
+  width: 48px;
+  background: #C9A227;
   margin: 12px auto 0;
   border-radius: 2px;
-  opacity: 0.8;
+  opacity: 1;
 }
 
-/* List */
+/* Card grid */
 .highlights-container ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   list-style: none;
   padding: 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Card */
 .highlights-container li {
-  background: linear-gradient(135deg, #000428, #004e92, #000428);
-  border: 1px solid #f5c518;
-  border-left: 7px solid #f5c518;
-  border-radius: 12px;
-  padding: 25px;
-  color: #ffffff;
-  width: 280px;
-  font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-
-  /* ✅ Center text perfectly inside box */
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 27, 69, 0.08);
+  border-left: 4px solid #C9A227;
+  border-radius: 10px;
+  padding: 24px 22px 24px 26px;
+  color: #374151;
+  width: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 27, 69, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 14px;
+  position: relative;
 }
 
-/* Hover effect */
+/* Dot marker */
+.highlights-container li::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  min-width: 9px;
+  border-radius: 50%;
+  background: #C9A227;
+  margin-top: 6px;
+  transition: background 0.25s;
+}
+
+/* Hover */
 .highlights-container li:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(245, 197, 24, 0.25);
-  border-color: rgb(255, 200, 0);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0, 27, 69, 0.12);
+  border-left-color: #001B45;
 }
 
 .highlights-container li:hover::before {
-  background: linear-gradient(180deg, #ffe170, #f5c518);
+  background: #001B45;
 }
 
-/* Text */
+/* Text span */
 .highlights-container li span {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0 10px;
+  color: #374151;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.65;
   display: block;
-  line-height: 1.5;
+  padding: 0;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .highlights-container {
-    padding: 50px 20px;
+    padding: 48px 20px;
   }
 
   .highlights-container h3 {
-    font-size: 2.2rem;
+    font-size: 1.7rem;
+  }
+
+  .highlights-container ul {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .highlights-container li {
-    width: 90%;
-    padding: 20px;
+    padding: 18px 18px 18px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlights-container {
+    padding: 36px 14px;
+  }
+
+  .highlights-container li span {
+    font-size: 0.9rem;
   }
 }

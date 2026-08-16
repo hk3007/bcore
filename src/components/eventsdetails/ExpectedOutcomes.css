@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap');
+
+.eo-section {
+  background: #001B45;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top gold line */
+.eo-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #C9A227, #E8C84A, #C9A227, transparent);
+}
+
+.eo-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.eo-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.eo-eyebrow {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.7);
+  margin-bottom: 12px;
+}
+
+.eo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.eo-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: #C9A227;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ── GRID ── */
+.eo-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.eo-item {
+  position: relative;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 14px;
+  padding: 28px 24px 24px 24px;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.eo-item:hover {
+  background: rgba(201, 162, 39, 0.07);
+  border-color: rgba(201, 162, 39, 0.4);
+  transform: translateY(-4px);
+}
+
+.eo-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(201, 162, 39, 0.5);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.eo-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(201, 162, 39, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9A227;
+  margin-bottom: 14px;
+}
+
+.eo-item-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .eo-section { padding: 56px 20px; }
+  .eo-grid { grid-template-columns: 1fr; }
+}
