@@ -1,303 +1,1212 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 // =========================================================================
-// TOKENS — shared across the 3rd IORC page and its sub-sections
+// GLOBAL TOKENS
 // =========================================================================
-$navy: #0a1a33;
-$navy-deep: #050f1f;
+
+$navy: #0b1f33;
+$navy-deep: #061321;
 
 $olympic-blue: #0085c7;
 $olympic-yellow: #f4c300;
-$olympic-yellow-dark: #a88200;
-$olympic-black: #000000;
 $olympic-green: #009f3d;
 $olympic-red: #df0024;
 
 $paper: #ffffff;
+$soft: #f6f8fa;
+$soft-blue: #f3f8fc;
+
 $ink: #101828;
 $muted: #667085;
-$line: #e6e9f0;
-$tint: #f7f8fb;
+
+$line: #e4e8ed;
+$line-dark: #d6dce3;
 
 $bp-mobile: 480px;
 $bp-tablet: 768px;
 $bp-desktop: 1024px;
 $bp-wide: 1440px;
 
+// =========================================================================
+// FONT MIXINS
+// =========================================================================
+
 @mixin display-font {
-  font-family: "Fraunces", Georgia, serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
+
 @mixin body-font {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    "DM Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
+
+// =========================================================================
+// GLOBAL PAGE
+// =========================================================================
 
 .irc-page {
   @include body-font;
+
+  width: 100%;
+  min-height: 100vh;
+
   background: $paper;
   color: $ink;
+
   line-height: 1.6;
+
   overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* =========================================================================
-   HERO HEADER
-   ========================================================================= */
+.irc-body {
+  width: 100%;
+  background: $paper;
+  color: $ink;
+}
+
+// =========================================================================
+// HERO
+// =========================================================================
+
 .irc-hero {
   position: relative;
-  padding: 96px 24px 70px;
-  text-align: center;
-  color: #fff;
+
+  min-height: min(900px, 100vh);
+
+  display: flex;
+  align-items: center;
+
+  padding: 110px 70px 95px;
+
   overflow: hidden;
+
   background:
-    radial-gradient(circle at 12% 8%, rgba(47, 107, 255, 0.4), transparent 42%),
-    radial-gradient(circle at 88% 20%, rgba(255, 176, 32, 0.28), transparent 40%),
-    linear-gradient(155deg, #0a1a33 0%, #050f1f 100%);
+    radial-gradient(circle at 7% 12%,
+      rgba(0, 133, 199, 0.1),
+      transparent 27%),
+    radial-gradient(circle at 94% 78%,
+      rgba(244, 195, 0, 0.09),
+      transparent 25%),
+    radial-gradient(circle at 72% 25%,
+      rgba(0, 159, 61, 0.035),
+      transparent 22%),
+    linear-gradient(135deg,
+      #ffffff 0%,
+      #fafcfd 50%,
+      #f4f8fb 100%);
+
+  color: $ink;
+
+  isolation: isolate;
+
+  border-bottom: 1px solid $line;
 }
+
+// =========================================================================
+// TOP MULTI-COLOR LINE
+// =========================================================================
+
+.irc-hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background: linear-gradient(90deg,
+      $olympic-blue 0%,
+      $olympic-blue 25%,
+      $olympic-yellow 25%,
+      $olympic-yellow 50%,
+      $olympic-green 50%,
+      $olympic-green 75%,
+      $olympic-red 75%,
+      $olympic-red 100%);
+
+  z-index: 20;
+}
+
+// =========================================================================
+// HERO GRID
+// =========================================================================
+
+.irc-hero__grid {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.5;
+
+  background-image:
+    linear-gradient(rgba(11, 31, 51, 0.035) 1px,
+      transparent 1px),
+    linear-gradient(90deg,
+      rgba(11, 31, 51, 0.035) 1px,
+      transparent 1px);
+
+  background-size: 90px 90px;
+
+  mask-image: linear-gradient(to bottom,
+      transparent,
+      black 15%,
+      black 80%,
+      transparent);
+}
+
+// =========================================================================
+// HERO NOISE
+// =========================================================================
+
+.irc-hero__noise {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.012;
+
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+// =========================================================================
+// HERO GLOWS
+// =========================================================================
 
 .irc-hero-glow {
   position: absolute;
+
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.55;
-  animation: irc-drift 12s ease-in-out infinite;
+
+  filter: blur(90px);
+
   pointer-events: none;
-}
-.irc-hero-glow-1 {
-  width: 340px;
-  height: 340px;
-  top: -100px;
-  left: -70px;
-  background: #2f6bff;
-}
-.irc-hero-glow-2 {
-  width: 280px;
-  height: 280px;
-  bottom: -110px;
-  right: -40px;
-  background: #ff4d5e;
-  animation-delay: 3s;
+
+  opacity: 0.22;
+
+  animation: ircHeroFloat 14s ease-in-out infinite;
+
+  &-1 {
+    width: 420px;
+    height: 420px;
+
+    left: -180px;
+    top: -160px;
+
+    background: rgba(0, 133, 199, 0.32);
+  }
+
+  &-2 {
+    width: 360px;
+    height: 360px;
+
+    right: -160px;
+    bottom: -160px;
+
+    background: rgba(223, 0, 36, 0.16);
+
+    animation-delay: 4s;
+  }
 }
 
-@keyframes irc-drift {
+@keyframes ircHeroFloat {
+
   0%,
   100% {
-    transform: translate(0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
+
   50% {
-    transform: translate(24px, -18px) scale(1.08);
+    transform: translate3d(25px, -20px, 0) scale(1.08);
   }
 }
+
+// =========================================================================
+// ABSTRACT DECORATION
+// =========================================================================
+
+.irc-hero__decor {
+  position: absolute;
+
+  right: 7%;
+  top: 14%;
+
+  width: 280px;
+  height: 320px;
+
+  pointer-events: none;
+
+  opacity: 0.55;
+
+  z-index: 1;
+}
+
+.hero-dot {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -9px;
+
+    border-radius: inherit;
+
+    border: 1px solid currentColor;
+
+    opacity: 0.25;
+  }
+
+  &--blue {
+    width: 12px;
+    height: 12px;
+
+    top: 20px;
+    right: 80px;
+
+    background: $olympic-blue;
+    color: $olympic-blue;
+  }
+
+  &--yellow {
+    width: 8px;
+    height: 8px;
+
+    top: 95px;
+    right: 25px;
+
+    background: $olympic-yellow;
+    color: $olympic-yellow;
+  }
+
+  &--green {
+    width: 10px;
+    height: 10px;
+
+    top: 165px;
+    right: 125px;
+
+    background: $olympic-green;
+    color: $olympic-green;
+  }
+
+  &--red {
+    width: 7px;
+    height: 7px;
+
+    top: 235px;
+    right: 65px;
+
+    background: $olympic-red;
+    color: $olympic-red;
+  }
+}
+
+// =========================================================================
+// HERO CONTENT
+// =========================================================================
 
 .irc-hero-content {
   position: relative;
-  z-index: 2;
+
+  z-index: 5;
+
+  width: min(100%, 1500px);
+
   margin: 0 auto;
-  max-width: 900px;
 }
 
-.irc-hero-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.24em;
-  font-size: 0.72rem;
+// =========================================================================
+// INSTITUTION META
+// =========================================================================
+
+.irc-hero-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 32px;
+
+  font-size: 10px;
+
   font-weight: 700;
-  color: #ffd980;
-  margin: 0 0 16px;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color: #73808c;
+
+  &__line {
+    width: 36px;
+
+    height: 1px;
+
+    background: #cbd3da;
+  }
 }
+
+// =========================================================================
+// EVENT NAME — prominent identity block
+// Ordinal (03rd) + divider + "International Olympic Research Conference"
+// This sits BELOW the theme tagline in size, but is a real heading now,
+// not a caption.
+// =========================================================================
+
+.irc-event-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  margin-bottom: 40px;
+
+  max-width: 780px;
+}
+
+.irc-event-label__ordinal {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 2px;
+
+  flex-shrink: 0;
+}
+
+.irc-event-label__number {
+  @include display-font;
+
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+
+  color: $olympic-blue;
+}
+
+.irc-event-label__suffix {
+  @include display-font;
+
+  font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+
+  font-weight: 700;
+
+  color: $olympic-blue;
+
+  letter-spacing: -0.02em;
+
+  padding-bottom: 4px;
+}
+
+.irc-event-label__divider {
+  width: 1px;
+
+  height: 52px;
+
+  background: $line-dark;
+
+  flex-shrink: 0;
+}
+
+.irc-event-label__content {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.irc-event-label__eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  color: $olympic-blue;
+}
+
+.irc-event-label__title {
+  @include display-font;
+
+  margin: 0;
+
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+
+  font-weight: 800;
+
+  line-height: 1.02;
+
+  letter-spacing: -0.045em;
+
+  color: $navy;
+}
+
+// =========================================================================
+// MAIN TAGLINE (THEME) — THE ATHLETE AT THE HEART
+// THIS IS THE BIGGEST TYPOGRAPHIC ELEMENT ON THE PAGE
+// =========================================================================
 
 .irc-hero-title {
   @include display-font;
-  font-size: clamp(2.1rem, 5.4vw, 3.9rem);
-  letter-spacing: -0.01em;
-  margin: 0 0 16px;
-  font-weight: 600;
-  background: linear-gradient(95deg, #fff 0%, #ffd980 55%, #fff 100%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  margin: 0;
+
+  max-width: 1200px;
+
+  font-size: clamp(4.2rem, 8.5vw, 8.5rem);
+
+  font-weight: 900;
+
+  line-height: 0.82;
+
+  letter-spacing: -0.08em;
+
+  text-transform: uppercase;
+
+  color: $navy;
+}
+
+.irc-hero-title__line {
+  display: block;
+
+  white-space: nowrap;
+}
+
+.irc-hero-title__accent {
+  color: transparent;
+
+  background:
+    linear-gradient(90deg,
+      $navy 0%,
+      #244b68 40%,
+      $olympic-blue 75%,
+      #4a7591 100%);
+
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
 }
+
+// =========================================================================
+// SUBTITLE
+// =========================================================================
 
 .irc-hero-subtitle {
-  font-size: clamp(1.02rem, 2vw, 1.3rem);
+  margin: 38px 0 0;
+
+  max-width: 600px;
+
+  font-size: clamp(17px, 2vw, 25px);
+
   font-weight: 500;
-  color: #fff;
-  margin: 0 0 26px;
-  max-width: 680px;
-  margin-left: auto;
-  margin-right: auto;
+
+  line-height: 1.4;
+
+  color: #536273;
 }
+
+// =========================================================================
+// HERO BOTTOM
+// =========================================================================
+
+.irc-hero-bottom {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 80px;
+
+  margin-top: 58px;
+}
+
+// =========================================================================
+// DATE
+// =========================================================================
 
 .irc-hero-date {
-  display: inline-flex;
+  display: flex;
+
+  flex-direction: column; // changed from row-based align-items: center
+
+  min-width: 320px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid $line-dark;
+}
+  
+// =========================================================================
+// DATE — INTERNATIONAL PARTICIPANTS NOTE
+// =========================================================================
+
+.irc-hero-date__main {
+  display: flex;
+
   align-items: center;
-  gap: 1rem;
-  padding: 0.9rem 1.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
 
-  .date-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1;
+  gap: 20px;
+}
 
-    strong {
-      @include display-font;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-    em {
-      font-style: normal;
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      color: rgba(255, 255, 255, 0.6);
-      margin-top: 0.2rem;
-    }
-  }
-  .date-sep {
-    color: rgba(255, 255, 255, 0.4);
-  }
-  .date-year {
-    font-weight: 600;
-    color: #ffd980;
-    font-size: 0.95rem;
-    padding-left: 0.75rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.18);
+.irc-hero-date__note {
+  margin: 10px 0 0;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.01em;
+
+  color: #7a8792;
+
+  strong {
+    font-weight: 700;
+
+    color: $olympic-blue;
   }
 }
+
+
+.date-block {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1;
+
+  strong {
+    @include display-font;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.06em;
+
+    color: $navy;
+  }
+
+  em {
+    margin-top: 7px;
+
+    font-style: normal;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    color: #87939f;
+  }
+}
+
+.date-sep {
+  font-size: 22px;
+
+  color: #aab4bd;
+}
+
+.date-year {
+  padding-left: 22px;
+
+  border-left: 1px solid $line-dark;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #536273;
+}
+
+// =========================================================================
+// LOCATION
+// =========================================================================
+
+.irc-hero-location {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 280px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid $line-dark;
+
+  span {
+    margin-bottom: 7px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2em;
+
+    color: #8995a0;
+  }
+
+  strong {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: $navy;
+  }
+
+  small {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    color: #7a8792;
+  }
+}
+
+// =========================================================================
+// SCROLL
+// =========================================================================
+
+.irc-hero-scroll {
+  position: absolute;
+
+  right: 45px;
+
+  bottom: 40px;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  writing-mode: vertical-rl;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+
+  color: #9aa5ae;
+
+  i {
+    display: block;
+
+    width: 1px;
+
+    height: 55px;
+
+    background: #d3d9df;
+  }
+}
+
+// =========================================================================
+// GENERIC SECTION
+// =========================================================================
+
+.irc-section {
+  width: min(100% - 48px, 1100px);
+
+  padding: 90px 0;
+
+  margin: 0 auto;
+
+  &__eyebrow {
+    display: block;
+
+    margin-bottom: 16px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    text-transform: uppercase;
+
+    color: $olympic-blue;
+  }
+
+  &__title {
+    @include display-font;
+
+    margin: 0 0 25px;
+
+    font-size: clamp(32px, 4vw, 54px);
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.05em;
+
+    color: $navy;
+  }
+
+  &__lead {
+    margin: 0 0 20px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: $navy;
+  }
+
+  &__body {
+    p {
+      margin: 0 0 18px;
+
+      font-size: 16px;
+
+      line-height: 1.75;
+
+      color: #4e5b68;
+    }
+  }
+}
+
+// =========================================================================
+// GENERIC GRID
+// =========================================================================
+
+.irc-grid {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px 20px;
+
+  li {
+    position: relative;
+
+    padding: 18px 20px 18px 45px;
+
+    border: 1px solid $line;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #4b5754;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      left: 20px;
+      top: 25px;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: $olympic-blue;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(0, 133, 199, 0.35);
+
+      box-shadow: 0 12px 30px rgba(16, 24, 40, 0.06);
+    }
+  }
+}
+
+// =========================================================================
+// SECTION VARIANTS
+// =========================================================================
+
+.irc-section-wrap {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  &--white {
+    background: #ffffff;
+
+    color: $ink;
+  }
+
+  &--soft {
+    background: $soft;
+
+    color: $ink;
+  }
+
+  &--dark {
+    background: $soft-blue;
+
+    color: $ink;
+  }
+}
+
+// =========================================================================
+// 1200px
+// =========================================================================
+
+@media (max-width: 1200px) {
+  .irc-hero {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .irc-hero-title {
+    font-size: clamp(4rem, 8.5vw, 7rem);
+  }
+
+  .irc-hero__decor {
+    right: 3%;
+
+    opacity: 0.4;
+  }
+}
+
+// =========================================================================
+// 900px — TABLET
+// =========================================================================
+
+@media (max-width: 900px) {
+  .irc-hero {
+    min-height: 780px;
+
+    padding: 90px 35px 80px;
+  }
+
+  .irc-event-label {
+    margin-bottom: 30px;
+  }
+
+  .irc-hero-title {
+    font-size: clamp(3.6rem, 9.5vw, 6rem);
+
+    line-height: 0.85;
+  }
+
+  .irc-hero-bottom {
+    gap: 45px;
+  }
+
+  .irc-hero-scroll {
+    display: none;
+  }
+
+  .irc-section {
+    width: min(100% - 40px, 850px);
+
+    padding: 65px 0;
+  }
+}
+
+// =========================================================================
+// 640px — MOBILE
+// =========================================================================
 
 @media (max-width: 640px) {
   .irc-hero {
-    padding: 72px 18px 56px;
+    min-height: auto;
+
+    padding: 65px 20px 55px;
+
+    align-items: flex-start;
+  }
+
+  // -----------------------------------------------------------------------
+  // Institution
+  // -----------------------------------------------------------------------
+
+  .irc-hero-meta {
+    gap: 9px;
+
+    margin-bottom: 27px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.16em;
+  }
+
+  .irc-hero-meta__line {
+    width: 22px;
+  }
+
+  // -----------------------------------------------------------------------
+  // Event Name
+  // -----------------------------------------------------------------------
+
+  .irc-event-label {
+    gap: 14px;
+
+    margin-bottom: 28px;
+
+    max-width: 100%;
+  }
+
+  .irc-event-label__number {
+    font-size: 1.9rem;
+  }
+
+  .irc-event-label__suffix {
+    font-size: 0.9rem;
+  }
+
+  .irc-event-label__divider {
+    height: 40px;
+  }
+
+  .irc-event-label__eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
+  }
+
+  .irc-event-label__title {
+    font-size: 1.4rem;
+
+    line-height: 1.08;
+  }
+
+  // -----------------------------------------------------------------------
+  // Main Tagline
+  // -----------------------------------------------------------------------
+
+  .irc-hero-title {
+    max-width: 100%;
+
+    font-size: clamp(2.8rem, 13vw, 4.2rem);
+
+    line-height: 0.88;
+
+    letter-spacing: -0.06em;
+  }
+
+  .irc-hero-title__line {
+    white-space: normal;
+  }
+
+  // -----------------------------------------------------------------------
+  // Subtitle
+  // -----------------------------------------------------------------------
+
+  .irc-hero-subtitle {
+    margin-top: 26px;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+  }
+
+  // -----------------------------------------------------------------------
+  // Bottom Info
+  // -----------------------------------------------------------------------
+
+  .irc-hero-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 28px;
+
+    width: 100%;
+
+    margin-top: 42px;
+  }
+
+  .irc-hero-date {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .irc-hero-location {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  // -----------------------------------------------------------------------
+  // Decoration
+  // -----------------------------------------------------------------------
+
+  .irc-hero__decor {
+    width: 180px;
+
+    height: 180px;
+
+    right: -30px;
+
+    top: 15%;
+
+    opacity: 0.22;
+  }
+
+  .irc-hero-glow-1 {
+    width: 250px;
+    height: 250px;
+
+    left: -120px;
+    top: -100px;
+  }
+
+  .irc-hero-glow-2 {
+    width: 220px;
+    height: 220px;
+
+    right: -120px;
+    bottom: -100px;
+  }
+
+  // -----------------------------------------------------------------------
+  // Sections
+  // -----------------------------------------------------------------------
+
+  .irc-section {
+    width: calc(100% - 34px);
+
+    padding: 50px 0;
+  }
+
+  .irc-section__title {
+    font-size: 34px;
+  }
+
+  .irc-grid {
+    grid-template-columns: 1fr;
   }
 }
+
+// =========================================================================
+// 380px — SMALL MOBILE
+// =========================================================================
+
+@media (max-width: 380px) {
+  .irc-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .irc-event-label {
+    gap: 10px;
+  }
+
+  .irc-event-label__number {
+    font-size: 1.6rem;
+  }
+
+  .irc-event-label__suffix {
+    font-size: 0.78rem;
+  }
+
+  .irc-event-label__divider {
+    height: 34px;
+  }
+
+  .irc-event-label__eyebrow {
+    font-size: 7px;
+  }
+
+  .irc-event-label__title {
+    font-size: 1.18rem;
+  }
+
+  .irc-hero-title {
+    font-size: 2.4rem;
+  }
+
+  .date-block strong {
+    font-size: 34px;
+  }
+
+  .irc-section {
+    width: calc(100% - 28px);
+  }
+}
+
+// =========================================================================
+// REDUCED MOTION
+// =========================================================================
 
 @media (prefers-reduced-motion: reduce) {
   .irc-hero-glow {
     animation: none;
   }
-}
 
-/* =========================================================================
-   BODY — shared section primitives
-   ========================================================================= */
-.irc-body {
-  background: $paper;
-}
+  * {
+    scroll-behavior: auto !important;
 
-.irc-section {
-  padding: 4.5rem 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-
-  &--tint {
-    background: $tint;
-    max-width: 100%;
-    border-top: 1px solid $line;
-    border-bottom: 1px solid $line;
-
-    .irc-section__eyebrow,
-    .irc-section__title,
-    .irc-section__lead,
-    .irc-section__body,
-    .irc-list,
-    .irc-grid {
-      max-width: 860px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  &__title {
-    @include display-font;
-    font-weight: 600;
-    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-    margin: 0 0 1.75rem;
-    color: $navy;
-    position: relative;
-    padding-bottom: 0.9rem;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 64px;
-      height: 4px;
-      border-radius: 4px;
-      background: linear-gradient(
-        90deg,
-        $olympic-blue 0 25%,
-        $olympic-yellow 25% 50%,
-        $olympic-green 50% 75%,
-        $olympic-red 75% 100%
-      );
-    }
-  }
-
-  &__eyebrow {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: $olympic-blue;
-    margin-bottom: 0.9rem;
-  }
-
-  &__lead {
-    font-weight: 600;
-    color: $navy;
-    margin-bottom: 1.25rem;
-  }
-
-  &__body p {
-    color: #384158;
-    margin: 0 0 1.1rem;
-    font-size: 1.03rem;
-    line-height: 1.75;
-  }
-
-  @media (max-width: $bp-tablet) {
-    padding: 3rem 1.25rem;
-  }
-}
-
-.irc-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem 1.5rem;
-
-  li {
-    position: relative;
-    padding: 0.9rem 1rem 0.9rem 1.6rem;
-    background: $paper;
-    border: 1px solid $line;
-    border-radius: 10px;
-    color: #384158;
-    font-size: 0.98rem;
-    line-height: 1.55;
-
-    &::before {
-      content: "›";
-      position: absolute;
-      left: 0.6rem;
-      color: $olympic-yellow-dark;
-      font-weight: 700;
-    }
-  }
-
-  @media (max-width: $bp-tablet) {
-    grid-template-columns: 1fr;
+    transition-duration: 0.01ms !important;
   }
 }
 
 // =========================================================================
 // SECTION PARTIALS
 // =========================================================================
+
 @import "./IORC3Event/HeroShowcase.scss";
 @import "./IORC3Event/VisionObjectives.scss";
 @import "./IORC3Event/WhySafeSport.scss";
@@ -307,3 +1216,206 @@ $bp-wide: 1440px;
 @import "./IORC3Event/WhoShouldAttend.scss";
 @import "./IORC3Event/RegistrationTable.scss";
 @import "./IORC3Event/VenueSection.scss";
+
+// =========================================================================
+// HERO CONTENT — SPLIT LAYOUT (text left / video right)
+// =========================================================================
+
+.irc-hero-content--split {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+
+  align-items: center;
+
+  gap: 60px;
+}
+
+.irc-hero-content__text {
+  min-width: 0;
+}
+
+// =========================================================================
+// HERO VIDEO PANEL
+// =========================================================================
+
+.irc-hero-video {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 18px;
+}
+
+
+.irc-hero-video__frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  max-width: 460px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background: $navy-deep;
+
+  box-shadow:
+    0 30px 60px rgba(11, 31, 51, 0.18),
+    0 8px 20px rgba(11, 31, 51, 0.1);
+
+  border: 1px solid rgba(11, 31, 51, 0.06);
+
+  isolation: isolate;
+
+  // Olympic-ring accent border on top, echoing the page's top bar
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    z-index: 3;
+
+    background: linear-gradient(90deg,
+        $olympic-blue 0%,
+        $olympic-blue 25%,
+        $olympic-yellow 25%,
+        $olympic-yellow 50%,
+        $olympic-green 50%,
+        $olympic-green 75%,
+        $olympic-red 75%,
+        $olympic-red 100%);
+  }
+}
+
+.irc-hero-video__iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  pointer-events: none; // prevents interaction/redirect to YouTube
+}
+
+// Extra transparent shield as a second layer of protection against clicks
+.irc-hero-video__shield {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background: transparent;
+
+  cursor: default;
+}
+
+.irc-hero-video__chip {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  border: 1px solid $line;
+
+  box-shadow: 0 10px 24px rgba(16, 24, 40, 0.06);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: $navy;
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  &--blue {
+    background: $olympic-blue;
+  }
+
+  &--yellow {
+    background: $olympic-yellow;
+  }
+
+  &--green {
+    background: $olympic-green;
+  }
+
+  &--red {
+    background: $olympic-red;
+  }
+}
+
+.irc-hero-video__chip-text {
+  margin-left: 4px;
+
+  color: #536273;
+}
+
+// =========================================================================
+// RESPONSIVE — collapse to stacked layout below 900px
+// =========================================================================
+
+@media (max-width: 900px) {
+  .irc-hero-content--split {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .irc-hero-video {
+    align-items: flex-start;
+
+    order: 2; // keep text first, video below on tablet/mobile
+  }
+
+  .irc-hero-video__frame {
+    max-width: 100%;
+
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .irc-hero-video__frame {
+    border-radius: 18px;
+  }
+
+  .irc-hero-video__chip {
+    padding: 8px 12px;
+
+    font-size: 9px;
+  }
+}

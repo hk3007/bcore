@@ -1,107 +1,702 @@
+/* ============================================================
+   EXPECTED OUTCOMES
+   LIGHT OLYMPIC / EDITORIAL DESIGN
+   ============================================================ */
+
+@import url(
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+);
+
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+
 .irc-eo-section {
+  --eo-bg: #f7f8f6;
+  --eo-surface: #ffffff;
+  --eo-text: #101b19;
+  --eo-secondary: rgba(16, 27, 25, 0.68);
+  --eo-muted: rgba(16, 27, 25, 0.45);
+
+  --eo-border: rgba(16, 27, 25, 0.10);
+  --eo-border-hover: rgba(16, 27, 25, 0.18);
+
+  --eo-blue: #0085c7;
+  --eo-yellow: #f4c300;
+  --eo-green: #009f3d;
+  --eo-red: #df0024;
+
   position: relative;
-  background: linear-gradient(155deg, $navy 0%, $navy-deep 100%);
-  padding: 4.5rem 1.5rem;
+
+  width: 100%;
+
+  padding: 90px 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fafbf9 0%,
+      #f5f7f5 100%
+    );
+
+  color: var(--eo-text);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   overflow: hidden;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(
-      90deg,
-      $olympic-blue 0 25%,
-      $olympic-yellow 25% 50%,
-      $olympic-green 50% 75%,
-      $olympic-red 75% 100%
-    );
-  }
+  isolation: isolate;
+
+  -webkit-font-smoothing: antialiased;
 }
 
+
+/* ============================================================
+   OLYMPIC TOP STRIPE
+   ============================================================ */
+
+.irc-eo-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--eo-blue) 0%,
+      var(--eo-blue) 25%,
+
+      var(--eo-yellow) 25%,
+      var(--eo-yellow) 50%,
+
+      var(--eo-green) 50%,
+      var(--eo-green) 75%,
+
+      var(--eo-red) 75%,
+      var(--eo-red) 100%
+    );
+}
+
+
+/* ============================================================
+   BACKGROUND GRID
+   ============================================================ */
+
+.irc-eo-grid-bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  opacity: 0.65;
+
+  background-image:
+    linear-gradient(
+      rgba(16, 27, 25, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(16, 27, 25, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 85px 85px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+}
+
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+
 .irc-eo-inner {
-  max-width: 1100px;
+  position: relative;
+
+  width: min(100%, 1180px);
+
   margin: 0 auto;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.irc-eo-header {
+  max-width: 850px;
+
+  margin: 0 auto 52px;
+
   text-align: center;
 }
 
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
 .irc-eo-eyebrow {
   display: block;
-  text-transform: uppercase;
+
+  margin-bottom: 15px;
+
+  color: var(--eo-blue);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
   letter-spacing: 0.18em;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #ffd980;
-  margin-bottom: 0.9rem;
+
+  text-transform: uppercase;
 }
+
+
+/* ============================================================
+   HEADING ROW
+   ============================================================ */
+
+.irc-eo-heading-row {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+/* ============================================================
+   HEADING ACCENT
+   ============================================================ */
+
+.irc-eo-heading-line {
+  width: 28px;
+
+  height: 3px;
+
+  flex-shrink: 0;
+
+  background: var(--eo-yellow);
+
+  border-radius: 10px;
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
 
 .irc-eo-title {
-  @include display-font;
-  font-weight: 600;
-  font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-  color: #fff;
-  margin: 0 0 2.5rem;
+  margin: 0;
+
+  color: var(--eo-text);
+
+  font-size: clamp(
+    32px,
+    4vw,
+    52px
+  );
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
 }
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.irc-eo-intro {
+  max-width: 720px;
+
+  margin: 20px auto 0;
+
+  color: var(--eo-secondary);
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   GRID
+   ============================================================ */
 
 .irc-eo-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.1rem;
-  text-align: left;
 
-  @media (max-width: $bp-desktop) {
-    grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 18px;
+
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.irc-eo-item {
+  --eo-accent: #0085c7;
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: auto auto 1fr;
+
+  align-items: start;
+
+  column-gap: 14px;
+
+  min-height: 170px;
+
+  padding: 24px 22px 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.88)
+    );
+
+  border: 1px solid var(--eo-border);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(16, 27, 25, 0.035);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* ============================================================
+   CARD HOVER
+   ============================================================ */
+
+.irc-eo-item:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--eo-accent) 35%,
+      transparent
+    );
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 40px
+    rgba(16, 27, 25, 0.08);
+}
+
+
+/* ============================================================
+   NUMBER
+   ============================================================ */
+
+.irc-eo-item__number {
+  grid-column: 1 / -1;
+
+  margin-bottom: 18px;
+
+  color:
+    color-mix(
+      in srgb,
+      var(--eo-accent) 70%,
+      #101b19
+    );
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.16em;
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.irc-eo-item__icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 34px;
+
+  height: 34px;
+
+  flex-shrink: 0;
+
+  color: var(--eo-accent);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--eo-accent) 8%,
+      white
+    );
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--eo-accent) 35%,
+      transparent
+    );
+
+  border-radius: 2px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.irc-eo-item:hover .irc-eo-item__icon {
+  transform: translateY(-2px);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--eo-accent) 12%,
+      white
+    );
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.irc-eo-item__content {
+  min-width: 0;
+
+  padding-top: 1px;
+}
+
+
+/* ============================================================
+   TEXT
+   ============================================================ */
+
+.irc-eo-item__text {
+  margin: 0;
+
+  color: var(--eo-secondary);
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   BOTTOM ACCENT
+   ============================================================ */
+
+.irc-eo-item__accent {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: var(--eo-accent);
+
+  transform:
+    scaleX(0.15);
+
+  transform-origin: left;
+
+  opacity: 0.65;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+.irc-eo-item:hover .irc-eo-item__accent {
+  transform: scaleX(1);
+
+  opacity: 1;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+  .irc-eo-section {
+    padding: 75px 30px;
   }
-  @media (max-width: $bp-tablet) {
-    grid-template-columns: 1fr;
+
+  .irc-eo-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
   }
 }
 
-.irc-eo-item {
-  display: flex;
-  gap: 0.9rem;
-  padding: 1.4rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: background 0.3s, border-color 0.3s, transform 0.3s;
 
-  &:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 217, 128, 0.35);
-    transform: translateY(-3px);
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 720px) {
+
+  .irc-eo-section {
+    padding: 65px 22px;
   }
 
-  &__icon {
-    flex-shrink: 0;
+  .irc-eo-header {
+    margin-bottom: 38px;
+  }
+
+  .irc-eo-title {
+    font-size: clamp(
+      29px,
+      8vw,
+      42px
+    );
+  }
+
+  .irc-eo-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .irc-eo-item {
+    min-height: 0;
+
+    padding: 22px 20px 26px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .irc-eo-section {
+    padding: 55px 16px;
+  }
+
+  .irc-eo-header {
+    margin-bottom: 32px;
+  }
+
+  .irc-eo-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .irc-eo-heading-row {
+    gap: 9px;
+
+    align-items: flex-start;
+  }
+
+  .irc-eo-heading-line {
+    width: 20px;
+
+    height: 2px;
+
+    margin-top: 9px;
+  }
+
+  .irc-eo-title {
+    font-size: 29px;
+
+    line-height: 1.05;
+
+    text-align: left;
+  }
+
+  .irc-eo-intro {
+    margin-top: 16px;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+  .irc-eo-item {
+    grid-template-columns:
+      auto 1fr;
+
+    column-gap: 13px;
+
+    padding: 20px 18px 24px;
+  }
+
+  .irc-eo-item__number {
+    grid-column: 1 / -1;
+
+    margin-bottom: 15px;
+
+    font-size: 9px;
+  }
+
+  .irc-eo-item__icon {
     width: 32px;
+
     height: 32px;
-    border-radius: 8px;
-    border: 2px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffd980;
   }
 
-  &__num {
-    display: block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: rgba(255, 217, 128, 0.6);
-    margin-bottom: 0.4rem;
+  .irc-eo-item__text {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+  .irc-eo-section {
+    padding: 48px 13px;
   }
 
-  &__text {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 0;
+  .irc-eo-title {
+    font-size: 26px;
+  }
+
+  .irc-eo-item {
+    padding: 18px 16px 22px;
+  }
+
+  .irc-eo-item__text {
+    font-size: 11.5px;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .irc-eo-section *,
+  .irc-eo-section {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+
+  .irc-eo-section {
+    padding: 30px 0;
+
+    background: #ffffff;
+  }
+
+  .irc-eo-grid-bg {
+    display: none;
+  }
+
+  .irc-eo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .irc-eo-item {
+    box-shadow: none;
+
+    break-inside: avoid;
   }
 }

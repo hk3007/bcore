@@ -1,0 +1,114 @@
+// ============================================================
+// CONTACT US
+// Reuses the .irc-section--why base styling for visual
+// consistency with the Why Safe Sport section.
+// Adds only the contact-list specific rules below.
+// ============================================================
+
+.irc-section--contact {
+
+  // ==========================================================
+  // Two cards read better a little shorter than the why-cards,
+  // since there's no long paragraph, just a list of contacts.
+  // ==========================================================
+
+  .irc-why-block {
+    min-height: 300px;
+  }
+
+  // ==========================================================
+  // CONTACT LIST
+  // ==========================================================
+
+  .irc-contact-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+  }
+
+  .irc-contact-list__item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid var(--why-line);
+
+    &:last-child {
+      padding-bottom: 0;
+
+      border-bottom: none;
+    }
+  }
+
+  .irc-contact-list__name {
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.02em;
+
+    color: var(--why-text);
+  }
+
+  .irc-contact-list__email {
+    font-family: "Inter", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+
+    color: var(--context-accent);
+
+    text-decoration: none;
+
+    word-break: break-word;
+
+    transition: opacity 0.25s ease;
+
+    &:hover {
+      opacity: 0.75;
+
+      text-decoration: underline;
+    }
+  }
+
+  // ==========================================================
+  // TABLET / MOBILE ADJUSTMENTS
+  // ==========================================================
+
+  @media (max-width: 850px) {
+    .irc-why-block {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .irc-contact-list {
+      gap: 14px;
+    }
+
+    .irc-contact-list__name {
+      font-size: 11px;
+    }
+
+    .irc-contact-list__email {
+      font-size: 13px;
+    }
+  }
+}

@@ -1,61 +1,167 @@
 import React from "react";
 import "./IORC3Event.scss";
-
-import HeroShowcase from "./IORC3Event/HeroShowcase";
-import VisionObjectives from "./IORC3Event/VisionObjectives";
-import WhySafeSport from "./IORC3Event/WhySafeSport";
-import ConferenceStructure from "./IORC3Event/ConferenceStructure";
-import SummitAndFeatures from "./IORC3Event/SummitAndFeatures";
-import WhoShouldAttend from "./IORC3Event/WhoShouldAttend";
-import RegistrationTable from "./IORC3Event/RegistrationTable";
-import VenueSection from "./IORC3Event/VenueSection";
-import ExpectedOutcomes from "./IORC3Event/ExpectedOutcomes";
-import CallForAbstract from "../eventsdetails/CallForAbstract";
-import AbstractGuidelines from "../eventsdetails/AbstractGuidelines";
-import StepsToRegister from "../eventsdetails/StepsToRegister";
+import IORC3EventTabs from "./IORC3EventTabs";
 
 /* =========================================================================
-   HEADER
+   HEADER / HERO
    ========================================================================= */
+
 function Header() {
   return (
     <header className="irc-hero">
-      <div className="irc-hero-glow irc-hero-glow-1"></div>
-      <div className="irc-hero-glow irc-hero-glow-2"></div>
+      {/* Background decoration */}
+      <div className="irc-hero__noise" aria-hidden="true" />
+      <div className="irc-hero-glow irc-hero-glow-1" aria-hidden="true" />
+      <div className="irc-hero-glow irc-hero-glow-2" aria-hidden="true" />
+      <div className="irc-hero__grid" aria-hidden="true" />
 
-      <div className="irc-hero-content">
-        <span className="irc-hero-kicker">BCORE &middot; Rashtriya Raksha University</span>
-        <h1 className="irc-hero-title">
-          3rd International Olympic Research Conference
-        </h1>
-        <p className="irc-hero-subtitle">
-          The Athlete at the Heart — A Value-Driven Olympic Ecosystem
-        </p>
+      {/* Abstract accent dots */}
+      <div className="irc-hero__decor" aria-hidden="true">
+        <span className="hero-dot hero-dot--blue" />
+        <span className="hero-dot hero-dot--yellow" />
+        <span className="hero-dot hero-dot--green" />
+        <span className="hero-dot hero-dot--red" />
+      </div>
 
-        <div className="irc-hero-date">
-          <span className="date-block">
-            <strong>27</strong>
-            <em>JAN</em>
-          </span>
-          <span className="date-sep">–</span>
-          <span className="date-block">
-            <strong>29</strong>
-            <em>JAN</em>
-          </span>
-          <span className="date-year">2027</span>
+      {/* Main Hero Content — now split into two columns */}
+      <div className="irc-hero-content irc-hero-content--split">
+
+        {/* LEFT COLUMN — all existing text content */}
+        <div className="irc-hero-content__text">
+
+          {/* Institution */}
+          <div className="irc-hero-meta">
+            <span>BCORE</span>
+            <span className="irc-hero-meta__line" />
+            <span>Rashtriya Raksha University</span>
+          </div>
+
+          {/* EVENT NAME */}
+          <div className="irc-event-label">
+            <div className="irc-event-label__ordinal">
+              <span className="irc-event-label__number">03</span>
+              <span className="irc-event-label__suffix">RD</span>
+            </div>
+
+            <div className="irc-event-label__divider" />
+
+            <div className="irc-event-label__content">
+              <span className="irc-event-label__eyebrow">
+                BCORE International Olympic
+              </span>
+              <h2 className="irc-event-label__title">
+                Research Conference
+              </h2>
+            </div>
+          </div>
+
+          {/* THEME */}
+          <h1 className="irc-hero-title">
+            <span className="irc-hero-title__line">THE ATHLETE</span>
+            <span className="irc-hero-title__line irc-hero-title__accent">
+              AT THE HEART.
+            </span>
+          </h1>
+
+          <p className="irc-hero-subtitle">
+            A Value-Driven Olympic Ecosystem
+          </p>
+
+          {/* Event information */}
+          <div className="irc-hero-bottom">
+
+            {/* Date */}
+            {/* Date */}
+            <div className="irc-hero-date">
+              <div className="irc-hero-date__main">
+                <div className="date-block">
+                  <strong>27</strong>
+                  <em>JAN</em>
+                </div>
+
+                <span className="date-sep">—</span>
+
+                <div className="date-block">
+                  <strong>29</strong>
+                  <em>JAN</em>
+                </div>
+
+                <div className="date-year">
+                  2027
+                </div>
+              </div>
+
+              {/* International participants note */}
+              <p className="irc-hero-date__note">
+                International Participants: <strong>27–30 Jan 2027</strong>
+              </p>
+            </div>
+
+            {/* Venue */}
+            <div className="irc-hero-location">
+              <span>VENUE</span>
+
+              <strong>
+                Rashtriya Raksha University
+              </strong>
+
+              <small>
+                Gandhinagar, Gujarat
+              </small>
+            </div>
+
+          </div>
         </div>
+
+        {/* RIGHT COLUMN — video panel */}
+        <div className="irc-hero-video" aria-hidden="false">
+          <div className="irc-hero-video__frame">
+            <iframe
+              className="irc-hero-video__iframe"
+              src="https://www.youtube-nocookie.com/embed/xqKRRJ3-IT0?autoplay=1&mute=1&loop=1&playlist=xqKRRJ3-IT0&controls=0&showinfo=0&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
+              title="IORC Conference Highlight"
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen={false}
+            />
+            {/* Transparent overlay to block clicks -> stops redirect to YouTube */}
+            <div className="irc-hero-video__shield" />
+          </div>
+
+          {/* Small accent chip to tie it into the Olympic ring theme */}
+          <div className="irc-hero-video__chip">
+            <span className="chip-dot chip-dot--blue" />
+            <span className="chip-dot chip-dot--yellow" />
+            <span className="chip-dot chip-dot--green" />
+            <span className="chip-dot chip-dot--red" />
+            <span className="irc-hero-video__chip-text">Conference Glimpse</span>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="irc-hero-scroll">
+        <span>SCROLL TO EXPLORE</span>
+        <i />
       </div>
     </header>
   );
 }
-/* ======================= END HEADER ===================== */
 
-// Same details as the 2nd International Olympic Research Conference (event 3)
+/* =========================================================================
+   CALL FOR ABSTRACT
+   ========================================================================= */
+
 const callForAbstract = {
   text: `BCORE cordially invites abstracts for presentation at its International Olympic Research Conference at Rashtriya Raksha University. Submissions addressing hosting and organizing, Olympic education, sustainable development, and technological innovation are particularly welcomed. Early career researchers are encouraged to participate.`,
   submissionEmail: "olyresearchacademy.submissions@rru.ac.in",
   deadline: "30th November 2026",
 };
+
+/* =========================================================================
+   ABSTRACT GUIDELINES
+   ========================================================================= */
 
 const abstractGuidelines = {
   formatRequirements: [
@@ -67,6 +173,7 @@ const abstractGuidelines = {
     'Center the word "Abstract" as the title (bold).',
     "Text should be left-aligned and not indented.",
   ],
+
   contentStructure: [
     {
       heading: "Introduction",
@@ -96,12 +203,32 @@ const abstractGuidelines = {
   ],
 };
 
+/* =========================================================================
+   REGISTRATION STEPS
+   ========================================================================= */
+
 const steps = [
-  { event: "Step 1", date: " Submit the abstract" },
-  { event: "Step 2", date: "Wait For confirmation" },
-  { event: "Step 3", date: "Register to the Olympics conference" },
-  { event: "Step 4", date: "Fill Google Form" },
+  {
+    event: "Step 1",
+    date: "Submit the abstract",
+  },
+  {
+    event: "Step 2",
+    date: "Wait for confirmation",
+  },
+  {
+    event: "Step 3",
+    date: "Register to the Olympic Conference",
+  },
+  {
+    event: "Step 4",
+    date: "Fill Google Form",
+  },
 ];
+
+/* =========================================================================
+   PAGE
+   ========================================================================= */
 
 export default function IORC3Event() {
   return (
@@ -109,45 +236,7 @@ export default function IORC3Event() {
       <Header />
 
       <main className="irc-body">
-        {/* ABOUT THE CONFERENCE + ABOUT BCORE */}
-        <HeroShowcase />
-
-        {/* THEME, VISION & STRATEGIC OBJECTIVES */}
-        <VisionObjectives />
-
-        {/* WHY SAFE SPORT */}
-        <WhySafeSport />
-
-        {/* CONFERENCE STRUCTURE */}
-        <div id="structure">
-          <ConferenceStructure />
-        </div>
-
-        {/* ASIAN NOA & OSRC SUMMIT + KEY FEATURES */}
-        <SummitAndFeatures />
-
-        {/* CALL FOR ABSTRACT */}
-        <CallForAbstract callForAbstract={callForAbstract} />
-
-        {/* STEPS TO REGISTER */}
-        <StepsToRegister steps={steps} />
-
-        {/* ABSTRACT GUIDELINES */}
-        <AbstractGuidelines event={{ abstractGuidelines }} />
-
-        {/* EXPECTED OUTCOMES */}
-        <ExpectedOutcomes />
-
-        {/* WHO SHOULD ATTEND */}
-        <div id="stakeholders">
-          <WhoShouldAttend />
-        </div>
-
-        {/* REGISTRATION DETAILS */}
-        <RegistrationTable />
-
-        {/* VENUE */}
-        <VenueSection />
+        <IORC3EventTabs />
       </main>
     </div>
   );

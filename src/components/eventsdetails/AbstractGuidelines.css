@@ -1,270 +1,1039 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-/* CONTAINER */
+/* =========================================================
+   ROOT
+========================================================= */
+
 .rg-container {
-  max-width: 1200px;
+  --rg-bg: #f7f9f8;
+  --rg-white: #ffffff;
+
+  --rg-text: #101b19;
+  --rg-text-soft: #4b5956;
+  --rg-text-muted: #7a8582;
+
+  --rg-border: rgba(16, 27, 25, 0.1);
+
+  --rg-blue: #0085c7;
+  --rg-yellow: #f4c300;
+  --rg-green: #009f3d;
+  --rg-red: #df0024;
+
+  width: min(1200px, calc(100% - 80px));
+
   margin: 60px auto;
-  padding: 40px 32px;
-  border-radius: 16px;
-  background: #fff;
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+
+  padding: 70px 0 80px;
+
+  position: relative;
+
+  color: var(--rg-text);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
 }
 
-/* TITLE */
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.rg-container::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  opacity: 0.55;
+
+  background-image:
+    linear-gradient(
+      rgba(16, 27, 25, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(16, 27, 25, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.rg-header {
+  max-width: 850px;
+
+  margin-bottom: 48px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.rg-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--rg-blue);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.rg-eyebrow::before {
+  content: "";
+
+  width: 28px;
+
+  height: 2px;
+
+  background: var(--rg-blue);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
 .rg-title {
-  font-family: "Cinzel", serif;
-  color: var(--royal);
-  font-size: 2rem;
-  margin-bottom: 36px;
-  border-left: 4px solid var(--gold);
-  padding-left: 12px;
-  letter-spacing: 0.5px;
+  margin: 0;
+
+  color: var(--rg-text);
+
+  font-size: clamp(38px, 5vw, 66px);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
 }
 
-/* MAIN LAYOUT */
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.rg-intro {
+  max-width: 680px;
+
+  margin: 24px 0 0;
+
+  color: var(--rg-text-soft);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
 .rg-layout {
-  display: flex;
-  gap: 36px;
-  align-items: flex-start;
+  display: grid;
+
+  grid-template-columns: 290px minmax(0, 1fr);
+
+  gap: 24px;
+
+  align-items: start;
 }
 
-/* MENU — Always column */
+
+/* =========================================================
+   MENU
+========================================================= */
+
 .rg-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 14px;
-  background: linear-gradient(180deg, #f9f9f9, #fff);
-  border-radius: 12px;
-  padding: 20px;
-  width: 280px;
-  overflow-y: auto;
-  max-height: 80vh;
-  scroll-behavior: smooth;
-}
+  position: relative;
 
-.rg-menu::-webkit-scrollbar {
-  width: 6px;
-}
+  background: rgba(255, 255, 255, 0.82);
 
-.rg-menu::-webkit-scrollbar-thumb {
-  background: rgba(245, 197, 24, 0.4);
+  border: 1px solid var(--rg-border);
+
   border-radius: 4px;
+
+  box-shadow:
+    0 18px 45px rgba(16, 27, 25, 0.05);
+
+  overflow: hidden;
 }
+
+
+/* =========================================================
+   MENU HEADER
+========================================================= */
+
+.rg-menu-header {
+  padding: 18px 18px 14px;
+
+  border-bottom: 1px solid var(--rg-border);
+
+  color: var(--rg-text-muted);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TAB
+========================================================= */
 
 .rg-tab {
+  position: relative;
+
   display: flex;
+
   align-items: center;
+
+  width: 100%;
+
+  min-height: 58px;
+
+  padding: 12px 15px;
+
   gap: 10px;
-  border: none;
-  outline: none;
-  font-weight: 600;
-  color: var(--royal);
+
+  border: 0;
+
+  border-bottom: 1px solid var(--rg-border);
+
   background: transparent;
-  padding: 10px 12px;
-  border-radius: 10px;
-  transition: all 0.25s ease;
+
+  color: var(--rg-text-soft);
+
   cursor: pointer;
-  font-size: 0.95rem;
+
+  text-align: left;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    padding-left 0.25s ease;
 }
 
-.rg-tab svg {
-  color: var(--gold);
+.rg-tab:last-child {
+  border-bottom: 0;
 }
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.rg-tab-number {
+  width: 24px;
+
+  flex-shrink: 0;
+
+  color: var(--rg-text-muted);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.rg-tab-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 28px;
+
+  height: 28px;
+
+  flex-shrink: 0;
+
+  color: var(--rg-blue);
+
+  background: rgba(0, 133, 199, 0.07);
+
+  border-radius: 50%;
+
+  transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.rg-tab-label {
+  flex: 1;
+
+  min-width: 0;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.rg-tab-arrow {
+  opacity: 0;
+
+  color: var(--rg-blue);
+
+  font-size: 16px;
+
+  transform: translateX(-5px);
+
+  transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
 
 .rg-tab:hover {
-  background: rgba(245, 197, 24, 0.12);
-  transform: translateX(6px);
+  padding-left: 20px;
+
+  color: var(--rg-blue);
+
+  background: rgba(0, 133, 199, 0.035);
 }
+
+.rg-tab:hover .rg-tab-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
 
 .rg-tab.active {
-  background: linear-gradient(
-    90deg,
-    rgba(245, 197, 24, 0.25),
-    rgba(10, 25, 49, 0.05)
-  );
-  box-shadow: 0 4px 10px rgba(245, 197, 24, 0.15);
-  color: var(--royal);
+  color: var(--rg-blue);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 133, 199, 0.1),
+      rgba(0, 133, 199, 0.025)
+    );
 }
 
-/* CONTENT AREA */
+.rg-tab.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 3px;
+
+  height: 100%;
+
+  background: var(--rg-blue);
+}
+
+.rg-tab.active .rg-tab-number {
+  color: var(--rg-blue);
+}
+
+.rg-tab.active .rg-tab-icon {
+  color: #ffffff;
+
+  background: var(--rg-blue);
+}
+
+.rg-tab.active .rg-tab-arrow {
+  opacity: 1;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
 .rg-content {
-  flex: 1;
-  padding: 28px;
-  border-radius: 12px;
-  background: var(--card-bg);
-  border: 1px solid #e7e7e7;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  min-height: 280px;
+  position: relative;
+
+  min-width: 0;
+
+  padding: 44px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid var(--rg-border);
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 20px 55px rgba(16, 27, 25, 0.055);
+
+  overflow: hidden;
 }
 
-.rg-body {
-  animation: fadeIn 0.4s ease;
+
+/* =========================================================
+   OLYMPIC COLOR LINE
+========================================================= */
+
+.rg-color-line {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  display: flex;
+
+  height: 3px;
 }
+
+.rg-color-line span {
+  flex: 1;
+}
+
+.rg-color-line .blue {
+  background: var(--rg-blue);
+}
+
+.rg-color-line .yellow {
+  background: var(--rg-yellow);
+}
+
+.rg-color-line .green {
+  background: var(--rg-green);
+}
+
+.rg-color-line .red {
+  background: var(--rg-red);
+}
+
+
+/* =========================================================
+   SECTION META
+========================================================= */
+
+.rg-section-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--rg-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+.rg-section-meta strong {
+  color: var(--rg-blue);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .rg-section-title {
-  font-family: "Cinzel", serif;
-  color: var(--gold);
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+  position: relative;
+
+  margin: 0 0 18px;
+
+  padding-left: 16px;
+
+  color: var(--rg-text);
+
+  font-size: clamp(23px, 3vw, 32px);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.04em;
+
+  text-transform: uppercase;
 }
+
+.rg-section-title::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 2px;
+
+  width: 3px;
+
+  height: calc(100% - 4px);
+
+  border-radius: 5px;
+
+  background: var(--rg-blue);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .rg-section-desc {
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 1rem;
-  text-align: justify;
+  max-width: 850px;
+
+  margin: 0;
+
+  color: var(--rg-text-soft);
+
+  font-size: 14px;
+
+  line-height: 1.85;
 }
 
-/* FORMAT SECTION */
+
+/* =========================================================
+   FORMAT
+========================================================= */
+
 .rg-format {
-  margin-top: 24px;
+  margin-top: 38px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid var(--rg-border);
 }
+
+
+/* =========================================================
+   FORMAT HEADER
+========================================================= */
+
+.rg-format-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+}
+
+.rg-format-line {
+  width: 25px;
+
+  height: 2px;
+
+  background: var(--rg-yellow);
+}
+
 .rg-format h5 {
-  font-family: "Cinzel", serif;
-  color: var(--royal);
-  margin-bottom: 10px;
-}
-.rg-format ul {
-  padding-left: 20px;
-  list-style-type: disc;
-  color: var(--muted);
-}
-.rg-format li {
-  margin: 6px 0;
+  margin: 0;
+
+  color: var(--rg-text);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
 }
 
-/* LINK SECTION */
+
+/* =========================================================
+   FORMAT GRID
+========================================================= */
+
+.rg-format-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px 24px;
+}
+
+
+/* =========================================================
+   FORMAT ITEM
+========================================================= */
+
+.rg-format-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  background: #f8faf9;
+
+  border: 1px solid rgba(16, 27, 25, 0.06);
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.rg-format-item:hover {
+  background: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+.rg-format-number {
+  flex-shrink: 0;
+
+  color: var(--rg-blue);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.rg-format-item p {
+  margin: 0;
+
+  color: var(--rg-text-soft);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LINK
+========================================================= */
+
 .rg-link {
-  margin-top: 20px;
-  color: var(--muted);
-  font-size: 0.95rem;
+  margin-top: 34px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid var(--rg-border);
 }
+
+.rg-link-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--rg-text-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+.rg-link p {
+  margin: 0;
+
+  color: var(--rg-text-soft);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
 .rg-link a {
-  color: var(--royal);
+  color: var(--rg-blue);
+
+  font-weight: 700;
+
   text-decoration: none;
-  border-bottom: 2px solid var(--gold);
-  transition: 0.3s ease;
+
+  transition: color 0.2s ease;
 }
+
 .rg-link a:hover {
-  color: var(--gold);
-  border-bottom-color: var(--royal);
+  color: var(--rg-red);
 }
 
-/* NO SECTIONS */
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
 .rg-no-sections {
-  color: var(--muted);
-  padding: 14px;
+  padding: 20px;
+
+  color: var(--rg-text-muted);
+
+  font-size: 11px;
+
   text-align: center;
-  border-radius: 10px;
-  background: rgba(10, 25, 49, 0.04);
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* =========================================
-   RESPONSIVE STYLES
-========================================= */
+/* =========================================================
+   TABLET
+========================================================= */
 
-/* TABLET */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
+  .rg-container {
+    width: calc(100% - 48px);
+
+    padding: 60px 0 70px;
+  }
+
   .rg-layout {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
   .rg-menu {
-    width: 90%;
-    max-width: 600px;
-    flex-direction: column;
-    align-items: stretch;
-    overflow-y: visible;
-    padding: 20px;
-    background: #fff;
-    border: 1px solid rgba(10, 25, 49, 0.08);
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
-  .rg-tab {
-    text-align: left;
-    font-size: 0.95rem;
+  .rg-menu-header {
+    grid-column: 1 / -1;
+  }
+
+  .rg-tab:nth-child(2n) {
+    border-right: 0;
   }
 
   .rg-content {
-    width: 90%;
-    padding: 20px;
+    padding: 34px;
   }
 }
 
-/* MOBILE */
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
   .rg-container {
-    padding: 20px 14px;
+    width: calc(100% - 28px);
+
     margin: 30px auto;
+
+    padding: 45px 0 55px;
+  }
+
+  .rg-container::after {
+    background-size: 60px 60px;
+  }
+
+  .rg-header {
+    margin-bottom: 28px;
+  }
+
+  .rg-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.13em;
   }
 
   .rg-title {
-    font-size: 1.35rem;
-    border-left: 3px solid var(--gold);
-    padding-left: 10px;
-    margin-bottom: 20px;
+    font-size: 34px;
+
+    line-height: 1;
+
+    letter-spacing: -0.05em;
   }
 
-  .rg-layout {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
+  .rg-intro {
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
   }
+
+  /* -----------------------------------------
+     MOBILE MENU
+  ----------------------------------------- */
 
   .rg-menu {
-    width: 100%;
-    padding: 0;
-    gap: 12px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    display: block;
+
+    border-radius: 6px;
+  }
+
+  .rg-menu-header {
+    padding: 15px;
+
+    font-size: 9px;
   }
 
   .rg-tab {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 10px 12px;
-    border: 1px solid rgba(10, 25, 49, 0.08);
-    background: #fff;
-    border-radius: 10px;
+    min-height: 55px;
+
+    padding: 12px 13px;
   }
 
-  .rg-tab.active {
-    background: linear-gradient(
-      90deg,
-      rgba(245, 197, 24, 0.18),
-      rgba(10, 25, 49, 0.03)
-    );
-    box-shadow: 0 3px 10px rgba(245, 197, 24, 0.1);
+  .rg-tab:hover {
+    padding-left: 16px;
   }
+
+  .rg-tab-number {
+    width: 21px;
+
+    font-size: 9px;
+  }
+
+  .rg-tab-icon {
+    width: 27px;
+
+    height: 27px;
+  }
+
+  .rg-tab-label {
+    font-size: 10px;
+  }
+
+  .rg-tab-arrow {
+    opacity: 1;
+
+    transform: none;
+  }
+
+  /* -----------------------------------------
+     CONTENT
+  ----------------------------------------- */
 
   .rg-content {
-    width: 100%;
-    padding: 16px;
+    padding: 30px 20px;
+  }
+
+  .rg-section-meta {
+    margin-bottom: 14px;
+
+    font-size: 8px;
   }
 
   .rg-section-title {
-    font-size: 1.1rem;
+    margin-bottom: 15px;
+
+    font-size: 21px;
   }
 
   .rg-section-desc {
-    font-size: 0.9rem;
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  /* -----------------------------------------
+     FORMAT
+  ----------------------------------------- */
+
+  .rg-format {
+    margin-top: 28px;
+
+    padding-top: 24px;
+  }
+
+  .rg-format-grid {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+  }
+
+  .rg-format-item {
+    padding: 11px;
+  }
+
+  .rg-format-item p {
+    font-size: 11px;
+  }
+
+  /* -----------------------------------------
+     LINK
+  ----------------------------------------- */
+
+  .rg-link {
+    margin-top: 26px;
+
+    padding-top: 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+  .rg-container {
+    width: calc(100% - 20px);
+
+    padding-top: 38px;
+  }
+
+  .rg-title {
+    font-size: 29px;
+  }
+
+  .rg-tab {
+    min-height: 52px;
+
+    padding: 10px;
+  }
+
+  .rg-tab-label {
+    font-size: 9px;
+  }
+
+  .rg-content {
+    padding: 25px 16px;
+  }
+
+  .rg-section-title {
+    font-size: 19px;
+  }
+
+  .rg-section-desc {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-container *,
+  .rg-container {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print {
+  .rg-container {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 30px 0;
+
+    background: #ffffff;
+  }
+
+  .rg-container::after {
+    display: none;
+  }
+
+  .rg-menu {
+    display: none;
+  }
+
+  .rg-content {
+    padding: 20px 0;
+
+    border: 0;
+
+    box-shadow: none;
+  }
+
+  .rg-color-line {
+    display: none;
   }
 }

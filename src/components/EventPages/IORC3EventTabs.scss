@@ -1,0 +1,1312 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+// ============================================================
+// LIGHT THEME TOKENS
+// ============================================================
+
+$bg-primary: #ffffff;
+$bg-secondary: #f7f9f8;
+$bg-soft: #f1f5f4;
+
+$text-primary: #101b19;
+$text-secondary: #384158;
+$text-muted: #6b7571;
+
+$border: #e1e7e5;
+$border-hover: #cbd5d1;
+
+$accent: #0085c7;
+$accent-dark: #006b9f;
+$accent-light: #edf8fc;
+
+$green: #009f3d;
+$yellow: #f4c300;
+$red: #df0024;
+$black-ring: #101b19;
+
+$shadow: 0 10px 35px rgba(15, 28, 25, 0.07);
+
+// The 5 Olympic ring colors in official order — used as the signature
+// graphic element, never as arbitrary decoration.
+$rings: $accent, $black-ring, $red, $yellow, $green;
+
+
+// ============================================================
+// FONTS
+// ============================================================
+
+@mixin display-font {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+@mixin body-font {
+  font-family:
+    "DM Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+// ============================================================
+// MAIN CONTAINER
+// ============================================================
+
+.irc-tabs-container {
+  @include body-font;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: $bg-primary;
+
+  color: $text-primary;
+
+  overflow: visible;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+// ============================================================
+// HEADER
+// ============================================================
+
+.irc-tabs-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid $border;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 8px 30px rgba(15, 28, 25, 0.06);
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 3px;
+
+    background: linear-gradient(
+      90deg,
+      $accent 0%,
+      $accent 25%,
+      $yellow 25%,
+      $yellow 50%,
+      $green 50%,
+      $green 75%,
+      $red 75%,
+      $red 100%
+    );
+
+    opacity: 0.6;
+  }
+}
+
+
+// ============================================================
+// HEADER INNER
+// ============================================================
+
+.irc-tabs-header__inner {
+  position: relative;
+
+  width: min(100% - 70px, 1450px);
+
+  margin: 0 auto;
+
+  min-height: 104px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+
+// ============================================================
+// SIGNATURE GRAPHIC — five interlocked rings, rendered once as
+// an SVG-style background badge behind the meta label. This is
+// the one bold, memorable element; everything else stays quiet.
+// ============================================================
+
+.irc-tabs-rings {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+
+  place-items: center;
+
+  span {
+    position: absolute;
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    border: 3px solid transparent;
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        border-color: nth($rings, $i);
+      }
+    }
+
+    &:nth-child(1) {
+      top: 3px;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      top: 3px;
+      left: 13px;
+    }
+
+    &:nth-child(3) {
+      top: 3px;
+      left: 26px;
+    }
+
+    &:nth-child(4) {
+      top: 14px;
+      left: 6px;
+    }
+
+    &:nth-child(5) {
+      top: 14px;
+      left: 19px;
+    }
+  }
+}
+
+
+// ============================================================
+// HEADER META
+// ============================================================
+
+.irc-tabs-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  flex-shrink: 0;
+
+  white-space: nowrap;
+}
+
+.irc-tabs-meta__text-group {
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1.15;
+}
+
+.irc-tabs-meta__eyebrow {
+  @include display-font;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  color: $text-muted;
+}
+
+.irc-tabs-meta__current {
+  @include display-font;
+
+  margin-top: 4px;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+
+  color: $accent;
+}
+
+
+// ============================================================
+// DROPDOWN
+// ============================================================
+
+.irc-tabs-dropdown {
+  position: relative;
+
+  width: min(100%, 520px);
+
+  z-index: 100;
+}
+
+
+// ============================================================
+// DROPDOWN TRIGGER
+// ============================================================
+
+.irc-tabs-dropdown__trigger {
+  @include display-font;
+
+  width: 100%;
+
+  min-height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 10px 12px 10px 16px;
+
+  border: 1.5px solid $border;
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  color: $text-primary;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-shadow: 0 5px 20px rgba(15, 28, 25, 0.04);
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+  &:hover {
+    border-color: $accent;
+
+    box-shadow: 0 10px 28px rgba(0, 133, 199, 0.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(0, 133, 199, 0.4);
+
+    outline-offset: 3px;
+  }
+}
+
+
+// ============================================================
+// TRIGGER LEFT
+// ============================================================
+
+.irc-tabs-dropdown__trigger-left {
+  display: flex;
+
+  align-items: center;
+
+  min-width: 0;
+
+  gap: 16px;
+}
+
+
+// ============================================================
+// NUMBER
+// ============================================================
+
+.irc-tabs-dropdown__number {
+  display: grid;
+
+  place-items: center;
+
+  width: 40px;
+
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border-radius: 6px;
+
+  background: $accent;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.04em;
+}
+
+
+// ============================================================
+// ICON
+// ============================================================
+
+.irc-tabs-dropdown__icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 32px;
+
+  height: 32px;
+
+  flex-shrink: 0;
+
+  color: $accent;
+
+  font-size: 17px;
+
+  transition: transform 0.25s ease;
+}
+
+
+// ============================================================
+// LABEL
+// ============================================================
+
+.irc-tabs-dropdown__label {
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-size: 17px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.01em;
+}
+
+
+// ============================================================
+// TRIGGER RIGHT
+// ============================================================
+
+.irc-tabs-dropdown__trigger-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+.irc-tabs-dropdown__hint {
+  @include display-font;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.2em;
+
+  color: $text-muted;
+}
+
+.irc-tabs-dropdown__arrow {
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+
+  height: 42px;
+
+  border: 1.5px solid $border;
+
+  border-radius: 6px;
+
+  background: $bg-secondary;
+
+  color: $text-primary;
+
+  font-size: 17px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+// ============================================================
+// OPEN STATE
+// ============================================================
+
+.irc-tabs-dropdown.is-open {
+  .irc-tabs-dropdown__trigger {
+    border-color: $accent;
+
+    box-shadow: 0 14px 40px rgba(0, 133, 199, 0.16);
+  }
+
+  .irc-tabs-dropdown__arrow {
+    transform: rotate(180deg);
+
+    background: $accent;
+
+    color: white;
+
+    border-color: $accent;
+  }
+
+  .irc-tabs-dropdown__icon {
+    transform: rotate(10deg);
+  }
+}
+
+
+// ============================================================
+// DROPDOWN MENU
+// ============================================================
+
+.irc-tabs-dropdown__menu {
+  position: absolute;
+
+  top: calc(100% + 12px);
+
+  right: 0;
+
+  width: 100%;
+
+  max-height: min(660px, calc(100vh - 130px));
+
+  overflow: hidden;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  transform: translateY(-8px) scale(0.985);
+
+  transform-origin: top right;
+
+  pointer-events: none;
+
+  border: 1px solid $border;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.99);
+
+  box-shadow: 0 28px 70px rgba(15, 28, 25, 0.16);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+}
+
+.irc-tabs-dropdown.is-open {
+  .irc-tabs-dropdown__menu {
+    visibility: visible;
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+    pointer-events: auto;
+  }
+}
+
+
+// ============================================================
+// MENU HEADER
+// ============================================================
+
+.irc-tabs-dropdown__menu-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid $border;
+
+  background: $bg-secondary;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: $text-muted;
+
+  span:last-child {
+    font-size: 10px;
+
+    color: rgba(16, 27, 25, 0.4);
+  }
+}
+
+
+// ============================================================
+// OPTIONS
+// ============================================================
+
+.irc-tabs-dropdown__options {
+  max-height: 560px;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: $border transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border;
+
+    border-radius: 10px;
+  }
+}
+
+
+// ============================================================
+// OPTION
+// ============================================================
+
+.irc-tabs-dropdown__option {
+  @include display-font;
+
+  position: relative;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 42px 36px minmax(0, 1fr) 28px;
+
+  align-items: center;
+
+  gap: 14px;
+
+  min-height: 66px;
+
+  padding: 10px 20px;
+
+  border: 0;
+
+  border-bottom: 1px solid rgba(16, 27, 25, 0.06);
+
+  background: transparent;
+
+  color: $text-secondary;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  &:hover {
+    padding-left: 25px;
+
+    background: $bg-secondary;
+
+    color: $text-primary;
+
+    .irc-tabs-dropdown__option-icon {
+      color: $accent;
+
+      transform: translateX(2px);
+    }
+
+    .irc-tabs-dropdown__option-check {
+      color: $accent;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(0, 133, 199, 0.3);
+
+    outline-offset: -2px;
+  }
+
+  &.active {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 133, 199, 0.08),
+      rgba(0, 133, 199, 0.02)
+    );
+
+    color: $accent;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      top: 10px;
+      bottom: 10px;
+
+      width: 4px;
+
+      border-radius: 0 4px 4px 0;
+
+      background: $accent;
+    }
+
+    .irc-tabs-dropdown__option-number {
+      background: $accent;
+
+      color: white;
+    }
+
+    .irc-tabs-dropdown__option-icon {
+      color: $accent;
+    }
+
+    .irc-tabs-dropdown__option-check {
+      color: $accent;
+    }
+  }
+}
+
+
+// ============================================================
+// OPTION NUMBER
+// ============================================================
+
+.irc-tabs-dropdown__option-number {
+  display: grid;
+
+  place-items: center;
+
+  width: 36px;
+
+  height: 36px;
+
+  border-radius: 6px;
+
+  background: $bg-soft;
+
+  color: $text-muted;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+// ============================================================
+// OPTION ICON
+// ============================================================
+
+.irc-tabs-dropdown__option-icon {
+  display: grid;
+
+  place-items: center;
+
+  width: 32px;
+
+  height: 32px;
+
+  color: rgba(16, 27, 25, 0.45);
+
+  font-size: 16px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+// ============================================================
+// OPTION LABEL
+// ============================================================
+
+.irc-tabs-dropdown__option-label {
+  min-width: 0;
+
+  font-size: 15px;
+
+  font-weight: 650;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.005em;
+}
+
+
+// ============================================================
+// OPTION CHECK
+// ============================================================
+
+.irc-tabs-dropdown__option-check {
+  display: grid;
+
+  place-items: center;
+
+  font-size: 16px;
+
+  color: rgba(16, 27, 25, 0.28);
+
+  transition: color 0.2s ease;
+}
+
+
+// ============================================================
+// CONTENT WRAPPER
+// ============================================================
+
+.irc-tabs-content-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  min-height: calc(100vh - 104px);
+
+  overflow: visible;
+
+  background: $bg-primary;
+}
+
+
+// ============================================================
+// CONTENT
+// ============================================================
+
+.irc-tab-content {
+  display: none;
+
+  width: 100%;
+
+  opacity: 0;
+}
+
+.irc-tab-content.active {
+  display: block;
+
+  animation: ircContentEnter 0.4s ease both;
+}
+
+@keyframes ircContentEnter {
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+// ============================================================
+// CONTENT INNER
+// ============================================================
+
+.irc-tab-content-inner {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100%;
+}
+
+
+// ============================================================
+// CONTENT BACKGROUND
+// ============================================================
+
+.irc-content-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background: $bg-primary;
+}
+
+
+// ============================================================
+// CONTENT BODY
+// ============================================================
+
+.irc-content-body {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+
+  min-height: 100%;
+
+  padding: 0;
+
+  overflow: visible;
+}
+
+
+// ============================================================
+// TABLET
+// ============================================================
+
+@media (max-width: 1100px) {
+  .irc-tabs-header__inner {
+    width: min(100% - 50px, 1000px);
+
+    min-height: 96px;
+  }
+
+  .irc-tabs-dropdown {
+    width: 460px;
+  }
+
+  .irc-tabs-meta__current {
+    font-size: 18px;
+  }
+}
+
+
+// ============================================================
+// TABLET / SMALL LAPTOP
+// ============================================================
+
+@media (max-width: 850px) {
+  .irc-tabs-header__inner {
+    width: min(100% - 36px, 720px);
+
+    min-height: 88px;
+
+    gap: 20px;
+  }
+
+  .irc-tabs-meta__eyebrow {
+    display: none;
+  }
+
+  .irc-tabs-meta__current {
+    font-size: 16px;
+  }
+
+  .irc-tabs-rings {
+    display: none;
+  }
+
+  .irc-tabs-dropdown {
+    width: min(100%, 380px);
+  }
+
+  .irc-tabs-dropdown__hint {
+    display: none;
+  }
+}
+
+
+// ============================================================
+// MOBILE
+// ============================================================
+
+@media (max-width: 600px) {
+  .irc-tabs-header {
+    position: sticky;
+
+    top: 0;
+  }
+
+  .irc-tabs-header__inner {
+    width: calc(100% - 24px);
+
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    padding: 12px 0 14px;
+  }
+
+  // ----------------------------------------------------------
+  // Mobile meta
+  // ----------------------------------------------------------
+
+  .irc-tabs-meta {
+    gap: 10px;
+  }
+
+  .irc-tabs-rings {
+    width: 34px;
+    height: 34px;
+
+    span {
+      width: 14px;
+      height: 14px;
+
+      border-width: 2.5px;
+    }
+
+    span:nth-child(1) {
+      top: 2px;
+      left: 0;
+    }
+
+    span:nth-child(2) {
+      top: 2px;
+      left: 10px;
+    }
+
+    span:nth-child(3) {
+      top: 2px;
+      left: 20px;
+    }
+
+    span:nth-child(4) {
+      top: 10px;
+      left: 5px;
+    }
+
+    span:nth-child(5) {
+      top: 10px;
+      left: 15px;
+    }
+  }
+
+  .irc-tabs-meta__current {
+    font-size: 15px;
+  }
+
+  // ----------------------------------------------------------
+  // Mobile dropdown
+  // ----------------------------------------------------------
+
+  .irc-tabs-dropdown {
+    width: 100%;
+  }
+
+  .irc-tabs-dropdown__trigger {
+    min-height: 56px;
+
+    padding: 6px 8px 6px 10px;
+
+    gap: 12px;
+
+    border-radius: 6px;
+  }
+
+  .irc-tabs-dropdown__trigger-left {
+    gap: 10px;
+  }
+
+  .irc-tabs-dropdown__number {
+    width: 32px;
+
+    height: 32px;
+
+    font-size: 10px;
+  }
+
+  .irc-tabs-dropdown__icon {
+    width: 24px;
+
+    height: 24px;
+
+    font-size: 13px;
+  }
+
+  .irc-tabs-dropdown__label {
+    font-size: 13px;
+  }
+
+  .irc-tabs-dropdown__trigger-right {
+    gap: 8px;
+  }
+
+  .irc-tabs-dropdown__arrow {
+    width: 34px;
+
+    height: 34px;
+
+    font-size: 14px;
+  }
+
+  // ----------------------------------------------------------
+  // Mobile menu
+  // ----------------------------------------------------------
+
+  .irc-tabs-dropdown__menu {
+    top: calc(100% + 8px);
+
+    width: 100%;
+
+    max-height: calc(100vh - 165px);
+
+    border-radius: 8px;
+  }
+
+  .irc-tabs-dropdown__menu-header {
+    padding: 14px 16px;
+
+    font-size: 10px;
+
+    span:last-child {
+      font-size: 9px;
+    }
+  }
+
+  .irc-tabs-dropdown__options {
+    max-height: calc(100vh - 225px);
+  }
+
+  .irc-tabs-dropdown__option {
+    grid-template-columns: 32px 28px minmax(0, 1fr) 24px;
+
+    min-height: 56px;
+
+    gap: 10px;
+
+    padding: 8px 14px;
+
+    &:hover {
+      padding-left: 18px;
+    }
+  }
+
+  .irc-tabs-dropdown__option-number {
+    width: 28px;
+
+    height: 28px;
+
+    font-size: 9px;
+  }
+
+  .irc-tabs-dropdown__option-icon {
+    width: 25px;
+
+    height: 25px;
+
+    font-size: 12px;
+  }
+
+  .irc-tabs-dropdown__option-label {
+    font-size: 12px;
+
+    line-height: 1.3;
+  }
+
+  .irc-tabs-dropdown__option-check {
+    font-size: 13px;
+  }
+
+  // ----------------------------------------------------------
+  // Content
+  // ----------------------------------------------------------
+
+  .irc-tabs-content-wrapper {
+    min-height: calc(100vh - 130px);
+  }
+}
+
+
+// ============================================================
+// SMALL MOBILE
+// ============================================================
+
+@media (max-width: 420px) {
+  .irc-tabs-meta__current {
+    font-size: 13px;
+  }
+
+  .irc-tabs-dropdown__label {
+    font-size: 12px;
+  }
+
+  .irc-tabs-dropdown__trigger {
+    min-height: 52px;
+  }
+
+  .irc-tabs-dropdown__number {
+    width: 29px;
+
+    height: 29px;
+  }
+
+  .irc-tabs-dropdown__icon {
+    display: none;
+  }
+
+  .irc-tabs-dropdown__option {
+    grid-template-columns: 28px 24px minmax(0, 1fr) 20px;
+
+    min-height: 52px;
+
+    gap: 8px;
+  }
+
+  .irc-tabs-dropdown__option-number {
+    width: 26px;
+
+    height: 26px;
+  }
+
+  .irc-tabs-dropdown__option-label {
+    font-size: 11px;
+  }
+}
+
+
+// ============================================================
+// VERY SMALL MOBILE
+// ============================================================
+
+@media (max-width: 360px) {
+  .irc-tabs-rings {
+    display: none;
+  }
+
+  .irc-tabs-header__inner {
+    padding-top: 10px;
+  }
+
+  .irc-tabs-dropdown__trigger {
+    min-height: 50px;
+  }
+
+  .irc-tabs-dropdown__label {
+    font-size: 11px;
+  }
+
+  .irc-tabs-dropdown__menu {
+    top: calc(100% + 6px);
+  }
+}
+
+
+// ============================================================
+// REDUCED MOTION
+// ============================================================
+
+@media (prefers-reduced-motion: reduce) {
+  .irc-tabs-container *,
+  .irc-tabs-container *::before,
+  .irc-tabs-container *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+
+// ============================================================
+// PRINT
+// ============================================================
+
+@media print {
+  .irc-tabs-header {
+    position: static;
+
+    box-shadow: none;
+  }
+
+  .irc-tabs-dropdown__menu {
+    display: none;
+  }
+
+  .irc-tab-content {
+    display: block;
+
+    opacity: 1;
+
+    page-break-inside: avoid;
+  }
+
+  .irc-tab-content:not(.active) {
+    display: none;
+  }
+
+  .irc-content-background {
+    display: none;
+  }
+}

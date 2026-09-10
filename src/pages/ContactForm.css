@@ -192,3 +192,39 @@
     font-size: 2rem;
   }
 }
+
+/* =========================================================================
+   HONEYPOT FIELD — invisible to real users, catches bots that auto-fill
+   every input on a page
+   ========================================================================= */
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* =========================================================================
+   FIELD-LEVEL ERROR MESSAGES
+   ========================================================================= */
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: #c0392b;
+  font-weight: 600;
+}
+
+.error-message {
+  border-left: 4px solid #c0392b;
+  color: #c0392b;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}

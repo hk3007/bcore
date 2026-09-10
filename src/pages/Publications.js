@@ -45,6 +45,16 @@ const PUB_DATA = [
     authors: "",
     venue: "Rashtriya Raksha University, Gandhinagar, India",
     link: BOA1
+  },
+  {
+    id: 5,
+    date: "2025-01-27", // Used for sorting
+    displayDate: "27 Jan 2025", // User-friendly format
+    type: " दृष्टि VISION OLYMPiCS",
+    title: "1st International Olympic Research Conference (IORC) 2025: दृष्टि VISION OLYMPiCS",
+    authors: "",
+    venue: "Rashtriya Raksha University, Gandhinagar, India",
+    link: "https://drive.google.com/file/d/1oSrJWDuhxHDKOGPPC7CvEAfN9ov84qsV/view?usp=sharing"
   }
 ];
 
@@ -54,8 +64,8 @@ const Publications = () => {
   const filteredAndSorted = useMemo(() => {
     return [...PUB_DATA]
       .sort((a, b) => new Date(b.date) - new Date(a.date)) // Newest on top
-      .filter(p => 
-        p.title.toLowerCase().includes(query.toLowerCase()) || 
+      .filter(p =>
+        p.title.toLowerCase().includes(query.toLowerCase()) ||
         p.authors.toLowerCase().includes(query.toLowerCase())
       );
   }, [query]);
@@ -68,19 +78,19 @@ const Publications = () => {
 
       <section className="pub-hero">
         <div className="container">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             className="hero-title"
           >
             Research & <span className="blue-text">Publications</span>
           </motion.h1>
-          
+
           <div className="search-wrapper">
             <FaSearch className="search-icon" />
-            <input 
-              type="text" 
-              placeholder="Search by title, author, or keyword..." 
+            <input
+              type="text"
+              placeholder="Search by title, author, or keyword..."
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
@@ -99,7 +109,7 @@ const Publications = () => {
         <div className="pub-list">
           <AnimatePresence mode="popLayout">
             {filteredAndSorted.map((pub, idx) => (
-              <motion.div 
+              <motion.div
                 layout
                 key={pub.id}
                 initial={{ opacity: 0, y: 10 }}

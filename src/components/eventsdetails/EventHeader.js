@@ -1,18 +1,6 @@
 import React from "react";
 import "./EventHeader.css";
 
-function OlympicRings() {
-  return (
-    <svg className="eh-rings" viewBox="0 0 400 160" aria-hidden="true">
-      <circle className="eh-ring eh-ring-blue" cx="70" cy="60" r="42" />
-      <circle className="eh-ring eh-ring-black" cx="160" cy="60" r="42" />
-      <circle className="eh-ring eh-ring-red" cx="250" cy="60" r="42" />
-      <circle className="eh-ring eh-ring-yellow" cx="115" cy="100" r="42" />
-      <circle className="eh-ring eh-ring-green" cx="205" cy="100" r="42" />
-    </svg>
-  );
-}
-
 const EventHeader = ({ title, date, location }) => {
   return (
     <header className="eh-hero">
@@ -20,7 +8,6 @@ const EventHeader = ({ title, date, location }) => {
       <div className="eh-hero-glow eh-hero-glow-2"></div>
 
       <div className="eh-hero-content">
-        <OlympicRings />
 
         {title && <h1 className="eh-hero-title">{title}</h1>}
 

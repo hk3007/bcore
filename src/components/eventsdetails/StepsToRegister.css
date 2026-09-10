@@ -1,140 +1,1202 @@
-/* ============================================
-   VINTAGE ROYAL THEME - Steps to Register
-   Colors: Deep Royal Blue (#0a1931), Gold (#f5c518), Ivory White (#faf6f0)
-   Fonts: Cinzel (Title), Poppins (Body)
-============================================ */
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;500&display=swap");
+/* ============================================================
+   STEPS TO REGISTER
+   BCORE / IORC EDITORIAL DESIGN
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 
-.center-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;   /* horizontal center */
-  align-items: center;       /* vertical center */
-}
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
 
-/* Container */
-.vintage-steps-container {
-  background: #ffffff;
-  text-align: center;
+.str-container {
+  --str-bg: #f7f8f6;
+  --str-surface: #ffffff;
+
+  --str-text: #101b19;
+  --str-secondary: rgba(15, 28, 25, 0.68);
+  --str-muted: rgba(15, 28, 25, 0.45);
+
+  --str-line: rgba(15, 28, 25, 0.11);
+  --str-line-dark: rgba(15, 28, 25, 0.18);
+
+  --str-blue: #0085c7;
+  --str-yellow: #f4c300;
+  --str-green: #009f3d;
+  --str-red: #df0024;
+
   position: relative;
+
+  width: min(100% - 100px, 1200px);
+
+  margin: 60px auto;
+
+  padding: 80px 0 85px;
+
+  color: var(--str-text);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
   overflow: hidden;
-  max-width: 1400px;
-  padding: 10px 40px;
-  margin-bottom: 20px;
+
+  isolation: isolate;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
 }
 
-/* Heading */
-.vintage-steps-title {
-  font-family: "Cinzel", serif;
-  color: #0a1931;
-  font-size: 2.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  position: relative;
-  margin-bottom: 50px;
-  z-index: 1;
+
+/* ============================================================
+   BACKGROUND GRID
+   ============================================================ */
+
+.str-grid-bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  opacity: 0.55;
+
+  background-image:
+    linear-gradient(
+      rgba(15, 28, 25, 0.032) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 28, 25, 0.032) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
 }
 
-.vintage-steps-title::after {
+
+/* ============================================================
+   OLYMPIC SIDE ACCENT
+   ============================================================ */
+
+.str-container::before {
   content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #f5c518, #0a1931);
-  margin: 15px auto 0;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 80px;
+
+  width: 4px;
+
+  height: calc(100% - 160px);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--str-blue) 0%,
+      var(--str-blue) 25%,
+
+      var(--str-yellow) 25%,
+      var(--str-yellow) 50%,
+
+      var(--str-green) 50%,
+      var(--str-green) 75%,
+
+      var(--str-red) 75%,
+      var(--str-red) 100%
+    );
+
+  opacity: 0.95;
+
+  z-index: 3;
 }
 
-/* Steps Grid (flex without scroll) */
-.vintage-steps-grid {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 25px;
-  flex-wrap: nowrap;
-  flex-direction: row;
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.str-header {
   position: relative;
-  z-index: 1;
+
+  max-width: 850px;
+
+  margin-bottom: 65px;
+
+  padding-left: 22px;
 }
 
-/* Step Card */
-.vintage-step-card {
-  background: #faf6f0;
-  border-radius: 15px;
-  padding: 25px 20px;
-  width: 100%;
-  max-width: 280px;
-  flex: 1;
-  border-top: 5px solid #f5c518;
-  box-shadow: 0 6px 20px rgba(10, 25, 49, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.str-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 17px;
+
+  color: var(--str-blue);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
 }
 
-.vintage-step-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(10, 25, 49, 0.15);
+.str-eyebrow::before {
+  content: "";
+
+  width: 28px;
+
+  height: 2px;
+
+  background: var(--str-blue);
+
+  flex-shrink: 0;
 }
 
-/* Step Title */
-.vintage-step-card h4 {
-  font-family: "Cinzel", serif;
-  color: #0a1931;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.str-title {
+  position: relative;
+
+  margin: 0 0 20px;
+
+  padding-left: 18px;
+
+  color: var(--str-text);
+
+  font-size: clamp(38px, 5vw, 64px);
+
+  font-weight: 800;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
 }
 
-/* Step Text */
-.vintage-step-card p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: #333;
+
+/* TITLE ACCENT */
+
+.str-title::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 3px;
+
+  width: 4px;
+
+  height: calc(100% - 6px);
+
+  border-radius: 3px;
+
+  background: var(--str-blue);
+}
+
+
+/* ============================================================
+   INTRO
+   ============================================================ */
+
+.str-intro {
+  max-width: 700px;
+
   margin: 0;
+
+  color: var(--str-secondary);
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
 }
 
-/* 💻 Large Screens (default: horizontal layout) */
-@media (min-width: 1025px) {
-  .vintage-steps-grid {
-    flex-direction: row;
-    justify-content: center;
-    gap: 30px;
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+
+.str-timeline {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  align-items: stretch;
+}
+
+
+/* ============================================================
+   STEP
+   ============================================================ */
+
+.str-step {
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* ============================================================
+   CONNECTOR
+   ============================================================ */
+
+.str-connector {
+  position: absolute;
+
+  top: 30px;
+
+  left: calc(50% + 38px);
+
+  width: calc(100% - 76px + 22px);
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 133, 199, 0.5),
+      rgba(15, 28, 25, 0.12)
+    );
+
+  z-index: 0;
+}
+
+
+/* ============================================================
+   STEP NUMBER
+   ============================================================ */
+
+.str-step-number {
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 60px;
+
+  height: 60px;
+
+  margin-bottom: 18px;
+
+  border: 1px solid rgba(0, 133, 199, 0.35);
+
+  border-radius: 50%;
+
+  background: var(--str-surface);
+
+  box-shadow:
+    0 8px 24px rgba(15, 28, 25, 0.07);
+
+  color: var(--str-blue);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* INNER CIRCLE */
+
+.str-step-number::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  border: 1px solid rgba(0, 133, 199, 0.13);
+
+  border-radius: 50%;
+}
+
+
+/* NUMBER */
+
+.str-step-number span {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.str-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  min-height: 185px;
+
+  padding: 25px 22px 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(255, 255, 255, 0.82)
+    );
+
+  border: 1px solid var(--str-line);
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 14px 35px rgba(15, 28, 25, 0.05);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* TOP COLOR LINE */
+
+.str-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  top: 0;
+
+  height: 2px;
+
+  opacity: 0.85;
+
+  background: var(--str-blue);
+}
+
+
+/* ============================================================
+   DIFFERENT OLYMPIC COLORS
+   ============================================================ */
+
+.str-step-1 .str-card::before {
+  background: var(--str-blue);
+}
+
+.str-step-2 .str-card::before {
+  background: var(--str-yellow);
+}
+
+.str-step-3 .str-card::before {
+  background: var(--str-green);
+}
+
+.str-step-4 .str-card::before {
+  background: var(--str-red);
+}
+
+
+/* ============================================================
+   CARD TOP
+   ============================================================ */
+
+.str-card-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.str-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 38px;
+
+  height: 38px;
+
+  border: 1px solid rgba(0, 133, 199, 0.14);
+
+  background: rgba(0, 133, 199, 0.045);
+
+  color: var(--str-blue);
+}
+
+
+/* Individual icons */
+
+.str-step-2 .str-icon {
+  color: #b08a00;
+
+  background: rgba(244, 195, 0, 0.07);
+
+  border-color: rgba(244, 195, 0, 0.18);
+}
+
+.str-step-3 .str-icon {
+  color: var(--str-green);
+
+  background: rgba(0, 159, 61, 0.06);
+
+  border-color: rgba(0, 159, 61, 0.15);
+}
+
+.str-step-4 .str-icon {
+  color: var(--str-red);
+
+  background: rgba(223, 0, 36, 0.055);
+
+  border-color: rgba(223, 0, 36, 0.14);
+}
+
+
+/* ============================================================
+   STEP LABEL
+   ============================================================ */
+
+.str-step-label {
+  color: var(--str-muted);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.str-card-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 22px 0 18px;
+
+  background: var(--str-line);
+}
+
+
+/* ============================================================
+   STEP TEXT
+   ============================================================ */
+
+.str-step-text {
+  margin: 0;
+
+  color: var(--str-text);
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 1.55;
+
+  letter-spacing: -0.015em;
+}
+
+
+/* ============================================================
+   BOTTOM ACCENT
+   ============================================================ */
+
+.str-card-accent {
+  position: absolute;
+
+  right: 20px;
+
+  bottom: 18px;
+
+  width: 26px;
+
+  height: 2px;
+
+  background: var(--str-blue);
+
+  opacity: 0.6;
+}
+
+.str-step-2 .str-card-accent {
+  background: var(--str-yellow);
+}
+
+.str-step-3 .str-card-accent {
+  background: var(--str-green);
+}
+
+.str-step-4 .str-card-accent {
+  background: var(--str-red);
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
+
+.str-step:hover .str-card {
+  transform: translateY(-7px);
+
+  border-color: var(--str-line-dark);
+
+  box-shadow:
+    0 22px 45px rgba(15, 28, 25, 0.09);
+}
+
+.str-step:hover .str-step-number {
+  transform: translateY(-3px);
+
+  border-color: rgba(0, 133, 199, 0.55);
+
+  box-shadow:
+    0 12px 28px rgba(0, 133, 199, 0.13);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.str-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 42px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid var(--str-line);
+}
+
+
+/* FOOTER LINE */
+
+.str-footer-line {
+  width: 30px;
+
+  height: 2px;
+
+  flex-shrink: 0;
+
+  background: var(--str-blue);
+}
+
+
+/* FOOTER TEXT */
+
+.str-footer p {
+  margin: 0;
+
+  color: var(--str-muted);
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   FOOTER DOTS
+   ============================================================ */
+
+.str-footer-dots {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-left: auto;
+}
+
+.str-footer-dots i {
+  display: block;
+
+  width: 5px;
+
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--str-blue);
+}
+
+.str-footer-dots i:nth-child(2) {
+  background: var(--str-yellow);
+}
+
+.str-footer-dots i:nth-child(3) {
+  background: var(--str-green);
+}
+
+.str-footer-dots i:nth-child(4) {
+  background: var(--str-red);
+}
+
+
+/* ============================================================
+   LARGE TABLET
+   ============================================================ */
+
+@media (max-width: 1100px) {
+  .str-container {
+    width: min(100% - 70px, 1000px);
+
+    padding: 70px 0 75px;
+  }
+
+  .str-container::before {
+    top: 70px;
+
+    height: calc(100% - 145px);
+  }
+
+  .str-header {
+    margin-bottom: 52px;
+  }
+
+  .str-timeline {
+    gap: 16px;
+  }
+
+  .str-card {
+    padding: 22px 18px;
+  }
+
+  .str-step-text {
+    font-size: 14px;
+  }
+
+  .str-connector {
+    left: calc(50% + 34px);
+
+    width: calc(100% - 68px + 16px);
   }
 }
 
-/* 📱 Tablets (stack in 2 columns) */
-@media (max-width: 1024px) and (min-width: 601px) {
-  .vintage-steps-grid {
-    flex-wrap: wrap;
-    justify-content: center;
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 850px) {
+  .str-container {
+    width: min(100% - 44px, 720px);
+
+    padding: 65px 0 70px;
   }
-  .vintage-step-card {
-    flex: 1 1 45%;
-    max-width: 45%;
+
+  .str-container::before {
+    top: 65px;
+
+    height: calc(100% - 135px);
+  }
+
+  .str-header {
+    padding-left: 18px;
+
+    margin-bottom: 42px;
+  }
+
+  .str-title {
+    font-size: clamp(36px, 7vw, 54px);
+  }
+
+  .str-timeline {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 28px 18px;
+  }
+
+  /* Hide desktop connectors */
+
+  .str-connector {
+    display: none;
+  }
+
+  .str-step-number {
+    width: 54px;
+
+    height: 54px;
+
+    margin-bottom: 14px;
+  }
+
+  .str-card {
+    min-height: 175px;
+
+    padding: 22px 20px;
   }
 }
 
-/* 📱 Mobile (single column) */
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
 @media (max-width: 600px) {
-  .vintage-steps-container {
-    padding: 40px 20px;
+  .str-container {
+    width: calc(100% - 34px);
+
+    margin: 35px auto;
+
+    padding: 50px 0 55px;
   }
 
-  .vintage-steps-title {
-    font-size: 1.6rem;
-    margin-bottom: 40px;
+  .str-container::before {
+    display: none;
   }
 
-  .vintage-steps-grid {
+  .str-grid-bg {
+    background-size: 70px 70px;
+
+    opacity: 0.4;
+  }
+
+
+  /* ----------------------------------------------------------
+     HEADER
+     ---------------------------------------------------------- */
+
+  .str-header {
+    padding-left: 15px;
+
+    margin-bottom: 38px;
+  }
+
+  .str-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+
+    margin-bottom: 14px;
+  }
+
+  .str-eyebrow::before {
+    width: 20px;
+  }
+
+  .str-title {
+    margin-bottom: 17px;
+
+    padding-left: 14px;
+
+    font-size: clamp(30px, 10vw, 44px);
+
+    line-height: 0.98;
+  }
+
+  .str-title::before {
+    width: 3px;
+  }
+
+  .str-intro {
+    font-size: 12px;
+
+    line-height: 1.75;
+  }
+
+
+  /* ----------------------------------------------------------
+     MOBILE TIMELINE
+     ---------------------------------------------------------- */
+
+  .str-timeline {
+    display: flex;
+
     flex-direction: column;
-    align-items: center;
+
+    gap: 0;
+
+    padding-left: 8px;
+  }
+
+
+  /* ----------------------------------------------------------
+     STEP
+     ---------------------------------------------------------- */
+
+  .str-step {
+    display: grid;
+
+    grid-template-columns: 48px minmax(0, 1fr);
+
+    column-gap: 15px;
+
+    align-items: start;
+
+    padding-bottom: 28px;
+  }
+
+
+  /* ----------------------------------------------------------
+     MOBILE CONNECTOR
+     ---------------------------------------------------------- */
+
+  .str-connector {
+    display: block;
+
+    position: absolute;
+
+    left: 23px;
+
+    top: 48px;
+
+    bottom: 0;
+
+    width: 1px;
+
+    height: auto;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 133, 199, 0.4),
+        rgba(15, 28, 25, 0.08)
+      );
+  }
+
+
+  /* ----------------------------------------------------------
+     NUMBER
+     ---------------------------------------------------------- */
+
+  .str-step-number {
+    grid-column: 1;
+
+    width: 48px;
+
+    height: 48px;
+
+    margin: 0;
+
+    box-shadow:
+      0 6px 18px rgba(15, 28, 25, 0.06);
+  }
+
+  .str-step-number::before {
+    inset: 4px;
+  }
+
+  .str-step-number span {
+    font-size: 11px;
+  }
+
+
+  /* ----------------------------------------------------------
+     CARD
+     ---------------------------------------------------------- */
+
+  .str-card {
+    grid-column: 2;
+
+    min-height: 0;
+
+    padding: 20px 17px;
+
+    box-shadow:
+      0 10px 25px rgba(15, 28, 25, 0.045);
+  }
+
+  .str-step:hover .str-card {
+    transform: translateY(-3px);
+  }
+
+
+  /* ----------------------------------------------------------
+     CARD TOP
+     ---------------------------------------------------------- */
+
+  .str-card-top {
+    gap: 10px;
+  }
+
+  .str-icon {
+    width: 34px;
+
+    height: 34px;
+  }
+
+  .str-step-label {
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+  }
+
+
+  /* ----------------------------------------------------------
+     DIVIDER
+     ---------------------------------------------------------- */
+
+  .str-card-divider {
+    margin: 17px 0 14px;
+  }
+
+
+  /* ----------------------------------------------------------
+     TEXT
+     ---------------------------------------------------------- */
+
+  .str-step-text {
+    font-size: 13px;
+
+    line-height: 1.55;
+  }
+
+
+  /* ----------------------------------------------------------
+     FOOTER
+     ---------------------------------------------------------- */
+
+  .str-footer {
+    margin-top: 10px;
+
+    margin-left: 71px;
+
+    padding-top: 20px;
+
+    gap: 10px;
+  }
+
+  .str-footer-line {
+    width: 20px;
+  }
+
+  .str-footer p {
+    font-size: 10px;
+  }
+
+  .str-footer-dots {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 380px) {
+  .str-container {
+    width: calc(100% - 26px);
+
+    margin: 30px auto;
+
+    padding: 42px 0 48px;
+  }
+
+  .str-header {
+    margin-bottom: 32px;
+  }
+
+  .str-title {
+    font-size: 30px;
+  }
+
+  .str-intro {
+    font-size: 11px;
+  }
+
+  .str-timeline {
+    padding-left: 4px;
+  }
+
+  .str-step {
+    grid-template-columns: 43px minmax(0, 1fr);
+
+    column-gap: 12px;
+
+    padding-bottom: 24px;
+  }
+
+  .str-step-number {
+    width: 43px;
+
+    height: 43px;
+  }
+
+  .str-connector {
+    left: 21px;
+
+    top: 43px;
+  }
+
+  .str-card {
+    padding: 17px 14px;
+  }
+
+  .str-icon {
+    width: 31px;
+
+    height: 31px;
+  }
+
+  .str-step-label {
+    font-size: 7px;
+  }
+
+  .str-step-text {
+    font-size: 12px;
+  }
+
+  .str-footer {
+    margin-left: 55px;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .str-container *,
+  .str-container {
+    transition: none !important;
+
+    animation: none !important;
+  }
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .str-container {
+    width: 100%;
+
+    margin: 0;
+
+    padding: 30px 0;
+
+    background: #fff;
+
+    box-shadow: none;
+  }
+
+  .str-container::before,
+  .str-grid-bg {
+    display: none;
+  }
+
+  .str-timeline {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
     gap: 20px;
   }
 
-  .vintage-step-card {
-    width: 100%;
-    max-width: 320px;
+  .str-connector {
+    display: none;
+  }
+
+  .str-card {
+    box-shadow: none;
+
+    border: 1px solid #ddd;
+  }
+
+  .str-footer {
+    display: none;
   }
 }

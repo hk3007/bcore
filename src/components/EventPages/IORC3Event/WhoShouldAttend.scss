@@ -1,3 +1,736 @@
-.irc-grid--attend li::before {
-  color: $olympic-green;
+/* ============================================================
+   WHO SHOULD ATTEND
+   LIGHT OLYMPIC / EDITORIAL DESIGN
+   ============================================================ */
+
+@import url(
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+);
+
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+
+.irc-attend-section {
+  --attend-bg: #f7f8f6;
+  --attend-surface: #ffffff;
+
+  --attend-text: #101b19;
+  --attend-secondary: rgba(16, 27, 25, 0.68);
+  --attend-muted: rgba(16, 27, 25, 0.42);
+
+  --attend-border: rgba(16, 27, 25, 0.10);
+
+  --attend-blue: #0085c7;
+  --attend-yellow: #f4c300;
+  --attend-green: #009f3d;
+  --attend-red: #df0024;
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 90px 40px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fafbf9 0%,
+      #f4f6f4 100%
+    );
+
+  color: var(--attend-text);
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ============================================================
+   OLYMPIC TOP LINE
+   ============================================================ */
+
+.irc-attend-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--attend-blue) 0%,
+      var(--attend-blue) 25%,
+
+      var(--attend-yellow) 25%,
+      var(--attend-yellow) 50%,
+
+      var(--attend-green) 50%,
+      var(--attend-green) 75%,
+
+      var(--attend-red) 75%,
+      var(--attend-red) 100%
+    );
+}
+
+
+/* ============================================================
+   BACKGROUND GRID
+   ============================================================ */
+
+.irc-attend-grid-bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  opacity: 0.6;
+
+  background-image:
+    linear-gradient(
+      rgba(16, 27, 25, 0.034) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(16, 27, 25, 0.034) 1px,
+      transparent 1px
+    );
+
+  background-size: 85px 85px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    );
+}
+
+
+/* ============================================================
+   INNER
+   ============================================================ */
+
+.irc-attend-inner {
+  position: relative;
+
+  width: min(100%, 1180px);
+
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.irc-attend-header {
+  max-width: 820px;
+
+  margin: 0 auto 52px;
+
+  text-align: center;
+}
+
+
+/* ============================================================
+   EYEBROW
+   ============================================================ */
+
+.irc-attend-eyebrow {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--attend-green);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   HEADING ROW
+   ============================================================ */
+
+.irc-attend-heading-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+
+/* ============================================================
+   HEADING LINE
+   ============================================================ */
+
+.irc-attend-heading-line {
+  width: 28px;
+
+  height: 3px;
+
+  flex-shrink: 0;
+
+  background: var(--attend-blue);
+
+  border-radius: 10px;
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.irc-attend-title {
+  margin: 0;
+
+  color: var(--attend-text);
+
+  font-size: clamp(
+    32px,
+    4vw,
+    52px
+  );
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.055em;
+
+  text-transform: uppercase;
+}
+
+
+/* ============================================================
+   LEAD
+   ============================================================ */
+
+.irc-attend-lead {
+  max-width: 650px;
+
+  margin: 20px auto 0;
+
+  color: var(--attend-secondary);
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.8;
+}
+
+
+/* ============================================================
+   ATTENDEE GRID
+   ============================================================ */
+
+.irc-attend-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+/* ============================================================
+   ATTENDEE CARD
+   ============================================================ */
+
+.irc-attend-item {
+  --attend-accent: #0085c7;
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    30px 36px minmax(0, 1fr) 20px;
+
+  align-items: center;
+
+  column-gap: 12px;
+
+  min-height: 92px;
+
+  padding: 18px 17px;
+
+  background:
+    rgba(255, 255, 255, 0.92);
+
+  border: 1px solid var(--attend-border);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(16, 27, 25, 0.035);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
+
+.irc-attend-item:hover {
+  transform: translateY(-4px);
+
+  background: #ffffff;
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--attend-accent) 35%,
+      transparent
+    );
+
+  box-shadow:
+    0 16px 35px
+    rgba(16, 27, 25, 0.075);
+}
+
+
+/* ============================================================
+   NUMBER
+   ============================================================ */
+
+.irc-attend-number {
+  color:
+    color-mix(
+      in srgb,
+      var(--attend-accent) 70%,
+      #101b19
+    );
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* ============================================================
+   ICON
+   ============================================================ */
+
+.irc-attend-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 34px;
+
+  height: 34px;
+
+  color: var(--attend-accent);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--attend-accent) 8%,
+      white
+    );
+
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--attend-accent) 32%,
+      transparent
+    );
+
+  border-radius: 2px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.irc-attend-item:hover .irc-attend-icon {
+  transform: translateY(-2px);
+
+  background:
+    color-mix(
+      in srgb,
+      var(--attend-accent) 13%,
+      white
+    );
+}
+
+
+/* ============================================================
+   TEXT
+   ============================================================ */
+
+.irc-attend-text {
+  color: var(--attend-secondary);
+
+  font-size: 12.5px;
+
+  font-weight: 600;
+
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   ARROW
+   ============================================================ */
+
+.irc-attend-arrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--attend-muted);
+
+  opacity: 0.55;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+.irc-attend-item:hover .irc-attend-arrow {
+  color: var(--attend-accent);
+
+  opacity: 1;
+
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* ============================================================
+   BOTTOM ACCENT
+   ============================================================ */
+
+.irc-attend-accent {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: var(--attend-accent);
+
+  transform:
+    scaleX(0.08);
+
+  transform-origin: left;
+
+  opacity: 0.65;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+
+.irc-attend-item:hover .irc-attend-accent {
+  transform: scaleX(1);
+
+  opacity: 1;
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+  .irc-attend-section {
+    padding: 75px 30px;
+  }
+
+  .irc-attend-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+
+/* ============================================================
+   SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 720px) {
+
+  .irc-attend-section {
+    padding: 65px 22px;
+  }
+
+  .irc-attend-header {
+    margin-bottom: 38px;
+  }
+
+  .irc-attend-title {
+    font-size: clamp(
+      29px,
+      8vw,
+      42px
+    );
+  }
+
+  .irc-attend-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .irc-attend-item {
+    min-height: 82px;
+  }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+  .irc-attend-section {
+    padding: 55px 16px;
+  }
+
+  .irc-attend-header {
+    margin-bottom: 30px;
+  }
+
+  .irc-attend-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .irc-attend-heading-row {
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    gap: 9px;
+  }
+
+  .irc-attend-heading-line {
+    width: 20px;
+
+    height: 2px;
+
+    margin-top: 10px;
+  }
+
+  .irc-attend-title {
+    font-size: 29px;
+
+    line-height: 1.05;
+
+    text-align: left;
+  }
+
+  .irc-attend-lead {
+    margin-top: 16px;
+
+    font-size: 12px;
+
+    line-height: 1.75;
+
+    text-align: left;
+  }
+
+  .irc-attend-item {
+    grid-template-columns:
+      27px 34px minmax(0, 1fr) 18px;
+
+    column-gap: 10px;
+
+    min-height: 76px;
+
+    padding: 16px 14px;
+  }
+
+  .irc-attend-number {
+    font-size: 8px;
+  }
+
+  .irc-attend-icon {
+    width: 30px;
+
+    height: 30px;
+  }
+
+  .irc-attend-icon svg {
+    width: 15px;
+
+    height: 15px;
+  }
+
+  .irc-attend-text {
+    font-size: 11.5px;
+
+    line-height: 1.55;
+  }
+
+  .irc-attend-arrow svg {
+    width: 13px;
+
+    height: 13px;
+  }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+  .irc-attend-section {
+    padding: 48px 13px;
+  }
+
+  .irc-attend-title {
+    font-size: 26px;
+  }
+
+  .irc-attend-item {
+    grid-template-columns:
+      24px 31px minmax(0, 1fr) 16px;
+
+    column-gap: 8px;
+
+    padding: 14px 12px;
+  }
+
+  .irc-attend-icon {
+    width: 28px;
+
+    height: 28px;
+  }
+
+  .irc-attend-text {
+    font-size: 11px;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .irc-attend-section *,
+  .irc-attend-section {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+
+  .irc-attend-section {
+    padding: 30px 0;
+
+    background: #ffffff;
+  }
+
+  .irc-attend-grid-bg {
+    display: none;
+  }
+
+  .irc-attend-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .irc-attend-item {
+    box-shadow: none;
+
+    break-inside: avoid;
+  }
 }

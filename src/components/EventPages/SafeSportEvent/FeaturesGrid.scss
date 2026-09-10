@@ -18,7 +18,7 @@
     letter-spacing: 0.18em;
     font-size: 0.72rem;
     font-weight: 700;
-    color: $olympic-green;
+    color: green($color: #000000);
     margin-bottom: 0.9rem;
   }
 
@@ -26,7 +26,7 @@
     @include display-font;
     font-weight: 600;
     font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-    color: $navy;
+    color: bisque;
     margin: 0 0 0.9rem;
   }
 

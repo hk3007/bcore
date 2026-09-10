@@ -81,6 +81,7 @@ export const UpComing = () => {
       name: "Foundation Programme in Safe Sport and Safeguarding",
       startDate: new Date("2026-10-21"),
       endDate: new Date("2026-10-23"),
+      place: "Rashtriya Raksha University, Gandhinagar, Gujarat, India",
     },
     {
       id: 6,
@@ -88,15 +89,8 @@ export const UpComing = () => {
       startDate: new Date("2027-01-27"),
       endDate: new Date("2027-01-29"),
       place: "Rashtriya Raksha University, Gandhinagar, Gujarat, India",
-      description:
-        "Focused on building a safe, ethical, and athlete-centred Olympic ecosystem by integrating research, policy, education, and governance with a strong emphasis on safe sport and athlete safeguarding.",
-      bookletLink: "https://bcore.rru.ac.in", // placeholder (to be published)
-      paymentLink: "https://bcore.rru.ac.in", // placeholder
-      faQ: "https://bcore.rru.ac.in", // placeholder
-      scheduleLink: "/event/3/schedule",
-      guidlines: "https://bcore.rru.ac.in", // submission guidelines to be published
-      paperPresentation:
-        "Submission details to be announced via official BCORE website",
+      description: "Focused on building a safe, ethical, and athlete-centred Olympic ecosystem by integrating research, policy, education, and governance with a strong emphasis on safe sport and athlete safeguarding.",
+      registrationLink: "https://rise.rru.ac.in/Course/693/785",
     },
   ];
 
@@ -191,6 +185,16 @@ export const UpComing = () => {
                       className="ue-btn secondary"
                     >
                       Booklet
+                    </a>
+                  )}
+                  {event.registrationLink && (
+                    <a
+                      href={event.registrationLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ue-btn secondary"
+                    >
+                      Registration
                     </a>
                   )}
                   {event.paymentLink && (

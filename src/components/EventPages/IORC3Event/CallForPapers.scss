@@ -1,0 +1,1487 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap");
+
+// ==========================================================================
+// TOKENS
+// ==========================================================================
+
+$navy: #0b1f33;
+$navy-deep: #061321;
+
+$blue: #0085c7;
+$yellow: #f4c300;
+$green: #009f3d;
+$red: #df0024;
+
+$paper: #ffffff;
+$soft: #f6f8fa;
+$soft-blue: #f3f8fc;
+
+$ink: #101828;
+$muted: #667085;
+$muted-light: #87939f;
+
+$line: #e4e8ed;
+$line-dark: #d6dce3;
+
+// ==========================================================================
+// FONTS
+// ==========================================================================
+
+@mixin display-font {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+@mixin body-font {
+  font-family:
+    "DM Sans",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+// ==========================================================================
+// MAIN
+// ==========================================================================
+
+.iorc-cfp {
+  @include body-font;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba($blue, 0.045),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 94% 80%,
+      rgba($yellow, 0.035),
+      transparent 22%
+    ),
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #fbfcfd 55%,
+      #f7f9fb 100%
+    );
+
+  color: $ink;
+
+  overflow: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// ==========================================================================
+// BACKGROUND
+// ==========================================================================
+
+.iorc-cfp__background {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+.iorc-cfp__grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.45;
+
+  background-image:
+    linear-gradient(
+      rgba($navy, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba($navy, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+}
+
+.iorc-cfp__glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  opacity: 0.12;
+
+  &--blue {
+    width: 500px;
+    height: 500px;
+
+    top: -250px;
+    right: -180px;
+
+    background: rgba($blue, 0.35);
+
+    animation: cfpFloatBlue 16s ease-in-out infinite;
+  }
+
+  &--green {
+    width: 420px;
+    height: 420px;
+
+    left: -220px;
+    bottom: -200px;
+
+    background: rgba($green, 0.22);
+
+    animation: cfpFloatGreen 19s ease-in-out infinite;
+  }
+}
+
+@keyframes cfpFloatBlue {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-35px, 30px, 0) scale(1.08);
+  }
+}
+
+@keyframes cfpFloatGreen {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(30px, -25px, 0) scale(1.08);
+  }
+}
+
+// ==========================================================================
+// DECORATIVE DOTS
+// ==========================================================================
+
+.iorc-cfp__dots {
+  position: absolute;
+
+  top: 100px;
+  right: 6%;
+
+  width: 180px;
+  height: 180px;
+
+  opacity: 0.55;
+}
+
+.dot {
+  position: absolute;
+
+  display: block;
+
+  border-radius: 50%;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -8px;
+
+    border: 1px solid currentColor;
+
+    border-radius: inherit;
+
+    opacity: 0.22;
+  }
+
+  &--blue {
+    width: 11px;
+    height: 11px;
+
+    top: 20px;
+    right: 65px;
+
+    background: $blue;
+    color: $blue;
+  }
+
+  &--yellow {
+    width: 7px;
+    height: 7px;
+
+    top: 70px;
+    right: 15px;
+
+    background: $yellow;
+    color: $yellow;
+  }
+
+  &--green {
+    width: 9px;
+    height: 9px;
+
+    top: 125px;
+    right: 90px;
+
+    background: $green;
+    color: $green;
+  }
+
+  &--red {
+    width: 6px;
+    height: 6px;
+
+    top: 155px;
+    right: 35px;
+
+    background: $red;
+    color: $red;
+  }
+}
+
+// ==========================================================================
+// CONTAINER
+// ==========================================================================
+
+.iorc-cfp__container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100% - 100px, 1180px);
+
+  margin: 0 auto;
+
+  padding: 110px 0 120px;
+}
+
+// ==========================================================================
+// SECTION
+// ==========================================================================
+
+.iorc-cfp__section {
+  position: relative;
+
+  margin-bottom: 0;
+}
+
+.iorc-cfp__section--stories {
+  padding-top: 0;
+}
+
+// ==========================================================================
+// SECTION TOP
+// ==========================================================================
+
+.iorc-cfp__section-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+.iorc-cfp__eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  @include display-font;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.24em;
+
+  text-transform: uppercase;
+
+  color: #7c8995;
+}
+
+.iorc-cfp__eyebrow-line {
+  width: 38px;
+
+  height: 1px;
+
+  background: $blue;
+}
+
+.iorc-cfp__section-number {
+  @include display-font;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color: #9aa5ae;
+}
+
+// ==========================================================================
+// HEADING ROW
+// ==========================================================================
+
+.iorc-cfp__heading-row {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  padding-bottom: 35px;
+
+  border-bottom: 1px solid $line;
+}
+
+.iorc-cfp__title {
+  @include display-font;
+
+  margin: 0;
+
+  max-width: 800px;
+
+  font-size: clamp(4rem, 7vw, 7.2rem);
+
+  font-weight: 800;
+
+  line-height: 0.86;
+
+  letter-spacing: -0.075em;
+
+  color: $navy;
+
+  span {
+    display: block;
+
+    color: transparent;
+
+    background:
+      linear-gradient(
+        90deg,
+        $navy 0%,
+        #244b68 55%,
+        $blue 100%
+      );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+.iorc-cfp__heading-side {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 5px;
+
+  padding-bottom: 5px;
+
+  white-space: nowrap;
+
+  span:first-child {
+    @include display-font;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+
+    color: $blue;
+  }
+
+  span:last-child {
+    font-size: 9px;
+
+    letter-spacing: 0.08em;
+
+    color: #8b96a1;
+  }
+}
+
+// ==========================================================================
+// INTRO
+// ==========================================================================
+
+.iorc-cfp__intro {
+  display: grid;
+
+  grid-template-columns: 50px minmax(0, 700px);
+
+  gap: 20px;
+
+  align-items: start;
+
+  margin: 42px 0 70px;
+}
+
+.iorc-cfp__intro-marker {
+  position: relative;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid $line-dark;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  span {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: $blue;
+
+    box-shadow:
+      0 0 0 7px rgba($blue, 0.06),
+      0 0 20px rgba($blue, 0.15);
+  }
+}
+
+.iorc-cfp__intro p {
+  margin: 0;
+
+  max-width: 720px;
+
+  @include body-font;
+
+  font-size: clamp(17px, 1.8vw, 21px);
+
+  font-weight: 500;
+
+  line-height: 1.65;
+
+  color: #465463;
+}
+
+// ==========================================================================
+// TIMELINE
+// ==========================================================================
+
+.iorc-cfp__timeline {
+  margin-top: 10px;
+}
+
+.iorc-cfp__timeline-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 26px;
+
+  @include display-font;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  color: #8b96a1;
+
+  i {
+    display: block;
+
+    width: 80px;
+
+    height: 1px;
+
+    background: $line-dark;
+  }
+}
+
+.iorc-cfp__timeline-list {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  border-top: 1px solid $line-dark;
+  border-bottom: 1px solid $line-dark;
+}
+
+.iorc-cfp__timeline-item {
+  position: relative;
+
+  min-height: 210px;
+
+  padding: 28px 25px 30px;
+
+  border-right: 1px solid $line;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    background: rgba($blue, 0.025);
+  }
+}
+
+.iorc-cfp__timeline-number {
+  @include display-font;
+
+  margin-bottom: 50px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  color: $blue;
+}
+
+.iorc-cfp__timeline-line {
+  position: absolute;
+
+  top: 73px;
+  left: 25px;
+  right: 25px;
+
+  height: 1px;
+
+  background: $line-dark;
+
+  span {
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    width: 8px;
+    height: 8px;
+
+    transform: translateY(-50%);
+
+    border-radius: 50%;
+
+    background: $blue;
+
+    box-shadow:
+      0 0 0 5px rgba($blue, 0.07);
+  }
+}
+
+.iorc-cfp__timeline-item:nth-child(2) {
+  .iorc-cfp__timeline-line span {
+    background: $yellow;
+    box-shadow: 0 0 0 5px rgba($yellow, 0.08);
+  }
+}
+
+.iorc-cfp__timeline-item:nth-child(3) {
+  .iorc-cfp__timeline-line span {
+    background: $green;
+    box-shadow: 0 0 0 5px rgba($green, 0.08);
+  }
+}
+
+.iorc-cfp__timeline-item:nth-child(4) {
+  .iorc-cfp__timeline-line span {
+    background: $red;
+    box-shadow: 0 0 0 5px rgba($red, 0.08);
+  }
+}
+
+.iorc-cfp__timeline-content {
+  margin-top: 72px;
+
+  h3 {
+    @include display-font;
+
+    margin: 0 0 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.015em;
+
+    color: $navy;
+  }
+
+  p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+
+    color: $muted;
+  }
+}
+
+// ==========================================================================
+// SUBMISSION
+// ==========================================================================
+
+.iorc-cfp__submission {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-top: 45px;
+
+  padding: 23px 26px;
+
+  border: 1px solid $line;
+
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.iorc-cfp__submission-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  @include display-font;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  color: #7c8995;
+
+  i {
+    display: block;
+
+    width: 28px;
+
+    height: 1px;
+
+    background: $line-dark;
+  }
+}
+
+.iorc-cfp__email {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  @include display-font;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: $navy;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: $blue;
+
+    .iorc-cfp__email-arrow {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+.iorc-cfp__email-arrow {
+  display: inline-flex;
+
+  transition: transform 0.25s ease;
+
+  color: $blue;
+
+  font-size: 18px;
+}
+
+// ==========================================================================
+// DIVIDER
+// ==========================================================================
+
+.iorc-cfp__divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin: 105px 0;
+
+  height: 1px;
+
+  background: $line;
+
+  span {
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: $blue;
+  }
+
+  span:nth-child(2) {
+    background: $yellow;
+  }
+
+  span:nth-child(3) {
+    background: $green;
+  }
+
+  span:nth-child(4) {
+    background: $red;
+  }
+}
+
+// ==========================================================================
+// STORY GRID
+// ==========================================================================
+
+.iorc-cfp__stories-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 55px;
+}
+
+.iorc-cfp__story-card {
+  position: relative;
+
+  min-height: 270px;
+
+  padding: 28px 30px 30px;
+
+  border: 1px solid $line;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: $blue;
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition: transform 0.35s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba($blue, 0.3);
+
+    box-shadow:
+      0 18px 45px rgba(16, 24, 40, 0.07);
+
+    &::before {
+      transform: scaleY(1);
+    }
+
+    .iorc-cfp__story-arrow {
+      transform: translate(3px, -3px);
+    }
+  }
+}
+
+.iorc-cfp__story-card--yellow::before {
+  background: $yellow;
+}
+
+.iorc-cfp__story-card--green::before {
+  background: $green;
+}
+
+.iorc-cfp__story-card--red::before {
+  background: $red;
+}
+
+.iorc-cfp__story-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 60px;
+
+  > span {
+    @include display-font;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    color: #9aa5ae;
+  }
+}
+
+.iorc-cfp__story-dot {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid $line;
+
+  border-radius: 50%;
+
+  i {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: $blue;
+  }
+}
+
+.iorc-cfp__story-card--yellow {
+  .iorc-cfp__story-dot i {
+    background: $yellow;
+  }
+}
+
+.iorc-cfp__story-card--green {
+  .iorc-cfp__story-dot i {
+    background: $green;
+  }
+}
+
+.iorc-cfp__story-card--red {
+  .iorc-cfp__story-dot i {
+    background: $red;
+  }
+}
+
+.iorc-cfp__story-body {
+  max-width: 440px;
+
+  h3 {
+    @include display-font;
+
+    margin: 0 0 13px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.035em;
+
+    line-height: 1.15;
+
+    color: $navy;
+  }
+
+  p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+    color: $muted;
+  }
+}
+
+.iorc-cfp__story-arrow {
+  position: absolute;
+
+  right: 25px;
+  bottom: 25px;
+
+  @include display-font;
+
+  font-size: 18px;
+
+  color: #a4afb8;
+
+  transition: transform 0.3s ease;
+}
+
+// ==========================================================================
+// CTA
+// ==========================================================================
+
+.iorc-cfp__cta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 60px;
+
+  margin-top: 70px;
+
+  padding: 50px 55px;
+
+  border: 1px solid $line-dark;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba($blue, 0.09),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #f9fbfd,
+      #ffffff
+    );
+
+  box-shadow:
+    0 20px 60px rgba(16, 24, 40, 0.04);
+}
+
+.iorc-cfp__cta-content {
+  max-width: 680px;
+}
+
+.iorc-cfp__cta-eyebrow {
+  display: block;
+
+  margin-bottom: 14px;
+
+  @include display-font;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+
+  color: $blue;
+}
+
+.iorc-cfp__cta-content h3 {
+  @include display-font;
+
+  margin: 0 0 16px;
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  font-weight: 700;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  color: $navy;
+
+  span {
+    display: block;
+
+    color: transparent;
+
+    background:
+      linear-gradient(
+        90deg,
+        $navy,
+        $blue
+      );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+.iorc-cfp__cta-content p {
+  max-width: 610px;
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: $muted;
+}
+
+.iorc-cfp__cta-button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 17px 21px 17px 25px;
+
+  background: $navy;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  @include display-font;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.03em;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  strong {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 31px;
+    height: 31px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    font-size: 15px;
+
+    font-weight: 400;
+
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: $blue;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 12px 30px rgba($blue, 0.25);
+
+    strong {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+// ==========================================================================
+// 1200px
+// ==========================================================================
+
+@media (max-width: 1200px) {
+  .iorc-cfp__container {
+    width: min(100% - 80px, 1100px);
+  }
+
+  .iorc-cfp__timeline-item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .iorc-cfp__timeline-line {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+// ==========================================================================
+// TABLET
+// ==========================================================================
+
+@media (max-width: 900px) {
+  .iorc-cfp__container {
+    width: min(100% - 60px, 850px);
+
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  .iorc-cfp__heading-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .iorc-cfp__heading-side {
+    align-items: flex-start;
+  }
+
+  .iorc-cfp__timeline-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .iorc-cfp__timeline-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .iorc-cfp__timeline-item:nth-child(-n + 2) {
+    border-bottom: 1px solid $line;
+  }
+
+  .iorc-cfp__cta {
+    padding: 40px;
+
+    gap: 35px;
+  }
+}
+
+// ==========================================================================
+// MOBILE
+// ==========================================================================
+
+@media (max-width: 640px) {
+  .iorc-cfp__container {
+    width: calc(100% - 36px);
+
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+
+  .iorc-cfp__dots {
+    top: 50px;
+    right: -45px;
+
+    opacity: 0.25;
+  }
+
+  .iorc-cfp__section-top {
+    margin-bottom: 25px;
+  }
+
+  .iorc-cfp__eyebrow {
+    font-size: 7px;
+
+    gap: 9px;
+
+    letter-spacing: 0.17em;
+  }
+
+  .iorc-cfp__eyebrow-line {
+    width: 25px;
+  }
+
+  .iorc-cfp__section-number {
+    font-size: 7px;
+  }
+
+  .iorc-cfp__title {
+    font-size: clamp(3.4rem, 15vw, 5rem);
+
+    line-height: 0.88;
+  }
+
+  .iorc-cfp__heading-row {
+    padding-bottom: 25px;
+  }
+
+  .iorc-cfp__heading-side {
+    display: none;
+  }
+
+  .iorc-cfp__intro {
+    grid-template-columns: 36px minmax(0, 1fr);
+
+    gap: 14px;
+
+    margin: 30px 0 48px;
+  }
+
+  .iorc-cfp__intro-marker {
+    width: 36px;
+    height: 36px;
+
+    span {
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  .iorc-cfp__intro p {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+  .iorc-cfp__timeline-label {
+    margin-bottom: 18px;
+  }
+
+  .iorc-cfp__timeline-list {
+    grid-template-columns: 1fr;
+  }
+
+  .iorc-cfp__timeline-item,
+  .iorc-cfp__timeline-item:nth-child(-n + 2) {
+    min-height: auto;
+
+    padding: 22px 20px 24px;
+
+    border-right: none;
+
+    border-bottom: 1px solid $line;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .iorc-cfp__timeline-number {
+    margin-bottom: 42px;
+  }
+
+  .iorc-cfp__timeline-line {
+    top: 67px;
+
+    left: 20px;
+    right: 20px;
+  }
+
+  .iorc-cfp__timeline-content {
+    margin-top: 55px;
+
+    h3 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .iorc-cfp__submission {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 20px;
+  }
+
+  .iorc-cfp__email {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+  }
+
+  .iorc-cfp__divider {
+    margin: 70px 0;
+  }
+
+  .iorc-cfp__stories-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 40px;
+  }
+
+  .iorc-cfp__story-card {
+    min-height: 235px;
+
+    padding: 23px;
+  }
+
+  .iorc-cfp__story-top {
+    margin-bottom: 45px;
+  }
+
+  .iorc-cfp__story-body h3 {
+    font-size: 20px;
+  }
+
+  .iorc-cfp__story-body p {
+    font-size: 13px;
+  }
+
+  .iorc-cfp__cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-top: 45px;
+
+    padding: 30px 25px;
+  }
+
+  .iorc-cfp__cta-content h3 {
+    font-size: 32px;
+  }
+
+  .iorc-cfp__cta-content p {
+    font-size: 13px;
+  }
+
+  .iorc-cfp__cta-button {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+// ==========================================================================
+// SMALL MOBILE
+// ==========================================================================
+
+@media (max-width: 380px) {
+  .iorc-cfp__container {
+    width: calc(100% - 28px);
+  }
+
+  .iorc-cfp__title {
+    font-size: 3.1rem;
+  }
+
+  .iorc-cfp__intro {
+    grid-template-columns: 30px minmax(0, 1fr);
+
+    gap: 11px;
+  }
+
+  .iorc-cfp__intro-marker {
+    width: 30px;
+    height: 30px;
+  }
+
+  .iorc-cfp__intro p {
+    font-size: 15px;
+  }
+
+  .iorc-cfp__story-card {
+    min-height: 220px;
+  }
+}
+
+// ==========================================================================
+// REDUCED MOTION
+// ==========================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  .iorc-cfp__glow {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// ==========================================================================
+// PRINT
+// ==========================================================================
+
+@media print {
+  .iorc-cfp {
+    background: #ffffff;
+  }
+
+  .iorc-cfp__background {
+    display: none;
+  }
+
+  .iorc-cfp__story-card:hover,
+  .iorc-cfp__timeline-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .iorc-cfp__cta-button {
+    color: #ffffff;
+  }
+}

@@ -5,50 +5,90 @@ import HeroShowcase from "./SafeSportEvent/HeroShowcase";
 import FeaturesGrid from "./SafeSportEvent/FeaturesGrid";
 import Timeline from "./SafeSportEvent/Timeline";
 import StatsDashboard from "./SafeSportEvent/StatsDashboard";
+import ContactUs from "./SafeSportEvent/ContactUs";
 
-/* =========================================================================
-   HEADER — DO NOT MODIFY STRUCTURE (TEXT UPDATED ONLY)
-   ========================================================================= */
-function OlympicRings({ className = "" }) {
-  return (
-    <svg
-      className={`ss-rings ${className}`}
-      viewBox="0 0 400 160"
-      aria-hidden="true"
-    >
-      <circle className="ss-ring ss-ring-blue" cx="70" cy="60" r="42" />
-      <circle className="ss-ring ss-ring-black" cx="160" cy="60" r="42" />
-      <circle className="ss-ring ss-ring-red" cx="250" cy="60" r="42" />
-      <circle className="ss-ring ss-ring-yellow" cx="115" cy="100" r="42" />
-      <circle className="ss-ring ss-ring-green" cx="205" cy="100" r="42" />
-    </svg>
-  );
-}
+const dayBreakdown = [
+  {
+    day: "Day - 1",
+    label: "Joint Sessions",
+    detail: "Athletes, Coaches & Administrators together",
+  },
+  {
+    day: "Day - 2",
+    label: "Athlete-Led Sessions",
+    detail: "Athletes lead | Coaches & Administrators Observe",
+  },
+  {
+    day: "Day - 3",
+    label: "Coaches & Administrator-Led Sessions",
+    detail: "Coaches & Administrators lead | Athletes Observe",
+  },
+];
 
 function Header() {
   return (
     <header className="ss-hero">
       <div className="ss-hero-glow ss-hero-glow-1"></div>
       <div className="ss-hero-glow ss-hero-glow-2"></div>
+      <div className="ss-hero-grid"></div>
 
-      <div className="ss-hero-content">
-        <h1 className="ss-hero-title">NATIONAL SAFE SPORT & PROGRAMME</h1>
-        <p className="ss-hero-subtitle">
-          Foundations of Safe Sports and Athlete’s Safeguarding
-        </p>
-
-        <div className="ss-hero-date">
-          <span className="date-block">
-            <strong>21</strong>
-            <em>OCT</em>
-          </span>
-          <span className="date-sep">–</span>
-          <span className="date-block">
-            <strong>23</strong>
-            <em>OCT</em>
-          </span>
-          <span className="date-year">2026</span>
+      <div className="ss-hero-inner">
+        {/* LEFT — Day breakdown */}
+        <div className="ss-hero-days">
+          {dayBreakdown.map((d, i) => (
+            <div className="ss-hero-day" key={i}>
+              <span className="ss-hero-day__label">{d.day}</span>
+              <span className="ss-hero-day__title">{d.label}</span>
+              <span className="ss-hero-day__detail">{d.detail}</span>
+            </div>
+          ))}
         </div>
+
+        {/* CENTER — Title block */}
+        <div className="ss-hero-content">
+          <h1 className="ss-hero-title">
+            NATIONAL SAFE SPORT
+            <br />
+            PROGRAMME
+          </h1>
+          <p className="ss-hero-subtitle">
+            Foundations of Safe Sports and Athlete&rsquo;s Safeguarding
+          </p>
+
+          <div className="ss-hero-tags">
+            <span>Workshop</span>
+            <span className="ss-hero-tags__sep">|</span>
+            <span>Deliberations</span>
+            <span className="ss-hero-tags__sep">|</span>
+            <span>Working Groups</span>
+          </div>
+
+          <div className="ss-hero-date">21 &ndash; 23 October 2026</div>
+
+          <div className="ss-hero-org">
+            <p>BHARAT CENTRE OF OLYMPIC RESEARCH &amp; EDUCATION (BCORE)</p>
+            <p>RASHTRIYA RAKSHA UNIVERSITY</p>
+          </div>
+        </div>
+
+        {/* RIGHT — QR / register */}
+        <a
+          className="ss-hero-register"
+          href="https://rise.rru.ac.in/Course/688/779"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="ss-hero-qr">
+            <img
+              className="ss-hero-qr__img"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=0&data=https%3A%2F%2Frise.rru.ac.in%2FCourse%2F688%2F779"
+              alt="QR code to register for the National Safe Sport Programme"
+              width="110"
+              height="110"
+            />
+          </div>
+          <span className="ss-hero-register__label">Scan to Register</span>
+        </a>
       </div>
     </header>
   );
@@ -183,6 +223,10 @@ export default function SafeSportEvent() {
             ))}
           </ul>
         </section>
+
+        <div id="contact">
+          <ContactUs />
+        </div>
       </main>
     </div>
   );
