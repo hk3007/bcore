@@ -1,0 +1,1556 @@
+/* =========================================================
+   BCORE AS A SERVICE PROVIDER
+   DARK HERO + WHITE EDITORIAL CONTENT
+   ========================================================= */
+
+:root {
+  --bsp-red: #df0024;
+  --bsp-red-dark: #b8001d;
+
+  --bsp-gold: #d4af37;
+
+  --bsp-black: #080808;
+  --bsp-black-soft: #111111;
+
+  --bsp-white: #ffffff;
+  --bsp-off-white: #f6f6f4;
+
+  --bsp-text: #151515;
+  --bsp-muted: #686868;
+
+  --bsp-border: #dedede;
+  --bsp-dark-border: rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.bcore-services-page {
+  position: relative;
+  background: var(--bsp-white);
+
+  color: var(--bsp-text);
+
+  font-family:
+    "Plus Jakarta Sans",
+    sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   GLOBAL BACKGROUND
+   ========================================================= */
+
+.bsp-background {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  overflow: hidden;
+}
+
+.bsp-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.025;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.5) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.5) 1px,
+      transparent 1px
+    );
+
+}
+
+.bsp-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.bsp-ring-one {
+  width: 650px;
+  height: 650px;
+
+  right: -330px;
+  top: 25%;
+}
+
+.bsp-ring-two {
+  width: 380px;
+  height: 380px;
+
+  left: -230px;
+  top: 55%;
+
+  border-color:
+    rgba(223, 0, 36, 0.08);
+}
+
+.bsp-red-orb {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  right: -250px;
+  top: 35%;
+
+  background:
+    rgba(223, 0, 36, 0.025);
+
+  filter: blur(100px);
+}
+
+.bsp-gold-orb {
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  left: -200px;
+  top: 10%;
+
+  background:
+    rgba(212, 175, 55, 0.025);
+
+  filter: blur(100px);
+}
+
+
+/* =========================================================
+   DARK PAGE HEADER
+   ========================================================= */
+
+.bsp-page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 30px 110px;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(223, 0, 36, 0.09),
+      transparent 35%
+    ),
+    #080808;
+
+  color: white;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   HEADER GRID
+   ========================================================= */
+
+.bsp-header-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.055;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.3) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    radial-gradient(
+      circle,
+      black 0%,
+      transparent 75%
+    );
+}
+
+
+/* =========================================================
+   HEADER RINGS
+   ========================================================= */
+
+.bsp-header-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.bsp-header-ring-one {
+  width: 650px;
+  height: 650px;
+
+  top: -320px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+}
+
+.bsp-header-ring-two {
+  width: 850px;
+  height: 850px;
+
+  bottom: -650px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  border-color:
+    rgba(223, 0, 36, 0.15);
+}
+
+
+/* =========================================================
+   HEADER RED ACCENT
+   ========================================================= */
+
+.bsp-page-header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 1px;
+  height: 100%;
+
+  left: 50%;
+  top: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(223, 0, 36, 0.45),
+      transparent
+    );
+
+  opacity: 0.5;
+}
+
+.bsp-page-header::after {
+  content: "BCORE";
+
+  position: absolute;
+
+  bottom: -60px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  font-family: "Anton", sans-serif;
+
+  font-size:
+    clamp(200px, 30vw, 450px);
+
+  line-height: 0.8;
+
+  letter-spacing: -0.04em;
+
+  color:
+    rgba(255, 255, 255, 0.025);
+
+  white-space: nowrap;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.bsp-header-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1100px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   HEADER META
+   ========================================================= */
+
+.bsp-header-meta {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 38px;
+
+  color: #999;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.22em;
+}
+
+.bsp-header-line {
+  width: 55px;
+  height: 1px;
+
+  background:
+    var(--bsp-red);
+}
+
+.bsp-header-slash {
+  color:
+    var(--bsp-red);
+}
+
+
+/* =========================================================
+   MAIN HEADER TITLE
+   ========================================================= */
+
+.bsp-page-header h1 {
+  margin: 0;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-weight: 400;
+
+  font-size:
+    clamp(
+      75px,
+      11vw,
+      165px
+    );
+
+  line-height: 0.78;
+
+  letter-spacing:
+    -0.025em;
+}
+
+.bsp-page-header h1 span {
+  display: block;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px rgba(255, 255, 255, 0.65);
+}
+
+.bsp-page-header h1::first-line {
+  color: white;
+}
+
+
+/* =========================================================
+   HEADER STATEMENT
+   ========================================================= */
+
+.bsp-header-statement {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-top: 48px;
+}
+
+.bsp-header-statement span {
+  color: #d1d1d1;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.18em;
+}
+
+.bsp-header-statement span:last-child {
+  color:
+    var(--bsp-red);
+}
+
+.bsp-header-statement i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background:
+    var(--bsp-gold);
+}
+
+
+/* =========================================================
+   HEADER DESCRIPTION
+   ========================================================= */
+
+.bsp-header-description {
+  max-width: 700px;
+
+  margin:
+    32px auto 0;
+
+  color: #999;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HEADER BOTTOM
+   ========================================================= */
+
+.bsp-header-bottom {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-top: 55px;
+
+  color: #5f5f5f;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.16em;
+}
+
+.bsp-header-bottom span:nth-child(even) {
+  color:
+    var(--bsp-red);
+}
+
+
+/* =========================================================
+   SIDE LABEL
+   ========================================================= */
+
+.bsp-side-label {
+  position: absolute;
+
+  right: 28px;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(90deg);
+
+  transform-origin:
+    center;
+
+  color: #555;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.25em;
+}
+
+
+/* =========================================================
+   SECTION INDEX
+   ========================================================= */
+
+.bsp-section-index {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+}
+
+.bsp-section-index span {
+  color:
+    var(--bsp-red);
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size: 30px;
+}
+
+.bsp-section-index div {
+  width: 35px;
+  height: 1px;
+
+  margin-top: 15px;
+
+  background:
+    var(--bsp-red);
+}
+
+.bsp-section-index p {
+  margin: 8px 0 0;
+
+  color: #777;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.18em;
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.bsp-kicker {
+  color:
+    var(--bsp-red);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.2em;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.bsp-introduction {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    220px
+    minmax(0, 1fr);
+
+  gap: 80px;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding:
+    140px 40px;
+
+  border-bottom:
+    1px solid
+    var(--bsp-border-light);
+}
+
+.bsp-introduction-content {
+  max-width: 880px;
+}
+
+.bsp-introduction-content h2 {
+  margin:
+    18px 0 35px;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      55px,
+      6vw,
+      90px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  color:
+    var(--bsp-black);
+}
+
+.bsp-introduction-content h2 span {
+  color:
+    var(--bsp-red);
+}
+
+.bsp-introduction-content p {
+  max-width: 800px;
+
+  margin-bottom: 22px;
+
+  color: #666;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   AUDIENCE
+   ========================================================= */
+
+.bsp-audience {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 35px;
+}
+
+.bsp-audience span {
+  padding:
+    10px 13px;
+
+  border:
+    1px solid
+    #d9d9d9;
+
+  color: #666;
+
+  background:
+    #fafafa;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.12em;
+}
+
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.bsp-services {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding:
+    120px 40px
+    150px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.bsp-section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-bottom: 55px;
+
+  padding-bottom: 25px;
+
+  border-bottom:
+    1px solid
+    var(--bsp-border);
+}
+
+.bsp-section-heading h2 {
+  margin:
+    15px 0 0;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      60px,
+      7vw,
+      105px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.85;
+}
+
+.bsp-section-heading h2 span {
+  color:
+    var(--bsp-red);
+}
+
+.bsp-heading-number {
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size: 32px;
+
+  color:
+    #d0d0d0;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+   ========================================================= */
+
+.bsp-service-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.bsp-service-card {
+  position: relative;
+
+  min-height: 510px;
+
+  padding: 36px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    #dedede;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.035);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.bsp-service-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 4px;
+  height: 0;
+
+  background:
+    var(--bsp-red);
+
+  transition:
+    height 0.45s ease;
+}
+
+.bsp-service-card:hover {
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(223, 0, 36, 0.4);
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.08);
+}
+
+.bsp-service-card:hover::before {
+  height: 100%;
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.bsp-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 65px;
+}
+
+.bsp-card-number {
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size: 45px;
+
+  color:
+    #d8d8d8;
+}
+
+.bsp-card-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(223, 0, 36, 0.3);
+
+  color:
+    var(--bsp-red);
+
+  background:
+    white;
+}
+
+
+/* =========================================================
+   SERVICE CARD CONTENT
+   ========================================================= */
+
+.bsp-service-card h3 {
+  max-width: 520px;
+
+  margin:
+    0 0 22px;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      52px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.92;
+
+  color:
+    var(--bsp-black);
+}
+
+.bsp-service-description {
+  max-width: 650px;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.bsp-card-rule {
+  width: 45px;
+  height: 2px;
+
+  margin:
+    28px 0 22px;
+
+  background:
+    var(--bsp-red);
+}
+
+
+/* =========================================================
+   SERVICE AREAS
+   ========================================================= */
+
+.bsp-service-areas {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.bsp-service-areas span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #777;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.bsp-service-areas svg {
+  color:
+    var(--bsp-red);
+}
+
+
+/* =========================================================
+   CARD BACKGROUND NUMBER
+   ========================================================= */
+
+.bsp-card-background-number {
+  position: absolute;
+
+  right: -15px;
+  bottom: -50px;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size: 220px;
+
+  line-height: 1;
+
+  color:
+    rgba(0, 0, 0, 0.025);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   APPROACH
+   ========================================================= */
+
+.bsp-approach {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    220px
+    minmax(0, 1fr);
+
+  gap: 80px;
+
+  max-width: 1250px;
+
+  margin: auto;
+
+  padding:
+    130px 40px;
+
+  border-top:
+    1px solid
+    var(--bsp-border);
+}
+
+.bsp-approach-content {
+  max-width: 950px;
+}
+
+.bsp-approach-heading h2 {
+  margin:
+    20px 0 30px;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      55px,
+      7vw,
+      100px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.86;
+
+  color:
+    var(--bsp-black);
+}
+
+.bsp-approach-heading h2 span {
+  color:
+    var(--bsp-red);
+}
+
+.bsp-approach-heading h2 strong {
+  display: block;
+
+  color:
+    var(--bsp-black);
+
+  font-weight: 400;
+}
+
+.bsp-approach-intro {
+  max-width: 760px;
+
+  margin:
+    0 0 55px;
+
+  color: #666;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   APPROACH CARDS
+   ========================================================= */
+
+.bsp-approach-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 1px;
+
+  background:
+    #dedede;
+
+  border:
+    1px solid
+    #dedede;
+}
+
+.bsp-approach-card {
+  min-height: 220px;
+
+  padding: 30px;
+
+  background:
+    white;
+}
+
+.bsp-approach-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border:
+    1px solid
+    rgba(223, 0, 36, 0.25);
+
+  color:
+    var(--bsp-red);
+}
+
+.bsp-approach-card h3 {
+  margin:
+    0 0 10px;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size: 28px;
+
+  font-weight: 400;
+
+  color:
+    var(--bsp-black);
+}
+
+.bsp-approach-card p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   IMPACT
+   ========================================================= */
+
+.bsp-impact {
+  position: relative;
+
+  z-index: 1;
+
+  background:
+    var(--bsp-black);
+
+  color:
+    white;
+
+  overflow: hidden;
+}
+
+.bsp-impact-inner {
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding:
+    110px 8vw;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.bsp-impact-title span {
+  color:
+    var(--bsp-red);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.2em;
+}
+
+.bsp-impact-title h2 {
+  margin:
+    18px 0 0;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      65px,
+      8vw,
+      115px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.82;
+}
+
+.bsp-impact-title strong {
+  color:
+    var(--bsp-red);
+
+  font-weight: 400;
+}
+
+.bsp-impact-content {
+  max-width: 580px;
+}
+
+.bsp-impact-line {
+  width: 55px;
+  height: 2px;
+
+  margin-bottom: 30px;
+
+  background:
+    var(--bsp-red);
+}
+
+.bsp-impact-content p {
+  margin: 0;
+
+  color: #999;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.bsp-cta {
+  position: relative;
+
+  margin:
+    80px 40px;
+
+  padding:
+    100px 8vw;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(223, 0, 36, 0.3);
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(223, 0, 36, 0.055),
+      #fafafa
+    );
+}
+
+.bsp-cta-pattern {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: -250px;
+
+  border:
+    1px solid
+    rgba(223, 0, 36, 0.12);
+
+  border-radius: 50%;
+}
+
+.bsp-cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+.bsp-cta h2 {
+  margin:
+    18px 0 25px;
+
+  font-family:
+    "Anton",
+    sans-serif;
+
+  font-size:
+    clamp(
+      55px,
+      7vw,
+      105px
+    );
+
+  font-weight: 400;
+
+  line-height: 0.86;
+
+  color:
+    var(--bsp-black);
+}
+
+.bsp-cta h2 span {
+  color:
+    var(--bsp-red);
+}
+
+.bsp-cta p {
+  max-width: 650px;
+
+  color: #666;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.bsp-cta-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+  padding:
+    16px 23px;
+
+  background:
+    var(--bsp-red);
+
+  color:
+    white;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    0.13em;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.bsp-cta-button:hover {
+  background:
+    var(--bsp-red-dark);
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .bsp-page-header {
+    min-height: 680px;
+
+    padding:
+      130px 30px
+      100px;
+  }
+
+  .bsp-introduction,
+  .bsp-approach {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+
+    padding:
+      90px 30px;
+  }
+
+  .bsp-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bsp-services {
+    padding:
+      90px 25px
+      110px;
+  }
+
+  .bsp-impact-inner {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    padding:
+      90px 30px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .bsp-page-header {
+    min-height: 620px;
+
+    padding:
+      120px 20px
+      80px;
+  }
+
+  .bsp-page-header h1 {
+    font-size:
+      clamp(
+        58px,
+        17vw,
+        95px
+      );
+  }
+
+  .bsp-header-meta {
+    font-size: 8px;
+
+    gap: 8px;
+  }
+
+  .bsp-header-line {
+    width: 25px;
+  }
+
+  .bsp-header-statement {
+    gap: 9px;
+
+    margin-top: 35px;
+  }
+
+  .bsp-header-statement span {
+    font-size: 8px;
+  }
+
+  .bsp-header-description {
+    font-size: 13px;
+  }
+
+  .bsp-header-bottom {
+    font-size: 7px;
+
+    gap: 8px;
+  }
+
+  .bsp-side-label {
+    display: none;
+  }
+
+
+  .bsp-introduction {
+    padding:
+      75px 22px;
+  }
+
+
+  .bsp-introduction-content h2,
+  .bsp-section-heading h2,
+  .bsp-approach-heading h2,
+  .bsp-impact-title h2,
+  .bsp-cta h2 {
+    font-size:
+      55px;
+  }
+
+
+  .bsp-service-card {
+    min-height: auto;
+
+    padding:
+      28px;
+  }
+
+
+  .bsp-card-top {
+    margin-bottom: 45px;
+  }
+
+
+  .bsp-service-card h3 {
+    font-size:
+      38px;
+  }
+
+
+  .bsp-approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .bsp-section-heading {
+    align-items: flex-start;
+  }
+
+
+  .bsp-heading-number {
+    font-size: 22px;
+  }
+
+
+  .bsp-approach {
+    padding:
+      80px 22px;
+  }
+
+
+  .bsp-impact-inner {
+    padding:
+      80px 22px;
+  }
+
+
+  .bsp-cta {
+    margin:
+      40px 15px;
+
+    padding:
+      65px 25px;
+  }
+
+}

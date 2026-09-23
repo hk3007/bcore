@@ -6,6 +6,8 @@ import FeaturesGrid from "./SafeSportEvent/FeaturesGrid";
 import Timeline from "./SafeSportEvent/Timeline";
 import StatsDashboard from "./SafeSportEvent/StatsDashboard";
 import ContactUs from "./SafeSportEvent/ContactUs";
+import StrategicPartners from "./SafeSportEvent/StrategicPartners";
+import BannerVideo from "../../assets/Safe Sport.mp4"; // adjust path/filename
 
 const dayBreakdown = [
   {
@@ -28,68 +30,147 @@ const dayBreakdown = [
 function Header() {
   return (
     <header className="ss-hero">
-      <div className="ss-hero-glow ss-hero-glow-1"></div>
-      <div className="ss-hero-glow ss-hero-glow-2"></div>
-      <div className="ss-hero-grid"></div>
 
+      {/* RIGHT-SIDE CINEMATIC VIDEO */}
+      <div className="ss-hero-video-wrap">
+        <video
+          className="ss-hero-video"
+          src={BannerVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+
+        <div className="ss-hero-video-fade" />
+      </div>
+
+      {/* DESIGN LAYERS */}
+      <div className="ss-hero-diagonal" />
+      <div className="ss-hero-glow ss-hero-glow-1" />
+      <div className="ss-hero-glow ss-hero-glow-2" />
+      <div className="ss-hero-grid" />
+
+      {/* CONTENT */}
       <div className="ss-hero-inner">
-        {/* LEFT — Day breakdown */}
+
+        <div className="ss-hero-main">
+
+          <div className="ss-hero-tags">
+            <span className="ss-hero-tags__bar" />
+
+            <span>Workshop</span>
+            <span className="ss-hero-tags__sep">|</span>
+
+            <span>Deliberations</span>
+            <span className="ss-hero-tags__sep">|</span>
+
+            <span>Working Groups</span>
+          </div>
+
+          <h1 className="ss-hero-title">
+            NATIONAL SAFE SPORT
+            <br />
+            <span className="ss-hero-title__accent">
+              PROGRAMME
+            </span>
+          </h1>
+
+          <p className="ss-hero-subtitle">
+            Foundations of Safe Sport and Athlete&rsquo;s
+            Safeguarding
+          </p>
+
+          <div className="ss-hero-facts">
+
+            <div className="ss-hero-fact">
+              <span className="ss-hero-fact__icon">
+                📅
+              </span>
+
+              <div>
+                <strong>
+                  21 – 23 October 2026
+                </strong>
+
+                <span>
+                  Event Dates
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="ss-hero-org">
+            <p>
+              BHARAT CENTRE OF OLYMPIC RESEARCH &amp; EDUCATION
+            </p>
+
+            <p>
+              RASHTRIYA RAKSHA UNIVERSITY
+            </p>
+          </div>
+
+          <a
+            className="ss-hero-cta"
+            href="https://rise.rru.ac.in/Course/688/779"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register Now
+
+            <span className="ss-hero-cta__arrow">
+              →
+            </span>
+          </a>
+
+        </div>
+
+        {/* Floating programme information */}
         <div className="ss-hero-days">
           {dayBreakdown.map((d, i) => (
-            <div className="ss-hero-day" key={i}>
-              <span className="ss-hero-day__label">{d.day}</span>
-              <span className="ss-hero-day__title">{d.label}</span>
-              <span className="ss-hero-day__detail">{d.detail}</span>
+            <div
+              className="ss-hero-day"
+              key={i}
+            >
+              <span className="ss-hero-day__label">
+                {d.day}
+              </span>
+
+              <span className="ss-hero-day__title">
+                {d.label}
+              </span>
+
+              <span className="ss-hero-day__detail">
+                {d.detail}
+              </span>
             </div>
           ))}
         </div>
 
-        {/* CENTER — Title block */}
-        <div className="ss-hero-content">
-          <h1 className="ss-hero-title">
-            NATIONAL SAFE SPORT
-            <br />
-            PROGRAMME
-          </h1>
-          <p className="ss-hero-subtitle">
-            Foundations of Safe Sports and Athlete&rsquo;s Safeguarding
-          </p>
+      </div>
 
-          <div className="ss-hero-tags">
-            <span>Workshop</span>
-            <span className="ss-hero-tags__sep">|</span>
-            <span>Deliberations</span>
-            <span className="ss-hero-tags__sep">|</span>
-            <span>Working Groups</span>
-          </div>
-
-          <div className="ss-hero-date">21 &ndash; 23 October 2026</div>
-
-          <div className="ss-hero-org">
-            <p>BHARAT CENTRE OF OLYMPIC RESEARCH &amp; EDUCATION (BCORE)</p>
-            <p>RASHTRIYA RAKSHA UNIVERSITY</p>
-          </div>
+      {/* REGISTER QR */}
+      <a
+        className="ss-hero-register"
+        href="https://rise.rru.ac.in/Course/688/779"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="ss-hero-qr">
+          <img
+            className="ss-hero-qr__img"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=0&data=https%3A%2F%2Frise.rru.ac.in%2FCourse%2F688%2F779"
+            alt="QR code to register for the National Safe Sport Programme"
+          />
         </div>
 
-        {/* RIGHT — QR / register */}
-        <a
-          className="ss-hero-register"
-          href="https://rise.rru.ac.in/Course/688/779"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="ss-hero-qr">
-            <img
-              className="ss-hero-qr__img"
-              src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=0&data=https%3A%2F%2Frise.rru.ac.in%2FCourse%2F688%2F779"
-              alt="QR code to register for the National Safe Sport Programme"
-              width="110"
-              height="110"
-            />
-          </div>
-          <span className="ss-hero-register__label">Scan to Register</span>
-        </a>
-      </div>
+        <span className="ss-hero-register__label">
+          Scan to Register
+        </span>
+      </a>
+
     </header>
   );
 }
@@ -223,6 +304,10 @@ export default function SafeSportEvent() {
             ))}
           </ul>
         </section>
+
+        <div id="partners">
+          <StrategicPartners />
+        </div>
 
         <div id="contact">
           <ContactUs />

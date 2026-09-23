@@ -5,15 +5,30 @@ const contacts = [
     label: "Programme Enquiries",
     ring: "blue",
     people: [
-      { role: "BCORE", email: "bcore@rru.ac.in" },
-      { role: "", email: "ro1.bcore@rru.ac.in" },
+      {
+        name: "Dr. Utsav Chaware",
+        role: "BCORE",
+        email: "bcore@rru.ac.in",
+        phone: "+91-84356 25768",
+      },
+      {
+        name: "Ms. Sonika Bisht",
+        role: "",
+        email: "ro1.bcore@rru.ac.in",
+        phone: "+91-70880 72279",
+      },
     ],
   },
   {
     label: "Accommodation",
     ring: "yellow",
     people: [
-      { role: "Ms. Khushbu Shah", email: "aacc1.bcore@rru.ac.in" },
+      {
+        name: "Ms. Khushbu Shah",
+        role: "",
+        email: "aacc1.bcore@rru.ac.in",
+        phone: "+91-90167 49850",
+      },
     ],
   },
 ];
@@ -48,12 +63,21 @@ export default function ContactUs() {
             <ul className="contact-card__list">
               {group.people.map((p) => (
                 <li className="contact-card__item" key={p.email}>
-                  <span className="contact-card__role">{p.role}</span>
+                  <span className="contact-card__name">{p.name}</span>
+                  {p.role && (
+                    <span className="contact-card__role">{p.role}</span>
+                  )}
                   <a
                     className="contact-card__email"
                     href={`mailto:${p.email}`}
                   >
                     {p.email}
+                  </a>
+                  <a
+                    className="contact-card__phone"
+                    href={`tel:${p.phone.replace(/[^+\d]/g, "")}`}
+                  >
+                    {p.phone}
                   </a>
                 </li>
               ))}

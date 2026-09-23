@@ -45,17 +45,17 @@ export const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-useEffect(() => {
-  let lastScrollY = window.scrollY;
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
 
-  const handleScroll = () => {
-    // Only close if user scrolls DOWN at least 10px after menu is open
-    if (menuOpen && Math.abs(window.scrollY - lastScrollY) > 10) {
-      setMenuOpen(false);
-      setOpenDropdown(null);
-    }
-    lastScrollY = window.scrollY;
-  };
+    const handleScroll = () => {
+      // Only close if user scrolls DOWN at least 10px after menu is open
+      if (menuOpen && Math.abs(window.scrollY - lastScrollY) > 10) {
+        setMenuOpen(false);
+        setOpenDropdown(null);
+      }
+      lastScrollY = window.scrollY;
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -69,35 +69,35 @@ useEffect(() => {
     if (!isMobile) return;
     setOpenDropdown((cur) => (cur === idx ? null : idx));
   };
-  
-useEffect(() => {
-  if (menuOpen || openAnnouncement) {
-    // ─── OPEN: Lock scroll + save position ───
-    const scrollY = document.documentElement.scrollTop || window.pageYOffset;
 
-    document.body.classList.add("body-lock");
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.width = "100%";
-  } else {
-    // ─── CLOSE: Restore exact scroll position ───
-    const scrollY = document.body.style.top 
-      ? Math.abs(parseInt(document.body.style.top, 10)) 
-      : 0;
+  useEffect(() => {
+    if (menuOpen || openAnnouncement) {
+      // ─── OPEN: Lock scroll + save position ───
+      const scrollY = document.documentElement.scrollTop || window.pageYOffset;
 
-    document.body.classList.remove("body-lock");
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.width = "";
+      document.body.classList.add("body-lock");
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    } else {
+      // ─── CLOSE: Restore exact scroll position ───
+      const scrollY = document.body.style.top
+        ? Math.abs(parseInt(document.body.style.top, 10))
+        : 0;
 
-    // This is the magic line — restores scroll instantly without jump
-    window.scrollTo(0, scrollY);
-  }
-}, [menuOpen, openAnnouncement]);
+      document.body.classList.remove("body-lock");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+
+      // This is the magic line — restores scroll instantly without jump
+      window.scrollTo(0, scrollY);
+    }
+  }, [menuOpen, openAnnouncement]);
 
 
   const navItems = [
@@ -118,10 +118,11 @@ useEffect(() => {
       label: "Work With BCORE",
       icon: Users,
       dropdown: [
+        { to: "/services", label: "BCORE as a Service Provider" },
         { to: "/team", label: "Team" },
         { to: "/careers", label: "Careers" },
       ],
-    },
+    }, ,
     { to: "/news", label: "News", icon: Newspaper },
     { to: "/contact", label: "Contact", icon: Phone },
   ];

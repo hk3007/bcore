@@ -15,9 +15,13 @@ import slider3 from '../pages/Slider/2nd IORC 3.jpg';
 import slider4 from '../pages/Slider/SIX LEACIES WEB SLIDER.jpg';
 import legacy1 from "../pages/Slider/LEGACY 1.png"
 import legacy2 from "../pages/Slider/LEGACY 2.png"
+import IORC3 from "../pages/Slider/IORC 3 BROCHURE_Web.jpg"
+import SafeSport from "../pages/Slider/Bcore_ATHLETE SAFEGUARDING_Web.jpg"
 
 const ImageCarousel = () => {
   const images = [
+    { src: SafeSport, alt: "Slide 4" },
+    { src: IORC3, alt: "Slide 4" },
     { src: legacy2, alt: "Slide 4" },
     { src: legacy1, alt: "Slide 4" },
     { src: slider4, alt: "Slide 4" },

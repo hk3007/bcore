@@ -50,269 +50,726 @@ $bp-wide: 1440px;
 }
 
 /* =========================================================================
-   HEADER STYLES — Redesigned to match reference artwork
+   PREMIUM SPLIT VIDEO HERO
    ========================================================================= */
 
 .ss-hero {
   position: relative;
-  padding: 3.5rem 3rem;
+  min-height: 680px;
   color: #fff;
+  overflow: hidden;
+  background: #030303;
+  isolation: isolate;
+
+  @media (max-width: $bp-tablet) {
+    min-height: auto;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   VIDEO
+   ------------------------------------------------------------------------- */
+
+.ss-hero-video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
   background: #050505;
 }
 
-.ss-hero-glow {
+.ss-hero-video {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.35;
-  animation: ss-drift 12s ease-in-out infinite;
+  top: 0;
+  right: 0;
+
+  width: 67%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(1.08) contrast(1.05);
+
+  transform: scale(1.015);
+}
+
+/* Cinematic darkening toward the content */
+.ss-hero-video-fade {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #030303 0%,
+      #030303 27%,
+      rgba(3, 3, 3, 0.96) 34%,
+      rgba(3, 3, 3, 0.65) 46%,
+      rgba(3, 3, 3, 0.08) 68%,
+      rgba(3, 3, 3, 0) 100%
+    );
+
   pointer-events: none;
 }
+
+/* Slight cinematic darkness over video */
+.ss-hero-video-wrap::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25),
+      transparent 35%,
+      rgba(0, 0, 0, 0.35)
+    );
+
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------
+   BACKGROUND ACCENTS
+   ------------------------------------------------------------------------- */
+
+.ss-hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  opacity: 0.18;
+}
+
 .ss-hero-glow-1 {
   width: 420px;
   height: 420px;
-  top: -140px;
-  left: 20%;
-  background: $flare-red;
-}
-.ss-hero-glow-2 {
-  width: 360px;
-  height: 360px;
-  bottom: -140px;
-  right: 10%;
-  background: $flare-orange;
-  animation-delay: 3s;
+
+  top: -180px;
+  left: -100px;
+
+  background: $olympic-red;
 }
 
+.ss-hero-glow-2 {
+  width: 320px;
+  height: 320px;
+
+  right: 30%;
+  bottom: -180px;
+
+  background: #ff4d38;
+}
+
+/* Very subtle technical grid */
 .ss-hero-grid {
   position: absolute;
   inset: 0;
+
+  z-index: 1;
+
   pointer-events: none;
-  opacity: 0.08;
+
+  opacity: 0.035;
+
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+    linear-gradient(
+      rgba(255,255,255,0.8) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.8) 1px,
+      transparent 1px
+    );
+
   background-size: 48px 48px;
 }
 
-@keyframes ss-drift {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(24px, -18px) scale(1.08);
-  }
-}
+/* -------------------------------------------------------------------------
+   CONTENT
+   ------------------------------------------------------------------------- */
 
 .ss-hero-inner {
   position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+
+  z-index: 3;
+
+  display: flex;
   align-items: center;
-  gap: 2rem;
-  max-width: 1400px;
+
+  min-height: 680px;
+
+  max-width: 1500px;
+
   margin: 0 auto;
+
+  padding:
+    5rem
+    4rem;
 }
 
-/* -------- Left: Day breakdown -------- */
-.ss-hero-days {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
+/* -------------------------------------------------------------------------
+   LEFT CONTENT
+   ------------------------------------------------------------------------- */
 
-.ss-hero-day {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-
-  &__label {
-    @include heading-font;
-    font-size: 1.15rem;
-    letter-spacing: 0.02em;
-    color: $flare-red;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.15rem;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      max-width: 150px;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.35);
-    }
-  }
-
-  &__title {
-    font-weight: 700;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: #fff;
-  }
-
-  &__detail {
-    font-size: 0.78rem;
-    line-height: 1.4;
-    color: rgba(255, 255, 255, 0.65);
-  }
-}
-
-/* -------- Center: Title block -------- */
-.ss-hero-content {
+.ss-hero-main {
+  width: 55%;
+  max-width: 720px;
   position: relative;
-  text-align: center;
-  margin: 0 auto;
+  z-index: 5;
 }
 
-.ss-hero-title {
-  @include heading-font;
-  font-size: clamp(2rem, 4.2vw, 3.4rem);
-  line-height: 1.05;
-  letter-spacing: 0.01em;
-  margin: 0 0 1.1rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  background: linear-gradient(180deg, $flare-red 0%, $flare-orange 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.ss-hero-subtitle {
-  @include body-font;
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  font-weight: 500;
-  color: #fff;
-  margin: 0 0 1rem;
-}
+/* Top label */
 
 .ss-hero-tags {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #fff;
-  margin: 0 0 1.25rem;
 
-  &__sep {
-    color: $flare-red;
-    font-weight: 400;
-  }
-}
+  gap: 0.8rem;
 
-.ss-hero-date {
-  display: inline-block;
-  @include body-font;
+  margin-bottom: 1.8rem;
+
+  font-size: 0.78rem;
   font-weight: 700;
-  font-size: 1.05rem;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.72);
+}
+
+.ss-hero-tags__bar {
+  width: 46px;
+  height: 2px;
+
+  background: $olympic-red;
+
+  box-shadow:
+    0 0 14px rgba(223,0,36,0.7);
+}
+
+.ss-hero-tags__sep {
+  color: rgba(255,255,255,0.3);
+}
+
+/* -------------------------------------------------------------------------
+   TITLE
+   ------------------------------------------------------------------------- */
+
+.ss-hero-title {
+  @include heading-font;
+
+  margin: 0;
+
+  font-size: clamp(
+    3.5rem,
+    6.4vw,
+    6.5rem
+  );
+
+  line-height: 0.9;
+
+  letter-spacing: -0.015em;
+
+  font-weight: 400;
+
+  text-transform: uppercase;
+
   color: #fff;
-  padding: 0.55rem 1.5rem;
-  border-radius: 6px;
-  margin: 0 0 1.75rem;
-  background: linear-gradient(90deg, $flare-red, $flare-orange);
+
+  text-wrap: balance;
 }
 
-.ss-hero-org {
-  p {
-    @include heading-font;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    font-size: clamp(0.85rem, 1.3vw, 1.05rem);
-    color: #fff;
-    margin: 0 0 0.2rem;
-  }
+.ss-hero-title__accent {
+  color: $olympic-red;
+
+  text-shadow:
+    0 0 35px rgba(223,0,36,0.18);
 }
 
-/* -------- Right: QR / register -------- */
-.ss-hero-register {
+/* -------------------------------------------------------------------------
+   SUBTITLE
+   ------------------------------------------------------------------------- */
+
+.ss-hero-subtitle {
+  @include body-font;
+
+  max-width: 500px;
+
+  margin:
+    1.7rem
+    0
+    2rem;
+
+  font-size: clamp(
+    1rem,
+    1.4vw,
+    1.2rem
+  );
+
+  line-height: 1.6;
+
+  color: rgba(255,255,255,0.68);
+}
+
+/* -------------------------------------------------------------------------
+   EVENT INFORMATION
+   ------------------------------------------------------------------------- */
+
+.ss-hero-facts {
+  display: flex;
+
+  gap: 2.5rem;
+
+  margin-bottom: 1.8rem;
+
+  flex-wrap: wrap;
+}
+
+.ss-hero-fact {
+  display: flex;
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+.ss-hero-fact__icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(223,0,36,0.7);
+
+  border-radius: 50%;
+
+  font-size: 1.05rem;
+
+  background: rgba(223,0,36,0.08);
+}
+
+.ss-hero-fact div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-self: end;
-  gap: 0.6rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.15s ease;
+}
 
-  &:hover {
-    transform: translateY(-2px);
-  }
+.ss-hero-fact strong {
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  color: #fff;
+}
+
+.ss-hero-fact span {
+  margin-top: 0.15rem;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.42);
+}
+
+/* -------------------------------------------------------------------------
+   ORGANISATION
+   ------------------------------------------------------------------------- */
+
+.ss-hero-org {
+  margin-bottom: 2rem;
+
+  padding-left: 1rem;
+
+  border-left: 2px solid $olympic-red;
+}
+
+.ss-hero-org p {
+  @include body-font;
+
+  margin: 0;
+
+  font-size: 0.75rem;
+
+  line-height: 1.5;
+
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+
+  color: rgba(255,255,255,0.68);
+}
+
+/* -------------------------------------------------------------------------
+   CTA
+   ------------------------------------------------------------------------- */
+
+.ss-hero-cta {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.9rem;
+
+  padding:
+    1rem
+    1.8rem;
+
+  border-radius: 3px;
+
+  background: $olympic-red;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+
+  box-shadow:
+    0 15px 40px rgba(223,0,36,0.28);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ss-hero-cta:hover {
+  transform: translateY(-3px);
+
+  background: #ff1838;
+
+  box-shadow:
+    0 20px 50px rgba(223,0,36,0.42);
+}
+
+.ss-hero-cta__arrow {
+  font-size: 1.25rem;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.ss-hero-cta:hover .ss-hero-cta__arrow {
+  transform: translateX(5px);
+}
+
+/* -------------------------------------------------------------------------
+   DAY CARD
+   ------------------------------------------------------------------------- */
+
+.ss-hero-days {
+  position: absolute;
+
+  right: 3.5rem;
+  bottom: 3.5rem;
+
+  z-index: 5;
+
+  width: 260px;
+
+  padding: 1.25rem;
+
+  background: rgba(0,0,0,0.55);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.14);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 4px;
+}
+
+.ss-hero-day {
+  padding: 0.8rem 0;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.1);
+}
+
+.ss-hero-day:last-child {
+  border-bottom: 0;
+}
+
+.ss-hero-day__label {
+  display: block;
+
+  margin-bottom: 0.2rem;
+
+  color: $olympic-red;
+
+  font-family: "Anton", sans-serif;
+
+  font-size: 0.8rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+.ss-hero-day__title {
+  display: block;
+
+  color: #fff;
+
+  font-size: 0.76rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.ss-hero-day__detail {
+  display: block;
+
+  margin-top: 0.2rem;
+
+  color: rgba(255,255,255,0.48);
+
+  font-size: 0.68rem;
+
+  line-height: 1.4;
+}
+
+/* -------------------------------------------------------------------------
+   QR
+   ------------------------------------------------------------------------- */
+
+.ss-hero-register {
+  position: absolute;
+
+  top: 2rem;
+  right: 2rem;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.ss-hero-register:hover {
+  transform: translateY(-3px);
 }
 
 .ss-hero-qr {
-  width: 126px;
-  height: 126px;
-  padding: 8px;
+  width: 78px;
+  height: 78px;
+
+  padding: 5px;
+
   background: #fff;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 26px -12px rgba(0, 0, 0, 0.5);
+
+  border-radius: 3px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35);
 }
 
 .ss-hero-qr__img {
+  width: 100%;
+  height: 100%;
+
   display: block;
-  width: 110px;
-  height: 110px;
 }
 
 .ss-hero-register__label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
+  display: none;
+
+  color: #fff;
+
+  font-size: 0.7rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
 }
 
-/* -------- Responsive -------- */
+/* -------------------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------------------- */
+
 @media (max-width: $bp-desktop) {
-  .ss-hero-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+
+  .ss-hero-video {
+    width: 100%;
+    opacity: 0.38;
+  }
+
+  .ss-hero-video-fade {
+    background:
+      linear-gradient(
+        90deg,
+        #030303 0%,
+        rgba(3,3,3,0.94) 40%,
+        rgba(3,3,3,0.5) 75%,
+        rgba(3,3,3,0.3) 100%
+      );
+  }
+
+  .ss-hero-main {
+    width: 75%;
   }
 
   .ss-hero-days {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: left;
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+
+  .ss-hero {
+    min-height: 760px;
   }
 
-  .ss-hero-day {
-    flex: 1 1 220px;
+  .ss-hero-video-wrap {
+    position: absolute;
+  }
+
+  .ss-hero-video {
+    width: 100%;
+    height: 100%;
+
+    opacity: 0.42;
+
+    object-position: center;
+  }
+
+  .ss-hero-video-fade {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3,3,3,0.2) 0%,
+        rgba(3,3,3,0.45) 35%,
+        #030303 82%
+      );
+  }
+
+  .ss-hero-inner {
+    min-height: 760px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding:
+      2rem
+      1.5rem
+      3rem;
+  }
+
+  .ss-hero-main {
+    width: 100%;
+  }
+
+  .ss-hero-title {
+    font-size: clamp(
+      3.2rem,
+      13vw,
+      5rem
+    );
+  }
+
+  .ss-hero-days {
+    display: none;
   }
 
   .ss-hero-register {
-    justify-self: center;
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .ss-hero-qr {
+    width: 64px;
+    height: 64px;
+  }
+
+  .ss-hero-tags {
+    flex-wrap: wrap;
+  }
+
+  .ss-hero-diagonal {
+    opacity: 0.5;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: $bp-mobile) {
+
   .ss-hero {
-    padding: 2.5rem 1.25rem;
+    min-height: 720px;
   }
 
-  .ss-hero-days {
-    flex-direction: column;
+  .ss-hero-inner {
+    min-height: 720px;
+  }
+
+  .ss-hero-title {
+    font-size: 3.25rem;
+  }
+
+  .ss-hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .ss-hero-facts {
+    gap: 1rem;
+  }
+
+  .ss-hero-org p {
+    font-size: 0.66rem;
+  }
+
+  .ss-hero-qr {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ss-hero-cta {
+    width: 100%;
+    justify-content: center;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ss-hero-glow {
+
+  .ss-hero-video {
     animation: none;
   }
+
+  .ss-hero-cta,
+  .ss-hero-register {
+    transition: none;
+  }
 }
+
 
 /* ======================= END HEADER STYLES ============= */
 
@@ -477,6 +934,7 @@ $bp-wide: 1440px;
 @import "./SafeSportEvent/StatsDashboard.scss";
 @import "./SafeSportEvent/Timeline.scss";
 @import "./SafeSportEvent/ContactUs.scss";
+@import "./SafeSportEvent/StrategicPartners.scss";
 
 
 /* ==========================================================================

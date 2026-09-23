@@ -20,11 +20,27 @@
 }
 
 .contact-card {
+  position: relative;
   background: #fff;
   border: 1px solid $line;
   border-radius: 16px;
   padding: 1.75rem;
+  overflow: hidden;
   box-shadow: 0 14px 36px -28px rgba(10, 26, 51, 0.35);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      $flare-red 0%,
+      $flare-orange 100%
+    );
+  }
 
   &__tag {
     display: inline-block;
@@ -48,20 +64,30 @@
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    padding: 0.6rem 0;
+    padding: 0.75rem 0;
 
     &:not(:last-child) {
       border-bottom: 1px dashed $line;
     }
   }
 
-  &__role {
-    font-weight: 600;
+  &__name {
+    font-weight: 700;
     color: $navy;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    @include display-font;
   }
 
-  &__email {
+  &__role {
+    font-weight: 600;
+    color: $flare-red;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  &__email,
+  &__phone {
     color: $muted;
     font-size: 0.9rem;
     text-decoration: none;
@@ -71,5 +97,9 @@
       color: $olympic-yellow-dark;
       text-decoration: underline;
     }
+  }
+
+  &__phone {
+    word-break: normal;
   }
 }
