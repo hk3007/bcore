@@ -497,7 +497,7 @@ export const BCORE = () => {
 
                         <div className="oly-iframe-wrapper">
                             <iframe
-                                src="https://www.youtube.com/embed/tO6hkYHkRBo?si=gy4dYFb4xzG1n_4e"
+                                src="https://www.youtube.com/embed/BP2jNf4NEjw?si=3Vr_gTxxnpWjh51E"
                                 title="BCORE Video"
                                 frameBorder="0"
                                 allow="autoplay; encrypted-media; picture-in-picture"

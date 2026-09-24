@@ -15,6 +15,7 @@ import speaker3 from "./Images/Maria Bogner.png";
 import BCORENightRunDetails from "./BCORENightRunDetails";
 import SafeSportEvent from "../components/EventPages/SafeSportEvent";
 import IORC3Event from "../components/EventPages/IORC3Event";
+import AsianNationalOlympicAcademySummit from "../components/EventPages/AsianNationalOlympicAcademySummit";
 import Highlights from "../components/eventsdetails/Highlights";
 import ImportantDates from "../components/eventsdetails/ImportantDates";
 import CallForAbstract from "../components/eventsdetails/CallForAbstract";
@@ -1140,6 +1141,10 @@ export const EventDetails = () => {
       id: 6,
       type: "External",
     },
+    {
+      id: 7,
+      type: "External",
+    },
   ];
 
   const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
@@ -1185,6 +1190,7 @@ export const EventDetails = () => {
       {event.type === "External" && event.id === 4 && <BCORENightRunDetails />}
       {event.type === "External" && event.id === 5 && <SafeSportEvent />}
       {event.type === "External" && event.id === 6 && <IORC3Event />}
+      {event.type === "External" && event.id === 7 && <AsianNationalOlympicAcademySummit />}
 
       {event.type !== "External" && (
         <div className="event-details-page">
