@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Newspaper, Megaphone, Award, Globe, Search, Bell } from 'lucide-react';
+import { Award} from 'lucide-react';
 import "./news.css";
-import { FaChevronLeft, FaChevronRight, FaCrown, FaStar } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight} from "react-icons/fa";
 import { Helmet } from 'react-helmet';
 
 

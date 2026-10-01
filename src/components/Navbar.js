@@ -9,6 +9,7 @@ import {
   Calendar,
   ChevronDown,
   Bell,
+  Image,
 } from "lucide-react";
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -122,7 +123,8 @@ export const Navbar = () => {
         { to: "/team", label: "Team" },
         { to: "/careers", label: "Careers" },
       ],
-    }, ,
+    },
+    { to: "/gallery", label: "Gallery", icon: Image },
     { to: "/news", label: "News", icon: Newspaper },
     { to: "/contact", label: "Contact", icon: Phone },
   ];

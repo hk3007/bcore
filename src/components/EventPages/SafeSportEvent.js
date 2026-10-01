@@ -198,6 +198,35 @@ const stakeholders = [
   "Other stakeholders committed to safe and inclusive sport",
 ];
 
+/* =========================================================
+   SAFE SPORT SURVEYS
+========================================================= */
+
+const surveyForms = [
+  {
+    number: "01",
+    audience: "For Coaches",
+    title: "National Coaches Survey",
+    description:
+      "A confidential survey for coaches to share their direct experiences of psychological, physical, and sexual violence in sport, sport safety culture, reporting systems, well-being priorities, and readiness to identify and prevent abuse or misconduct.",
+    note:
+      "Please answer based on your direct coaching experience. There are no right or wrong answers.",
+    action: "Take the Coaches Survey",
+    link: "https://forms.gle/JWG84R4E7Hzj8cHA7",
+  },
+  {
+    number: "02",
+    audience: "For Sport Participants",
+    title: "Safe Sport Experience Survey",
+    description:
+      "A confidential survey conducted by BCORE to understand experiences of psychological, physical, and sexual violence in sports environments and contribute to a stronger culture of safety and safeguarding.",
+    note:
+      "Your responses will support the understanding of safe sport experiences and safeguarding needs.",
+    action: "Take the Survey",
+    link: "https://forms.gle/8KrMTaeL1ijC6GpW9",
+  },
+];
+
 export default function SafeSportEvent() {
   return (
     <div className="ss-page">
@@ -277,6 +306,99 @@ export default function SafeSportEvent() {
               <li key={i}>{item}</li>
             ))}
           </ul>
+        </section>
+
+        {/* =========================================================
+    SAFE SPORT SURVEYS
+========================================================= */}
+
+        <section className="ss-surveys" id="surveys">
+          <div className="ss-surveys__inner">
+
+            <div className="ss-surveys__header">
+              <div className="ss-surveys__eyebrow">
+                <span className="ss-surveys__eyebrow-line" />
+                <span>BCORE Research &amp; Safeguarding</span>
+              </div>
+
+              <h2 className="ss-surveys__title">
+                Help Us Build
+                <br />
+                <span>Safer Sport.</span>
+              </h2>
+
+              <p className="ss-surveys__intro">
+                BCORE is conducting surveys to better understand experiences,
+                practices and safeguarding needs within sporting environments.
+                Your responses will contribute to evidence-based understanding
+                and help identify opportunities for stronger Safe Sport practices.
+              </p>
+            </div>
+
+            <div className="ss-surveys__cards">
+
+              {surveyForms.map((survey) => (
+                <article
+                  className="ss-survey-card"
+                  key={survey.number}
+                >
+
+                  <div className="ss-survey-card__top">
+                    <span className="ss-survey-card__number">
+                      {survey.number}
+                    </span>
+
+                    <span className="ss-survey-card__audience">
+                      {survey.audience}
+                    </span>
+                  </div>
+
+                  <div className="ss-survey-card__body">
+
+                    <h3>{survey.title}</h3>
+
+                    <p className="ss-survey-card__description">
+                      {survey.description}
+                    </p>
+
+                    <div className="ss-survey-card__note">
+                      <span className="ss-survey-card__note-mark">
+                        +
+                      </span>
+
+                      <p>{survey.note}</p>
+                    </div>
+
+                  </div>
+
+                  <div className="ss-survey-card__footer">
+
+                    <span className="ss-survey-card__confidential">
+                      <span className="ss-survey-card__dot" />
+                      Confidential Survey
+                    </span>
+
+                    <a
+                      href={survey.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ss-survey-card__button"
+                    >
+                      <span>{survey.action}</span>
+
+                      <span className="ss-survey-card__arrow">
+                        ↗
+                      </span>
+                    </a>
+
+                  </div>
+
+                </article>
+              ))}
+
+            </div>
+
+          </div>
         </section>
 
         {/* FEATURES */}

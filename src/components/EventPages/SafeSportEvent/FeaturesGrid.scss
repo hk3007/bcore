@@ -1,102 +1,323 @@
+/* =========================================================
+   SAFE SPORT — PROGRAMME CONTENT
+   WHITE EDITORIAL SYSTEM
+   ========================================================= */
+
 .fg-section {
-  max-width: 1180px;
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 4.5rem 1.5rem;
+  padding: 6.5rem 2rem;
+
+  background: #ffffff;
+
+  @media (max-width: $bp-desktop) {
+    padding: 5rem 1.5rem;
+  }
 
   @media (max-width: $bp-tablet) {
-    padding: 3rem 1.25rem;
+    padding: 4rem 1.25rem;
   }
 }
 
+/* =========================================================
+   HEADING
+   ========================================================= */
+
 .fg-heading {
-  max-width: 640px;
-  margin: 0 0 3rem;
+  margin-bottom: 3.5rem;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  &__line {
+    width: 38px;
+    height: 2px;
+    background: #df0024;
+    display: block;
+  }
 
   &__eyebrow {
     display: inline-block;
+    color: #df0024;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: green($color: #000000);
-    margin-bottom: 0.9rem;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+    align-items: end;
+    gap: 4rem;
+
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
   }
 
   &__title {
     @include display-font;
+
+    margin: 0;
+
+    color: #101010;
+
+    font-size: clamp(2.4rem, 5vw, 4.6rem);
     font-weight: 600;
-    font-size: clamp(1.7rem, 3.2vw, 2.3rem);
-    color: bisque;
-    margin: 0 0 0.9rem;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+
+    span {
+      color: #df0024;
+    }
   }
 
   &__lead {
-    color: $muted;
-    font-size: 1.02rem;
-    line-height: 1.7;
-    margin: 0;
+    max-width: 430px;
+
+    margin: 0 0 0.35rem;
+
+    color: #667085;
+
+    font-size: 1rem;
+    line-height: 1.75;
   }
 }
 
+/* =========================================================
+   GRID
+   ========================================================= */
+
 .fg-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background: #e4e7ec;
+  border: 1px solid #e4e7ec;
 
   @media (max-width: $bp-desktop) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   @media (max-width: $bp-tablet) {
     grid-template-columns: 1fr;
   }
 }
 
+/* =========================================================
+   CARD
+   ========================================================= */
+
 .fg-card {
   position: relative;
-  background: #fff;
-  border: 1px solid $line;
-  border-radius: 18px;
-  padding: 2rem 1.75rem 1.9rem;
-  box-shadow: 0 16px 40px -30px rgba(10, 26, 51, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 2rem 2.25rem;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 26px 52px -26px rgba(10, 26, 51, 0.32);
-    border-color: rgba(0, 133, 199, 0.25);
+    z-index: 2;
+
+    background: #fcfcfc;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 18px 45px rgba(16, 24, 40, 0.08);
+
+    .fg-card__ring {
+      transform: scale(1.08) rotate(8deg);
+    }
+
+    .fg-card__accent {
+      width: 100%;
+    }
+
+    .fg-card__number {
+      color: #101010;
+    }
+  }
+
+  /* -----------------------------------------
+     TOP ROW
+     ----------------------------------------- */
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    min-height: 48px;
+
+    margin-bottom: 2.15rem;
+  }
+
+  &__number {
+    color: #bfc3ca;
+
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    transition: color 0.25s ease;
   }
 
   &__ring {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
     border: 4px solid;
-    margin-bottom: 1.4rem;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    transition:
+      transform 0.35s ease;
   }
 
+  /* -----------------------------------------
+     TAG
+     ----------------------------------------- */
+
   &__tag {
-    display: block;
+    margin-bottom: 0.7rem;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+
     text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.7rem;
-    font-weight: 700;
-    margin-bottom: 0.6rem;
   }
+
+  /* -----------------------------------------
+     TITLE
+     ----------------------------------------- */
 
   &__title {
     @include display-font;
+
+    max-width: 300px;
+
+    margin: 0 0 0.9rem;
+
+    color: #101010;
+
+    font-size: 1.35rem;
     font-weight: 600;
-    font-size: 1.2rem;
-    color: $navy;
-    margin: 0 0 0.65rem;
-    line-height: 1.35;
+    line-height: 1.25;
+
+    letter-spacing: -0.02em;
   }
 
+  /* -----------------------------------------
+     DESCRIPTION
+     ----------------------------------------- */
+
   &__text {
-    color: $muted;
-    font-size: 0.94rem;
-    line-height: 1.65;
+    max-width: 340px;
+
     margin: 0;
+
+    color: #667085;
+
+    font-size: 0.91rem;
+    line-height: 1.7;
+  }
+
+  /* -----------------------------------------
+     BOTTOM ACCENT
+     ----------------------------------------- */
+
+  &__accent {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    transition: width 0.35s ease;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .fg-card {
+    min-height: auto;
+
+    padding: 1.75rem 1.5rem 2rem;
+
+    &__top {
+      margin-bottom: 1.75rem;
+    }
+
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__text {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .fg-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .fg-heading {
+    margin-bottom: 2.5rem;
+
+    &__title {
+      font-size: 2.4rem;
+    }
+
+    &__lead {
+      font-size: 0.94rem;
+    }
+  }
+
+  .fg-card {
+    padding: 1.5rem;
+
+    &__ring {
+      width: 38px;
+      height: 38px;
+    }
   }
 }

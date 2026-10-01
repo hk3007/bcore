@@ -54,13 +54,13 @@ export const About = () => {
             </section>
 
             {/* --- Quote Section --- */}
-            <section className="quote-breakout">
+            {/* <section className="quote-breakout">
                 <FaQuoteLeft className="quote-icon" />
                 <blockquote className="director-quote">
                     "Sports and education go hand in hand, where disciplines merge to create a robust Olympic ecosystem. The seeds we sow today will shape the next generation of Olympic scholars."
                 </blockquote>
                 <cite>— Utsav Chaware, Director</cite>
-            </section>
+            </section> */}
 
             {/* --- Objectives Section (Grid) --- */}
             <section className="objectives-modern">

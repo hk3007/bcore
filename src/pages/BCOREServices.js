@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Target,
   Users,
-  BookOpen,
 } from "lucide-react";
 
 import AOS from "aos";

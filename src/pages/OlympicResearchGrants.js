@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import {
   Target, Users, Search, Landmark, Gift, ShieldCheck,
   Mail, ExternalLink, Download, Award,
-  FileText, CheckCircle, ChevronRight,
+  FileText, CheckCircle,
   BookOpen, Zap, Globe, Clock, Star
 } from "lucide-react";
 

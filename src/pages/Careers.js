@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Briefcase, Mail, ShieldCheck, Globe, Zap, ArrowRight, FileText, Award, Search, UserPlus, Star, CheckCircle } from "lucide-react";
+import { Briefcase, ShieldCheck, Globe, Zap, FileText, Award, Search, UserPlus, Star, CheckCircle } from "lucide-react";
 import { Helmet } from "react-helmet";
 import "./Careers.css";
 import EOI1 from "../pages/Broucher/EOI 1.pdf";

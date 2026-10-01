@@ -151,24 +151,6 @@ const legacyData = [
   },
 ];
 
-/* ---------------- building blocks ---------------- */
-
-function OlympicRings({ className = "" }) {
-  return (
-    <svg
-      className={`bcl-rings ${className}`}
-      viewBox="0 0 400 160"
-      aria-hidden="true"
-    >
-      <circle className="bcl-ring bcl-ring-blue" cx="70" cy="60" r="42" />
-      <circle className="bcl-ring bcl-ring-black" cx="160" cy="60" r="42" />
-      <circle className="bcl-ring bcl-ring-red" cx="250" cy="60" r="42" />
-      <circle className="bcl-ring bcl-ring-yellow" cx="115" cy="100" r="42" />
-      <circle className="bcl-ring bcl-ring-green" cx="205" cy="100" r="42" />
-    </svg>
-  );
-}
-
 function initials(name = "") {
   return name
     .split(" ")

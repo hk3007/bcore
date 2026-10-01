@@ -18,7 +18,7 @@ import image4 from "../pages/Images/TEAM/Krishna Ramani.jpeg";
 import image6 from "../pages/Images/TEAM/Sonika Bisht.jpeg";
 import image7 from "../pages/Images/TEAM/Tonmoy Paul.png";
 import image8 from "../pages/Images/TEAM/Dr. Debraj Bhattacharya.jpeg";
-
+import image9 from "../pages/Images/TEAM/Bhaavana Shresta.jpeg";
 // =========================================================
 // CORE LEADERSHIP
 // =========================================================
@@ -73,10 +73,10 @@ const teamMembers = [
   },
   {
     name: "Ms. Sonika Bisht",
-    designation: "Research Officer BCORE",
+    designation: "Research Officer",
     photo: image6,
     info:
-      "Research Officer at BCORE.",
+      "Human Rights and Sports Governance - exploring athlete rights, safeguarding, inclusion, accountability, ethical governance, and policy frameworks within sport.",
   },
   {
     name: "Ms. Khushbu Shah",
@@ -100,13 +100,19 @@ const interns = [
     photo: image4,
     info: "Operations and Management",
   },
-
   {
     name: "Tonmoy Paul",
     designation:
       "School of Internal Security, Defence and Strategic Studies",
     photo: image7,
     info: "Multimedia Content Architect",
+  },
+    {
+    name: "Bhavana Shresta",
+    designation:
+      "School of Applied Sciences, Engineering and Technology",
+    photo: image9,
+    info: "Graphic Designer",
   },
 ];
 

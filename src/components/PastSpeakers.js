@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, FreeMode} from "swiper/modules";
+import { Autoplay, FreeMode} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";

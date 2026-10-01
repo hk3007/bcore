@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./ethics.css";
 import {
-  ShieldCheck, FileText, Search, Users, CheckCircle,
+  ShieldCheck, Search, Users, CheckCircle,
   Award, Globe, Scale, ChevronRight, Mail
 } from "lucide-react";
 import { Helmet } from "react-helmet";

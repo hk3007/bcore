@@ -6,45 +6,54 @@ export default function HeroShowcase() {
     <section className="hs-showcase">
       <div className="hs-showcase__panel hs-showcase__panel--copy">
         <span className="hs-eyebrow">
-          BCORE &middot; Rashtriya Raksha University
+          BCORE · Rashtriya Raksha University
         </span>
+
         <h2 className="hs-headline">
           Every athlete deserves a{" "}
-          <span className="hs-headline__accent">safe field of play.</span>
+          <span className="hs-headline__accent">
+            safe field of play.
+          </span>
         </h2>
+
         <p className="hs-lead">
           A three-day foundation Programme built on Olympic values, Indian
           safeguarding law and international best practice — designed to turn
           policy into everyday practice across India’s sporting ecosystem.
         </p>
+
         <div className="hs-cta-row">
-          {/* Register Now Button (redirect to link) */}
           <a
             href="https://rise.rru.ac.in/Course/688/779"
             target="_blank"
             rel="noopener noreferrer"
+            className="hs-btn hs-btn--primary"
           >
-            <button className="hs-btn hs-btn--primary" type="button">
-              Register Now
-            </button>
+            Register Now
+            <span>↗</span>
           </a>
 
-          {/* Download Brochure Button (PDF from public folder) */}
-          <a href={Brochure} download>
-            <button className="hs-btn hs-btn--ghost" type="button">
-              Download Brochure
-            </button>
+          <a
+            href={Brochure}
+            download
+            className="hs-btn hs-btn--ghost"
+          >
+            Download Brochure
+            <span>↓</span>
           </a>
         </div>
+
         <div className="hs-meta-row">
           <div className="hs-meta">
             <strong>3</strong>
             <span>Days of Learning</span>
           </div>
+
           <div className="hs-meta">
             <strong>12+</strong>
             <span>Core Modules</span>
           </div>
+
           <div className="hs-meta">
             <strong>13</strong>
             <span>Stakeholder Groups</span>
@@ -53,65 +62,43 @@ export default function HeroShowcase() {
       </div>
 
       <div className="hs-showcase__panel hs-showcase__panel--visual">
+        <div className="hs-visual-orbit hs-visual-orbit--outer" />
+        <div className="hs-visual-orbit hs-visual-orbit--middle" />
+        <div className="hs-visual-orbit hs-visual-orbit--inner" />
+
+        <div className="hs-visual-center">
+          <span className="hs-visual-center__small">
+            BCORE
+          </span>
+
+          <strong>
+            SAFE
+            <br />
+            SPORT
+          </strong>
+
+          <span className="hs-visual-center__line" />
+        </div>
+
         <div className="hs-visual-card hs-visual-card--1">
-          <span className="hs-visual-dot hs-visual-dot--blue"></span>
+          <span className="hs-visual-dot hs-visual-dot--blue" />
           <p>Athlete-centred design</p>
         </div>
+
         <div className="hs-visual-card hs-visual-card--2">
-          <span className="hs-visual-dot hs-visual-dot--yellow"></span>
+          <span className="hs-visual-dot hs-visual-dot--yellow" />
           <p>Observer-based learning</p>
         </div>
+
         <div className="hs-visual-card hs-visual-card--3">
-          <span className="hs-visual-dot hs-visual-dot--green"></span>
+          <span className="hs-visual-dot hs-visual-dot--green" />
           <p>Policy &amp; legal grounding</p>
         </div>
-        <svg
-          className="hs-visual-mask"
-          viewBox="0 0 480 480"
-          aria-hidden="true"
-        >
-          <defs>
-            <linearGradient
-              id="hsTrackGradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="100%"
-            >
-              <stop offset="0%" stopColor="#0085C7" />
-              <stop offset="35%" stopColor="#F4C300" />
-              <stop offset="70%" stopColor="#009F3D" />
-              <stop offset="100%" stopColor="#DF0024" />
-            </linearGradient>
-          </defs>
-          <circle
-            cx="240"
-            cy="240"
-            r="190"
-            fill="none"
-            stroke="url(#hsTrackGradient)"
-            strokeWidth="2"
-            strokeDasharray="6 10"
-          />
-          <circle
-            cx="240"
-            cy="240"
-            r="150"
-            fill="none"
-            stroke="#0085C7"
-            strokeOpacity="0.15"
-            strokeWidth="36"
-          />
-          <circle
-            cx="240"
-            cy="240"
-            r="150"
-            fill="none"
-            stroke="url(#hsTrackGradient)"
-            strokeWidth="3"
-            strokeDasharray="120 822"
-          />
-        </svg>
+
+        <div className="hs-visual-card hs-visual-card--4">
+          <span className="hs-visual-dot hs-visual-dot--red" />
+          <p>Athlete safeguarding</p>
+        </div>
       </div>
     </section>
   );
