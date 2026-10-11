@@ -55,6 +55,16 @@ const PUB_DATA = [
     authors: "",
     venue: "Rashtriya Raksha University, Gandhinagar, India",
     link: "https://drive.google.com/file/d/1oSrJWDuhxHDKOGPPC7CvEAfN9ov84qsV/view?usp=sharing"
+  },
+  {
+    id: 6,
+    date: "2026-01-27", // Used for sorting
+    displayDate: "27 Jan 2026", // User-friendly format
+    type: " दृष्टि VISION OLYMPiCS",
+    title: "2nd International Olympic Research Conference (IORC) 2026: दृष्टि VISION OLYMPiCS",
+    authors: "",
+    venue: "Rashtriya Raksha University, Gandhinagar, India",
+    link: "https://drive.google.com/file/d/1L77hUm44XiBxYLA6VTR1XVN0Tnd6IwST/view?usp=sharing"
   }
 ];
 

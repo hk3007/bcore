@@ -137,6 +137,8 @@ export const UpComing = () => {
       endDate: new Date("2026-10-23"),
       place:
         "Rashtriya Raksha University, Gandhinagar, Gujarat, India",
+      brochureLink:
+        "https://drive.google.com/file/d/1I4gNjxOA8FQ63YEIdPoPgNzLximCrnNN/view?usp=sharing",
     },
 
     {
@@ -150,6 +152,8 @@ export const UpComing = () => {
         "Focused on building a safe, ethical, and athlete-centred Olympic ecosystem by integrating research, policy, education, and governance with a strong emphasis on safe sport and athlete safeguarding.",
       registrationLink:
         "https://rise.rru.ac.in/Course/693/785",
+      brochureLink:
+        "https://drive.google.com/file/d/1rjZWR-xlGJfA5AY8Umg-3pSv8Zop_7q7/view?usp=sharing",
     },
     {
       id: 7,
@@ -363,6 +367,17 @@ export const UpComing = () => {
                       className="ue-btn secondary"
                     >
                       Booklet
+                    </a>
+                  )}
+
+                  {event.brochureLink && (
+                    <a
+                      href={event.brochureLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="ue-btn secondary"
+                    >
+                      Brochure
                     </a>
                   )}
 

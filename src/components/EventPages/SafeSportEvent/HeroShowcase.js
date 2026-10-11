@@ -1,5 +1,4 @@
 import React from "react";
-import Brochure from "../../../pages/PDF/National Safe Sport Brochure.pdf";
 
 export default function HeroShowcase() {
   return (
@@ -34,7 +33,7 @@ export default function HeroShowcase() {
           </a>
 
           <a
-            href={Brochure}
+            href="https://drive.google.com/file/d/1I4gNjxOA8FQ63YEIdPoPgNzLximCrnNN/view?usp=sharing"
             download
             className="hs-btn hs-btn--ghost"
           >
