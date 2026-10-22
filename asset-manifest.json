@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.dee77376.css",
-    "main.js": "./static/js/main.72d71bf4.js",
+    "main.js": "./static/js/main.8dd82d34.js",
     "static/js/453.b2889c0a.chunk.js": "./static/js/453.b2889c0a.chunk.js",
     "static/media/Schedule.pdf": "./static/media/Schedule.fe24e7c8bed3b5a5fc2d.pdf",
     "static/media/loader Gif.gif": "./static/media/loader Gif.5e0afe0262a00866cd42.gif",
@@ -62,11 +62,11 @@
     "static/media/Hyperlab Logo.png": "./static/media/Hyperlab Logo.8d5422f5aa5d84bc6221.png",
     "index.html": "./index.html",
     "main.dee77376.css.map": "./static/css/main.dee77376.css.map",
-    "main.72d71bf4.js.map": "./static/js/main.72d71bf4.js.map",
+    "main.8dd82d34.js.map": "./static/js/main.8dd82d34.js.map",
     "453.b2889c0a.chunk.js.map": "./static/js/453.b2889c0a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dee77376.css",
-    "static/js/main.72d71bf4.js"
+    "static/js/main.8dd82d34.js"
   ]
 }
