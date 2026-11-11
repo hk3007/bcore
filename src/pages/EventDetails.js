@@ -13,6 +13,7 @@ import speaker1 from "./Images/Col Anant Kumar.png";
 import speaker2 from "./Images/Lambis.png";
 import speaker3 from "./Images/Maria Bogner.png";
 import BCORENightRunDetails from "./BCORENightRunDetails";
+import BCORENightRun2Details from "./BCORENightRun2Details";
 import SafeSportEvent from "../components/EventPages/SafeSportEvent";
 import IORC3Event from "../components/EventPages/IORC3Event";
 import AsianNationalOlympicAcademySummit from "../components/EventPages/AsianNationalOlympicAcademySummit";
@@ -1145,6 +1146,10 @@ export const EventDetails = () => {
       id: 7,
       type: "External",
     },
+    {
+      id: 8,
+      type: "External",
+    },
   ];
 
   const event = events.find((e) => e.id === parseInt(id)); // Find event by ID
@@ -1191,6 +1196,7 @@ export const EventDetails = () => {
       {event.type === "External" && event.id === 5 && <SafeSportEvent />}
       {event.type === "External" && event.id === 6 && <IORC3Event />}
       {event.type === "External" && event.id === 7 && <AsianNationalOlympicAcademySummit />}
+      {event.type === "External" && event.id === 8 && <BCORENightRun2Details />}
 
       {event.type !== "External" && (
         <div className="event-details-page">

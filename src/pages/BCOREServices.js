@@ -157,8 +157,8 @@ export const BCOREServices = () => {
       <Helmet>
 
         <title>
-          BCORE as a Service Provider | Bharat Centre of Olympic Research &
-          Education
+          BCORE as a Research & Education Expertise | Bharat Centre of
+          Olympic Research & Education
         </title>
 
         <meta
@@ -239,7 +239,7 @@ export const BCOREServices = () => {
               /
             </span>
 
-            <span>SERVICE PROVIDER</span>
+            <span>RESEARCH & EDUCATION EXPERTISE</span>
 
             <span className="bsp-header-line"></span>
 
@@ -248,7 +248,7 @@ export const BCOREServices = () => {
 
           {/* Main title */}
 
-          <h1 data-aos="fade-up">
+          <h1 className="bsp-title-compact" data-aos="fade-up">
 
             BCORE
 
@@ -256,8 +256,8 @@ export const BCOREServices = () => {
               AS A
             </span>
 
-            SERVICE
-            PROVIDER
+            <em>RESEARCH & EDUCATION</em>
+            <em>EXPERTISE</em>
 
           </h1>
 
@@ -601,19 +601,8 @@ export const BCOREServices = () => {
               </span>
 
               <h2>
-
-                Research.
-
-                <span>
-                  Education.
-                </span>
-
-                Governance.
-
-                <strong>
-                  Impact.
-                </strong>
-
+                Research. <span>Education.</span> Governance.{" "}
+                <strong>Impact.</strong>
               </h2>
 
             </div>

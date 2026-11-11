@@ -50,6 +50,21 @@ const events = [
   },
 
   {
+    id: 5,
+    name: "Foundation Programme in Safe Sport and Safeguarding",
+    date: "21 - 23 October 2026",
+
+    startDate: new Date("2026-10-21"),
+    endDate: new Date("2026-10-23"),
+
+    place:
+      "Rashtriya Raksha University, Gandhinagar, Gujarat, India",
+
+    bookletLink:
+      "https://drive.google.com/file/d/1I4gNjxOA8FQ63YEIdPoPgNzLximCrnNN/view?usp=sharing",
+  },
+
+  {
     id: 3,
     name: "2nd International Olympic Research Conference",
     date: "27 - 30 January 2026",

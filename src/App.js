@@ -9,7 +9,7 @@ import { Footer } from './components/Footer';
 import { Team } from './pages/Team';
 import { Events } from './pages/Events';
 import { UpComing } from './pages/UpComingEvents';
-import Ethics_Statement from './pages/Ethics_Statement';
+import EthicsStatement from './pages/Ethics_Statement';
 import { OlympicResearchGrants } from './pages/OlympicResearchGrants';
 import { Loader } from './components/Loader';
 import './components/loader.css';
@@ -58,7 +58,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/news" element={<NewsSection />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/ethics" element={<Ethics_Statement />} />
+        <Route path="/ethics" element={<EthicsStatement />} />
         <Route path="/olympicresearchgrants" element={<OlympicResearchGrants />} />
         <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/careers" element={<Careers />} />

@@ -167,6 +167,17 @@ export const UpComing = () => {
         "The Summit brings together National Olympic Academies, Olympic Studies and Research Centres, and other institutions from across Asia to strengthen collaboration in Olympic education, research and academic exchange.",
       registrationNotice: "Registration opens soon",
     },
+    {
+      id: 8,
+      name: "2nd Edition of BCORE Night Run",
+      startDate: new Date("2026-12-12"),
+      endDate: new Date("2026-12-12"),
+      place: "Gandhinagar, Gujarat, India",
+      description:
+        "A community night run centered on Safe Sports and Athlete Safeguarding, building on the inaugural edition's success.",
+      bookletLink:
+        "https://drive.google.com/file/d/1tqm6hrR3zJW8Akr8HJKW6T2yrvsbNRzM/view",
+    },
   ];
 
   const today = new Date();

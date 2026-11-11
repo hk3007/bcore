@@ -38,6 +38,16 @@ const EVENTS = [
         id: '1bP9M89LzksUzthhobIXkNPnAfEqFFx4c',
         date: '10 January 2026',
     },
+    {
+        name: 'Japan Visit',
+        id: '1G62f37bWtnBmkuKtrSWV1wzAyzIKGWLx',
+        date: 'September 2026',
+    },
+    {
+        name: 'Foundations of Safe Sport and Athlete’s Safeguarding',
+        id: '14jdnlnv6Z28ieTZlDIxl26h5-yHIbjDH',
+        date: '21st - 23rd October 2026',
+    }
 ];
 
 const PAGE_SIZE = 60;

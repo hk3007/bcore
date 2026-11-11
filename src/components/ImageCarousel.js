@@ -18,8 +18,24 @@ import legacy2 from "../pages/Slider/LEGACY 2.png"
 import IORC3 from "../pages/Slider/IORC 3 BROCHURE_Web.jpg"
 import SafeSport from "../pages/Slider/Bcore_ATHLETE SAFEGUARDING_Web.jpg"
 
+import spesResearchMethodology from "../pages/Slider/SPES_Research Methodology_09.10.2026 (2) (1).jpg.jpeg"
+import charilaos from "../pages/Slider/CHARILAOS.png"
+import groupPhoto from "../pages/Slider/GROUP PHOTO.png"
+import mou from "../pages/Slider/MOU.png"
+import olympicInteraction from "../pages/Slider/OLYMPIC INTERACTION.png"
+import speakers from "../pages/Slider/SPEAKERS.png"
+import specialGuest from "../pages/Slider/SPECIAL GUEST.png"
+
+
 const ImageCarousel = () => {
   const images = [
+    { src: spesResearchMethodology, alt: "SPES Research Methodology" },
+    { src: specialGuest, alt: "Special Guest" },
+    { src: speakers, alt: "Speakers" },
+    { src: olympicInteraction, alt: "Olympic Interaction" },
+    { src: mou, alt: "MOU" },
+    { src: groupPhoto, alt: "Group Photo" },
+    { src: charilaos, alt: "Charilaos" },
     { src: SafeSport, alt: "Slide 4" },
     { src: IORC3, alt: "Slide 4" },
     { src: legacy2, alt: "Slide 4" },

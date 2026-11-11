@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import './about.css'; 
 import logo1 from './Images/BCORE Logo.png';
 import logo5 from './Images/Indian_Olympic_Association_logo.png';
-import { FaQuoteLeft } from 'react-icons/fa';
 import Map from './Images/Olympic Map.png';
 import { Helmet } from 'react-helmet';
 

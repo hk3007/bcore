@@ -383,6 +383,23 @@
   color: white;
 }
 
+.bsp-page-header h1.bsp-title-compact {
+  font-size:
+    clamp(
+      34px,
+      7.2vw,
+      108px
+    );
+
+  line-height: 1.02;
+}
+
+.bsp-page-header h1.bsp-title-compact em {
+  display: block;
+  font-style: normal;
+  color: white;
+}
+
 
 /* =========================================================
    HEADER STATEMENT
@@ -1045,6 +1062,9 @@
 
   color:
     var(--bsp-black);
+
+  overflow-wrap:
+    break-word;
 }
 
 .bsp-approach-heading h2 span {
@@ -1551,6 +1571,69 @@
 
     padding:
       65px 25px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .bsp-approach {
+    gap: 25px;
+
+    padding:
+      60px 18px;
+  }
+
+  .bsp-section-index {
+    gap: 12px;
+  }
+
+  .bsp-section-index span {
+    font-size: 24px;
+  }
+
+  .bsp-approach-heading h2 {
+    font-size:
+      clamp(
+        34px,
+        12vw,
+        48px
+      );
+
+    line-height: 1.05;
+
+    margin:
+      14px 0 20px;
+  }
+
+  .bsp-approach-intro {
+    margin-bottom: 35px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .bsp-approach-card {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .bsp-approach-icon {
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 18px;
+  }
+
+  .bsp-approach-card h3 {
+    font-size: 22px;
+  }
+
+  .bsp-approach-card p {
+    font-size: 11px;
   }
 
 }

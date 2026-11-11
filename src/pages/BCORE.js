@@ -105,7 +105,7 @@ export const BCORE = () => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [countdownDate]);
 
 
     // Parse both start and end date
@@ -146,32 +146,33 @@ export const BCORE = () => {
     const videoRef = useRef(null);
 
     useEffect(() => {
-        if (!videoRef.current) return;
+        const videoEl = videoRef.current;
+        if (!videoEl) return;
 
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     // Video is in viewport
-                    if (videoRef.current && videoRef.current.paused) {
-                        videoRef.current.play().catch(() => {
+                    if (videoEl.paused) {
+                        videoEl.play().catch(() => {
                             // Autoplay failed - browser might have restrictions
                             console.log('Autoplay prevented by browser');
                         });
                     }
                 } else {
                     // Video is out of viewport
-                    if (videoRef.current && !videoRef.current.paused) {
-                        videoRef.current.pause();
+                    if (!videoEl.paused) {
+                        videoEl.pause();
                     }
                 }
             },
             { threshold: 0.5 } // Trigger when 50% of video is visible
         );
 
-        observer.observe(videoRef.current);
+        observer.observe(videoEl);
 
         return () => {
-            if (videoRef.current) observer.unobserve(videoRef.current);
+            observer.unobserve(videoEl);
         };
     }, []);
 

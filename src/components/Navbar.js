@@ -59,7 +59,7 @@ export const Navbar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   const toggleMenu = () => setMenuOpen((v) => !v);
   const closeMenu = () => {
@@ -119,7 +119,7 @@ export const Navbar = () => {
       label: "Work With BCORE",
       icon: Users,
       dropdown: [
-        { to: "/services", label: "BCORE as a Service Provider" },
+        { to: "/services", label: "BCORE as a Research & Education Expertise" },
         { to: "/team", label: "Team" },
         { to: "/careers", label: "Careers" },
       ],
